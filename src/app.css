@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@import "@fontsource/fira-mono";
+
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/aspect-ratio";
+
+:root {
+  --font-body: Arial, sans-serif;
+  --font-mono: 'Fira Mono', monospace;
+}
+
+body {
+  font-family: var(--font-body);
+  min-height: 100vh;
+  margin: 0;
+  background-color: white;
+  color: #1e293b; /* slate-800 */
+}
