@@ -1,0 +1,144 @@
+[
+  { "slug": "sports-thumb-spica-sts-100", "name": "Sports Thumb Spica — Small", "sku": "STS-100", "brand": "Maramed", "category": "orthotics", "subcat": "Thumb Spica" },
+  { "slug": "sports-thumb-spica-sts-200", "name": "Sports Thumb Spica — Medium", "sku": "STS-200", "brand": "Maramed", "category": "orthotics", "subcat": "Thumb Spica" },
+  { "slug": "sports-thumb-spica-sts-300", "name": "Sports Thumb Spica — Large", "sku": "STS-300", "brand": "Maramed", "category": "orthotics", "subcat": "Thumb Spica" },
+
+  { "slug": "thumb-guard-spica-tgs-100", "name": "Thumb Guard Spica — Small", "sku": "TGS-100", "brand": "Maramed", "category": "orthotics", "subcat": "Thumb Spica" },
+  { "slug": "thumb-guard-spica-tgs-200", "name": "Thumb Guard Spica — Medium", "sku": "TGS-200", "brand": "Maramed", "category": "orthotics", "subcat": "Thumb Spica" },
+  { "slug": "thumb-guard-spica-tgs-300", "name": "Thumb Guard Spica — Large", "sku": "TGS-300", "brand": "Maramed", "category": "orthotics", "subcat": "Thumb Spica" },
+
+  { "slug": "wrist-hand-wh-100", "name": "Wrist Hand — Small", "sku": "WH-100", "brand": "Maramed", "category": "orthotics", "subcat": "Wrist/Hand" },
+  { "slug": "wrist-hand-wh-200", "name": "Wrist Hand — Medium", "sku": "WH-200", "brand": "Maramed", "category": "orthotics", "subcat": "Wrist/Hand" },
+  { "slug": "wrist-hand-wh-300", "name": "Wrist Hand — Large", "sku": "WH-300", "brand": "Maramed", "category": "orthotics", "subcat": "Wrist/Hand" },
+
+  { "slug": "wrist-hand-extended-whe-100", "name": "Wrist Hand Extended — Small", "sku": "WHE-100", "brand": "Maramed", "category": "orthotics", "subcat": "Wrist/Hand" },
+  { "slug": "wrist-hand-extended-whe-200", "name": "Wrist Hand Extended — Medium", "sku": "WHE-200", "brand": "Maramed", "category": "orthotics", "subcat": "Wrist/Hand" },
+  { "slug": "wrist-hand-extended-whe-300", "name": "Wrist Hand Extended — Large", "sku": "WHE-300", "brand": "Maramed", "category": "orthotics", "subcat": "Wrist/Hand" },
+
+  { "slug": "wrist-hand-thumb-s-wht-100-s", "name": "Wrist Hand Thumb (S-Series) — Small", "sku": "WHT-100-S", "brand": "Maramed", "category": "orthotics", "subcat": "Wrist/Hand" },
+  { "slug": "wrist-hand-thumb-s-wht-200-s", "name": "Wrist Hand Thumb (S-Series) — Medium", "sku": "WHT-200-S", "brand": "Maramed", "category": "orthotics", "subcat": "Wrist/Hand" },
+  { "slug": "wrist-hand-thumb-s-wht-300-s", "name": "Wrist Hand Thumb (S-Series) — Large", "sku": "WHT-300-S", "brand": "Maramed", "category": "orthotics", "subcat": "Wrist/Hand" },
+
+  { "slug": "elbow-orthosis-eo-100", "name": "Elbow Orthosis — Small", "sku": "EO-100", "brand": "Maramed", "category": "orthotics", "subcat": "Elbow/SEWHO" },
+  { "slug": "elbow-orthosis-eo-200", "name": "Elbow Orthosis — Medium", "sku": "EO-200", "brand": "Maramed", "category": "orthotics", "subcat": "Elbow/SEWHO" },
+  { "slug": "elbow-orthosis-eo-300", "name": "Elbow Orthosis — Large", "sku": "EO-300", "brand": "Maramed", "category": "orthotics", "subcat": "Elbow/SEWHO" },
+  { "slug": "elbow-orthosis-eo-400", "name": "Elbow Orthosis — X-Large", "sku": "EO-400", "brand": "Maramed", "category": "orthotics", "subcat": "Elbow/SEWHO" },
+
+  { "slug": "sewho-eo-sg-100", "name": "Shoulder-Elbow-Wrist-Hand Orthosis — Small", "sku": "EO-SG-100", "brand": "Maramed", "category": "orthotics", "subcat": "Elbow/SEWHO" },
+  { "slug": "sewho-eo-sg-200", "name": "Shoulder-Elbow-Wrist-Hand Orthosis — Medium", "sku": "EO-SG-200", "brand": "Maramed", "category": "orthotics", "subcat": "Elbow/SEWHO" },
+  { "slug": "sewho-eo-sg-300", "name": "Shoulder-Elbow-Wrist-Hand Orthosis — Large", "sku": "EO-SG-300", "brand": "Maramed", "category": "orthotics", "subcat": "Elbow/SEWHO" },
+  { "slug": "sewho-eo-sg-400", "name": "Shoulder-Elbow-Wrist-Hand Orthosis — X-Large", "sku": "EO-SG-400", "brand": "Maramed", "category": "orthotics", "subcat": "Elbow/SEWHO" },
+
+  { "slug": "humerus-fb-shoulder-guard-hfb-sg-100", "name": "Humerus Fracture Brace — Shoulder Guard (S-Series) — Small", "sku": "HFB-SG-100", "brand": "Maramed", "category": "orthotics", "subcat": "Upper Extremity FB" },
+  { "slug": "humerus-fb-shoulder-guard-hfb-sg-200", "name": "Humerus Fracture Brace — Shoulder Guard (S-Series) — Medium", "sku": "HFB-SG-200", "brand": "Maramed", "category": "orthotics", "subcat": "Upper Extremity FB" },
+  { "slug": "humerus-fb-shoulder-guard-hfb-sg-300", "name": "Humerus Fracture Brace — Shoulder Guard (S-Series) — Large", "sku": "HFB-SG-300", "brand": "Maramed", "category": "orthotics", "subcat": "Upper Extremity FB" },
+  { "slug": "humerus-fb-shoulder-guard-hfb-sg-400", "name": "Humerus Fracture Brace — Shoulder Guard (S-Series) — X-Large", "sku": "HFB-SG-400", "brand": "Maramed", "category": "orthotics", "subcat": "Upper Extremity FB" },
+
+  { "slug": "ulna-fracture-brace-ufb-100", "name": "Ulna Fracture Brace — Small", "sku": "UFB-100", "brand": "Maramed", "category": "orthotics", "subcat": "Upper Extremity FB" },
+  { "slug": "ulna-fracture-brace-ufb-200", "name": "Ulna Fracture Brace — Medium", "sku": "UFB-200", "brand": "Maramed", "category": "orthotics", "subcat": "Upper Extremity FB" },
+  { "slug": "ulna-fracture-brace-ufb-300", "name": "Ulna Fracture Brace — Large", "sku": "UFB-300", "brand": "Maramed", "category": "orthotics", "subcat": "Upper Extremity FB" },
+
+  { "slug": "ulna-fracture-brace-s-ufb-100-s", "name": "Ulna Fracture Brace (S-Series) — Small", "sku": "UFB-100-S", "brand": "Maramed", "category": "orthotics", "subcat": "Upper Extremity FB" },
+  { "slug": "ulna-fracture-brace-s-ufb-200-s", "name": "Ulna Fracture Brace (S-Series) — Medium", "sku": "UFB-200-S", "brand": "Maramed", "category": "orthotics", "subcat": "Upper Extremity FB" },
+  { "slug": "ulna-fracture-brace-s-ufb-300-s", "name": "Ulna Fracture Brace (S-Series) — Large", "sku": "UFB-300-S", "brand": "Maramed", "category": "orthotics", "subcat": "Upper Extremity FB" },
+
+  { "slug": "pediatric-ucb-100", "name": "Pediatric UCB — 100", "sku": "UCB-100", "brand": "Maramed", "category": "pediatric", "subcat": "Pediatric Foot" },
+  { "slug": "pediatric-ucb-200", "name": "Pediatric UCB — 200", "sku": "UCB-200", "brand": "Maramed", "category": "pediatric", "subcat": "Pediatric Foot" },
+  { "slug": "pediatric-ucb-300", "name": "Pediatric UCB — 300", "sku": "UCB-300", "brand": "Maramed", "category": "pediatric", "subcat": "Pediatric Foot" },
+  { "slug": "pediatric-ucb-400", "name": "Pediatric UCB — 400", "sku": "UCB-400", "brand": "Maramed", "category": "pediatric", "subcat": "Pediatric Foot" },
+  { "slug": "pediatric-ucb-500", "name": "Pediatric UCB — 500", "sku": "UCB-500", "brand": "Maramed", "category": "pediatric", "subcat": "Pediatric Foot" },
+  { "slug": "pediatric-ucb-600", "name": "Pediatric UCB — 600", "sku": "UCB-600", "brand": "Maramed", "category": "pediatric", "subcat": "Pediatric Foot" },
+  { "slug": "pediatric-ucb-700", "name": "Pediatric UCB — 700", "sku": "UCB-700", "brand": "Maramed", "category": "pediatric", "subcat": "Pediatric Foot" },
+  { "slug": "pediatric-ucb-800", "name": "Pediatric UCB — 800", "sku": "UCB-800", "brand": "Maramed", "category": "pediatric", "subcat": "Pediatric Foot" },
+  { "slug": "pediatric-ucb-900", "name": "Pediatric UCB — 900", "sku": "UCB-900", "brand": "Maramed", "category": "pediatric", "subcat": "Pediatric Foot" },
+
+  { "slug": "drop-foot-splint-full-foot-pls-ff-100", "name": "Drop Foot Splint — Full Foot — Small", "sku": "PLS-FF-100", "brand": "Maramed", "category": "orthotics", "subcat": "AFO / PLS" },
+  { "slug": "drop-foot-splint-full-foot-pls-ff-200", "name": "Drop Foot Splint — Full Foot — Medium", "sku": "PLS-FF-200", "brand": "Maramed", "category": "orthotics", "subcat": "AFO / PLS" },
+  { "slug": "drop-foot-splint-full-foot-pls-ff-300", "name": "Drop Foot Splint — Full Foot — Large", "sku": "PLS-FF-300", "brand": "Maramed", "category": "orthotics", "subcat": "AFO / PLS" },
+  { "slug": "drop-foot-splint-full-foot-pls-ff-400", "name": "Drop Foot Splint — Full Foot — X-Large", "sku": "PLS-FF-400", "brand": "Maramed", "category": "orthotics", "subcat": "AFO / PLS" },
+
+  { "slug": "drop-foot-splint-dynafo-plsb-100", "name": "Drop Foot Splint — Dynafo — Small", "sku": "PLSB-100", "brand": "Maramed", "category": "orthotics", "subcat": "AFO / PLS" },
+  { "slug": "drop-foot-splint-dynafo-plsb-200", "name": "Drop Foot Splint — Dynafo — Medium", "sku": "PLSB-200", "brand": "Maramed", "category": "orthotics", "subcat": "AFO / PLS" },
+  { "slug": "drop-foot-splint-dynafo-plsb-300", "name": "Drop Foot Splint — Dynafo — Large", "sku": "PLSB-300", "brand": "Maramed", "category": "orthotics", "subcat": "AFO / PLS" },
+  { "slug": "drop-foot-splint-dynafo-plsb-400", "name": "Drop Foot Splint — Dynafo — X-Large", "sku": "PLSB-400", "brand": "Maramed", "category": "orthotics", "subcat": "AFO / PLS" },
+
+  { "slug": "drop-foot-splint-sliding-pls-s-100", "name": "Drop Foot Splint — Sliding — Small", "sku": "PLS-S-100", "brand": "Maramed", "category": "orthotics", "subcat": "AFO / PLS" },
+  { "slug": "drop-foot-splint-sliding-pls-s-200", "name": "Drop Foot Splint — Sliding — Medium", "sku": "PLS-S-200", "brand": "Maramed", "category": "orthotics", "subcat": "AFO / PLS" },
+  { "slug": "drop-foot-splint-sliding-pls-s-300", "name": "Drop Foot Splint — Sliding — Large", "sku": "PLS-S-300", "brand": "Maramed", "category": "orthotics", "subcat": "AFO / PLS" },
+  { "slug": "drop-foot-splint-sliding-pls-s-400", "name": "Drop Foot Splint — Sliding — X-Large", "sku": "PLS-S-400", "brand": "Maramed", "category": "orthotics", "subcat": "AFO / PLS" },
+
+  { "slug": "open-heel-full-foot-plsc-100", "name": "Open Heel — Full Foot — Small", "sku": "PLSC-100", "brand": "Maramed", "category": "orthotics", "subcat": "AFO / PLS (Open Heel)" },
+  { "slug": "open-heel-full-foot-plsc-200", "name": "Open Heel — Full Foot — Medium", "sku": "PLSC-200", "brand": "Maramed", "category": "orthotics", "subcat": "AFO / PLS (Open Heel)" },
+  { "slug": "open-heel-full-foot-plsc-300", "name": "Open Heel — Full Foot — Large", "sku": "PLSC-300", "brand": "Maramed", "category": "orthotics", "subcat": "AFO / PLS (Open Heel)" },
+  { "slug": "open-heel-full-foot-plsc-400", "name": "Open Heel — Full Foot — X-Large", "sku": "PLSC-400", "brand": "Maramed", "category": "orthotics", "subcat": "AFO / PLS (Open Heel)" },
+
+  { "slug": "open-heel-full-foot-plsc-oh-100", "name": "Open Heel (OH) — Full Foot — Small", "sku": "PLSC-OH-100", "brand": "Maramed", "category": "orthotics", "subcat": "AFO / PLS (Open Heel)" },
+  { "slug": "open-heel-full-foot-plsc-oh-200", "name": "Open Heel (OH) — Full Foot — Medium", "sku": "PLSC-OH-200", "brand": "Maramed", "category": "orthotics", "subcat": "AFO / PLS (Open Heel)" },
+  { "slug": "open-heel-full-foot-plsc-oh-300", "name": "Open Heel (OH) — Full Foot — Large", "sku": "PLSC-OH-300", "brand": "Maramed", "category": "orthotics", "subcat": "AFO / PLS (Open Heel)" },
+  { "slug": "open-heel-full-foot-plsc-oh-400", "name": "Open Heel (OH) — Full Foot — X-Large", "sku": "PLSC-OH-400", "brand": "Maramed", "category": "orthotics", "subcat": "AFO / PLS (Open Heel)" },
+
+  { "slug": "open-heel-sliding-pls-soh-100", "name": "Open Heel — Sliding — Small", "sku": "PLS-SOH-100", "brand": "Maramed", "category": "orthotics", "subcat": "AFO / PLS (Open Heel)" },
+  { "slug": "open-heel-sliding-pls-soh-200", "name": "Open Heel — Sliding — Medium", "sku": "PLS-SOH-200", "brand": "Maramed", "category": "orthotics", "subcat": "AFO / PLS (Open Heel)" },
+  { "slug": "open-heel-sliding-pls-soh-300", "name": "Open Heel — Sliding — Large", "sku": "PLS-SOH-300", "brand": "Maramed", "category": "orthotics", "subcat": "AFO / PLS (Open Heel)" },
+  { "slug": "open-heel-sliding-pls-soh-400", "name": "Open Heel — Sliding — X-Large", "sku": "PLS-SOH-400", "brand": "Maramed", "category": "orthotics", "subcat": "AFO / PLS (Open Heel)" },
+
+  { "slug": "tibia-splint-ts-100", "name": "Tibia Splint — Small", "sku": "TS-100", "brand": "Maramed", "category": "orthotics", "subcat": "Lower Extremity Splints" },
+  { "slug": "tibia-splint-ts-200", "name": "Tibia Splint — Medium", "sku": "TS-200", "brand": "Maramed", "category": "orthotics", "subcat": "Lower Extremity Splints" },
+  { "slug": "tibia-splint-ts-300", "name": "Tibia Splint — Large", "sku": "TS-300", "brand": "Maramed", "category": "orthotics", "subcat": "Lower Extremity Splints" },
+  { "slug": "tibia-splint-ts-400", "name": "Tibia Splint — X-Large", "sku": "TS-400", "brand": "Maramed", "category": "orthotics", "subcat": "Lower Extremity Splints" },
+
+  { "slug": "tibia-fracture-brace-s-tfb-100-s", "name": "Tibia Fracture Brace (S-Series) — Small", "sku": "TFB-100-S", "brand": "Maramed", "category": "orthotics", "subcat": "Tibia FB" },
+  { "slug": "tibia-fracture-brace-s-tfb-200-s", "name": "Tibia Fracture Brace (S-Series) — Medium", "sku": "TFB-200-S", "brand": "Maramed", "category": "orthotics", "subcat": "Tibia FB" },
+  { "slug": "tibia-fracture-brace-s-tfb-300-s", "name": "Tibia Fracture Brace (S-Series) — Large", "sku": "TFB-300-S", "brand": "Maramed", "category": "orthotics", "subcat": "Tibia FB" },
+
+  { "slug": "tibia-fracture-brace-tfb-100", "name": "Tibia Fracture Brace — Small", "sku": "TFB-100", "brand": "Maramed", "category": "orthotics", "subcat": "Tibia FB" },
+  { "slug": "tibia-fracture-brace-tfb-200", "name": "Tibia Fracture Brace — Medium", "sku": "TFB-200", "brand": "Maramed", "category": "orthotics", "subcat": "Tibia FB" },
+  { "slug": "tibia-fracture-brace-tfb-300", "name": "Tibia Fracture Brace — Large", "sku": "TFB-300", "brand": "Maramed", "category": "orthotics", "subcat": "Tibia FB" },
+  { "slug": "tibia-fracture-brace-tfb-400", "name": "Tibia Fracture Brace — X-Large", "sku": "TFB-400", "brand": "Maramed", "category": "orthotics", "subcat": "Tibia FB" },
+
+  { "slug": "tibia-fracture-brace-proximal-support-tfb-ps-100", "name": "Tibia Fracture Brace — Proximal Support — Small", "sku": "TFB-PS-100", "brand": "Maramed", "category": "orthotics", "subcat": "Tibia FB" },
+  { "slug": "tibia-fracture-brace-proximal-support-tfb-ps-200", "name": "Tibia Fracture Brace — Proximal Support — Medium", "sku": "TFB-PS-200", "brand": "Maramed", "category": "orthotics", "subcat": "Tibia FB" },
+  { "slug": "tibia-fracture-brace-proximal-support-tfb-ps-200-e", "name": "Tibia Fracture Brace — Proximal Support — Medium Long", "sku": "TFB-PS-200-E", "brand": "Maramed", "category": "orthotics", "subcat": "Tibia FB" },
+  { "slug": "tibia-fracture-brace-proximal-support-tfb-ps-300", "name": "Tibia Fracture Brace — Proximal Support — Large", "sku": "TFB-PS-300", "brand": "Maramed", "category": "orthotics", "subcat": "Tibia FB" },
+  { "slug": "tibia-fracture-brace-proximal-support-tfb-ps-300-e", "name": "Tibia Fracture Brace — Proximal Support — Large Long", "sku": "TFB-PS-300-E", "brand": "Maramed", "category": "orthotics", "subcat": "Tibia FB" },
+
+  { "slug": "foot-component-fc-100", "name": "Foot Component — Small", "sku": "FC-100", "brand": "Maramed", "category": "orthotics", "subcat": "Tibia FB" },
+  { "slug": "foot-component-fc-200", "name": "Foot Component — Medium", "sku": "FC-200", "brand": "Maramed", "category": "orthotics", "subcat": "Tibia FB" },
+  { "slug": "foot-component-fc-300", "name": "Foot Component — Large", "sku": "FC-300", "brand": "Maramed", "category": "orthotics", "subcat": "Tibia FB" },
+
+  { "slug": "afo-cast-boot-women-afc-boot-100-w", "name": "AFC Boot (Women) — Small", "sku": "AFC-BOOT-100/W", "brand": "Maramed", "category": "footwear", "subcat": "AFO & Cast Boot" },
+  { "slug": "afo-cast-boot-women-afc-boot-200-w", "name": "AFC Boot (Women) — Medium", "sku": "AFC-BOOT-200/W", "brand": "Maramed", "category": "footwear", "subcat": "AFO & Cast Boot" },
+  { "slug": "afo-cast-boot-women-afc-boot-300-w", "name": "AFC Boot (Women) — Large", "sku": "AFC-BOOT-300/W", "brand": "Maramed", "category": "footwear", "subcat": "AFO & Cast Boot" },
+
+  { "slug": "afo-socks-afo-l-1", "name": "AFO Socks — Pediatric (One Size)", "sku": "AFO-L-1", "brand": "Maramed", "category": "accessories", "subcat": "Accessories" },
+  { "slug": "afo-socks-afo-l-2", "name": "AFO Socks — Adult (One Size)", "sku": "AFO-L-2", "brand": "Maramed", "category": "accessories", "subcat": "Accessories" },
+  { "slug": "afo-shoe-insert-afo-s-1", "name": "AFO Shoe Insert — Men’s 3–6", "sku": "AFO-S-1", "brand": "Maramed", "category": "accessories", "subcat": "Accessories" },
+  { "slug": "afo-shoe-insert-afo-s-2", "name": "AFO Shoe Insert — Men’s 6–9", "sku": "AFO-S-2", "brand": "Maramed", "category": "accessories", "subcat": "Accessories" },
+  { "slug": "afo-shoe-insert-afo-s-3", "name": "AFO Shoe Insert — Men’s 9–11", "sku": "AFO-S-3", "brand": "Maramed", "category": "accessories", "subcat": "Accessories" },
+  { "slug": "afo-shoe-insert-afo-s-4", "name": "AFO Shoe Insert — Men’s 11–13", "sku": "AFO-S-4", "brand": "Maramed", "category": "accessories", "subcat": "Accessories" },
+
+  { "slug": "quick-lock-fastener-qlf-2", "name": "Quick Lock Fastener — Small Stem (100)", "sku": "QLF-2", "brand": "Maramed", "category": "accessories", "subcat": "Fasteners" },
+  { "slug": "quick-lock-fastener-qlf-4", "name": "Quick Lock Fastener — Standard Stem (100)", "sku": "QLF-4", "brand": "Maramed", "category": "accessories", "subcat": "Fasteners" },
+  { "slug": "quick-lock-fastener-qlf-6", "name": "Quick Lock Fastener — Long Stem (100)", "sku": "QLF-6", "brand": "Maramed", "category": "accessories", "subcat": "Fasteners" },
+  { "slug": "quick-lock-fastener-qlf-8", "name": "Quick Lock Fastener — Large Stem (100)", "sku": "QLF-8", "brand": "Maramed", "category": "accessories", "subcat": "Fasteners" },
+  { "slug": "quick-lock-fastener-gun-qlf-it-1", "name": "Quick Lock Fastener Gun", "sku": "QLF-IT-1", "brand": "Maramed", "category": "accessories", "subcat": "Fasteners" },
+  { "slug": "quick-lock-washers-qlf-wa", "name": "Washers for QLF4/6/8 (50)", "sku": "QLF-WA", "brand": "Maramed", "category": "accessories", "subcat": "Fasteners" },
+
+  { "slug": "strap-10", "name": "Hook & Loop Strap (Forearm-Wrist-Hand)", "sku": "STRAP-10", "brand": "Maramed", "category": "accessories", "subcat": "Straps" },
+  { "slug": "strap-17", "name": "Hook & Loop Strap (Assorted)", "sku": "STRAP-17", "brand": "Maramed", "category": "accessories", "subcat": "Straps" },
+  { "slug": "strap-mg-17", "name": "Magic Tape Strap — Small", "sku": "STRAP-MG-17", "brand": "Maramed", "category": "accessories", "subcat": "Straps" },
+  { "slug": "strap-mg-19", "name": "Magic Tape Strap — Md/Lg/XLg", "sku": "STRAP-MG-19", "brand": "Maramed", "category": "accessories", "subcat": "Straps" },
+  { "slug": "strap-plsc-1-m", "name": "Adhesive-Back Strap — fits PLSC & PLS-FF", "sku": "STRAP-PLSC-1/M", "brand": "Maramed", "category": "accessories", "subcat": "Straps" },
+  { "slug": "strap-plsc-s-m", "name": "Strap — fits PLS-S", "sku": "STRAP-PLSC-S/M", "brand": "Maramed", "category": "accessories", "subcat": "Straps" },
+
+  { "slug": "stockinette-t3", "name": "Stockinette — Tibial FB Small", "sku": "STOCKINETT-T3", "brand": "Maramed", "category": "accessories", "subcat": "Stockinette" },
+  { "slug": "stockinette-t4", "name": "Stockinette — Tibial FB Med/Lg", "sku": "STOCKINETT-T4", "brand": "Maramed", "category": "accessories", "subcat": "Stockinette" },
+  { "slug": "stockinette-u3", "name": "Stockinette — Ulna FB All", "sku": "STOCKINETT-U3", "brand": "Maramed", "category": "accessories", "subcat": "Stockinette" },
+  { "slug": "stockinette-sg3", "name": "Stockinette — Humeral SG Small", "sku": "STOCKINETT-SG3", "brand": "Maramed", "category": "accessories", "subcat": "Stockinette" },
+  { "slug": "stockinette-sg4", "name": "Stockinette — Humeral SG Md/Lg/XLg", "sku": "STOCKINETT-SG4", "brand": "Maramed", "category": "accessories", "subcat": "Stockinette" },
+
+  { "slug": "deburring-tool-dbt-1a", "name": "Deburring Tool", "sku": "DBT-1A", "brand": "Maramed", "category": "accessories", "subcat": "Tools" },
+  { "slug": "epoxy-adjustment-mandrels-eams-set", "name": "Epoxy Adjustment Mandrels — Set of 12", "sku": "EAMS-SET", "brand": "Maramed", "category": "accessories", "subcat": "Tools" },
+
+  { "slug": "buckle-1pk", "name": "1” Loop & Chafe — Pack of 100", "sku": "BUCKLE-1PK", "brand": "Maramed", "category": "accessories", "subcat": "Buckles" }
+]
