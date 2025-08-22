@@ -10,10 +10,3 @@
   --font-mono: 'Fira Mono', monospace;
 }
 
-body {
-  font-family: var(--font-body);
-  min-height: 100vh;
-  margin: 0;
-  background-color: white;
-  color: #1e293b; /* slate-800 */
-}
