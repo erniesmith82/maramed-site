@@ -13,10 +13,16 @@
   const isActive = (href) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 </script>
 
-<header class="fixed inset-x-0 top-0 z-40 bg-white/85 backdrop-blur border-b border-slate-200 dark:bg-gray-900/70 dark:border-gray-800">
+<header
+  class="fixed inset-x-0 top-0 z-40
+         border-b border-slate-200 dark:border-gray-800
+         bg-gradient-to-b from-slate-300/90 to-slate-100/85
+         dark:from-gray-900/90 dark:to-gray-800/70
+         backdrop-blur"
+>
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-22 flex items-center justify-between">
     <a href={brand.href} class="flex items-center gap-2">
-      {#if brand.logo}<img src={brand.logo} alt={brand.name} class="h-18 w-35 rounded-lg" />{/if}
+      {#if brand.logo}<img src={brand.logo} alt={brand.name} class="h-18 w-45 rounded-lg" />{/if}
     </a>
 
     <nav class="hidden md:flex items-center gap-6">
@@ -34,12 +40,6 @@
           {l.label}
         </a>
       {/each}
-      <a
-        href="/contact"
-        class="inline-flex items-center rounded-lg border border-slate-300 bg-slate-50 px-3 py-1.5 text-sm font-semibold text-slate-800 hover:bg-white dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700"
-      >
-        Get a Quote
-      </a>
     </nav>
 
     <button
@@ -72,13 +72,6 @@
             {l.label}
           </a>
         {/each}
-        <a
-          href="/contact"
-          class="mt-2 inline-flex items-center justify-center rounded-lg border border-slate-300 bg-slate-50 px-3 py-2 text-sm font-semibold text-slate-800 hover:bg-white dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700"
-          on:click={() => (mobileOpen = false)}
-        >
-          Get a Quote
-        </a>
       </nav>
     </div>
   {/if}
