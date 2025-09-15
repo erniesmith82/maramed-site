@@ -162,8 +162,18 @@
 
     {
       "slug": "s-series",
-      "label": "The New S-Series",
-      "description": "Lightweight, formable S-Series shells engineered for comfort, durability, and streamlined clinical fitting.",
+      "label": "The New S-Series™",
+      "description": "In response to the needs and preferences of today’s healthcare professional, Maramed is proud to introduce the new S-Series™ line of prefabricated orthoses. It consists of the same superior materials and anatomical designs as our original style and includes several distinct new features.",
+      "features": [
+    "Longer straps with end stops insure proper brace alignment while donning and doffing",
+    "All straps are made of Magic Tape™, a revolutionary strapping material that consists of self-engaging hook and loop",
+    "Straps are easily replaced without any tools",
+    "Removable straps promote proper hygiene",
+    "Same clinically tested anatomical shapes",
+    "More patient compliant",
+    "Lower profile – no external parts to catch on clothes",
+    "By replacing the loop, chafe and rivet with a simple static slot, slippage and rotation of the anterior/posterior components are minimized"
+  ],
       "families": [
         {
           "key": "WHT-S",

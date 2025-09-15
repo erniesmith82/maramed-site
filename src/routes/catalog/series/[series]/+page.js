@@ -17,6 +17,7 @@ export function load({ params }) {
   return {
     seriesLabel: series.label,
     seriesDescription: series.description ?? "",
+    features: series.features ?? [],            // 👈 forward features
     families
   };
 }

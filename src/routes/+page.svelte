@@ -42,15 +42,6 @@
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
     <div class="grid lg:grid-cols-2 gap-10 items-center">
       <div>
-        {#if showBrandLogo}
-          <img
-            src="/brand/maramed-logo-modern-sans.svg"
-            alt="Maramed"
-            class="h-10 w-auto mb-6 hidden sm:block"
-            on:error={() => (showBrandLogo = false)}
-          />
-        {/if}
-
         <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
           Orthopedic <span class="text-slate-600">&amp; prosthetic</span> systems built for reliability.
         </h1>
@@ -63,9 +54,7 @@
           <a href="/catalog" class="inline-flex items-center rounded-xl bg-slate-900 px-5 py-3 font-semibold text-white hover:bg-black">
             Browse Catalog
           </a>
-          <a href="/contact" class="inline-flex items-center rounded-xl border border-slate-300 px-5 py-3 font-semibold text-slate-800 hover:bg-slate-50">
-            Get a Quote
-          </a>
+         
         </div>
 
         <p class="mt-4 text-sm text-slate-500">
@@ -77,14 +66,14 @@
         <div class="aspect-[16/10] w-full rounded-3xl border border-slate-200 overflow-hidden">
           {#if showHero}
             <img
-              src="/images/hero-catalog.jpg"
+              src="/Maramed-catalog.jpg"
               alt="Catalog preview"
               class="h-full w-full object-cover"
               on:error={() => (showHero = false)}
             />
           {:else}
             <div class="h-full w-full grid place-items-center bg-slate-50 text-slate-400">
-              Add a hero image at <code>/static/images/hero-catalog.jpg</code>
+              Add a hero image at <code>/static/images/Maramed-catalog.jpg</code>
             </div>
           {/if}
         </div>
