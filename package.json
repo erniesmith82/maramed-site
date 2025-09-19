@@ -32,6 +32,7 @@
 	},
 	"dependencies": {
 		"flowbite": "^3.1.2",
-		"flowbite-svelte": "^1.12.6"
+		"flowbite-svelte": "^1.12.6",
+		"nodemailer": "^7.0.6"
 	}
 }

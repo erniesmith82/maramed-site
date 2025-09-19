@@ -1,435 +1,1535 @@
 {
+  "families": {
+    "TS-SPORTS": {
+      "key": "TS-SPORTS",
+      "title": "Sports Thumb Spica",
+      "image": "/images/products/sports-thumb-spica.jpg",
+      "details": {
+        "lcode": "L3999",
+        "heroImage": "/images/products/sports-thumb-spica.jpg",
+        "gallery": [
+          "/images/thumb-spica-sports-1.jpg",
+          "/images/thumb-spica-sports-2.jpg"
+        ],
+        "description": "Designed for functional support of the thumb CMC/MCP joints during sport or daily activity.",
+        "indications": [
+          "Sprains, fractures and strains",
+          "Postoperative rehabilitation",
+          "Collateral ligament injuries",
+          "Skier’s thumb & Gamekeeper’s thumb",
+          "DeQuervain’s Syndrome",
+          "Arthritis pain in thumb and saddle joints",
+          "Prophylactic bracing and immobilization"
+        ],
+        "features": [],
+        "latexFree": false,
+        "mpNote": [
+          "M-P Diameter is width of hand"
+        ],
+        "additionalItems": [
+          { "item number": "STRAP-STS/M", "description": "Elastic Strap" },
+          { "item number": "STOCKINETT-TGS2", "description": "Stockinette-one size" }
+        ]
+      },
+      "items": [
+        { "sku": "STS-100L", "size": "Small",  "side": "Left",  "mpDiameter": "2¾ – 3¼" },
+        { "sku": "STS-100R", "size": "Small",  "side": "Right", "mpDiameter": "2¾ – 3¼" },
+        { "sku": "STS-200L", "size": "Medium", "side": "Left",  "mpDiameter": "3¼ – 3¾" },
+        { "sku": "STS-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾" },
+        { "sku": "STS-300L", "size": "Large",  "side": "Left",  "mpDiameter": "3¾ – 4" },
+        { "sku": "STS-300R", "size": "Large",  "side": "Right", "mpDiameter": "3¾ – 4" }
+      ]
+    },
+    "TGS": {
+      "key": "TGS",
+      "title": "Thumb Guard Spica",
+      "image": "/images/products/thumb-guard-spica.jpg",
+      "details": {
+        "lcode": "L3999",
+        "heroImage": "/images/products/thumb-guard-spica.jpg",
+        "gallery": [],
+        "description": "Provides rigid immobilization and support of the thumb with comfortable, adjustable strapping.",
+        "indications": [
+          "Sprains, fractures and strains",
+          "Skier’s thumb & Gamekeeper’s thumb",
+          "Postoperative rehabilitation"
+        ],
+        "features": [],
+        "latexFree": false,
+        "mpNote": "M-P Diameter is width of hand",
+        "additionalItems": [
+          { "item number": "STRAP-STS/M", "description": "Elastic Strap" },
+          { "item number": "STOCKINETT-TGS2", "description": "Stockinette-one size" }
+        ]
+      },
+      "items": [
+        { "sku": "TGS-100L", "size": "Small",  "side": "Left",  "mpDiameter": "2¾ – 3¼" },
+        { "sku": "TGS-100R", "size": "Small",  "side": "Right", "mpDiameter": "2¾ – 3¼" },
+        { "sku": "TGS-200L", "size": "Medium", "side": "Left",  "mpDiameter": "3¼ – 3¾" },
+        { "sku": "TGS-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾" },
+        { "sku": "TGS-300L", "size": "Large",  "side": "Left",  "mpDiameter": "3¾ – 4" },
+        { "sku": "TGS-300R", "size": "Large",  "side": "Right", "mpDiameter": "3¾ – 4" }
+      ]
+    },
+    "ATA": {
+      "key": "ATA",
+      "title": "Arthroscopic Traction Assist",
+      "image": "/images/products/arthroscopic-traction-assist.jpg",
+      "details": {
+        "lcode": "L3984, L3906",
+        "heroImage": "/images/products/arthroscopic-traction-assist.jpg",
+        "gallery": [
+          "/images/products/arthroscopic-traction-assist.jpg"
+        ],
+        "description": "Provides proper positioning of the shoulder during arthroscopic surgery and helps distribute traction forces to reduce pressure-injury risk. LATEX FREE.",
+        "indications": [
+          "Assistive suspension device for upper extremity fracture reduction (in conjunction with traction equipment)",
+          "Shoulder positioning for arthroscopic surgery (in conjunction with traction equipment)"
+        ],
+        "features": [
+          "Latex-free construction",
+          "Helps eliminate pressure sores caused by traction",
+          "Facilitates stable operative positioning"
+        ],
+        "latexFree": true,
+        "mpNote": "M-P Diameter is width of hand",
+        "additionalItems": [
+          { "item number": "STRAP-10", "description": "Hook and Loop Strap" },
+          { "item number": "STOCKINETT-WH", "description": "Stockinette-one size" }
+        ]
+      },
+      "items": [
+        { "sku": "WHH-100L", "size": "Small",  "side": "Left",  "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7",  "forearmCircumference": "8 – 10", "fingerExtension": "5" },
+        { "sku": "WHH-100R", "size": "Small",  "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7",  "forearmCircumference": "8 – 10", "fingerExtension": "5"  },
+        { "sku": "WHH-200L", "size": "Medium", "side": "Left",  "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8",  "forearmCircumference": "10 – 12", "fingerExtension": "5½"  },
+        { "sku": "WHH-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8",  "forearmCircumference": "10 – 12", "fingerExtension": "5½"  },
+        { "sku": "WHH-300L", "size": "Large",  "side": "Left",  "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9",  "forearmCircumference": "12 – 14", "fingerExtension": "6¼"  },
+        { "sku": "WHH-300R", "size": "Large",  "side": "Right", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9",  "forearmCircumference": "12 – 14", "fingerExtension": "6¼"  }
+      ]
+    },
+    "FPO": {
+      "key": "FPO",
+      "title": "Functional Positioning Orthosis",
+      "image": "/images/products/functional-positioning-orthosis.jpg",
+      "details": {
+        "lcode": "L3807",
+        "heroImage": "/images/products/functional-positioning-orthosis.jpg",
+        "gallery": [],
+        "description": "Provides proper support to the wrist and thumb while allowing the fingers to rest comfortably on the extended padded platform.",
+        "indications": [
+          "Functional positioning splint",
+          "Post cast fracture immobilization",
+          "Post tendon transfer support",
+          "Post cva"
+        ],
+        "features": [],
+        "latexFree": false,
+        "mpNote": "M-P Diameter is width of hand",
+        "additionalItems": [
+          { "item number": "STRAP-10", "description": "Hook and Loop Strap" },
+          { "item number": "STOCKINETT-WHT", "description": "Stockinette-one size" }
+        ]
+      },
+      "items": [
+        { "sku": "WHTF-100L", "size": "Small",  "side": "Left",  "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7",  "forearmCircumference": "8 – 10", "fingerExtension": "5" },
+        { "sku": "WHTF-100R", "size": "Small",  "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7",  "forearmCircumference": "8 – 10", "fingerExtension": "5"  },
+        { "sku": "WHTF-200L", "size": "Medium", "side": "Left",  "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8",  "forearmCircumference": "10 – 12", "fingerExtension": "5½"  },
+        { "sku": "WHTF-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8",  "forearmCircumference": "10 – 12", "fingerExtension": "5½"  },
+        { "sku": "WHTF-300L", "size": "Large",  "side": "Left",  "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9",  "forearmCircumference": "12 – 14", "fingerExtension": "6¼"  },
+        { "sku": "WHTF-300R", "size": "Large",  "side": "Right", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9",  "forearmCircumference": "12 – 14", "fingerExtension": "6¼"  }
+      ]
+    },
+    "FPO-S": {
+      "key": "FPO-S",
+      "title": "Functional Positioning Orthosis S-Series™",
+      "image": "/images/products/functional-positioning-orthosis-s-series.jpg",
+      "details": {
+        "lcode": "L3807",
+        "heroImage": "/images/products/functional-positioning-orthosis-s-series.jpg",
+        "gallery": [],
+        "description": "S-Series version of the Functional Positioning Orthosis with streamlined slotted shell.",
+        "indications": [
+          "Functional positioning splint",
+          "Post cast fracture immobilization",
+          "Post tendon transfer support",
+          "Post cva"
+        ],
+        "features": [
+          "S-Series slotted shell for lower profile"
+        ],
+        "latexFree": false,
+        "mpNote": "M-P Diameter is width of hand",
+        "additionalItems": [
+          { "item number": "STRAP-10", "description": "Hook and Loop Strap" },
+          { "item number": "STOCKINETT-WHT", "description": "Stockinette-one size" }
+        ]
+      },
+      "items": [
+        { "sku": "WHTF-100L-S", "size": "Small",  "side": "Left",  "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7",  "forearmCircumference": "8 – 10", "fingerExtension": "5" },
+        { "sku": "WHTF-100R-S", "size": "Small",  "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7",  "forearmCircumference": "8 – 10", "fingerExtension": "5"  },
+        { "sku": "WHTF-200L-S", "size": "Medium", "side": "Left",  "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8",  "forearmCircumference": "10 – 12", "fingerExtension": "5½"  },
+        { "sku": "WHTF-200R-S", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8",  "forearmCircumference": "10 – 12", "fingerExtension": "5½"  },
+        { "sku": "WHTF-300L-S", "size": "Large",  "side": "Left",  "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9",  "forearmCircumference": "12 – 14", "fingerExtension": "6¼"  },
+        { "sku": "WHTF-300R-S", "size": "Large",  "side": "Right", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9",  "forearmCircumference": "12 – 14", "fingerExtension": "6¼"  }
+      ]
+    },
+    "WH": {
+      "key": "WH",
+      "title": "Wrist Hand / Wrist Hand Extended",
+      "image": "/images/products/wrist-hand.jpg",
+      "details": {
+        "lcode": "L3984, L3906",
+        "heroImage": "/images/products/wrist-hand.jpg",
+        "gallery": [],
+        "description": "Provides proper support and immobilization of the wrist. Allows unobstructed motion of the thumb and fingers.",
+        "indications": [
+          "Post cast fracture immobilization",
+          "Wrist fractures and sprains",
+          "Cumulative Trauma Disorder",
+          "Carpal Tunnel Syndrome",
+          "Post tendon transfer support",
+          "Postoperative support after removal of internal or external fixation devices"
+        ],
+        "features": [],
+        "latexFree": true,
+        "mpNote": [
+          "M-P Diameter is width of hand",
+          "* A 4′ proximal extended orthosis (WHE) is available for added protection"
+        ],
+        "additionalItems": [
+          { "item number": "STRAP-10", "description": "Hook & Loop strap" },
+          { "item number": "STOCKINETT-WH", "description": "Stockinette-one size" }
+        ]
+      },
+      "items": [
+        { "sku": "WH-100L",  "size": "Small",  "side": "Left",  "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7",  "forearmCircumference": "8 – 10",  "length": "7½" },
+        { "sku": "WH-100R",  "size": "Small",  "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7",  "forearmCircumference": "8 – 10",  "length": "7½" },
+        { "sku": "WH-200L",  "size": "Medium", "side": "Left",  "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8",  "forearmCircumference": "10 – 12", "length": "7½" },
+        { "sku": "WH-200R",  "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8",  "forearmCircumference": "10 – 12", "length": "7½" },
+        { "sku": "WH-300L",  "size": "Large",  "side": "Left",  "mpDiameter": "3¾ – 4",   "wristCircumference": "8 – 9",  "forearmCircumference": "12 – 14", "length": "8"   },
+        { "sku": "WH-300R",  "size": "Large",  "side": "Right", "mpDiameter": "3¾ – 4",   "wristCircumference": "8 – 9",  "forearmCircumference": "12 – 14", "length": "8"   },
+        { "sku": "WHE-100L", "size": "Small",  "side": "Left",  "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7",  "forearmCircumference": "8 – 10",  "length": "11"  },
+        { "sku": "WHE-100R", "size": "Small",  "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7",  "forearmCircumference": "8 – 10",  "length": "11"  },
+        { "sku": "WHE-200L", "size": "Medium", "side": "Left",  "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8",  "forearmCircumference": "10 – 12", "length": "11"  },
+        { "sku": "WHE-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8",  "forearmCircumference": "10 – 12", "length": "11"  },
+        { "sku": "WHE-300L", "size": "Large",  "side": "Left",  "mpDiameter": "3¾ – 4",   "wristCircumference": "8 – 9",  "forearmCircumference": "12 – 14", "length": "13"  },
+        { "sku": "WHE-300R", "size": "Large",  "side": "Right", "mpDiameter": "3¾ – 4",   "wristCircumference": "8 – 9",  "forearmCircumference": "12 – 14", "length": "13"  }
+      ]
+    },
+    "WH-S": {
+      "key": "WH-S",
+      "title": "Wrist Hand S-Series™",
+      "image": "/images/products/wrist-hand-s-series.jpg",
+      "details": {
+        "lcode": "L3984, L3906",
+        "heroImage": "/images/products/wrist-hand-s-series.jpg",
+        "gallery": [],
+        "description": "S-Series version of the Wrist Hand orthosis with slotted shell, providing proper support and immobilization of the wrist. Allows unobstructed motion of the thumb and fingers.",
+        "indications": [
+          "Post cast fracture immobilization",
+          "Wrist fractures and sprains",
+          "Cumulative Trauma Disorder",
+          "Carpal Tunnel Syndrome",
+          "Post tendon transfer support",
+          "Postoperative support after removal of internal or external fixation devices"
+        ],
+        "features": [
+          "S-Series slotted shell for lower profile"
+        ],
+        "latexFree": false,
+        "mpNote": [
+          "M-P Diameter is width of hand"
+        ],
+        "additionalItems": [
+          { "item number": "STRAP-10", "description": "Hook & Loop strap" },
+          { "item number": "STOCKINETT-WH", "description": "Stockinette-one size" }
+        ]
+      },
+      "items": [
+        { "sku": "WH-100L-S", "size": "Small",  "side": "Left",  "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7",  "forearmCircumference": "8 – 10",  "length": "7½" },
+        { "sku": "WH-100R-S", "size": "Small",  "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7",  "forearmCircumference": "8 – 10",  "length": "7½" },
+        { "sku": "WH-200L-S", "size": "Medium", "side": "Left",  "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8",  "forearmCircumference": "10 – 12", "length": "7½" },
+        { "sku": "WH-200R-S", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8",  "forearmCircumference": "10 – 12", "length": "7½" },
+        { "sku": "WH-300L-S", "size": "Large",  "side": "Left",  "mpDiameter": "3¾ – 4",   "wristCircumference": "8 – 9",  "forearmCircumference": "12 – 14", "length": "8"   },
+        { "sku": "WH-300R-S", "size": "Large",  "side": "Right", "mpDiameter": "3¾ – 4",   "wristCircumference": "8 – 9",  "forearmCircumference": "12 – 14", "length": "8"   }
+      ]
+    },
+    "WHT": {
+      "key": "WHT",
+      "title": "Wrist Hand Thumb/ Wrist Hand Thumb Extended",
+      "image": "/images/products/wrist-hand-thumb.jpg",
+      "details": {
+        "lcode": "L3984, L3907, L3999",
+        "heroImage": "/images/products/wrist-hand-thumb.jpg",
+        "gallery": [],
+        "description": "Provides proper support and immobilization of the wrist and thumb. Allows unobstructed motion of the fingers.",
+        "indications": [
+          "Post cast fracture immobilization",
+          "Wrist fractures and sprains",
+          "Cumulative Trauma Disorder",
+          "Carpal Tunnel Syndrome",
+          "Post tendon transfer support",
+          "Postoperative support after removal of internal or external fixation devices",
+          "Gamekeeper’s thumb",
+          "DeQuervain’s Syndrome"
+        ],
+        "features": [],
+        "latexFree": false,
+        "mpNote": [
+          "M-P Diameter is width of hand",
+          "*A 4′ proximal extended orthosis WHTE is available for added protection"
+        ],
+        "additionalItems": [
+          { "item number": "STRAP-10", "description": "Hook & Loop strap" },
+          { "item number": "STOCKINETT-WHT", "description": "Stockinette-one size" }
+        ]
+      },
+      "items": [
+        { "sku": "WHT-100L",  "size": "Small",  "side": "Left",  "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7",  "forearmCircumference": "8 – 10",  "length": "7½" },
+        { "sku": "WHT-100R",  "size": "Small",  "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7",  "forearmCircumference": "8 – 10",  "length": "7½" },
+        { "sku": "WHT-200L",  "size": "Medium", "side": "Left",  "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8",  "forearmCircumference": "10 – 12", "length": "7½" },
+        { "sku": "WHT-200R",  "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8",  "forearmCircumference": "10 – 12", "length": "7½" },
+        { "sku": "WHT-300L",  "size": "Large",  "side": "Left",  "mpDiameter": "3¾ – 4",   "wristCircumference": "8 – 9",  "forearmCircumference": "12 – 14", "length": "8"   },
+        { "sku": "WHT-300R",  "size": "Large",  "side": "Right", "mpDiameter": "3¾ – 4",   "wristCircumference": "8 – 9",  "forearmCircumference": "12 – 14", "length": "8"   },
+        { "sku": "WHTE-100L", "size": "Small",  "side": "Left",  "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7",  "forearmCircumference": "8 – 10",  "length": "11"  },
+        { "sku": "WHTE-100R", "size": "Small",  "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7",  "forearmCircumference": "8 – 10",  "length": "11"  },
+        { "sku": "WHTE-200L", "size": "Medium", "side": "Left",  "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8",  "forearmCircumference": "10 – 12", "length": "11"  },
+        { "sku": "WHTE-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8",  "forearmCircumference": "10 – 12", "length": "11"  },
+        { "sku": "WHTE-300L", "size": "Large",  "side": "Left",  "mpDiameter": "3¾ – 4",   "wristCircumference": "8 – 9",  "forearmCircumference": "12 – 14", "length": "13"  },
+        { "sku": "WHTE-300R", "size": "Large",  "side": "Right", "mpDiameter": "3¾ – 4",   "wristCircumference": "8 – 9",  "forearmCircumference": "12 – 14", "length": "13"  }
+      ]
+    },
+    "WHT-S": {
+      "key": "WHT-S",
+      "title": "Wrist Hand Thumb S-Series™",
+      "image": "/images/products/wrist-hand-thumb-s-series.jpg",
+      "details": {
+        "lcode": "L3984, L3907, L3999",
+        "heroImage": "/images/products/wrist-hand-thumb-s-series.jpg",
+        "gallery": [],
+        "description": "S-Series version providing immobilization of the wrist and thumb with unobstructed finger motion.",
+        "indications": [
+          "Post cast fracture immobilization",
+          "Wrist fractures and sprains",
+          "Cumulative Trauma Disorder",
+          "Carpal Tunnel Syndrome",
+          "Post tendon transfer support",
+          "Postoperative support after removal of internal or external fixation devices",
+          "Gamekeeper’s thumb",
+          "DeQuervain’s Syndrome"
+        ],
+        "features": [],
+        "latexFree": false,
+        "mpNote": [
+          "M-P Diameter is width of hand"
+        ],
+        "additionalItems": [
+          { "item number": "STRAP-10", "description": "Hook & Loop strap" },
+          { "item number": "STOCKINETT-WHT", "description": "Stockinette-one size" }
+        ]
+      },
+      "items": [
+        { "sku": "WHT-100L-S",  "size": "Small",  "side": "Left",  "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7",  "forearmCircumference": "8 – 10",  "length": "7½" },
+        { "sku": "WHT-100R-S",  "size": "Small",  "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7",  "forearmCircumference": "8 – 10",  "length": "7½" },
+        { "sku": "WHT-200L-S",  "size": "Medium", "side": "Left",  "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8",  "forearmCircumference": "10 – 12", "length": "7½" },
+        { "sku": "WHT-200R-S",  "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8",  "forearmCircumference": "10 – 12", "length": "7½" },
+        { "sku": "WHT-300L-S",  "size": "Large",  "side": "Left",  "mpDiameter": "3¾ – 4",   "wristCircumference": "8 – 9",  "forearmCircumference": "12 – 14", "length": "8"   },
+        { "sku": "WHT-300R-S",  "size": "Large",  "side": "Right", "mpDiameter": "3¾ – 4",   "wristCircumference": "8 – 9",  "forearmCircumference": "12 – 14", "length": "8"   }
+      ]
+    },
+    "HFB-SG-S": {
+      "key": "HFB-SG-S",
+      "title": "Shoulder Guard Humerus Fracture Brace  (S-Series)™",
+      "image": "/images/products/over-the-shoulder-shoulder-guard-hfb-s-series.jpg",
+      "details": {
+        "lcode": "L3980",
+        "heroImage": "/images/products/over-the-shoulder-shoulder-guard-hfb-s-series.jpg",
+        "gallery": [],
+        "description": "Clinically designed for treating humeral fractures while providing limited shoulder motion. Fitting instructions detailing HFB fitting and hygiene are included with each HFB to help insure patient compliance.",
+        "indications": [
+          "Nonoperative treatment of closed humeral shaft fractures",
+          "Postoperative treatment of open humeral shaft fractures",
+          "Protection of humeral defects",
+          "After removal of internal or external fixation",
+          "Post biopsy",
+          "Defects resulting from tumor growth",
+          "Adjunct to internal fixation such as unreamed intermedulary nails"
+        ],
+        "features": [],
+        "latexFree": false,
+        "mpNote": "",
+        "additionalItems": [
+          { "item number": "STRAP-17/S", "description": "Magic Tape™ strap-Sm" },
+          { "item number": "STRAP-19/S", "description": "Magic Tape™ strap-Md/Lg/XLg" },
+          { "item number": "STRAP-OS-1/M", "description": "Over the shoulder strap" },
+          { "item number": "STOCKINETT-H3", "description": "Stockinette-Sm" },
+          { "item number": "STOCKINETT-H4", "description": "Stockinette-Md/Lg/XLg" }
+        ]
+      },
+      "items": [
+        { "sku": "HFB-SG-100L-S", "size": "Small", "side": "Left", "circumference": "8 – 12¼", "medialLength": "6¼", "lateralLength": "10¼"  },
+        { "sku": "HFB-SG-100R-S", "size": "Small", "side": "Right", "circumference": "8 – 12¼", "medialLength": "6¼", "lateralLength": "10¼"  },
+        { "sku": "HFB-SG-200L-S", "size": "Medium", "side": "Left", "circumference": "11 – 14½", "medialLength": "7", "lateralLength": "12"  },
+        { "sku": "HFB-SG-200R-S", "size": "Medium", "side": "Right", "circumference": "11 – 14½", "medialLength": "7", "lateralLength": "12"  },
+        { "sku": "HFB-SG-300L-S", "size": "Large", "side": "Left", "circumference": "12 – 16½", "medialLength": "7¼", "lateralLength": "12½"  },
+        { "sku": "HFB-SG-300R-S", "size": "Large", "side": "Right", "circumference": "12 – 16½", "medialLength": "7¼", "lateralLength": "12½"  },
+        { "sku": "HFB-SG-400L-S", "size": "X-Large", "side": "Left", "circumference": "12 – 17½", "medialLength": "8", "lateralLength": "13½"  },
+        { "sku": "HFB-SG-400R-S", "size": "x-Large", "side": "Right", "circumference": "12 – 17½", "medialLength": "8", "lateralLength": "13½"  }
+      ]
+    },
+    "HFB-S": {
+      "key": "HFB-S",
+      "title": "Humerus Fracture Brace (S-Series)™",
+      "image": "/images/products/humerus-fracture-brace-s-series.jpg",
+      "details": {
+        "lcode": "L3980",
+        "heroImage": "/images/products/humerus-fracture-brace-s-series.jpg",
+        "gallery": [],
+        "description": "Clinically designed for treating humeral fractures. Fitting instructions detailing HFB fitting and hygiene are included with each HFB to help insure patient compliance.",
+        "indications": [
+          "Nonoperative treatment of closed humeral shaft fractures",
+          "Postoperative treatment of open humeral shaft fractures",
+          "Protection of humeral defects",
+          "After removal of internal or external fixation",
+          "Post biopsy",
+          "Defects resulting from tumor growth",
+          "Adjunct to internal fixation such as unreamed intermedulary nails"
+        ],
+        "features": [],
+        "latexFree": false,
+        "mpNote": "",
+        "additionalItems": [
+          { "item number": "STRAP-17/S", "description": "Magic Tape™ strap-Sm" },
+          { "item number": "STRAP-19/S", "description": "Magic Tape™ strap-Md/Lg/XLg" },
+          { "item number": "STOCKINETT-H3", "description": "Stockinette-Sm" },
+          { "item number": "STOCKINETT-H4", "description": "Stockinette-Md/Lg/XLg" }
+        ]
+      },
+      "items": [
+        { "sku": "HFB-100L-S", "size": "Small",  "side": "Left", "circumference": "8 – 11", "medialLength": "5¼", "lateralLength": "6¼"  },
+        { "sku": "HFB-100R-S", "size": "Small", "side": "Right", "circumference": "8 – 11", "medialLength": "5¼", "lateralLength": "6¼"  },
+        { "sku": "HFB-200L-S", "size": "Medium", "side": "Left", "circumference": "10 – 13", "medialLength": "5½", "lateralLength": "6¾"  },
+        { "sku": "HFB-200R-S", "size": "Medium", "side": "Right", "circumference": "10 – 13", "medialLength": "5½", "lateralLength": "6¾"  },
+        { "sku": "HFB-300L-S", "size": "Large", "side": "Left", "circumference": "12 – 15", "medialLength": "6", "lateralLength": "7¼"  },
+        { "sku": "HFB-300R-S", "size": "Large", "side": "Right", "circumference": "12 – 15", "medialLength": "6", "lateralLength": "7¼"  },
+        { "sku": "HFB-400L-S", "size": "X-Large", "side": "Left", "circumference": "14 – 17", "medialLength": "6¼", "lateralLength": "7¾"  },
+        { "sku": "HFB-400R-S", "size": "x-Large", "side": "Right", "circumference": "14 – 17", "medialLength": "6¼", "lateralLength": "7¾"  }
+      ]
+    },
+    "UFB-S": {
+  "key": "UFB-S",
+  "title": "Ulna Fracture Brace (S-Series)",
+  "image": "/images/products/ulna-fracture-brace-s-series.jpg",
+  "details": {
+    "lcode": "L3982",
+    "heroImage": "/images/products/ulna-fracture-brace-s-series.jpg",
+    "gallery": [],
+    "description": "Overlapping volar and dorsal shells allow easy adjustment to accommodate volumetric soft-tissue changes during fracture healing, eliminating the need for serial casting. An interosseous groove helps separate the radius and ulna for stabilization, while flared distal edges improve comfort through active range of motion. The design supports early return to function. Fitting and hygiene instructions are included with each UFB to help ensure patient compliance.",
+    "indications": [
+      "Treatment of mid-shaft and distal ulnar fractures",
+      "Post external fixation for healing of soft tissue",
+      "Adjunct to internal fixation such as unreamed intermedullary nails"
+    ],
+    "features": [
+      "Overlapping volar/dorsal shells for adjustable compression",
+      "Eliminates serial casting",
+      "Interosseous groove aids radial–ulnar separation",
+      "Flared distal edges for comfort through ROM",
+      "Supports early return to function",
+      "Includes fitting & hygiene instructions"
+    ],
+    "latexFree": false,
+    "mpNote": "",
+    "additionalItems": [
+      { "item number": "Strap-10/S & STRAP-14/S", "description": "Magic Tape™ straps-Sm" },
+      { "item number": "Strap-10/S & STRAP-17/S", "description": "Magic Tape™ straps-Md" },
+      { "item number": "Strap-14/S & STRAP-17/S", "description": "Magic Tape™ straps-Lg" },
+      { "item number": "STOCKINETT-U3",           "description": "Stockinette-one size" }
+    ]
+  },
+  "items": [
+    { "sku": "UFB-100L-S", "size": "Small", "side": "Left",  "circumference": "8 – 10",  "length": "7" },
+    { "sku": "UFB-100R-S", "size": "Small", "side": "Right",  "circumference": "8 – 10",  "length": "7" },
+    { "sku": "UFB-200L-S", "size": "Medium", "side": "Left",  "circumference": "10 – 12", "length": "8" },
+    { "sku": "UFB-200R-S", "size": "Medium", "side": "Right", "circumference": "10 – 12", "length": "8" },
+    { "sku": "UFB-300L-S", "size": "Large", "side": "Left",  "circumference": "12 – 14", "length": "9" },
+    { "sku": "UFB-300R-S", "size": "Large", "side": "Right", "circumference": "12 – 14", "length": "9" }
+  ]
+},
+    "TFB-S": {
+  "key": "TFB-S",
+  "title": "Tibia Fracture Brace (S-Series)",
+  "image": "/images/products/tibia-fracture-brace-s-series.jpg",
+  "details": {
+    "lcode": "L2114",
+    "heroImage": "/images/products/tibia-fracture-brace-s-series.jpg",
+    "gallery": [],
+    "description": "Clinically designed for treating tibial shaft fractures. Fitting instructions detailing TFB fitting and hygiene are included with each TFB to help ensure patient compliance. A heel cup is provided with each TFB. Optional foot components are available.",
+    "indications": [
+      "Nonoperative treatment of closed tibial shaft fractures",
+      "Postoperative treatment of open tibial shaft fractures",
+      "Protection of tibial defects",
+      "After removal of internal or external fixation",
+      "Post biopsy",
+      "Defects resulting from tumor growth",
+      "Adjunct to internal fixation such as unreamed intermedullary nails"
+    ],
+    "features": [
+      "Heel cup included",
+      "Optional foot components available",
+      "Includes fitting and hygiene instructions"
+    ],
+    "latexFree": false,
+    "mpNote": "",
+    "additionalItems": [
+      { "item number": "TFB-HEEL/SA", "description": "Heel Cup—one size" },
+      { "item number": "STRAP-17/S", "description": "Magic Tape™ strap—Sm" },
+      { "item number": "STRAP-17/S & STRAP-19/S", "description": "Magic Tape™ straps—Md/Lg" },
+      { "item number": "STOCKINETT-T3", "description": "Stockinette—Sm" },
+      { "item number": "STOCKINETT-T4", "description": "Stockinette—Md/Lg" }
+    ]
+  },
+  "items": [
+    { "sku": "TFB-100L-S", "size": "Small",  "side": "Left",  "circumference": "11½ – 14",  "height": "11"   },
+    { "sku": "TFB-100R-S", "size": "Small", "side": "Right", "circumference": "11½ – 14",  "height": "11"   },
+    { "sku": "TFB-200L-S", "size": "Medium", "side": "Left",  "circumference": "12½ – 15½", "height": "12½" },
+    { "sku": "TFB-200R-S", "size": "Medium","side": "Right", "circumference": "12½ – 15½", "height": "12½" },
+    { "sku": "TFB-300L-S", "size": "Large",  "side": "Left",  "circumference": "13 – 16½",  "height": "13"  },
+    { "sku": "TFB-300R-S", "size": "Large", "side": "Right", "circumference": "13 – 16½",  "height": "13"  }
+  ]
+},
+
+"HFB-N": {
+  "key": "HFB-N",
+  "title": "Neutral Humerus Fracture Brace",
+  "image": "/images/products/neutral-humerus-fracture-brace.jpg",
+  "details": {
+    "lcode": "L3980",
+    "heroImage": "/images/products/neutral-humerus-fracture-brace.jpg",
+    "gallery": [],
+    "description": "Neutral-design humerus fracture brace that fits either right or left, reducing inventory while providing adjustable circumferential compression.",
+    "indications": [
+      "Nonoperative treatment of closed humeral shaft fractures",
+      "Postoperative treatment of open humeral shaft fractures",
+      "Protection of humeral defects",
+      "After removal of internal or external fixation",
+      "Adjunct to internal fixation"
+    ],
+    "features": [
+      "Neutral design fits right or left",
+      "Requires less inventory",
+      "Available sizes: Small, Medium, Large, X-Large",
+      "Ulna brace available separately in Small/Medium/Large"
+    ],
+    "latexFree": false,
+    "mpNote": "",
+    "additionalItems": []
+  },
+  "items": [
+    { "sku": "HFB-N-100", "size": "Small",   "side": "Left or Right", "distalCircumference": "7 – 9",   "proximalCircumference": "9 – 11",   "length": "7½" },
+    { "sku": "HFB-N-200", "size": "Medium",  "side": "Left or Right", "distalCircumference": "9 – 11",  "proximalCircumference": "11 – 13",  "length": "8"  },
+    { "sku": "HFB-N-300", "size": "Large",   "side": "Left or Right", "distalCircumference": "11 – 13", "proximalCircumference": "13 – 15",  "length": "8"  },
+    { "sku": "HFB-N-400", "size": "X-Large", "side": "Left or Right", "distalCircumference": "13 – 15", "proximalCircumference": "15 – 17",  "length": "11" }
+  ]
+},
+
+    "UFB": {
+  "key": "UFB",
+  "title": "Ulna Fracture Brace",
+  "image": "/images/products/ulna-fracture-brace.jpg",
+  "details": {
+    "lcode": "L3982",
+    "heroImage": "/images/products/ulna-fracture-brace.jpg",
+    "gallery": [],
+    "description": "Overlapping volar and dorsal shells allow easy adjustment to accommodate volumetric soft-tissue changes during fracture healing, eliminating the need for serial casting. An interosseous groove helps separate the radius and ulna for stabilization, while flared distal edges improve comfort through active range of motion. The design supports early return to function. Fitting and hygiene instructions are included with each UFB to help ensure patient compliance.",
+    "indications": [
+      "Treatment of mid-shaft and distal ulnar fractures",
+      "Post external fixation for healing of soft tissue",
+      "Adjunct to internal fixation such as unreamed intermedullary nails"
+    ],
+    "features": [
+      "Overlapping volar/dorsal shells for adjustable compression",
+      "Eliminates serial casting",
+      "Interosseous groove aids radial–ulnar separation",
+      "Flared distal edges for comfort through ROM",
+      "Includes fitting & hygiene instructions"
+    ],
+    "latexFree": false,
+    "mpNote": "",
+    "additionalItems": [
+      { "item number": "STRAP-10 & STRAP-14", "description": "Hook & Loop straps — Small" },
+      { "item number": "STRAP-10 & STRAP-17", "description": "Hook & Loop straps — Medium" },
+      { "item number": "STRAP-14 & STRAP-17", "description": "Hook & Loop straps — Large" },
+      { "item number": "STOCKINETT-U3",       "description": "Stockinette — one size" }
+    ]
+  },
+  "items": [
+    { "sku": "UFB-100L", "size": "Small",  "side": "Left",  "circumference": "8 – 10",  "length": "7" },
+    { "sku": "UFB-100R", "size": "Small",  "side": "Right", "circumference": "8 – 10",  "length": "7" },
+    { "sku": "UFB-200L", "size": "Medium", "side": "Left",  "circumference": "10 – 12", "length": "8" },
+    { "sku": "UFB-200R", "size": "Medium", "side": "Right", "circumference": "10 – 12", "length": "8" },
+    { "sku": "UFB-300L", "size": "Large",  "side": "Left",  "circumference": "12 – 14", "length": "9" },
+    { "sku": "UFB-300R", "size": "Large",  "side": "Right", "circumference": "12 – 14", "length": "9" }
+  ]
+},
+
+   "UFB-N": {
+  "key": "UFB-N",
+  "title": "Neutral Ulna Fracture Brace",
+  "image": "/images/products/neutral-ulna-fracture-brace.jpg",
+  "details": {
+    "lcode": "L3982",
+    "heroImage": "/images/products/neutral-ulna-fracture-brace.jpg",
+    "gallery": [],
+    "description": "Neutral-design ulna fracture brace that fits either right or left to reduce inventory while providing adjustable circumferential compression.",
+    "indications": [
+      "Treatment of mid-shaft and distal ulnar fractures",
+      "Post external fixation for healing of soft tissue",
+      "Adjunct to internal fixation such as unreamed intermedullary nails"
+    ],
+    "features": [
+      "Neutral design fits right or left",
+      "Requires less inventory",
+      "Available sizes: Small, Medium, Large"
+    ],
+    "latexFree": false,
+    "mpNote": "",
+    "additionalItems": []
+  },
+  "items": [
+    {
+      "sku": "UFB-N-100",
+      "size": "Small",
+      "side": "Left or Right",
+      "distalCircumference": "6½ – 7½",
+      "proximalCircumference": "7½ – 9",
+      "length": "6½"
+    },
+    {
+      "sku": "UFB-N-200",
+      "size": "Medium",
+      "side": "Left or Right",
+      "distalCircumference": "7½ – 8½",
+      "proximalCircumference": "9 – 11",
+      "length": "7"
+    },
+    {
+      "sku": "UFB-N-300",
+      "size": "Large",
+      "side": "Left or Right",
+      "distalCircumference": "8½ – 9½",
+      "proximalCircumference": "11 – 13",
+      "length": "8"
+    }
+  ]
+},
+
+   "HFB-SG": {
+  "key": "HFB-SG",
+  "title": "Over the Shoulder — Shoulder Guard Humerus Fracture Brace",
+  "image": "/images/products/over-the-shoulder-shoulder-guard-hfb.jpg",
+  "details": {
+    "lcode": "L3980",
+    "heroImage": "/images/products/over-the-shoulder-shoulder-guard-hfb.jpg",
+    "gallery": [],
+    "description": "Clinically designed for treating humeral fractures while providing limited shoulder motion. Includes fitting and hygiene instructions with each brace to help ensure patient compliance.",
+    "indications": [
+      "Nonoperative treatment of closed humeral shaft fractures",
+      "Postoperative treatment of open humeral shaft fractures",
+      "Protection of humeral defects",
+      "After removal of internal or external fixation",
+      "Post biopsy",
+      "Defects resulting from tumor growth",
+      "Adjunct to internal fixation such as unreamed intermedullary nails"
+    ],
+    "features": [
+      "Over-the-shoulder shoulder guard limits shoulder motion",
+      "Adjustable compression for soft-tissue changes",
+      "Includes fitting & hygiene instructions"
+    ],
+    "latexFree": false,
+    "mpNote": "",
+    "additionalItems": [
+      { "item number": "STRAP-17",     "description": "Hook & Loop strap — Small" },
+      { "item number": "STRAP-19",     "description": "Hook & Loop strap — Medium/Large/X-Large" },
+      { "item number": "STRAP-OS-1/M", "description": "Over-the-shoulder strap — one size" },
+      { "item number": "STOCKINETT-H3","description": "Stockinette — Small" },
+      { "item number": "STOCKINETT-H4","description": "Stockinette — Medium/Large/X-Large" }
+    ]
+  },
+  "items": [
+    { "sku": "HFB-SG-100L", "size": "Small",   "side": "Left",  "circumference": "8 – 12¼",  "medialLength": "6¼", "lateralLength": "10¼" },
+    { "sku": "HFB-SG-100R", "size": "Small",   "side": "Right", "circumference": "8 – 12¼",  "medialLength": "6¼", "lateralLength": "10¼" },
+    { "sku": "HFB-SG-200L", "size": "Medium",  "side": "Left",  "circumference": "11 – 14½", "medialLength": "7",   "lateralLength": "12"  },
+    { "sku": "HFB-SG-200R", "size": "Medium",  "side": "Right", "circumference": "11 – 14½", "medialLength": "7",   "lateralLength": "12"  },
+    { "sku": "HFB-SG-300L", "size": "Large",   "side": "Left",  "circumference": "12 – 16½", "medialLength": "7¼", "lateralLength": "12½" },
+    { "sku": "HFB-SG-300R", "size": "Large",   "side": "Right", "circumference": "12 – 16½", "medialLength": "7¼", "lateralLength": "12½" },
+    { "sku": "HFB-SG-400L", "size": "X-Large", "side": "Left",  "circumference": "12 – 17½", "medialLength": "8",   "lateralLength": "13½" },
+    { "sku": "HFB-SG-400R", "size": "X-Large", "side": "Right", "circumference": "12 – 17½", "medialLength": "8",   "lateralLength": "13½" }
+  ]
+},
+
+    "HFB-OS": {
+  "key": "HFB-OS",
+  "title": "Over the Shoulder — Universal Humerus Fracture Brace (Neutral)",
+  "image": "/images/products/over-the-shoulder-universal-humerus-fracture-brace.jpg",
+  "details": {
+    "lcode": "L3980",
+    "heroImage": "/images/products/over-the-shoulder-universal-humerus-fracture-brace.jpg",
+    "gallery": [],
+    "description": "Clinically designed for treating humeral fractures while providing limited shoulder motion. Neutral, over-the-shoulder design with adjustable compression. Includes fitting and hygiene instructions to help ensure patient compliance.",
+    "indications": [
+      "Nonoperative treatment of closed humeral shaft fractures",
+      "Postoperative treatment of open humeral shaft fractures",
+      "Protection of humeral defects",
+      "After removal of internal or external fixation",
+      "Post biopsy",
+      "Defects resulting from tumor growth",
+      "Adjunct to internal fixation such as unreamed intermedullary nails"
+    ],
+    "features": [
+      "Neutral design fits right or left",
+      "Over-the-shoulder shoulder guard limits shoulder motion",
+      "Adjustable compression to accommodate soft-tissue changes",
+      "Includes fitting & hygiene instructions"
+    ],
+    "latexFree": false,
+    "mpNote": [
+      "HFB-OS-000X is Special Order (not on shelf).",
+      "STRAP-MG-63-1 requires VEL-WRAP-6."
+    ],
+    "additionalItems": [
+      { "item number": "STRAP-MG-63-1", "description": "Shoulder strap — one size (requires VEL-WRAP-6)" },
+      { "item number": "STRAP-MG-30",   "description": "Biceps & distal strap — one size" },
+      { "item number": "VEL-WRAP-6",    "description": "Double-sided loop wrap" },
+      { "item number": "VEL-WRAP-3",    "description": "Double-sided loop wrap" },
+      { "item number": "STOCKINETT-SG3","description": "Stockinette — Small" },
+      { "item number": "STOCKINETT-SG4","description": "Stockinette — Medium/Large/X-Large" },
+      { "item number": "STRAP-OS-1/M",  "description": "Shoulder strap 63″" },
+      { "item number": "STRAP-OS-2/M",  "description": "Double-sided loop strap" },
+      { "item number": "STRAP-OS-3/M",  "description": "Double-sided hook strap" }
+    ]
+  },
+  "items": [
+
+    { "sku": "HFB-OS-100", "size": "Small",   "side": "Left or Right", "circumference": "8 – 12½",  "medialLength": "6",   "lateralLength": "10½", "group": "Standard Neutral sizes" },
+    { "sku": "HFB-OS-200", "size": "Medium",  "side": "Left or Right", "circumference": "10 – 13¼", "medialLength": "6½",  "lateralLength": "11½", "group": "Standard Neutral sizes"},
+    { "sku": "HFB-OS-300", "size": "Large",   "side": "Left or Right", "circumference": "12 – 15",  "medialLength": "7",   "lateralLength": "13½", "group": "Standard Neutral sizes" },
+    { "sku": "HFB-OS-400", "size": "X-Large", "side": "Left or Right", "circumference": "14 – 16",  "medialLength": "7¼",  "lateralLength": "14", "group": "Standard Neutral sizes"  },
+
+    
+    { "sku": "HFB-OS-000X", "size": "X-Small", "side": "Left or Right", "circumference": "7 – 9",     "medialLength": "4½", "lateralLength": "10½", "group": "Extended Version (Neutral)" },
+    { "sku": "HFB-OS-100X", "size": "Small",   "side": "Left or Right", "circumference": "11 – 14",   "medialLength": "5¾", "lateralLength": "13½", "group": "Extended Version (Neutral)" },
+    { "sku": "HFB-OS-200X", "size": "Medium",  "side": "Left or Right", "circumference": "13 – 16",   "medialLength": "6¼", "lateralLength": "14", "group": "Extended Version (Neutral)"  },
+    { "sku": "HFB-OS-300X", "size": "Large",   "side": "Left or Right", "circumference": "15½ – 17½", "medialLength": "7",   "lateralLength": "16½", "group": "Extended Version (Neutral)" },
+    { "sku": "HFB-OS-400X", "size": "X-Large", "side": "Left or Right", "circumference": "17 – 20",   "medialLength": "8",   "lateralLength": "17½", "group": "Extended Version (Neutral)" }
+  ]
+},
+
+    "HFB": {
+  "key": "HFB",
+  "title": "Humerus Fracture Brace",
+  "image": "/images/products/humerus-fracture-brace.jpg",
+  "details": {
+    "lcode": "L3980",
+    "heroImage": "/images/products/humerus-fracture-brace.jpg",
+    "gallery": [],
+    "description": "Original Humerus Fracture Brace with proper anatomical design and clinically tested performance. Now available in XX-Large, fitting biceps circumference 18–23″.",
+    "indications": [
+      "Nonoperative treatment of closed humeral shaft fractures",
+      "Postoperative treatment of open humeral shaft fractures",
+      "Protection of humeral defects",
+      "After removal of internal or external fixation",
+      "Post biopsy",
+      "Defects resulting from tumor growth",
+      "Adjunct to internal fixation such as unreamed intermedullary nails"
+    ],
+    "features": [
+      "Proper anatomical design",
+      "Clinically tested",
+      "Now available in XX-Large (fits 18–23″ biceps circumference)"
+    ],
+    "latexFree": false,
+    "mpNote": [],
+    "additionalItems": []
+  },
+  "items": [
+    { "sku": "HFB-100L", "size": "Small",    "side": "Left",  "circumference": "8 – 11",  "medialLength": "5¼", "lateralLength": "6¼" },
+    { "sku": "HFB-100R", "size": "Small",    "side": "Right", "circumference": "8 – 11",  "medialLength": "5¼", "lateralLength": "6¼" },
+    { "sku": "HFB-200L", "size": "Medium",   "side": "Left",  "circumference": "10 – 13", "medialLength": "5½", "lateralLength": "6¾" },
+    { "sku": "HFB-200R", "size": "Medium",   "side": "Right", "circumference": "10 – 13", "medialLength": "5½", "lateralLength": "6¾" },
+    { "sku": "HFB-300L", "size": "Large",    "side": "Left",  "circumference": "12 – 15", "medialLength": "6",  "lateralLength": "7¼" },
+    { "sku": "HFB-300R", "size": "Large",    "side": "Right", "circumference": "12 – 15", "medialLength": "6",  "lateralLength": "7¼" },
+    { "sku": "HFB-400L", "size": "X-Large",  "side": "Left",  "circumference": "14 – 17", "medialLength": "6¼", "lateralLength": "7¾" },
+    { "sku": "HFB-400R", "size": "X-Large",  "side": "Right", "circumference": "14 – 17", "medialLength": "6¼", "lateralLength": "7¾" },
+    { "sku": "HFB-500L", "size": "XX-Large", "side": "Left",  "circumference": "18 – 23", "medialLength": "7¼", "lateralLength": "8¾" },
+    { "sku": "HFB-500R", "size": "XX-Large", "side": "Right", "circumference": "18 – 23", "medialLength": "7¼", "lateralLength": "8¾" }
+  ]
+},
+
+
+    "EO": {
+  "key": "EO",
+  "title": "Elbow Orthosis",
+  "image": "/images/products/elbow-orthosis.jpg",
+  "details": {
+    "lcode": "L3995, L3980, L3806, L3807",
+    "heroImage": "/images/products/elbow-orthosis.jpg",
+    "gallery": [],
+    "description": "Clinically designed for anatomical alignment of the humerus–forearm–wrist–hand with an articulating elbow joint. Allows unrestricted shoulder motion.",
+    "indications": [
+      "Distal humeral fractures",
+      "Immobilization after surgery",
+      "Unconscious movement during sleep",
+      "Olecranon and epicondyle fractures",
+      "Ligament injuries in the elbow joint",
+      "Instabilities or hyperextension",
+      "Injuries requiring limited range of motion at the elbow",
+      "Elbow arthroplasty",
+      "Postoperative conditions",
+      "Postoperative cast"
+    ],
+    "features": [],
+    "latexFree": false,
+    "mpNote": "",
+    "additionalItems": [
+      { "item number": "STRAP-10",        "description": "Forearm–Wrist–Hand Hook & Loop strap" },
+      { "item number": "STOCKINETT-WH",   "description": "Forearm–Wrist–Hand Stockinette—one size" },
+      { "item number": "8010",            "description": "Elbow Joint—11′" },
+      { "item number": "Round-Pad-¼",     "description": "Foam Elbow Pad—¼′" },
+      { "item number": "STRAP-17",        "description": "Humerus Hook & Loop strap—Sm" },
+      { "item number": "STOCKINETT-H3",   "description": "Humerus Stockinette—Sm" },
+      { "item number": "STRAP-19",        "description": "Humerus Hook & Loop strap—Md/Lg/XLg" },
+      { "item number": "STOCKINETT-H4",   "description": "Humerus Stockinette—Md/Lg/XLg" }
+    ]
+  },
+  "items": [
+    { "sku": "EO-100L", "size": "Small",    "side": "Left",  "wristCircumference": "6 – 7",  "forearmCircumference": "8 – 10",  "bicepCircumference": "8 – 11" },
+    { "sku": "EO-100R", "size": "Small",    "side": "Right", "wristCircumference": "6 – 7",  "forearmCircumference": "8 – 10",  "bicepCircumference": "8 – 11" },
+    { "sku": "EO-200L", "size": "Medium",   "side": "Left",  "wristCircumference": "7 – 8",  "forearmCircumference": "10 – 12", "bicepCircumference": "10 – 13" },
+    { "sku": "EO-200R", "size": "Medium",   "side": "Right", "wristCircumference": "7 – 8",  "forearmCircumference": "10 – 12", "bicepCircumference": "10 – 13" },
+    { "sku": "EO-300L", "size": "Large",    "side": "Left",  "wristCircumference": "8 – 9",  "forearmCircumference": "12 – 14", "bicepCircumference": "12 – 15" },
+    { "sku": "EO-300R", "size": "Large",    "side": "Right", "wristCircumference": "8 – 9",  "forearmCircumference": "12 – 14", "bicepCircumference": "12 – 15" },
+    { "sku": "EO-400L", "size": "X-Large",  "side": "Left",  "wristCircumference": "8 – 9",  "forearmCircumference": "12 – 14", "bicepCircumference": "14 – 17" },
+    { "sku": "EO-400R", "size": "X-Large",  "side": "Right", "wristCircumference": "8 – 9",  "forearmCircumference": "12 – 14", "bicepCircumference": "14 – 17" }
+  ]
+},
+
+   "EO-SG": {
+  "key": "EO-SG",
+  "title": "Shoulder-Elbow-Wrist-Hand Orthosis",
+  "image": "/images/products/shoulder-elbow-wrist-hand-orthosis.jpg",
+  "details": {
+    "lcode": "L3971, L3995, L3806",
+    "heroImage": "/images/products/shoulder-elbow-wrist-hand-orthosis.jpg",
+    "gallery": [],
+    "description": "Anatomical alignment of the shoulder–humerus–forearm–wrist–hand with an articulating elbow joint. Allows limited functional shoulder motion with shoulder protection.",
+    "indications": [
+      "Distal humeral fractures",
+      "Immobilization after surgery",
+      "Unconscious movement during sleep",
+      "Olecranon and epicondyle fractures",
+      "Ligament injuries in the elbow joint",
+      "Instabilities or hyperextension",
+      "Injuries requiring limited range of motion at the elbow",
+      "Elbow arthroplasty",
+      "Postoperative conditions",
+      "Postoperative cast"
+    ],
+    "features": [],
+    "latexFree": false,
+    "mpNote": "",
+    "additionalItems": [
+      { "item number": "STRAP-10",       "description": "Forearm–Wrist–Hand Hook & Loop strap" },
+      { "item number": "STOCKINETT-WH",  "description": "Forearm–Wrist–Hand Stockinette—one size" },
+      { "item number": "8010",           "description": "Elbow Joint—11″" },
+      { "item number": "Round-Pad-¼",    "description": "Foam Elbow Pad—¼″" },
+      { "item number": "STRAP-17",       "description": "Shoulder Guard Hook & Loop strap—Sm" },
+      { "item number": "STOCKINETT-SG3", "description": "Shoulder Guard Stockinette—Sm" },
+      { "item number": "STRAP-19",       "description": "Shoulder Guard Hook & Loop strap—Md/Lg/XLg" },
+      { "item number": "STOCKINETT-SG4", "description": "Shoulder Guard Stockinette—Md/Lg/XLg" },
+      { "item number": "STRAP-OS-1/M",   "description": "Shoulder strap—one size" }
+    ]
+  },
+  "items": [
+    { "sku": "EO-SG-100L", "size": "Small",   "side": "Left",  "wristCircumference": "6 – 7",  "forearmCircumference": "8 – 10",  "bicepCircumference": "8 – 12¼" },
+    { "sku": "EO-SG-100R", "size": "Small",   "side": "Right", "wristCircumference": "6 – 7",  "forearmCircumference": "8 – 10",  "bicepCircumference": "8 – 12¼" },
+    { "sku": "EO-SG-200L", "size": "Medium",  "side": "Left",  "wristCircumference": "7 – 8",  "forearmCircumference": "10 – 12", "bicepCircumference": "11 – 14½" },
+    { "sku": "EO-SG-200R", "size": "Medium",  "side": "Right", "wristCircumference": "7 – 8",  "forearmCircumference": "10 – 12", "bicepCircumference": "11 – 14½" },
+    { "sku": "EO-SG-300L", "size": "Large",   "side": "Left",  "wristCircumference": "8 – 9",  "forearmCircumference": "12 – 14", "bicepCircumference": "12 – 16½" },
+    { "sku": "EO-SG-300R", "size": "Large",   "side": "Right", "wristCircumference": "8 – 9",  "forearmCircumference": "12 – 14", "bicepCircumference": "12 – 16½" },
+    { "sku": "EO-SG-400L", "size": "X-Large", "side": "Left",  "wristCircumference": "8 – 9",  "forearmCircumference": "12 – 14", "bicepCircumference": "14 – 17½" },
+    { "sku": "EO-SG-400R", "size": "X-Large", "side": "Right", "wristCircumference": "8 – 9",  "forearmCircumference": "12 – 14", "bicepCircumference": "14 – 17½" }
+  ]
+},
+
+   "WHCS-C": {
+  "key": "WHCS-C",
+  "title": "Wrist Hand Colles Fluffi-Splint™",
+  "image": "/images/products/wrist-hand-colles-fluffi-splint.jpg",
+  "details": {
+    "lcode": "L3914",
+    "heroImage": "/images/products/wrist-hand-colles-fluffi-splint.jpg",
+    "gallery": [],
+    "description": "Provides effective temporary positioning and immobilization of the wrist in an ulnar-deviated position with the added comfort and safety of a soft cover and straps. The cover and straps wick moisture and are washable to promote hygiene. Excellent for rehabilitation and long-term care. Rigid polystyrene construction permits unobstructed radiographs and allows gas autoclave. Available with an aluminum insert, which can be hand-modified without heat.",
+    "indications": [
+      "Temporary positioning and/or immobilization of wrist and hand fractures or ligament injuries",
+      "Post cast immobilization"
+    ],
+    "features": [
+      "Soft Fluffi™ cover and straps wick moisture; washable",
+      "Rigid polystyrene shell allows unobstructed radiographs",
+      "Shell can be gas-autoclaved",
+      "Optional aluminum insert; hand-modifiable without heat"
+    ],
+    "latexFree": false,
+    "mpNote": [
+      "M-P Diameter is width of hand",
+      "For aluminum insert add -A (e.g., WHCS-C-100-A)"
+    ],
+    "additionalItems": [
+      { "item number": "COV-WHCS-1",  "description": "Fluffi-Cover™ — Small (complete with 3 straps: one 1½″ & two 2″)" },
+      { "item number": "COV-WHCS-2",  "description": "Fluffi-Cover™ — Medium (complete with 3 straps: one 1½″ & two 2″)" },
+      { "item number": "COV-WHCS-3",  "description": "Fluffi-Cover™ — Large (complete with 3 straps: one 1½″ & two 2″)" },
+      { "item number": "COV-WHCS-4",  "description": "Fluffi-Cover™ — X-Large (complete with 3 straps: one 1½″ & two 2″)" },
+      { "item number": "STRAP-C-1.5", "description": "Fluffi-Strap™ — replacement strap, 1½″ width" },
+      { "item number": "STRAP-C-2",   "description": "Fluffi-Strap™ — replacement strap, 2″ width" }
+    ]
+  },
+  "items": [
+    { "sku": "WHCS-C-100L", "size": "Small",    "side": "Left",  "mpDiameter": "2 – 2½",   "length": "5¼" },
+    { "sku": "WHCS-C-100R", "size": "Small",    "side": "Right", "mpDiameter": "2 – 2½",   "length": "5¼" },
+    { "sku": "WHCS-C-200L", "size": "Medium",   "side": "Left",  "mpDiameter": "2¾ – 3¼",  "length": "7½" },
+    { "sku": "WHCS-C-200R", "size": "Medium",   "side": "Right", "mpDiameter": "2¾ – 3¼",  "length": "7½" },
+    { "sku": "WHCS-C-300L", "size": "Large",    "side": "Left",  "mpDiameter": "3¼ – 3¾",  "length": "9"  },
+    { "sku": "WHCS-C-300R", "size": "Large",    "side": "Right", "mpDiameter": "3¼ – 3¾",  "length": "9"  },
+    { "sku": "WHCS-C-400L", "size": "X-Large",  "side": "Left",  "mpDiameter": "3¾ – 4",   "length": "10" },
+    { "sku": "WHCS-C-400R", "size": "X-Large",  "side": "Right", "mpDiameter": "3¾ – 4",   "length": "10" }
+  ]
+},
+
+    "WHCS": {
+  "key": "WHCS",
+  "title": "Wrist Hand Colles Splint",
+  "image": "/images/products/wrist-hand-colles-splint.jpg",
+  "details": {
+    "lcode": "L3914",
+    "heroImage": "/images/products/wrist-hand-colles-splint.jpg",
+    "gallery": [],
+    "description": "Provides effective temporary positioning and immobilization of the wrist in an ulnar-deviated position. Rigid polystyrene construction permits unobstructed radiographs and allows the splint to be gas autoclaved.",
+    "indications": [
+      "Temporary positioning and/or immobilization of wrist and hand fractures or ligament injuries",
+      "Post cast immobilization"
+    ],
+    "features": [
+      "Rigid polystyrene shell allows unobstructed radiographs",
+      "Shell can be gas-autoclaved"
+    ],
+    "latexFree": false,
+    "mpNote": "M-P Diameter is width of hand",
+    "additionalItems": []
+  },
+  "items": [
+    { "sku": "WHCS-100L", "size": "Small",    "side": "Left",  "mpDiameter": "2 – 2½",   "length": "5¼" },
+    { "sku": "WHCS-100R", "size": "Small",    "side": "Right", "mpDiameter": "2 – 2½",   "length": "5¼" },
+    { "sku": "WHCS-200L", "size": "Medium",   "side": "Left",  "mpDiameter": "2¾ – 3¼",  "length": "7½" },
+    { "sku": "WHCS-200R", "size": "Medium",   "side": "Right", "mpDiameter": "2¾ – 3¼",  "length": "7½" },
+    { "sku": "WHCS-300L", "size": "Large",    "side": "Left",  "mpDiameter": "3¼ – 3¾",  "length": "9"  },
+    { "sku": "WHCS-300R", "size": "Large",    "side": "Right", "mpDiameter": "3¼ – 3¾",  "length": "9"  },
+    { "sku": "WHCS-400L", "size": "X-Large",  "side": "Left",  "mpDiameter": "3¾ – 4",   "length": "10" },
+    { "sku": "WHCS-400R", "size": "X-Large",  "side": "Right", "mpDiameter": "3¾ – 4",   "length": "10" }
+  ]
+},
+
+    "WHFS-C": {
+  "key": "WHFS-C",
+  "title": "Wrist Hand Forearm Fluffi-Splint™",
+  "image": "/images/products/wrist-hand-forearm-fluffi-splint.jpg",
+  "details": {
+    "lcode": "L3914",
+    "heroImage": "/images/products/wrist-hand-forearm-fluffi-splint.jpg",
+    "gallery": [],
+    "description": "Provides effective temporary positioning and immobilization of the wrist in a neutral position with the added comfort and safety of a soft cover and straps. The cover and straps wick away moisture and are washable to promote proper hygiene. Excellent for rehabilitation and long-term care. Rigid polystyrene construction permits unobstructed radiographs and allows the splint to be gas autoclaved. Available with an aluminum insert, which can be modified by hand without heat.",
+    "indications": [
+      "Temporary positioning and/or immobilization of wrist and hand fractures or ligament injuries",
+      "Post cast immobilization"
+    ],
+    "features": [
+      "Soft Fluffi™ cover and straps wick moisture; washable",
+      "Rigid polystyrene shell allows unobstructed radiographs",
+      "Shell can be gas-autoclaved",
+      "Optional aluminum insert; hand-modifiable without heat"
+    ],
+    "latexFree": false,
+    "mpNote": [
+      "M-P Diameter is width of hand",
+      "For aluminum insert add -A (e.g., WHFS-C-100-A)"
+    ],
+    "additionalItems": [
+      { "item number": "COV-WHFS-1",  "description": "Fluffi-Cover™ — Small (complete with 3 straps: one 1½″ & two 2″)" },
+      { "item number": "COV-WHFS-2",  "description": "Fluffi-Cover™ — Medium (complete with 3 straps: one 1½″ & two 2″)" },
+      { "item number": "COV-WHFS-3",  "description": "Fluffi-Cover™ — Large (complete with 3 straps: one 1½″ & two 2″)" },
+      { "item number": "STRAP-C-1.5", "description": "Fluffi-Strap™ — replacement strap, 1½″ width" },
+      { "item number": "STRAP-C-2",   "description": "Fluffi-Strap™ — replacement strap, 2″ width" }
+    ]
+  },
+  "items": [
+    { "sku": "WHFS-C-100L", "size": "Small",  "side": "Left",  "mpDiameter": "2¾ – 3¼", "length": "7½" },
+    { "sku": "WHFS-C-100R", "size": "Small",  "side": "Right", "mpDiameter": "2¾ – 3¼", "length": "7½" },
+    { "sku": "WHFS-C-200L", "size": "Medium", "side": "Left",  "mpDiameter": "3¼ – 3¾", "length": "10" },
+    { "sku": "WHFS-C-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "length": "10" },
+    { "sku": "WHFS-C-300L", "size": "Large",  "side": "Left",  "mpDiameter": "3¾ – 4",   "length": "10½" },
+    { "sku": "WHFS-C-300R", "size": "Large",  "side": "Right", "mpDiameter": "3¾ – 4",   "length": "10½" }
+  ]
+},
+
+    "WHFS": {
+  "key": "WHFS",
+  "title": "Wrist Hand Forearm Splint",
+  "image": "/images/products/wrist-hand-forearm-splint.jpg",
+  "details": {
+    "lcode": "L3914",
+    "heroImage": "/images/products/wrist-hand-forearm-splint.jpg",
+    "gallery": [],
+    "description": "Provides effective temporary positioning and immobilization of the wrist in the neutral position. Rigid polystyrene construction permits unobstructed radiographs and allows the splint to be gas autoclaved.",
+    "indications": [
+      "Temporary positioning and/or immobilization of wrist and hand fractures or ligament injuries",
+      "Post cast immobilization"
+    ],
+    "features": [
+      "Rigid polystyrene shell allows unobstructed radiographs",
+      "Shell can be gas-autoclaved"
+    ],
+    "latexFree": false,
+    "mpNote": "M-P Diameter is width of hand",
+    "additionalItems": []
+  },
+  "items": [
+    { "sku": "WHFS-100L", "size": "Small",  "side": "Left",  "mpDiameter": "2¾ – 3¼", "length": "7½" },
+    { "sku": "WHFS-100R", "size": "Small",  "side": "Right", "mpDiameter": "2¾ – 3¼", "length": "7½" },
+    { "sku": "WHFS-200L", "size": "Medium", "side": "Left",  "mpDiameter": "3¼ – 3¾", "length": "10" },
+    { "sku": "WHFS-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "length": "10" },
+    { "sku": "WHFS-300L", "size": "Large",  "side": "Left",  "mpDiameter": "3¾ – 4",   "length": "10½" },
+    { "sku": "WHFS-300R", "size": "Large",  "side": "Right", "mpDiameter": "3¾ – 4",   "length": "10½" }
+  ]
+},
+
+    "PLS-FF": {
+  "key": "PLS-FF",
+  "title": "Drop Foot Splint — Full Foot",
+  "image": "/images/products/drop-foot-splint-full-foot.jpg",
+  "details": {
+    "lcode": "L1930",
+    "heroImage": "/images/products/drop-foot-splint-full-foot.jpg",
+    "gallery": [],
+    "description": "Full-foot posterior leaf-spring AFO designed to assist dorsiflexion and support gait. Rigid footplate with comfortable proximal cuff; can be trimmed and heat-modified for fit.",
+    "indications": [],
+    "features": [],
+    "latexFree": false,
+    "mpNote": [],
+    "additionalItems": []
+  },
+  "items": [
+    { "sku": "PLS-FF-100L", "size": "Small",   "side": "Left",  "height": "13",   "insideLength": "8½",    "outsideLength": "9 3/8",  "width": "3¼", "mensShoeSize": "3 – 6" },
+    { "sku": "PLS-FF-100R", "size": "Small",   "side": "Right", "height": "13",   "insideLength": "8½",    "outsideLength": "9 3/8",  "width": "3¼", "mensShoeSize": "3 – 6" },
+
+    { "sku": "PLS-FF-200L", "size": "Medium",  "side": "Left",  "height": "13½",  "insideLength": "9¾",    "outsideLength": "10 1/8", "width": "3½", "mensShoeSize": "6 – 9" },
+    { "sku": "PLS-FF-200R", "size": "Medium",  "side": "Right", "height": "13½",  "insideLength": "9¾",    "outsideLength": "10 1/8", "width": "3½", "mensShoeSize": "6 – 9" },
+
+    { "sku": "PLS-FF-300L", "size": "Large",   "side": "Left",  "height": "14½",  "insideLength": "11",    "outsideLength": "11",     "width": "3¾", "mensShoeSize": "9 – 11" },
+    { "sku": "PLS-FF-300R", "size": "Large",   "side": "Right", "height": "14½",  "insideLength": "11",    "outsideLength": "11",     "width": "3¾", "mensShoeSize": "9 – 11" },
+
+    { "sku": "PLS-FF-400L", "size": "X-Large", "side": "Left",  "height": "14½",  "insideLength": "11½",   "outsideLength": "12",     "width": "4",  "mensShoeSize": "11 – 13" },
+    { "sku": "PLS-FF-400R", "size": "X-Large", "side": "Right", "height": "14½",  "insideLength": "11½",   "outsideLength": "12",     "width": "4",  "mensShoeSize": "11 – 13" }
+  ]
+},
+
+    "PLSB": {
+      "key": "PLSB",
+      "title": "Drop Foot Splint — Dynafo",
+      "image": "/images/plsb-hero.jpg",
+      "details": {
+        "lcode": "",
+        "heroImage": "/images/plsb-hero.jpg",
+        "gallery": [],
+        "description": "",
+        "indications": [],
+        "features": [],
+        "latexFree": false,
+        "mpNote": "",
+        "additionalItems": []
+      },
+      "items": [
+        { "sku": "PLSB-100", "size": "Small"  },
+        { "sku": "PLSB-200", "size": "Medium" },
+        { "sku": "PLSB-300", "size": "Large"  },
+        { "sku": "PLSB-400", "size": "X-Large" }
+      ]
+    },
+    "PLS-S": {
+      "key": "PLS-S",
+      "title": "Drop Foot Splint — Sliding",
+      "image": "/images/pls-s-hero.jpg",
+      "details": {
+        "lcode": "",
+        "heroImage": "/images/pls-s-hero.jpg",
+        "gallery": [],
+        "description": "",
+        "indications": [],
+        "features": [],
+        "latexFree": false,
+        "mpNote": "",
+        "additionalItems": []
+      },
+      "items": [
+        { "sku": "PLS-S-100", "size": "Small"  },
+        { "sku": "PLS-S-200", "size": "Medium" },
+        { "sku": "PLS-S-300", "size": "Large"  },
+        { "sku": "PLS-S-400", "size": "X-Large" }
+      ]
+    },
+    "PLSC": {
+      "key": "PLSC",
+      "title": "Open Heel — Full Foot",
+      "image": "/images/plsc-hero.jpg",
+      "details": {
+        "lcode": "",
+        "heroImage": "/images/plsc-hero.jpg",
+        "gallery": [],
+        "description": "",
+        "indications": [],
+        "features": [],
+        "latexFree": false,
+        "mpNote": "",
+        "additionalItems": []
+      },
+      "items": [
+        { "sku": "PLSC-100", "size": "Small"  },
+        { "sku": "PLSC-200", "size": "Medium" },
+        { "sku": "PLSC-300", "size": "Large"  },
+        { "sku": "PLSC-400", "size": "X-Large" }
+      ]
+    },
+    "PLSC-OH": {
+  "key": "PLSC-OH",
+  "title": "Open Heel PLS — Three Styles",
+  "image": "/images/products/open-heel-PLS.jpg",
+  "details": {
+    "lcode": "L1930",
+    "heroImage": "/images/products/open-heel-PLS.jpg",
+    "gallery": [],
+    "description": "The Open Heel Posterior Leaf Spring (PLS) AFO keeps the same anatomical design as Maramed’s traditional PLS but with an open-heel cutout so patients can wear nearly any shoe comfortably without heel contact. Fabricated from a durable polypropylene and pre-dorsiflexed for superior dorsiflexion assist. The anatomical shape compensates for atrophy, avoids calcaneus irritation, and provides one of the best off-the-shelf fits in the industry. A padded strap enhances comfort. Available in three styles and four sizes (Small–X-Large).",
+    "indications": [],
+    "features": [
+      "Open-heel cutout for comfort and shoe compatibility",
+      "Pre-dorsiflexed polypropylene leaf spring for dorsiflexion assist",
+      "Anatomical design reduces calcaneus irritation, compensates for atrophy",
+      "Padded strap for improved comfort",
+      "Three styles: Full-Foot Plate, Sliding Calf Section, Three-Quarter Foot Plate"
+    ],
+    "latexFree": false,
+    "mpNote": [],
+    "additionalItems": []
+  },
+  "items": [
+    { "sku": "PLS-FFOH-100L", "size": "Small",   "side": "Left",  "mensShoeSize": "3 – 6",  "group": "Full-Foot Plate (PLS-FFOH)" },
+    { "sku": "PLS-FFOH-100R", "size": "Small",   "side": "Right", "mensShoeSize": "3 – 6",  "group": "Full-Foot Plate (PLS-FFOH)" },
+    { "sku": "PLS-FFOH-200L", "size": "Medium",  "side": "Left",  "mensShoeSize": "6 – 9",  "group": "Full-Foot Plate (PLS-FFOH)" },
+    { "sku": "PLS-FFOH-200R", "size": "Medium",  "side": "Right", "mensShoeSize": "6 – 9",  "group": "Full-Foot Plate (PLS-FFOH)" },
+    { "sku": "PLS-FFOH-300L", "size": "Large",   "side": "Left",  "mensShoeSize": "9 – 11", "group": "Full-Foot Plate (PLS-FFOH)" },
+    { "sku": "PLS-FFOH-300R", "size": "Large",   "side": "Right", "mensShoeSize": "9 – 11", "group": "Full-Foot Plate (PLS-FFOH)" },
+    { "sku": "PLS-FFOH-400L", "size": "X-Large", "side": "Left",  "mensShoeSize": "11 – 13","group": "Full-Foot Plate (PLS-FFOH)" },
+    { "sku": "PLS-FFOH-400R", "size": "X-Large", "side": "Right", "mensShoeSize": "11 – 13","group": "Full-Foot Plate (PLS-FFOH)" },
+
+    { "sku": "PLS-SOH-100L",  "size": "Small",   "side": "Left",  "mensShoeSize": "3 – 6",  "group": "Sliding Calf Section (PLS-SOH)" },
+    { "sku": "PLS-SOH-100R",  "size": "Small",   "side": "Right", "mensShoeSize": "3 – 6",  "group": "Sliding Calf Section (PLS-SOH)" },
+    { "sku": "PLS-SOH-200L",  "size": "Medium",  "side": "Left",  "mensShoeSize": "6 – 9",  "group": "Sliding Calf Section (PLS-SOH)" },
+    { "sku": "PLS-SOH-200R",  "size": "Medium",  "side": "Right", "mensShoeSize": "6 – 9",  "group": "Sliding Calf Section (PLS-SOH)" },
+    { "sku": "PLS-SOH-300L",  "size": "Large",   "side": "Left",  "mensShoeSize": "9 – 11", "group": "Sliding Calf Section (PLS-SOH)" },
+    { "sku": "PLS-SOH-300R",  "size": "Large",   "side": "Right", "mensShoeSize": "9 – 11", "group": "Sliding Calf Section (PLS-SOH)" },
+    { "sku": "PLS-SOH-400L",  "size": "X-Large", "side": "Left",  "mensShoeSize": "11 – 13","group": "Sliding Calf Section (PLS-SOH)" },
+    { "sku": "PLS-SOH-400R",  "size": "X-Large", "side": "Right", "mensShoeSize": "11 – 13","group": "Sliding Calf Section (PLS-SOH)" },
+
+    { "sku": "PLSC-OH-100L",  "size": "Small",   "side": "Left",  "mensShoeSize": "3 – 6",  "group": "Three-Quarter Foot Plate (PLSC-OH)" },
+    { "sku": "PLSC-OH-100R",  "size": "Small",   "side": "Right", "mensShoeSize": "3 – 6",  "group": "Three-Quarter Foot Plate (PLSC-OH)" },
+    { "sku": "PLSC-OH-200L",  "size": "Medium",  "side": "Left",  "mensShoeSize": "6 – 9",  "group": "Three-Quarter Foot Plate (PLSC-OH)" },
+    { "sku": "PLSC-OH-200R",  "size": "Medium",  "side": "Right", "mensShoeSize": "6 – 9",  "group": "Three-Quarter Foot Plate (PLSC-OH)" },
+    { "sku": "PLSC-OH-300L",  "size": "Large",   "side": "Left",  "mensShoeSize": "9 – 11", "group": "Three-Quarter Foot Plate (PLSC-OH)" },
+    { "sku": "PLSC-OH-300R",  "size": "Large",   "side": "Right", "mensShoeSize": "9 – 11", "group": "Three-Quarter Foot Plate (PLSC-OH)" },
+    { "sku": "PLSC-OH-400L",  "size": "X-Large", "side": "Left",  "mensShoeSize": "11 – 13","group": "Three-Quarter Foot Plate (PLSC-OH)" },
+    { "sku": "PLSC-OH-400R",  "size": "X-Large", "side": "Right", "mensShoeSize": "11 – 13","group": "Three-Quarter Foot Plate (PLSC-OH)" }
+  ]
+},
+
+    "PLS-SOH": {
+      "key": "PLS-SOH",
+      "title": "Open Heel — Sliding",
+      "image": "/images/pls-soh-hero.jpg",
+      "details": {
+        "lcode": "",
+        "heroImage": "/images/pls-soh-hero.jpg",
+        "gallery": [],
+        "description": "",
+        "indications": [],
+        "features": [],
+        "latexFree": false,
+        "mpNote": "",
+        "additionalItems": []
+      },
+      "items": [
+        { "sku": "PLS-SOH-100", "size": "Small"  },
+        { "sku": "PLS-SOH-200", "size": "Medium" },
+        { "sku": "PLS-SOH-300", "size": "Large"  },
+        { "sku": "PLS-SOH-400", "size": "X-Large" }
+      ]
+    },
+    "TS": {
+      "key": "TS",
+      "title": "Tibia Splint",
+      "image": "/images/ts-hero.jpg",
+      "details": {
+        "lcode": "",
+        "heroImage": "/images/ts-hero.jpg",
+        "gallery": [],
+        "description": "",
+        "indications": [],
+        "features": [],
+        "latexFree": false,
+        "mpNote": "",
+        "additionalItems": []
+      },
+      "items": [
+        { "sku": "TS-100", "size": "Small"  },
+        { "sku": "TS-200", "size": "Medium" },
+        { "sku": "TS-300", "size": "Large"  },
+        { "sku": "TS-400", "size": "X-Large" }
+      ]
+    },
+    "STOCKINETTE": {
+      "key": "STOCKINETTE",
+      "title": "Cotton Stockinette",
+      "image": "",
+      "details": {
+        "lcode": "",
+        "heroImage": "",
+        "gallery": [],
+        "description": "100% cotton tubular stockinette for under-cast and under-orthosis use. Soft hand, breathable, and easy to cut to length.",
+        "indications": [],
+        "features": [
+          "Soft, breathable cotton",
+          "Conforms and stretches to shape",
+          "Cut-to-length convenience",
+          "Latex free"
+        ],
+        "latexFree": true,
+        "notes": [],
+        "additionalItems": []
+      },
+      "items": [
+        { "sku": "STOCKINETT-TGS2", "Description": "2″ Thumb Gard Spika",            "Size": "all",       "group": "Stockinette" },
+        { "sku": "STOCKINETT-TGS2", "Description": "2″ Sport Thumb Spika",           "Size": "all",       "group": "Stockinette" },
+        { "sku": "STOCKINETT-WH",   "Description": "2″ Wrist Hand",                   "Size": "all",       "group": "Stockinette" },
+        { "sku": "STOCKINETT-WH",   "Description": "2″ Wrist Hand Extended",          "Size": "all",       "group": "Stockinette" },
+        { "sku": "STOCKINETT-WH",   "Description": "2″ Wrist Hand Holder",            "Size": "all",       "group": "Stockinette" },
+        { "sku": "STOCKINETT-WHT",  "Description": "2″ Wrist Hand Thumb",             "Size": "all",       "group": "Stockinette" },
+        { "sku": "STOCKINETT-WHT",  "Description": "2″ Wrist Hand Thumb Extended",    "Size": "all",       "group": "Stockinette" },
+        { "sku": "STOCKINETT-WHT",  "Description": "2″ Wrist Hand Thumb Finger",      "Size": "all",       "group": "Stockinette" },
+
+        { "sku": "STOCKINETT-C3",   "Description": "3″ Colles’ Fracture Brace",       "Size": "all",       "group": "Fracture Braces" },
+        { "sku": "STOCKINETT-F6",   "Description": "6″ Femoral Fracture Brace",       "Size": "Md/Lg",     "group": "Fracture Braces" },
+        { "sku": "STOCKINETT-H3",   "Description": "3″ Humerus Fracture Brace",       "Size": "Sm",        "group": "Fracture Braces" },
+        { "sku": "STOCKINETT-H4",   "Description": "4″ Humerus Fracture Brace",       "Size": "Md/Lg/XLg", "group": "Fracture Braces" },
+        { "sku": "STOCKINETT-PTB3", "Description": "3″ Tibial FB Proximal Support",   "Size": "Sm",        "group": "Fracture Braces" },
+        { "sku": "STOCKINETT-PTB4", "Description": "4″ Tibial FB Proximal Support",   "Size": "Md/Lg",     "group": "Fracture Braces" },
+        { "sku": "STOCKINETT-SG3",  "Description": "3″ Humeral FB-OS or SG",          "Size": "Sm",        "group": "Fracture Braces" },
+        { "sku": "STOCKINETT-SG4",  "Description": "4″ Humeral FB-OS or SG",          "Size": "Md/Lg/XLg", "group": "Fracture Braces" },
+        { "sku": "STOCKINETT-T3",   "Description": "3″ Tibial Fracture Brace",        "Size": "Sm",        "group": "Fracture Braces" },
+        { "sku": "STOCKINETT-T4",   "Description": "4″ Tibial Fracture Brace",        "Size": "Md/Lg",     "group": "Fracture Braces" },
+        { "sku": "STOCKINETT-U3",   "Description": "3″ Ulna Fracture Brace",          "Size": "all",       "group": "Fracture Braces" },
+
+        { "sku": "STOCKINETT-3-26", "Description": "3″ Ankle Foot Calf",              "Size": "Sm/Md",     "group": "Lower Extremity" },
+        { "sku": "STOCKINETT-4-26", "Description": "4″ Ankle Foot Calf",              "Size": "Lg/XLg",    "group": "Lower Extremity" }
+      ]
+    },
+    
+"AFO-S": {
+  "key": "AFO-S",
+  "title": "AFO/Drop Foot Splint Accessories",
+  "image": "/images/products/afo-drop-foot-splint-accessories.jpg",
+  "details": {
+    "lcode": "",
+    "heroImage": "/images/products/afo-drop-foot-splint-accessories.jpg",
+    "gallery": [],
+    "description": "The exact height compatible with any model of PLS.",
+    "indications": [],
+    "features": [
+      "Inserts compatible with all PLS models",
+      "Seamless cotton-blend socks",
+      "Adhesive-back strap fits PLSC & PLS-FF"
+    ],
+    "latexFree": false,
+    "mpNote": "",
+    "additionalItems": []
+  },
+  "items": [
+    { "sku": "AFO-S-1", "Description": "Anti-shock Shoe Insert", "mensShoeSize": "3 – 6",   "group": "AFO Shoe Inserts" },
+    { "sku": "AFO-S-2", "Description": "Anti-shock Shoe Insert", "mensShoeSize": "6 – 9",   "group": "AFO Shoe Inserts" },
+    { "sku": "AFO-S-3", "Description": "Anti-shock Shoe Insert", "mensShoeSize": "9 – 11",  "group": "AFO Shoe Inserts" },
+    { "sku": "AFO-S-4", "Description": "Anti-shock Shoe Insert", "mensShoeSize": "11 – 13", "group": "AFO Shoe Inserts" },
+
+    { "sku": "AFO-L-1", "Description": "AFO Sock (seamless)", "size": "Pediatric — one size", "group": "AFO Socks" },
+    { "sku": "AFO-L-2", "Description": "AFO Sock (seamless)", "size": "Adult — one size",     "group": "AFO Socks" },
+
+    { "sku": "STRAP-PLSC/M", "Description": "Adhesive-back strap — fits PLSC & PLS-FF", "group": "Drop Foot Splint Straps" }
+  ]
+},
+
+
+    "EAM": {
+  "key": "EAM",
+  "title": "Epoxy Adjustment Mandrels",
+  "image": "/images/products/epoxy-adjustment-mandrels.jpg",
+  "details": {
+    "lcode": "",
+    "heroImage": "/images/products/epoxy-adjustment-mandrels.jpg",
+    "gallery": [],
+    "description": "Used in post-forming plastic modification.",
+    "indications": [],
+    "features": [
+      "Available in shapes a–e with multiple sizes",
+      "Sold individually or as a complete 12-tool set"
+    ],
+    "latexFree": false,
+    "mpNote": "",
+    "additionalItems": []
+  },
+  "items": [
+    { "sku": "EAM20", "Description": "Shape a", "size": "Large",  "group": "Shape a" },
+    { "sku": "EAM21", "Description": "Shape a", "size": "Small",  "group": "Shape a" },
+
+    { "sku": "EAM10", "Description": "Shape b", "size": "X-Large", "group": "Shape b" },
+    { "sku": "EAM11", "Description": "Shape b", "size": "Large",  "group": "Shape b" },
+    { "sku": "EAM12", "Description": "Shape b", "size": "Medium", "group": "Shape b" },
+    { "sku": "EAM13", "Description": "Shape b", "size": "Small",  "group": "Shape b" },
+
+    { "sku": "EAM22", "Description": "Shape c", "size": "Large",  "group": "Shape c" },
+    { "sku": "EAM23", "Description": "Shape c", "size": "Small",  "group": "Shape c" },
+
+    { "sku": "EAM32", "Description": "Shape d", "size": "Large",  "group": "Shape d" },
+    { "sku": "EAM33", "Description": "Shape d", "size": "Small",  "group": "Shape d" },
+
+    { "sku": "EAM30", "Description": "Shape e", "size": "Large",  "group": "Shape e" },
+    { "sku": "EAM31", "Description": "Shape e", "size": "Small",  "group": "Shape e" },
+
+    { "sku": "EAMS-SET", "Description": "Complete set of 12 tools", "group": "Sets" }
+  ]
+},
+
+    "VEH": {
+      "key": "VEH",
+      "title": "",
+      "image": "",
+      "details": {
+        "lcode": "",
+        "heroImage": "",
+        "gallery": [],
+        "description": "",
+        "indications": [],
+        "features": [],
+        "latexFree": false,
+        "mpNote": "",
+        "additionalItems": []
+      },
+      "items": [
+        { "sku": "EO-100", "size": "Small"  },
+        { "sku": "EO-200", "size": "Medium" },
+        { "sku": "EO-300", "size": "Large"  },
+        { "sku": "EO-400", "size": "X-Large" }
+      ]
+    },
+   
+
+    "SM-GROUPED": {
+      "key": "SM-GROUPED",
+      "title": "Sky Medical ",
+      "image": "/sky-medical-thumbnail.png",
+      "details": {
+        "lcode": "",
+        "heroImage": "/images/products/AFO-Posterior-Leaf-Spring.png",
+        "gallery": [],
+        "description": "Upper-extremity functional fracture orthoses and PLS AFOs designed for adjustable compression and left/right-neutral fit where noted.",
+        "indications": [],
+        "features": [
+          "Adjustable fit for volumetric changes",
+          "Compression straps for consistent soft-tissue support",
+          "Neutral designs fit left or right (where noted)"
+        ],
+        "latexFree": false,
+        "mpNote": "",
+        "additionalItems": [],
+        "sizeGroups": [
+          {
+            "title": "Humerus Fracture Orthosis — Over the Shoulder (Neutral)",
+            "image": "/images/products/Humerus-Fracture-Orthosis-Over-the-Shoulder.png",
+            "notes": [
+              "Measure bicep circumference at the widest point.",
+              "Length values denote shell lengths (medial / lateral).",
+              "Neutral design fits left or right."
+            ],
+            "rows": [
+              { "itemNumber": "SM-HFO-DE-S",  "size": "Small",   "bicepCircumference": "8 – 11",  "length": "Medial 5¼ / Lateral 10" },
+              { "itemNumber": "SM-HFO-DE-M",  "size": "Medium",  "bicepCircumference": "11 – 14", "length": "Medial 5¾ / Lateral 10¾" },
+              { "itemNumber": "SM-HFO-DE-L",  "size": "Large",   "bicepCircumference": "12 – 15", "length": "Medial 6½ / Lateral 12" },
+              { "itemNumber": "SM-HFO-DE-XL", "size": "X-Large", "bicepCircumference": "14 – 17", "length": "Medial 6¾ / Lateral 13" }
+            ]
+          },
+          {
+            "title": "Humerus Fracture Orthosis (Neutral)",
+            "image": "/images/products/Humerus-Fracture-Orthosis-Neutral.png",
+            "notes": [
+              "Measure bicep circumference at the widest point.",
+              "Length values denote shell lengths (anterior / posterior).",
+              "Neutral design fits left or right."
+            ],
+            "rows": [
+              { "itemNumber": "SM-HFO-S",  "size": "Small",   "bicepCircumference": "8 – 11",  "length": "Anterior 4¾ / Posterior 6" },
+              { "itemNumber": "SM-HFO-M",  "size": "Medium",  "bicepCircumference": "11 – 14", "length": "Anterior 5¼ / Posterior 6¾" },
+              { "itemNumber": "SM-HFO-L",  "size": "Large",   "bicepCircumference": "12 – 15", "length": "Anterior 5¾ / Posterior 7½" },
+              { "itemNumber": "SM-HFO-XL", "size": "X-Large", "bicepCircumference": "14 – 17", "length": "Anterior 6¼ / Posterior 8" }
+            ]
+          },
+          {
+            "title": "Ulna Fracture Orthosis (Neutral)",
+            "image": "/images/products/Ulna-Fracture-Orthosis-Neutral .png",
+            "notes": [
+              "Measure forearm circumference at the widest point.",
+              "Overall length shown in inches.",
+              "Neutral design fits left or right."
+            ],
+            "rows": [
+              { "itemNumber": "SM-UFO-S", "size": "Small",  "forearmCircumference": "8 – 11",   "length": "7" },
+              { "itemNumber": "SM-UFO-M", "size": "Medium", "forearmCircumference": "9½ – 12½", "length": "7½" },
+              { "itemNumber": "SM-UFO-L", "size": "Large",  "forearmCircumference": "11 – 14",  "length": "8" }
+            ]
+          },
+          {
+            "title": "AFO — Posterior Leaf Spring",
+            "image": "/images/products/AFO-Posterior-Leaf-Spring.png",
+            "notes": [
+              "Select size by shoe size; use men’s / women’s ranges as a guide.",
+              "Pre-dorsiflexed, low-profile design for comfort.",
+              "Neutral; fits left or right."
+            ],
+            "rows": [
+              { "itemNumber": "SM-AFO-S",  "size": "Small",   "side": "Left or Right", "Description": "Men 5–6 / Women 6.5–7.5" },
+              { "itemNumber": "SM-AFO-M",  "size": "Medium",  "side": "Left or Right", "Description": "Men 6.5–10 / Women 8–11.5" },
+              { "itemNumber": "SM-AFO-L",  "size": "Large",   "side": "Left or Right", "Description": "Men 10.5–13 / Women 12–14.5" },
+              { "itemNumber": "SM-AFO-XL", "size": "X-Large", "side": "Left or Right", "Description": "Men 13+ / Women 14.5+" }
+            ]
+          },
+          {
+            "title": "AFO — Semi-Solid Posterior Leaf Spring",
+            "image": "/images/products/Semi-Solid-AFO-Posterior-Leaf-Spring.png",
+            "notes": [
+              "Semi-solid PLS increases dorsiflexion assist.",
+              "Select size by shoe size; use men’s / women’s ranges as a guide.",
+              "Neutral; fits left or right."
+            ],
+            "rows": [
+              { "itemNumber": "SM-SAFO-S", "size": "Small",  "side": "Left or Right", "Description": "Men 5–6 / Women 6.5–7.5" },
+              { "itemNumber": "SM-SAFO-M", "size": "Medium", "side": "Left or Right", "Description": "Men 6.5–10 / Women 8–11.5" },
+              { "itemNumber": "SM-SAFO-L", "size": "Large",  "side": "Left or Right", "Description": "Men 10.5–13 / Women 12–14.5" }
+            ]
+          }
+        ]
+      },
+      "items": []
+    }
+  },
   "series": [
     {
       "slug": "thumb-spica",
       "label": "Thumb Spica Series",
       "description": "The Thumb Spica series includes the Sports Thumb Spica and the Thumb Guard Spica. These orthoses comfortably restrict the motion of the basilar joint and maintain the thumb in a neutral position. Both embody an anatomically correct design that contours the orthosis to the palmar area of the hand. This allows full range of motion of the fingers for both styles, and full range of motion of the wrist for the Thumb Guard Spica. The Sports Thumb Spica, conversely, limits abduction of the wrist. The spicas are made of a hypoallergenic linear polyethylene plastic and are easily customized utilizing a heat gun and scissors, as shown in the modification procedures. Each is provided with one presewn double layer cotton stockinette. Additional stockinette and straps are available separately.",
-      "families": [
-        {
-          "key": "TS-SPORTS",
-          "title": "Sports Thumb Spica",
-          "image": "/images/products/sports-thumb-spica.jpg",
-          "details": {
-            "lcode": "L3999",
-            "heroImage": "/images/sports-thumb-spica.jpg",
-            "gallery": [
-              "/images/thumb-spica-sports-1.jpg",
-              "/images/thumb-spica-sports-2.jpg"
-            ],
-            "description": "Designed for functional support of the thumb CMC/MCP joints during sport or daily activity.",
-            "indications": [
-              "Sprains, fractures and strains",
-              "Postoperative rehabilitation",
-              "Collateral ligament injuries",
-              "Skier’s thumb & Gamekeeper’s thumb",
-              "DeQuervain’s Syndrome",
-              "Arthritis pain in thumb and saddle joints",
-              "Prophylactic bracing and immobilization"
-            ],
-            "mpNote": "M-P Diameter is width of hand"
-          },
-          "items": [
-            { "sku": "STS-100L", "size": "Small",  "side": "Left",  "mpDiameter": "2¾ – 3¼" },
-            { "sku": "STS-100R", "size": "Small",  "side": "Right", "mpDiameter": "2¾ – 3¼" },
-            { "sku": "STS-200L", "size": "Medium", "side": "Left",  "mpDiameter": "3¼ – 3¾" },
-            { "sku": "STS-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾" },
-            { "sku": "STS-300L", "size": "Large",  "side": "Left",  "mpDiameter": "3¾ – 4" },
-            { "sku": "STS-300R", "size": "Large",  "side": "Right", "mpDiameter": "3¾ – 4" }
-          ]
-        },
-        {
-          "key": "TGS",
-          "title": "Thumb Guard Spica",
-          "image": "/images/products/thumb-guard-spica.jpg",
-          "details": {
-            "lcode": "L3999",
-            "heroImage": "/images/thumb-guard-spica-hero.jpg",
-            "description": "Provides rigid immobilization and support of the thumb with comfortable, adjustable strapping.",
-            "indications": [
-              "Sprains, fractures and strains",
-              "Skier’s thumb & Gamekeeper’s thumb",
-              "Postoperative rehabilitation"
-            ],
-            "mpNote": "M-P Diameter is width of hand"
-          },
-          "items": [
-            { "sku": "TGS-100L", "size": "Small",  "side": "Left",  "mpDiameter": "2¾ – 3¼" },
-            { "sku": "TGS-100R", "size": "Small",  "side": "Right", "mpDiameter": "2¾ – 3¼" },
-            { "sku": "TGS-200L", "size": "Medium", "side": "Left",  "mpDiameter": "3¼ – 3¾" },
-            { "sku": "TGS-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾" },
-            { "sku": "TGS-300L", "size": "Large",  "side": "Left",  "mpDiameter": "3¾ – 4" },
-            { "sku": "TGS-300R", "size": "Large",  "side": "Right", "mpDiameter": "3¾ – 4" }
-          ]
-        }
-      ]
+      "familyKeys": ["TS-SPORTS", "TGS"]
     },
-
     {
       "slug": "wrist-hand",
       "label": "Wrist Hand Series",
       "description": "All orthoses in the Wrist Hand series are comprised of a foam lined hypoallergenic linear polyethylene plastic with a padded dorsal tongue that enables them to provide both rigid cast-like protection and maximum comfort to the patient. They provide a significant advantage over casting, as they are highly adjustable, allowing them to properly compensate for edema. The brace composition is completely radiolucent. In addition to the traditional style, which incorporates hook and loop straps with the quick lock fastener system, all of the Wrist Hand orthoses, except for the Arthroscopic Traction Assist, are available in the streamlined, slotted S-Series™ version. They are easily customized utilizing a heat gun and scissors, as shown in the modification procedures. Each is provided with one presewn double-layer cotton stockinette. Additional stockinette and straps are available separately.",
-      "families": [
-        {
-          "key": "ATA",
-          "title": "Arthroscopic Traction Assist",
-          "image": "/images/products/arthroscopic-traction-assist.jpg",
-          "details": {
-            "heroImage": "/images/products/arthroscopic-traction-assist.jpg",
-            "description": "Provides proper positioning of the shoulder during arthroscopic surgery. Eliminates pressure sores caused by traction. LATEX FREE."
-          },
-          "items": []
-        },
-        {
-          "key": "FPO",
-          "title": "Functional Positioning Orthosis",
-          "image": "/images/products/functional-positioning-orthosis.jpg",
-          "details": {
-            "heroImage": "/images/products/functional-positioning-orthosis.jpg",
-            "description": "Provides proper support to the wrist and thumb while allowing the fingers to rest comfortably on the extended padded platform."
-          },
-          "items": []
-        },
-        {
-          "key": "FPO-S",
-          "title": "Functional Positioning Orthosis S-Series",
-          "image": "/images/products/functional-positioning-orthosis-s-series.jpg",
-          "details": {
-            "heroImage": "/images/products/functional-positioning-orthosis-s-series.jpg",
-            "description": "S-Series version of the Functional Positioning Orthosis with streamlined slotted shell."
-          },
-          "items": []
-        },
-
-        {
-          "key": "WH",
-          "title": "Wrist Hand",
-          "image": "/images/products/wrist-hand.jpg",
-          "details": { "heroImage": "/images/products/wrist-hand.jpg", "description": "" },
-          "items": [
-            { "sku": "WH-100", "size": "Small"  },
-            { "sku": "WH-200", "size": "Medium" },
-            { "sku": "WH-300", "size": "Large"  }
-          ]
-        },
-        {
-          "key": "WHE",
-          "title": "Wrist Hand Extended",
-          "image": "/images/products/wrist-hand-thumb.jpg",
-          "details": { "heroImage": "/images/products/wrist-hand-thumb.jpg", "description": "" },
-          "items": [
-            { "sku": "WHE-100", "size": "Small"  },
-            { "sku": "WHE-200", "size": "Medium" },
-            { "sku": "WHE-300", "size": "Large"  }
-          ]
-        },
-        {
-          "key": "WH-S",
-          "title": "Wrist Hand S-Series",
-          "image": "/images/products/wrist-hand-thumb-s-series.jpg",
-          "details": {
-            "heroImage": "/images/products/wrist-hand-thumb-s-series.jpg",
-            "description": "S-Series version of the Wrist Hand orthosis with slotted shell."
-          },
-          "items": []
-        },
-
-        {
-          "key": "WHT",
-          "title": "Wrist Hand Thumb",
-          "image": "/images/wrist-hand/wht-hero.jpg",
-          "details": { "heroImage": "/images/products/wrist-hand-thumb.jpg", "description": "" },
-          "items": []
-        },
-        {
-          "key": "WHTE",
-          "title": "Wrist Hand Thumb Extended",
-          "image": "/images/wrist-hand/wht-extended-hero.jpg",
-          "details": { "heroImage": "/images/wrist-hand/wht-extended-hero.jpg", "description": "" },
-          "items": []
-        },
-        {
-          "key": "WHT-S",
-          "title": "Wrist Hand Thumb S-Series",
-          "image": "/images/wrist-hand/wht-s-hero.jpg",
-          "details": {
-            "heroImage": "/images/wrist-hand/wht-s-hero.jpg",
-            "description": "S-Series version providing immobilization of the wrist and thumb with unobstructed finger motion."
-          },
-          "items": []
-        }
-      ]
+      "familyKeys": ["ATA", "FPO", "FPO-S", "WH", "WH-S", "WHT", "WHT-S"]
     },
-
     {
       "slug": "s-series",
-      "label": "The New S-Series™",
-      "description": "In response to the needs and preferences of today’s healthcare professional, Maramed is proud to introduce the new S-Series™ line of prefabricated orthoses. It consists of the same superior materials and anatomical designs as our original style and includes several distinct new features.",
+      "label": "The S-Series™",
+      "description": "In response to the needs and preferences of today’s healthcare professional, Maramed is proud to introduce the S-Series™ line of prefabricated orthoses. It consists of the same superior materials and anatomical designs as our original style and includes several distinct new features.",
       "features": [
-    "Longer straps with end stops insure proper brace alignment while donning and doffing",
-    "All straps are made of Magic Tape™, a revolutionary strapping material that consists of self-engaging hook and loop",
-    "Straps are easily replaced without any tools",
-    "Removable straps promote proper hygiene",
-    "Same clinically tested anatomical shapes",
-    "More patient compliant",
-    "Lower profile – no external parts to catch on clothes",
-    "By replacing the loop, chafe and rivet with a simple static slot, slippage and rotation of the anterior/posterior components are minimized"
-  ],
-      "families": [
-        {
-          "key": "WHT-S",
-          "title": "Wrist Hand Thumb (S-Series)",
-          "image": "/images/wht-s-hero.jpg",
-          "details": { "heroImage": "/images/wht-s-hero.jpg", "description": "" },
-          "items": [
-            { "sku": "WHT-100-S", "size": "Small"  },
-            { "sku": "WHT-200-S", "size": "Medium" },
-            { "sku": "WHT-300-S", "size": "Large"  }
-          ]
-        },
-        {
-          "key": "HFB-SG",
-          "title": "Humerus Fracture Brace — Shoulder Guard (S-Series)",
-          "image": "/images/hfb-sg-hero.jpg",
-          "details": { "heroImage": "/images/hfb-sg-hero.jpg", "description": "" },
-          "items": [
-            { "sku": "HFB-SG-100", "size": "Small"  },
-            { "sku": "HFB-SG-200", "size": "Medium" },
-            { "sku": "HFB-SG-300", "size": "Large"  },
-            { "sku": "HFB-SG-400", "size": "X-Large" }
-          ]
-        },
-        {
-          "key": "UFB-S",
-          "title": "Ulna Fracture Brace (S-Series)",
-          "image": "/images/ufb-s-hero.jpg",
-          "details": { "heroImage": "/images/ufb-s-hero.jpg", "description": "" },
-          "items": [
-            { "sku": "UFB-100-S", "size": "Small"  },
-            { "sku": "UFB-200-S", "size": "Medium" },
-            { "sku": "UFB-300-S", "size": "Large"  }
-          ]
-        },
-        {
-          "key": "TFB-S",
-          "title": "Tibia Fracture Brace (S-Series)",
-          "image": "/images/tfb-s-hero.jpg",
-          "details": { "heroImage": "/images/tfb-s-hero.jpg", "description": "" },
-          "items": [
-            { "sku": "TFB-100-S", "size": "Small"  },
-            { "sku": "TFB-200-S", "size": "Medium" },
-            { "sku": "TFB-300-S", "size": "Large"  }
-          ]
-        }
-      ]
+        "Longer straps with end stops insure proper brace alignment while donning and doffing",
+        "All straps are made of Magic Tape™, a revolutionary strapping material that consists of self-engaging hook and loop",
+        "Straps are easily replaced without any tools",
+        "Removable straps promote proper hygiene",
+        "Same clinically tested anatomical shapes",
+        "More patient compliant",
+        "Lower profile – no external parts to catch on clothes",
+        "By replacing the loop, chafe and rivet with a simple static slot, slippage and rotation of the anterior/posterior components are minimized"
+      ],
+      "familyKeys": ["WH-S", "WHT-S", "HFB-S", "HFB-SG-S", "FPO-S", "UFB-S", "TFB-S"]
     },
-
     {
       "slug": "elbow",
       "label": "Elbow Series",
-      "description": "Elbow and SEWHO solutions for immobilization, controlled motion, and functional positioning.",
-      "families": [
-        {
-          "key": "EO",
-          "title": "Elbow Orthosis",
-          "image": "/images/eo-hero.jpg",
-          "details": { "heroImage": "/images/eo-hero.jpg", "description": "" },
-          "items": [
-            { "sku": "EO-100", "size": "Small"  },
-            { "sku": "EO-200", "size": "Medium" },
-            { "sku": "EO-300", "size": "Large"  },
-            { "sku": "EO-400", "size": "X-Large" }
-          ]
-        },
-        {
-          "key": "EO-SG",
-          "title": "Shoulder-Elbow-Wrist-Hand Orthosis (SEWHO)",
-          "image": "/images/eo-sg-hero.jpg",
-          "details": { "heroImage": "/images/eo-sg-hero.jpg", "description": "" },
-          "items": [
-            { "sku": "EO-SG-100", "size": "Small"  },
-            { "sku": "EO-SG-200", "size": "Medium" },
-            { "sku": "EO-SG-300", "size": "Large"  },
-            { "sku": "EO-SG-400", "size": "X-Large" }
-          ]
-        }
-      ]
+      "description": "The elbow orthoses are effective in limiting the range of motion involved with flexion and extension. Both the Shoulder-Elbow-Wrist-Hand orthosis and the Elbow orthosis feature: an upper component – consisting of a Humerus fracture brace, an elbow hinge and a lower component – consisting of a Forearm-Wrist-Hand immobilizer. The lower component helps to eliminate distal slippage. The elbow hinge is a limited motion aluminum medial upright that is adjustable in 30° increment stops. This joint is slotted to allow adjustments proximal and distal to the elbow. These orthoses are easily customized utilizing a heat gun and scissors, as shown in the modification procedures. Each is provided with one presewn double layer cotton stockinette. Additional stockinette and straps are available separately.",
+      "familyKeys": ["EO", "EO-SG"]
     },
-
     {
       "slug": "ue-fracture-braces",
       "label": "Upper Extremity Fracture Braces",
-      "description": "Functional fracture braces for the upper extremity to support healing while permitting controlled motion.",
-      "families": [
-        {
-          "key": "UFB",
-          "title": "Ulna Fracture Brace",
-          "image": "/images/ufb-hero.jpg",
-          "details": { "heroImage": "/images/ufb-hero.jpg", "description": "" },
-          "items": [
-            { "sku": "UFB-100", "size": "Small"  },
-            { "sku": "UFB-200", "size": "Medium" },
-            { "sku": "UFB-300", "size": "Large"  }
-          ]
-        }
-      ]
+      "description": "All Maramed fracture braces have been developed and tested in over 5,000 clinical cases in conjunction with the University of Miami, Department of Orthopedics and Rehabilitation*. The information gained from these studies was a key resource in the design of Maramed’s fracture brace line. The design is comprised of overlapping anterior and posterior shells that allow for ease of adjustment, accommodate for volumetric changes of soft tissue associated with fracture healing and eliminate the need for serial casting. Anatomical and biomedical considerations insure that soft tissue compression is maintained as volumetric adjustments are compensated for while maintaining proper suspension of the brace over the fracture area. Flared edges are incorporated in the anterior and posterior shells providing superior patient comfort throughout full range of motion. Maximum patient comfort is also provided through the use of a specially formulated low density polyethylene plastic with 1/8″ foam lining that pads the anterior shell. Excellent off-the-shelf fit has been achieved through many years of clinical development. However, in such cases where customization is indicated, braces can be quickly and easily modified utilizing a heat gun and scissors, as shown in the modification procedures. Each is provided with one presewn double layer cotton stockinette. Additional stockinette and straps are available separately.",
+      "familyKeys": ["HFB-S", "HFB-N", "UFB", "UFB-S", "UFB-N", "HFB-SG", "HFB-SG-S", "HFB-OS", "HFB"]
     },
-
+     
     {
       "slug": "afo-drop-foot",
       "label": "Ankle Foot Orthoses / Drop Foot Splints",
-      "description": "Posterior leaf spring and related AFO designs for foot drop and gait assistance.",
-      "families": [
-        {
-          "key": "PLS-FF",
-          "title": "Drop Foot Splint — Full Foot",
-          "image": "/images/pls-ff-hero.jpg",
-          "details": { "heroImage": "/images/pls-ff-hero.jpg", "description": "" },
-          "items": [
-            { "sku": "PLS-FF-100", "size": "Small"  },
-            { "sku": "PLS-FF-200", "size": "Medium" },
-            { "sku": "PLS-FF-300", "size": "Large"  },
-            { "sku": "PLS-FF-400", "size": "X-Large" }
-          ]
-        },
-        {
-          "key": "PLSB",
-          "title": "Drop Foot Splint — Dynafo",
-          "image": "/images/plsb-hero.jpg",
-          "details": { "heroImage": "/images/plsb-hero.jpg", "description": "" },
-          "items": [
-            { "sku": "PLSB-100", "size": "Small"  },
-            { "sku": "PLSB-200", "size": "Medium" },
-            { "sku": "PLSB-300", "size": "Large"  },
-            { "sku": "PLSB-400", "size": "X-Large" }
-          ]
-        },
-        {
-          "key": "PLS-S",
-          "title": "Drop Foot Splint — Sliding",
-          "image": "/images/pls-s-hero.jpg",
-          "details": { "heroImage": "/images/pls-s-hero.jpg", "description": "" },
-          "items": [
-            { "sku": "PLS-S-100", "size": "Small"  },
-            { "sku": "PLS-S-200", "size": "Medium" },
-            { "sku": "PLS-S-300", "size": "Large"  },
-            { "sku": "PLS-S-400", "size": "X-Large" }
-          ]
-        },
-        {
-          "key": "PLSC",
-          "title": "Open Heel — Full Foot",
-          "image": "/images/plsc-hero.jpg",
-          "details": { "heroImage": "/images/plsc-hero.jpg", "description": "" },
-          "items": [
-            { "sku": "PLSC-100", "size": "Small"  },
-            { "sku": "PLSC-200", "size": "Medium" },
-            { "sku": "PLSC-300", "size": "Large"  },
-            { "sku": "PLSC-400", "size": "X-Large" }
-          ]
-        },
-        {
-          "key": "PLSC-OH",
-          "title": "Open Heel (OH) — Full Foot",
-          "image": "/images/plsc-oh-hero.jpg",
-          "details": { "heroImage": "/images/plsc-oh-hero.jpg", "description": "" },
-          "items": [
-            { "sku": "PLSC-OH-100", "size": "Small"  },
-            { "sku": "PLSC-OH-200", "size": "Medium" },
-            { "sku": "PLSC-OH-300", "size": "Large"  },
-            { "sku": "PLSC-OH-400", "size": "X-Large" }
-          ]
-        },
-        {
-          "key": "PLS-SOH",
-          "title": "Open Heel — Sliding",
-          "image": "/images/pls-soh-hero.jpg",
-          "details": { "heroImage": "/images/pls-soh-hero.jpg", "description": "" },
-          "items": [
-            { "sku": "PLS-SOH-100", "size": "Small"  },
-            { "sku": "PLS-SOH-200", "size": "Medium" },
-            { "sku": "PLS-SOH-300", "size": "Large"  },
-            { "sku": "PLS-SOH-400", "size": "X-Large" }
-          ]
-        }
-      ]
+      "description": "The ankle foot orthoses/drop foot splints provide a full foot section for additional support and comfort when indicated and are fabricated in a predorsiflexed position to provide superior dorsiflexion assist. The amount of dorsiflexion assist is proportional to shoe size. The anatomical design compensates for atrophy and avoids calcaneus irritation. The splints are made of a specially formulated polypropylene plastic insuring effective product longevity and are guaranteed for life. They are easily customized, utilizing a heat gun and scissors, as shown in the modification procedures. Additional stockinette and straps are available separately.",
+      "familyKeys": ["PLS-FF", "PLSB", "PLS-S", "PLSC", "PLSC-OH", "PLS-SOH"]
     },
-
     {
       "slug": "lower-extremity-splints",
       "label": "Lower Extremity Splints",
       "description": "Lower limb splints for acute stabilization and conservative treatment.",
-      "families": [
-        {
-          "key": "TS",
-          "title": "Tibia Splint",
-          "image": "/images/ts-hero.jpg",
-          "details": { "heroImage": "/images/ts-hero.jpg", "description": "" },
-          "items": [
-            { "sku": "TS-100", "size": "Small"  },
-            { "sku": "TS-200", "size": "Medium" },
-            { "sku": "TS-300", "size": "Large"  },
-            { "sku": "TS-400", "size": "X-Large" }
-          ]
-        }
-      ]
+      "familyKeys": ["TS"]
     },
-
     {
-      "slug": "tibia-fracture-braces",
-      "label": "Tibia Fracture Braces",
-      "description": "Functional tibia fracture braces and related components for progressive mobilization.",
-      "families": [
-        {
-          "key": "TFB",
-          "title": "Tibia Fracture Brace",
-          "image": "/images/tfb-hero.jpg",
-          "details": { "heroImage": "/images/tfb-hero.jpg", "description": "" },
-          "items": [
-            { "sku": "TFB-100", "size": "Small"  },
-            { "sku": "TFB-200", "size": "Medium" },
-            { "sku": "TFB-300", "size": "Large"  },
-            { "sku": "TFB-400", "size": "X-Large" }
-          ]
-        },
-        {
-          "key": "TFB-PS",
-          "title": "Tibia Fracture Brace — Proximal Support",
-          "image": "/images/tfb-ps-hero.jpg",
-          "details": { "heroImage": "/images/tfb-ps-hero.jpg", "description": "" },
-          "items": [
-            { "sku": "TFB-PS-100",   "size": "Small"        },
-            { "sku": "TFB-PS-200",   "size": "Medium"       },
-            { "sku": "TFB-PS-200-E", "size": "Medium Long"  },
-            { "sku": "TFB-PS-300",   "size": "Large"        },
-            { "sku": "TFB-PS-300-E", "size": "Large Long"   }
-          ]
-        },
-        {
-          "key": "FC",
-          "title": "Foot Component",
-          "image": "/images/fc-hero.jpg",
-          "details": { "heroImage": "/images/fc-hero.jpg", "description": "" },
-          "items": [
-            { "sku": "FC-100", "size": "Small"  },
-            { "sku": "FC-200", "size": "Medium" },
-            { "sku": "FC-300", "size": "Large"  }
-          ]
-        }
-      ]
-    },
-
-    {
-      "slug": "upper-extremity-splints",
+      "slug": "ue-splints",
       "label": "Upper Extremity Splints",
-      "description": "Splinting options for the upper limb including hand, wrist, forearm, and elbow.",
-      "families": []
+      "description": "All styles of the upper extremity orthoses are available in a variety of configurations, depending upon the patient’s needs and the practitioner’s preferences. They provide effective immobilization and are completely radiolucent, allowing unobstructed radiographs. The Fluffi-Splints™ are available with either plastic or aluminum inserts. They are easily customized, as shown in the modification procedures.",
+      "familyKeys": ["WHCS-C", "WHCS", "WHFS-C", "WHFS"]
     },
-
     {
       "slug": "hkafo-kafo-femoral",
       "label": "HKAFO & KAFO Femoral Fracture Orthosis",
       "description": "Hip–knee–ankle–foot and knee–ankle–foot orthoses for femoral fracture management.",
-      "families": []
+      "familyKeys": []
+    },
+    {
+  "slug": "accessories",
+  "label": "Accessories",
+  "description": "Replacement straps, stockinette and liners, pads and heel cups, hardware, and other add-ons compatible with Maramed products.",
+  "familyKeys": ["AFO-S", "EAM"]
+},
+
+    {
+      "slug": "stockinette",
+      "label": "Cotton Stockinette & Liners",
+      "description": "Soft, breathable cotton tubular stockinette for use under orthoses, splints, and fracture braces. Protects skin, wicks moisture, and accommodates edema. Available in common widths and roll lengths.",
+      "familyKeys": ["STOCKINETTE"]
+    },
+    {
+      "slug": "sky-medical",
+      "label": "Sky Medical",
+      "description": "Maramed Orthopedic Systems now supplies Sky Medical fracture orthoses and AFOs. You'll receive the exact designs and outcomes you rely on, backed by Maramed's responsive service: quick answers from knowledgeable staff, streamlined ordering with SKU continuity, and reliable turnaround. From first fit to follow-up, our team is here to help with sizing, product selection, and post-purchase support.",
+      "familyKeys": ["SM-GROUPED"]
     }
   ]
 }
