@@ -2,7 +2,7 @@
   // animations consistent with the rest of the site
   import { fade, fly, scale } from "svelte/transition";
   import { onMount } from "svelte";
-  import { enhance } from "$app/forms";
+  import { enhance, applyAction } from "$app/forms"; // ← add applyAction
 
   export let data;
 
@@ -102,35 +102,42 @@
               </div>
             {/if}
 
-           <form
-  method="POST"
-  action="?/send"   
-  novalidate
-  use:enhance={({ form, data, cancel, submit }) => {
-    sending = true;
-    sent = false;
-    errorMsg = "";
+            <form
+              method="POST"
+              action="?/send"
+              novalidate
+              use:enhance={({ form }) => {
+                sending = true;
+                sent = false;
+                errorMsg = "";
 
-    return async ({ result, update }) => {
-      sending = false;
+                return async ({ result }) => {
+                  sending = false;
 
-      if (result?.type === "success" && result?.data?.ok) {
-        errorMsg = "";
-        sent = true;
-        form.reset();           // optional: clear inputs on success
-        await update();         // update the DOM so the success banner shows
-      } else if (result?.type === "failure") {
-        errorMsg = result?.data?.error || "Please check the required fields and try again.";
-      } else if (result?.type === "error") {
-        errorMsg = result?.error?.message || "Something went wrong submitting the form.";
-      } else {
-        errorMsg = "Something went wrong submitting the form.";
-      }
-    };
-  }}
->
+                  // 👉 Follow server redirect (to /contact/thank-you?ref=…)
+                  await applyAction(result);
 
-
+                  // Fallback UI (if no redirect happened)
+                  if (result?.type === "success" && result?.data?.ok) {
+                    errorMsg = "";
+                    sent = true;
+                    form.reset();
+                    return;
+                  }
+                  if (result?.type === "failure") {
+                    errorMsg = result?.data?.error || "Please check the required fields and try again.";
+                    return;
+                  }
+                  if (result?.type === "error") {
+                    errorMsg = result?.error?.message || "Something went wrong submitting the form.";
+                    return;
+                  }
+                  // generic fallback
+                  // (shouldn't hit if server returns a known result shape)
+                  errorMsg = "Something went wrong submitting the form.";
+                };
+              }}
+            >
               <!-- Honeypot (bots) -->
               <input type="text" name="fax" class="hidden" tabindex="-1" autocomplete="off" />
 
@@ -223,13 +230,13 @@
             <ul class="mt-3 space-y-2 text-emerald-50/90">
               <li in:fly={{ x: 10, y: 8, duration: T(300), delay: D(170) }}>
                 <span class="font-semibold">Email:</span>
-                <a class="underline" href="mailto:sales@example.com">sales@example.com</a>
+                <a class="underline" href="mailto:custsupport@maramed.com">custsupport@maramed.com</a>
               </li>
               <li in:fly={{ x: -10, y: 10, duration: T(300), delay: D(195) }}>
-                <span class="font-semibold">Phone:</span> (305) 823-8300
+                <span class="font-semibold">Phone:</span> (305) 823-8304
               </li>
               <li in:fly={{ x: 8, y: 10, duration: T(300), delay: D(220) }}>
-                <span class="font-semibold">Hours:</span> Mon–Fri · 9am–5pm
+                <span class="font-semibold">Hours:</span> Mon–Fri · 8am–5pm (EST)
               </li>
             </ul>
 

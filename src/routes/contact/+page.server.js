@@ -1,5 +1,6 @@
-// src/routes/contact/+page.server.js
-import { fail } from '@sveltejs/kit';
+import { fail, redirect } from '@sveltejs/kit';
+
+/* ---------- helpers ---------- */
 
 const MAIL_TEST  = String(process.env.MAIL_TEST ?? '0') === '1';
 const MAIL_DEBUG = String(process.env.MAIL_DEBUG ?? process.env.SMTP_LOG ?? '0') === '1';
@@ -22,8 +23,11 @@ const splitAddresses = (s = '') =>
     .map((x) => x.trim())
     .filter(Boolean);
 
+// ←——— NEW: helper to detect redirects ———→
+const isRedirect = (e) =>
+  e && typeof e === 'object' && 'status' in e && 'location' in e;
+
 async function makeTransport(nodemailer) {
-  // Prefer real SMTP unless explicitly forcing test
   if (hasRealSMTP() && !MAIL_TEST) {
     const isSecure =
       String(process.env.SMTP_SECURE ?? 'false') === 'true' ||
@@ -36,29 +40,21 @@ async function makeTransport(nodemailer) {
     const transport = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT ?? (isSecure ? 465 : 587)),
-      secure: isSecure,                      // 465 = implicit TLS; 587/25 = STARTTLS
-      requireTLS: !isSecure && requireTLSEnv, // force STARTTLS on 587/25
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS
-      },
-      tls: {
-        minVersion: 'TLSv1.2',
-        rejectUnauthorized
-      },
-      // Optional niceties
+      secure: isSecure,                        // 465 = implicit TLS; 587/25 = STARTTLS
+      requireTLS: !isSecure && requireTLSEnv,  // force STARTTLS on 587/25
+      auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
+      tls: { minVersion: 'TLSv1.2', rejectUnauthorized },
       greetingTimeout: 20_000,
       socketTimeout: 30_000,
       logger: MAIL_DEBUG,
       debug: MAIL_DEBUG
     });
 
-    // Fail fast with a clear error if auth/TLS is wrong
     await transport.verify();
     return { transport, mode: 'smtp' };
   }
 
-  // Fallback: Ethereal (test inbox; returns preview URL)
+  // Ethereal (test inbox)
   const testAccount = await nodemailer.createTestAccount();
   const transport = nodemailer.createTransport({
     host: testAccount.smtp.host,
@@ -70,6 +66,8 @@ async function makeTransport(nodemailer) {
   });
   return { transport, mode: 'ethereal' };
 }
+
+/* ---------- action handler ---------- */
 
 async function handleSubmit({ request }) {
   const data = await request.formData();
@@ -116,6 +114,8 @@ async function handleSubmit({ request }) {
     </p>
   `;
 
+  const msgRef = `MSG-${Date.now().toString(36).toUpperCase()}`;
+
   try {
     const nm = await import('nodemailer');
     const nodemailer = nm.default ?? nm;
@@ -128,42 +128,37 @@ async function handleSubmit({ request }) {
     const bccList  = splitAddresses(process.env.CONTACT_BCC || '');
 
     const info = await transport.sendMail({
-      // Friendly display name + org mailbox (keeps DMARC happy)
       from: `"Website Form" <${fromAddr}>`,
-      // Set envelope explicitly as well
       envelope: { from: fromAddr, to: [...toList, ...ccList, ...bccList] },
       to:  toList,
       ...(ccList.length  ? { cc:  ccList }  : {}),
       ...(bccList.length ? { bcc: bccList } : {}),
-      subject: subject.startsWith('Website contact') ? subject : `Website contact — ${subject}`,
+      subject: subject.startsWith('Website contact')
+        ? `${subject} (${msgRef})`
+        : `Website contact — ${subject} (${msgRef})`,
       html,
       text: plain,
-      // Replies go to the person who filled the form
       replyTo: `${name} <${email}>`,
       headers: {
         'X-Website-Form': 'maramed.com',
-        'X-Form-Page': '/contact'
+        'X-Form-Page': '/contact',
+        'X-Message-Ref': msgRef
       }
     });
 
-    const previewUrl = mode === 'ethereal' ? nodemailer.getTestMessageUrl(info) : undefined;
-    if (previewUrl) {
-      console.log('📧 Ethereal preview:', previewUrl);
-    } else {
-      console.log('📧 Contact form mail sent:', {
-        mode, messageId: info.messageId, to: toList, cc: ccList, bcc: bccList
-      });
-    }
+    const nmPreview = mode === 'ethereal' ? nodemailer.getTestMessageUrl(info) : undefined;
+    if (nmPreview) console.log('📧 Ethereal preview:', nmPreview);
 
-    return { ok: true, previewUrl, mode };
+    // success → redirect to thank-you page (let it bubble!)
+    throw redirect(303, `/contact/thank-you?ref=${encodeURIComponent(msgRef)}`);
+
   } catch (err) {
-    // Friendlier diagnostics for common cases
+    // ←——— LET REDIRECTS PASS THROUGH ———→
+    if (isRedirect(err)) throw err;
+
     const msg = String(err?.response || err?.message || '');
     if (err?.code === 'EAUTH' || /Encryption required/i.test(msg)) {
-      console.error(
-        'Auth/TLS failed. For Office 365 use port 587 with SMTP_SECURE=false and SMTP_REQUIRE_TLS=true, or port 465 with SMTP_SECURE=true. Ensure “Authenticated SMTP” is enabled for the mailbox.',
-        err
-      );
+      console.error('Auth/TLS failed for SMTP (check port/TLS settings).', err);
       return fail(502, { ok: false, error: 'Email server requires TLS/auth configuration.' });
     }
     if (/ECONNECTION|ETIMEDOUT|ENOTFOUND/.test(err?.code || '')) {
@@ -175,9 +170,7 @@ async function handleSubmit({ request }) {
   }
 }
 
-// Export both a named action and a default alias.
-// This way, your form works whether it posts to /contact or to /contact?/_action=send
+/* ---------- named actions ONLY ---------- */
 export const actions = {
-  send: handleSubmit,
-  default: handleSubmit
+  send: handleSubmit
 };

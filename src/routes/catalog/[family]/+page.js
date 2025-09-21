@@ -167,6 +167,123 @@ function normalizeAdditionalItems(additionalItems = []) {
   });
 }
 
+/* ---------- measurement cards helpers ---------- */
+function slugify(s = "") {
+  return s.toString().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
+
+function findImageByKeyword(gallery = [], keywords = []) {
+  const lower = gallery.map((p) => ({ p, k: (p || "").toLowerCase() }));
+  for (const kw of keywords) {
+    const hit = lower.find(({ k }) => k.includes(kw));
+    if (hit) return hit.p;
+  }
+  return "";
+}
+
+function coerceMeasurementCards(d = {}) {
+  // 1) explicit cards from products.json
+  if (Array.isArray(d.measurementCards) && d.measurementCards.length) {
+    return d.measurementCards.map((m, i) => ({
+      key: m.key || slugify(m.title || `card-${i + 1}`),
+      title: m.title || "",
+      note: m.note || m.description || "",
+      image: m.image || "",
+      href: m.href || `#${m.key || slugify(m.title || `card-${i + 1}`)}`
+    }));
+  }
+
+  // 2) build from sections (like MP “sections” schema)
+  if (Array.isArray(d.sections) && d.sections.length) {
+    return d.sections.map((s, i) => ({
+      key: s.id || slugify(s.title || `section-${i + 1}`),
+      title: s.title || "",
+      note: s.body || (Array.isArray(s.steps) ? s.steps[0] : ""),
+      image: s.image || "",
+      href: `#${s.id || slugify(s.title || `section-${i + 1}`)}`
+    }));
+  }
+
+  // 3) fallback: match notes to gallery images by keyword
+  const notes = Array.isArray(d.notes) ? d.notes : [];
+  const gallery = Array.isArray(d.gallery) ? d.gallery : [];
+  const map = [
+    { test: /m-?\s?p\s*diam/i, key: "mp-diameter",    title: "M-P Diameter",           kws: ["mp", "m-p", "m_p", "diameter"] },
+    { test: /calf/i,           key: "calf-circumf",   title: "Calf Circumference",     kws: ["calf"] },
+    { test: /forearm/i,        key: "forearm",        title: "Forearm",                kws: ["forearm"] },
+    { test: /wrist/i,          key: "wrist",          title: "Wrist",                  kws: ["wrist"] },
+    { test: /bicep/i,          key: "bicep-circumf",  title: "Bicep Circumference",    kws: ["bicep"] }
+  ];
+
+  const cards = [];
+  for (const rule of map) {
+    const note = notes.find((n) => rule.test(n));
+    if (note) {
+      cards.push({
+        key: rule.key,
+        title: rule.title,
+        note,
+        image: findImageByKeyword(gallery, rule.kws),
+        href: `#${rule.key}`
+      });
+    }
+  }
+  return cards;
+}
+
+/* ---------- sections normalization (steps & suggested tools) ---------- */
+function normalizeStringArray(value) {
+  if (!value) return [];
+  if (Array.isArray(value)) return value.map((v) => String(v).trim()).filter(Boolean);
+  const s = String(value).trim();
+  return s ? [s] : [];
+}
+
+function normalizeListsObject(lists) {
+  // Convert { "Group Title": [items] } to an array of { title, items }
+  if (!lists || typeof lists !== "object") return [];
+  const groups = [];
+  for (const [title, arr] of Object.entries(lists)) {
+    // If items look like tools (objects with itemNumber/sku), link them; otherwise keep as strings
+    const hasObjects = Array.isArray(arr) && arr.some((x) => x && typeof x === "object");
+    const items = hasObjects ? normalizeAdditionalItems(arr) : normalizeStringArray(arr);
+    groups.push({ title, items });
+  }
+  return groups;
+}
+
+function normalizeSuggestedTools(tools) {
+  // Accept strings or objects; create linkable items where possible
+  if (!tools) return [];
+  if (!Array.isArray(tools)) tools = [tools];
+  return normalizeAdditionalItems(
+    tools.map((t) => (typeof t === "string" ? { description: t } : t))
+  );
+}
+
+function normalizeSections(sections = []) {
+  if (!Array.isArray(sections)) return [];
+  return sections.map((s, i) => {
+    const id = s?.id || slugify(s?.title || `section-${i + 1}`);
+    return {
+      id,
+      title: s?.title || "",
+      body: s?.body || "",
+      // Canonical fields
+      steps: normalizeStringArray(s?.steps),
+      requiredMaterials: normalizeStringArray(s?.requiredMaterials),
+      procedure: normalizeStringArray(s?.procedure),
+      // Tools (linkable)
+      suggestedTools: normalizeSuggestedTools(s?.suggestedTools),
+      // Structured lists (each group can be strings or linkable items)
+      lists: normalizeListsObject(s?.lists),
+      // Pass through anything else in case the page uses it
+      ...("image" in (s || {}) ? { image: s.image } : {})
+    };
+  });
+}
+
+/* ---------- SvelteKit load ---------- */
 export function load({ params }) {
   const keyRaw = params.family;
   const hit = findFamilyInCatalog(keyRaw);
@@ -207,8 +324,14 @@ export function load({ params }) {
     }
   }
 
-  // ⬇️ mpNote now normalized as ARRAY
+  // mpNote as ARRAY
   const mpNotes = normalizeMpNoteArray(d.mpNote);
+
+  // Sections (with steps, requiredMaterials, procedure, suggestedTools, lists)
+  const sections = normalizeSections(d.sections);
+
+  // NEW: measurement cards (explicit → sections → notes/gallery)
+  const measurementCards = coerceMeasurementCards({ ...d, sections });
 
   return {
     family: f.key,
@@ -220,10 +343,13 @@ export function load({ params }) {
       indications: d.indications ?? [],
       lcode: d.lcode ?? "",
       notes: normalizeNotes(d.notes),
-      mpNote: mpNotes, // array for the Svelte page to render as a list
+      mpNote: mpNotes,
       additionalItems: normalizeAdditionalItems(d.additionalItems),
       sizes,
-      sizeGroups
+      sizeGroups,
+      measurementCards,
+      // expose normalized sections to the page
+      sections
     }
   };
 }

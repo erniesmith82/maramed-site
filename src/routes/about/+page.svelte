@@ -59,7 +59,6 @@
   <!-- Background image -->
   <div
     class="absolute inset-0 -z-10 bg-cover bg-center"
-    style="background-image:url('/images/about-bg.jpg')"
     aria-hidden="true"
   ></div>
 

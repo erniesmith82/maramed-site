@@ -1,3 +1,4 @@
+<!-- src/routes/catalog/[family]/+page.svelte -->
 <script>
   import { page } from "$app/stores";
   import { goto } from "$app/navigation";
@@ -19,6 +20,10 @@
   $: sizes           = details.sizes || [];
   $: sizeGroups      = details.sizeGroups || null; // can include { title, image, rows, notes? }
 
+  // NEW: sections from loader (normalized) + measurement cards (can be empty)
+  $: sections        = details.sections || [];
+  $: measurementCards = details?.measurementCards || [];
+
   // 🔁 mpNote: always coerce to an array for consistent rendering
   $: mpNotes = Array.isArray(details?.mpNote)
     ? details.mpNote.filter(Boolean)
@@ -28,7 +33,46 @@
 
   // Helpers
   const imgSrc = (p) => (!p ? "" : (p.startsWith("/") ? p : `/images/${p}`));
+  const isObj = (v) => v && typeof v === "object" && !Array.isArray(v);
   $: currentKey = $page.params?.family;
+
+  // Try to find a gallery image if a section didn't provide one explicitly
+  function sectionImage(sec) {
+    if (sec?.image) return sec.image;
+    const gallery = Array.isArray(details?.gallery) ? details.gallery : [];
+    if (!gallery.length) return "";
+
+    const id = (sec?.id || "").toLowerCase();
+    const title = (sec?.title || "").toLowerCase();
+
+    // quick keyword map for MI style sections
+    const synonyms = [
+      { re: /mp|m-?p|metacarpo/i, kw: "mp" },
+      { re: /calf/i, kw: "calf" },
+      { re: /forearm/i, kw: "forearm" },
+      { re: /wrist/i, kw: "wrist" },
+      { re: /bicep/i, kw: "bicep" }
+    ];
+
+    // 1) exact id match within path
+    let hit = gallery.find((p) => p.toLowerCase().includes(id));
+    if (hit) return hit;
+
+    // 2) first word of title
+    const first = title.split(/\s+/)[0] || "";
+    hit = gallery.find((p) => first && p.toLowerCase().includes(first));
+    if (hit) return hit;
+
+    // 3) synonyms
+    for (const { re, kw } of synonyms) {
+      if (re.test(id) || re.test(title)) {
+        hit = gallery.find((p) => p.toLowerCase().includes(kw));
+        if (hit) return hit;
+      }
+    }
+
+    return "";
+  }
 
   /* ================= Dynamic Sizes Table ================= */
   const COLUMN_LABELS = {
@@ -37,7 +81,7 @@
     size: "Size",
     side: "Side",
 
-    // Sky Medical measurements
+    // measurement fields
     bicepCircumference: "Bicep Circum.",
     forearmCircumference: "Forearm Circum.",
     wristCircumference: "Wrist Circum.",
@@ -47,12 +91,11 @@
     posteriorLength: "Posterior Length",
     mensShoeSize: "Men’s Shoe Size",
     womensShoeSize: "Women’s Shoe Size",
-
-    // Existing fields
     mpDiameter: "M-P Diameter*",
     fingerExtension: "Finger Extension",
     circumference: "Circumference",
-    // NEW: split lengths
+
+    // split + generic dims
     insideLength: "Inside Length",
     outsideLength: "Outside Length",
     length: "Length",
@@ -65,7 +108,6 @@
     description: "Description"
   };
 
-  // Order: put inside/outside length before generic length
   const COLUMN_ORDER = [
     "itemNumber","sku","size","side",
     "circumference",
@@ -109,8 +151,6 @@
     mpNotes.length > 0;
 
   /* ================= Additional Items → family links ================= */
-
-  // Normalize Additional Item fields
   function itemNum(item) {
     if (typeof item === "string") return item.split(/—|-|:/)[0]?.trim();
     return (
@@ -126,12 +166,10 @@
     return item?.Description ?? item?.description ?? item?.desc ?? item?.label ?? "";
   }
 
-  // ✅ Families now live at the top level (catalog.families), not series[].families
   const ALL_FAMILY_KEYS = new Set(
     Object.keys(catalog.families ?? {}).map((k) => k.toUpperCase())
   );
 
-  // Optional aliases for odd item numbers -> family keys
   const FAMILY_ALIAS = {
     "STOCKINETTE-WH": "STOCKINETTE",
     "STOCKINETTE": "STOCKINETTE"
@@ -145,7 +183,6 @@
     return aliased && ALL_FAMILY_KEYS.has(aliased) ? aliased : null;
   }
 
-  // ⚡ Build a quick SKU → family index from the top-level families map
   const SKU_INDEX = (() => {
     const idx = new Map();
     const fams = catalog.families ?? {};
@@ -164,10 +201,9 @@
     return SKU_INDEX.get(sku) ?? null;
   }
 
-  // Keyword fallbacks when an additional item has no SKU that we can index
   const KEYWORD_FAMILY_MAP = [
     { re: /stockinette-wh/i, key: "STOCKINETTE" },
-    { re: /wrist hand thumb extended/i, key: "WHT" }, // map to WHT (no separate WHTE family)
+    { re: /wrist hand thumb extended/i, key: "WHT" },
     { re: /wrist hand thumb finger/i,   key: "WHT"  },
     { re: /wrist hand thumb/i,          key: "WHT"  },
     { re: /wrist hand extended/i,       key: "WH"   },
@@ -190,10 +226,7 @@
   }
 
   function linkForAdditional(item) {
-    // if loader provided a direct href, use it
     if (item?.href) return item.href;
-
-    // otherwise fall back to page-side inference (unchanged)
     const sku = itemNum(item);
     const viaSku = findFamilyKeyBySku(sku);
     let famKey = canonicalFamilyKey(viaSku);
@@ -219,21 +252,17 @@
     typeof matchMedia !== "undefined" &&
     matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Same global knobs as landing page (bigger = slower)
   const DUR_MULT = 1;
   const DELAY_MULT = 0.5;
   const T = (ms) => (isReduced ? 0 : Math.round(ms * DUR_MULT));
   const D = (ms) => (isReduced ? 0 : Math.round(ms * DELAY_MULT));
 
-  // Scatter helpers (alternate directions/offsets)
   const sx = (i) => [ -18, 14, -10, 12, -8 ][i % 5];
   const sy = (i) => [ 12, 8, 14, 10, 11 ][i % 5];
 </script>
 
-
 <section class="w-full">
   {#if mounted}
-    <!-- page enter -->
     <div in:fade={{ duration: T(420) }}>
       <div in:scale={{ duration: T(520), start: 0.985 }}>
         <div class="max-w-6xl mx-auto px-4 py-8">
@@ -308,10 +337,134 @@
           </div>
         </div>
 
-        <!-- Sizes + Additional Items -->
-        <div class="max-w-6xl mx-auto px-4 pb-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <!-- ===== Sections (now with images) ===== -->
+        {#if sections.length}
+          <div class="max-w-6xl mx-auto px-4 pb-4">
+            <div class="mt-6 rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm"
+                 in:scale={{ duration: T(420), delay: D(110), start: 0.99 }}>
+              <div class="space-y-8">
+                {#each sections as sec, si}
+                  <section id={sec.id} class="scroll-mt-24"
+                           in:fly={{ x: sx(si), y: sy(si), duration: T(360), delay: D(140 + si*60) }}>
 
-          <!-- Sizes -->
+                    <!-- Title -->
+                    {#if sec.title}
+                      <h3 class="text-2xl font-bold text-slate-900">{sec.title}</h3>
+                    {/if}
+
+                    <!-- Content + Optional Image -->
+                    <div class="mt-3 grid grid-cols-1 md:grid-cols-12 gap-5 items-start">
+                      {#if sectionImage(sec)}
+                        <div class="md:col-span-5 order-first">
+                          <img
+                            src={imgSrc(sectionImage(sec))}
+                            alt={(sec.title ? `${sec.title} illustration` : "Illustration")}
+                            class="w-full h-48 md:h-56 object-contain rounded-lg bg-slate-50 ring-1 ring-slate-200"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        </div>
+                      {/if}
+
+                      <div class={sectionImage(sec) ? "md:col-span-7" : "md:col-span-12"}>
+                        {#if sec.body}
+                          <p class="text-slate-700">{sec.body}</p>
+                        {/if}
+
+                        {#if sec.requiredMaterials?.length}
+                          <h4 class="mt-4 font-semibold text-slate-900">Required Materials</h4>
+                          <ul class="mt-2 list-disc pl-6 space-y-1 text-slate-800">
+                            {#each sec.requiredMaterials as m}
+                              <li>{m}</li>
+                            {/each}
+                          </ul>
+                        {/if}
+
+                        {#if sec.steps?.length}
+                          <h4 class="mt-4 font-semibold text-slate-900">Steps</h4>
+                          <ol class="mt-2 list-decimal pl-6 space-y-1 text-slate-800">
+                            {#each sec.steps as step}
+                              <li>{step}</li>
+                            {/each}
+                          </ol>
+                        {/if}
+
+                        {#if sec.procedure?.length}
+                          <h4 class="mt-4 font-semibold text-slate-900">Procedure</h4>
+                          <ol class="mt-2 list-decimal pl-6 space-y-1 text-slate-800">
+                            {#each sec.procedure as p}
+                              <li>{p}</li>
+                            {/each}
+                          </ol>
+                        {/if}
+
+                        {#if sec.suggestedTools?.length}
+                          <h4 class="mt-4 font-semibold text-slate-900">Suggested Tools</h4>
+                          <ul class="mt-2 list-disc pl-6 space-y-1 text-slate-800">
+                            {#each sec.suggestedTools as t}
+                              <li>
+                                {#if t.href}
+                                  <a href={t.href} class="text-emerald-700 hover:underline"
+                                     on:click|preventDefault={() => nav(t.href)}>
+                                    {(t.itemNumber || t.sku || t.description) || "Tool"}
+                                  </a>
+                                  {#if t.description}
+                                    <span class="text-slate-700"> — {t.description}</span>
+                                  {/if}
+                                {:else}
+                                  {(t.itemNumber || t.sku || t.description) || "Tool"}
+                                  {#if t.description}
+                                    <span class="text-slate-700"> — {t.description}</span>
+                                  {/if}
+                                {/if}
+                              </li>
+                            {/each}
+                          </ul>
+                        {/if}
+
+                        {#if sec.lists?.length}
+                          <div class="mt-4 space-y-4">
+                            {#each sec.lists as group}
+                              <div>
+                                {#if group.title}
+                                  <h4 class="font-semibold text-slate-900">{group.title}</h4>
+                                {/if}
+                                <ul class="mt-2 list-disc pl-6 space-y-1 text-slate-800">
+                                  {#each group.items as it}
+                                    <li>
+                                      {#if isObj(it)}
+                                        {#if it.href}
+                                          <a href={it.href} class="text-emerald-700 hover:underline"
+                                             on:click|preventDefault={() => nav(it.href)}>
+                                            {itemNum(it) || "—"}
+                                          </a>
+                                          {#if itemDesc(it)}
+                                            <span class="text-slate-700"> — {itemDesc(it)}</span>
+                                          {/if}
+                                        {:else}
+                                          {itemNum(it) || itemDesc(it) || "—"}
+                                        {/if}
+                                      {:else}
+                                        {it}
+                                      {/if}
+                                    </li>
+                                  {/each}
+                                </ul>
+                              </div>
+                            {/each}
+                          </div>
+                        {/if}
+                      </div>
+                    </div>
+                  </section>
+                {/each}
+              </div>
+            </div>
+          </div>
+        {/if}
+
+        <!-- Sizes + Additional Items (unchanged) -->
+        <div class="max-w-6xl mx-auto px-4 pb-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           {#if (sizeGroups && sizeGroups.length) || sizes.length}
             <aside class="col-span-1 lg:col-span-12 lg:col-start-1 mx-auto w-full"
                    in:fade={{ duration: T(500), delay: D(80) }}>
@@ -321,33 +474,19 @@
                   Sizes
                 </h2>
 
-                <!-- Grouped sizes -->
                 {#if sizeGroups && sizeGroups.length}
                   {#each sizeGroups as group, gi}
                     {#if group.rows && group.rows.length}
                       <div class={gi > 0 ? "mt-10" : ""} in:fly={{ x: sx(gi), y: sy(gi), duration: T(420), delay: D(120 + gi*140) }}>
-                        <!-- Header -->
                         <div class="mb-3 flex items-center justify-between gap-3">
                           <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 text-left">
                             {group.title}
                           </h3>
-
-                          {#if group.image}
-                            <img
-                              src={imgSrc(group.image)}
-                              alt=""
-                              class="h-12 sm:h-14 lg:h-16 w-auto object-contain ml-2 shrink-0"
-                              loading="lazy"
-                              decoding="async"
-                              in:fade={{ duration: T(240) }}
-                            />
-                          {/if}
                         </div>
 
                         {#key group.title}
                           {#await Promise.resolve(getOrderedColumns(group.rows)) then cols}
                             {#if cols.length}
-                              <!-- container with full grid lines -->
                               <div class="-mx-4 sm:mx-0">
                                 <div class="overflow-x-auto">
                                   <div class="min-w-[680px] sm:min-w-0 overflow-hidden rounded-xl border border-slate-200">
@@ -366,7 +505,6 @@
                                       </thead>
                                       <tbody class="align-top">
                                         {#each group.rows as row, ri}
-                                          <!-- NEW: use itemNumber OR sku for the anchor id -->
                                           <tr id={(row.itemNumber || row.sku) ? String(row.itemNumber || row.sku) : undefined}
                                               class="border-b border-slate-200 hover:bg-slate-50 transition">
                                             {#each cols as col}
@@ -402,7 +540,6 @@
                     {/if}
                   {/each}
                 {:else}
-                  <!-- Single table (no groups) -->
                   {#if orderedColumns.length}
                     <div class="mt-4 -mx-4 sm:mx-0">
                       <div class="overflow-x-auto">
@@ -423,7 +560,6 @@
                             </thead>
                             <tbody class="align-top">
                               {#each sizes as row, i}
-                                <!-- NEW: use itemNumber OR sku for the anchor id -->
                                 <tr id={(row.itemNumber || row.sku) ? String(row.itemNumber || row.sku) : undefined}
                                     class="border-b border-slate-200 hover:bg-slate-50 transition"
                                     in:fly={{ x: sx(i), y: sy(i), duration: T(320), delay: D(80 + i*22) }}>
@@ -460,7 +596,7 @@
                   </ul>
                 {/if}
 
-                {#if details.notes && details.notes.length}
+                {#if details.notes && details.notes.length && !measurementCards.length}
                   <div class="mt-3 space-y-1 text-[13px] text-slate-500">
                     {#each details.notes as note, ni}
                       <p in:fly={{ x: sx(ni), y: sy(ni), duration: T(300), delay: D(80 + ni*30) }}>{note}</p>
@@ -529,6 +665,12 @@
     outline-offset: 2px;
     background: rgb(16 185 129 / 0.06);
     scroll-margin-top: 80px;
+  }
+  /* highlight a measurement card or section when linked via #anchor */
+  article[id]:target, section[id]:target {
+    outline: 2px solid rgb(16 185 129 / 0.6);
+    outline-offset: 2px;
+    background: rgb(16 185 129 / 0.06);
   }
   .no-hyphens { hyphens: none; }
 </style>

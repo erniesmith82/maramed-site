@@ -1,5 +1,5 @@
 <script>
-  import { enhance } from "$app/forms";
+  import { enhance, applyAction } from "$app/forms";   // applyAction auto-follows redirects
   import { fade, fly, scale } from "svelte/transition";
   import { onMount } from "svelte";
   import catalog from "$lib/data/products.json"; // pulls SKUs for the datalist
@@ -119,7 +119,7 @@
 
   // form state
   let sending = false;
-  let sent = false;
+  let sent = false;       // kept for completeness (not used after redirect)
   let errorMsg = "";
 
   $: orderItemsSerialized = serializeOrderRows(orderRows);
@@ -198,11 +198,6 @@
       <div in:fade={{ duration: T(360), delay: D(60) }}>
         <div class="rounded-2xl border border-slate-200 bg-white shadow-sm w-full min-w-0" in:scale={{ duration: T(360), delay: D(60), start: 0.99 }}>
           <div class="p-6 sm:p-8">
-            {#if sent}
-              <div class="mb-6 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-emerald-800" in:fade={{ duration: T(220) }} aria-live="polite">
-                Thanks! Your order request was sent. We’ll email you a confirmation shortly.
-              </div>
-            {/if}
 
             {#if errorMsg}
               <div class="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-red-800" in:fade={{ duration: T(200) }} aria-live="polite">
@@ -218,27 +213,30 @@
               action="?/send"
               novalidate
               class="mt-5"
-              use:enhance={({ form }) => {
+              use:enhance={(event) => {
+                const { form } = event;
+
+                // UI state
                 sending = true;
                 sent = false;
                 errorMsg = "";
-                const hidden = form.querySelector('textarea[name="orderItems"]');
+
+                // serialize dynamic rows into the hidden textarea before submit
+                const hidden = form?.querySelector('textarea[name="orderItems"]');
                 if (hidden) hidden.value = orderItemsSerialized;
 
-                return async ({ result, update }) => {
+                // Return a handler for the result of the action
+                return async ({ result }) => {
                   sending = false;
-                  if (result?.type === "success" && result?.data?.ok) {
-                    errorMsg = "";
-                    sent = true;
-                    form.reset();
-                    orderRows = [{ sku: "", description: "", qty: 1 }];
-                    await update();
-                  } else if (result?.type === "failure") {
+
+                  // SvelteKit applies the action (follows 303 redirects, updates form state)
+                  await applyAction(result);
+
+                  // Optional: surface errors if it wasn't a redirect
+                  if (result?.type === "failure") {
                     errorMsg = result?.data?.error || "Please check the required fields and try again.";
                   } else if (result?.type === "error") {
                     errorMsg = result?.error?.message || "Something went wrong submitting the form.";
-                  } else {
-                    errorMsg = "Something went wrong submitting the form.";
                   }
                 };
               }}

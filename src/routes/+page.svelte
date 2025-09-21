@@ -52,7 +52,7 @@ const D = (ms) => (isReduced ? 0 : Math.round(ms * DELAY_MULT));
             class="text-5xl sm:text-6xl font-extrabold tracking-tight text-white mb-4 text-center"
             in:fly={{ y: 12, duration: T(450), delay: D(40) }}
           >
-            Orthopedic <span class="text-slate-600">&amp; prosthetic</span> systems built for reliability.
+            Prefabricated Orthoses <span class="text-slate-600">&amp; Fracture Braces</span> systems built for reliability.
           </h1>
 
           <p
