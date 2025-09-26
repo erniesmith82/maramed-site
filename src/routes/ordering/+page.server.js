@@ -17,9 +17,15 @@ import {
   SMTP_TLS_REJECT_UNAUTHORIZED
 } from "$env/static/private";
 
+/** Small helpers */
+const getStr = (fd, k, d = "") => (fd.get(k) ?? d).toString();
+const isEmpty = (v) => String(v ?? "").trim() === "";
+const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(v || "").trim());
+const sanitizeOneLine = (s) => String(s || "").replace(/[\r\n]+/g, " ").trim();
+
 /** Build a human-readable order email from the form fields */
 function buildOrderEmailText(fd, orderRef) {
-  const pick = (k) => (fd.get(k) || "").toString();
+  const pick = (k, d = "") => getStr(fd, k, d);
 
   const lines = [
     "New website order request",
@@ -61,7 +67,7 @@ function buildOrderEmailText(fd, orderRef) {
 
 /** Build a short confirmation email for the customer */
 function buildCustomerConfirmationText(fd, orderRef) {
-  const contact = (fd.get("contactName") || "there").toString();
+  const contact = sanitizeOneLine(getStr(fd, "contactName") || "there");
 
   return [
     `Hi ${contact},`,
@@ -129,17 +135,35 @@ export const actions = {
       return fail(400, { ok: false, error: "Bad request" });
     }
 
-    // Basic validation for required fields
-    const contactName = (form.get("contactName") || "").toString().trim();
-    const email = (form.get("email") || "").toString().trim();
-    const shipAddress1 = (form.get("shipAddress1") || "").toString().trim();
-    const shipCity = (form.get("shipCity") || "").toString().trim();
-    const shipState = (form.get("shipState") || "").toString().trim();
-    const shipZip = (form.get("shipZip") || "").toString().trim();
-    const orderItems = (form.get("orderItems") || "").toString().trim();
+    // ===== Server-side validation (must mirror client but be authoritative) =====
+    const contactName   = getStr(form, "contactName").trim();
+    const email         = getStr(form, "email").trim();
+    const shipAddress1  = getStr(form, "shipAddress1").trim();
+    const shipCity      = getStr(form, "shipCity").trim();
+    const shipState     = getStr(form, "shipState").trim();
+    const shipZip       = getStr(form, "shipZip").trim();
+    const shipMethod    = getStr(form, "shipMethod").trim();
+    const orderItems    = getStr(form, "orderItems").trim();
+    const agree         = form.get("agree"); // checkbox present only if checked? (Svelte: sends "on")
 
-    if (!contactName || !email || !shipAddress1 || !shipCity || !shipState || !shipZip || !orderItems) {
-      return fail(400, { ok: false, error: "Please fill all required fields." });
+    const missing = [];
+    if (isEmpty(contactName))  missing.push("contactName");
+    if (!isEmail(email))       missing.push("email");
+    if (isEmpty(shipAddress1)) missing.push("shipAddress1");
+    if (isEmpty(shipCity))     missing.push("shipCity");
+    if (isEmpty(shipState))    missing.push("shipState");
+    if (isEmpty(shipZip))      missing.push("shipZip");
+    if (isEmpty(shipMethod))   missing.push("shipMethod");
+    if (isEmpty(orderItems))   missing.push("orderItems");
+    // Terms of Sale must be checked
+    if (!agree)                missing.push("agree");
+
+    if (missing.length) {
+      return fail(400, {
+        ok: false,
+        error: "Please fill all required fields.",
+        invalid: missing   // (optional) useful if you later want to map field errors
+      });
     }
 
     // Generate a short reference to correlate logs/emails/UI
@@ -154,7 +178,8 @@ export const actions = {
       const envelopeFrom = SMTP_FROM || SMTP_USER;
       const supportTo = CONTACT_TO || envelopeFrom;
 
-      const subject = `Website order ${orderRef}: ${(form.get("company") || contactName).toString()}`;
+      const companySafe = sanitizeOneLine(getStr(form, "company") || contactName);
+      const subject = `Website order ${orderRef}: ${companySafe}`;
       const text = buildOrderEmailText(form, orderRef);
 
       // 1) Send to Customer Support
@@ -218,7 +243,7 @@ export const actions = {
       });
     }
 
-    // ✅ Success: redirect OUTSIDE the try/catch so it doesn't get swallowed
+    // ✅ Success
     throw redirect(303, `/ordering/thank-you?ref=${encodeURIComponent(orderRef)}`);
   }
 };

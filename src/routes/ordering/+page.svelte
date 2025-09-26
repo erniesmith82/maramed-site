@@ -1,7 +1,7 @@
 <script>
   import { enhance, applyAction } from "$app/forms";   // applyAction auto-follows redirects
   import { fade, fly, scale } from "svelte/transition";
-  import { onMount } from "svelte";
+  import { onMount, tick } from "svelte";
   import catalog from "$lib/data/products.json"; // pulls SKUs for the datalist
 
   export let data;
@@ -49,7 +49,7 @@
             familyKey: famVal?.key || famKey,
             familyTitle,
             size: it?.size || "",
-            side: it?.side || "",
+            side: it?.side || ""
           });
         }
       }
@@ -64,7 +64,7 @@
             familyKey: fam?.key || fam?.slug || familyTitle,
             familyTitle,
             size: it?.size || "",
-            side: it?.side || "",
+            side: it?.side || ""
           });
         }
       }
@@ -79,7 +79,7 @@
     label:
       `${v.sku} — ${v.familyTitle}` +
       (v.size ? ` · ${v.size}` : "") +
-      (v.side ? ` · ${v.side}` : ""),
+      (v.side ? ` · ${v.side}` : "")
   }));
 
   function describeSku(sku) {
@@ -200,7 +200,14 @@
           <div class="p-6 sm:p-8">
 
             {#if errorMsg}
-              <div class="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-red-800" in:fade={{ duration: T(200) }} aria-live="polite">
+              <div
+                id="formAlert"
+                class="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-red-800"
+                role="alert"
+                aria-live="polite"
+                tabindex="-1"
+                in:fade={{ duration: T(200) }}
+              >
                 {errorMsg}
               </div>
             {/if}
@@ -235,8 +242,16 @@
                   // Optional: surface errors if it wasn't a redirect
                   if (result?.type === "failure") {
                     errorMsg = result?.data?.error || "Please check the required fields and try again.";
+                    await tick();
+                    const alert = document.getElementById("formAlert");
+                    alert?.scrollIntoView({ behavior: "smooth", block: "start" });
+                    alert?.focus?.();
                   } else if (result?.type === "error") {
                     errorMsg = result?.error?.message || "Something went wrong submitting the form.";
+                    await tick();
+                    const alert = document.getElementById("formAlert");
+                    alert?.scrollIntoView({ behavior: "smooth", block: "start" });
+                    alert?.focus?.();
                   }
                 };
               }}
@@ -253,7 +268,9 @@
                   { name: 'phone',      label: 'Phone',              type: 'tel',   req: false }
                 ] as f, i}
                   <div class="min-w-0" in:fly={{ x: sx(i), y: sy(i), duration: T(300), delay: D(80 + i*30) }}>
-                    <label for={f.name} class="block text-sm font-medium text-slate-700">{f.label}</label>
+                    <label for={f.name} class="block text-sm font-medium text-slate-700">
+                      {f.label}{#if f.req}<span class="req-star" aria-hidden="true"></span>{/if}
+                    </label>
                     <input
                       id={f.name} name={f.name} type={f.type}
                       class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm
@@ -271,14 +288,42 @@
                   <input id="poNumber" name="poNumber" type="text" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm focus:border-emerald-500 focus:ring-emerald-500"/>
                 </div>
                 <div in:fly={{ x: sx(5), y: sy(5), duration: T(300), delay: D(200) }}>
-                  <label for="shipMethod" class="block text-sm font-medium text-slate-700">Requested ship method</label>
-                  <select id="shipMethod" name="shipMethod" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm focus:border-emerald-500 focus:ring-emerald-500">
-                    <option>UPS Ground (default)</option>
-                    <option>UPS 2nd Day Air</option>
-                    <option>UPS Next Day Air</option>
-                    <option>Customer Freight Account (enter in notes)</option>
-                    <option>Other (enter in notes)</option>
-                  </select>
+                  <label for="shipMethod" class="block text-sm font-medium text-slate-700">
+  Requested ship method <span class="req-star" aria-hidden="true"></span>
+</label>
+<select
+  id="shipMethod"
+  name="shipMethod"
+  required
+  class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm focus:border-emerald-500 focus:ring-emerald-500"
+>
+  <optgroup label="UPS">
+    <option>UPS Ground (default)</option>
+    <option>UPS 2nd Day Air</option>
+    <option>UPS Next Day Air</option>
+  </optgroup>
+
+  <!-- visual separator (valid child of <select>) -->
+  <option value="" disabled aria-hidden="true" class="select-sep">────────────</option>
+
+  <optgroup label="FedEx">
+    <option>FedEx Ground</option>
+    <option>FedEx Express Saver (3 Day)</option>
+    <option>FedEx 2Day</option>
+    <option>FedEx Standard Overnight</option>
+    <option>FedEx Priority Overnight</option>
+    <option>FedEx First Overnight</option>
+  </optgroup>
+
+  <!-- visual separator -->
+  <option value="" disabled aria-hidden="true" class="select-sep">────────────</option>
+
+  <optgroup label="Other / Account">
+    <option>Customer Freight Account (enter in notes)</option>
+    <option>Other (enter in notes)</option>
+  </optgroup>
+</select>
+
                 </div>
               </div>
 
@@ -287,7 +332,9 @@
                 <h3 class="text-lg font-semibold text-slate-900">Shipping address</h3>
                 <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div class="sm:col-span-2">
-                    <label for="shipAddress1" class="block text-sm font-medium text-slate-700">Address line 1</label>
+                    <label for="shipAddress1" class="block text-sm font-medium text-slate-700">
+                      Address line 1 <span class="req-star" aria-hidden="true"></span>
+                    </label>
                     <input id="shipAddress1" name="shipAddress1" required class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm focus:border-emerald-500 focus:ring-emerald-500"/>
                   </div>
                   <div class="sm:col-span-2">
@@ -295,15 +342,21 @@
                     <input id="shipAddress2" name="shipAddress2" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm focus:border-emerald-500 focus:ring-emerald-500"/>
                   </div>
                   <div>
-                    <label for="shipCity" class="block text-sm font-medium text-slate-700">City</label>
+                    <label for="shipCity" class="block text-sm font-medium text-slate-700">
+                      City <span class="req-star" aria-hidden="true"></span>
+                    </label>
                     <input id="shipCity" name="shipCity" required class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm focus:border-emerald-500 focus:ring-emerald-500"/>
                   </div>
                   <div>
-                    <label for="shipState" class="block text-sm font-medium text-slate-700">State / Province</label>
+                    <label for="shipState" class="block text-sm font-medium text-slate-700">
+                      State / Province <span class="req-star" aria-hidden="true"></span>
+                    </label>
                     <input id="shipState" name="shipState" required class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm focus:border-emerald-500 focus:ring-emerald-500"/>
                   </div>
                   <div>
-                    <label for="shipZip" class="block text-sm font-medium text-slate-700">ZIP / Postal code</label>
+                    <label for="shipZip" class="block text-sm font-medium text-slate-700">
+                      ZIP / Postal code <span class="req-star" aria-hidden="true"></span>
+                    </label>
                     <input id="shipZip" name="shipZip" required class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm focus:border-emerald-500 focus:ring-emerald-500"/>
                   </div>
                   <div>
@@ -315,15 +368,18 @@
 
               <!-- Order list (table) -->
               <div class="mt-6 min-w-0" in:fly={{ x: -10, y: 12, duration: T(320), delay: D(260) }}>
-                <label class="block text-sm font-medium text-slate-700">Order list</label>
+                <h3 id="orderListHeading" class="block text-sm font-medium text-slate-700">Order list</h3>
 
                 <div class="mt-2 overflow-x-auto">
-                  <table class="w-full text-sm border border-slate-200 rounded-lg overflow-hidden">
+                  <table
+                    class="w-full text-sm border border-slate-200 rounded-lg overflow-hidden"
+                    aria-labelledby="orderListHeading"
+                  >
                     <thead class="bg-slate-50">
                       <tr class="text-left text-slate-600 border-b border-slate-200">
-                        <th class="py-2 px-3 w-[40%]">Item Number (SKU)</th>
+                        <th class="py-2 px-3 w-[40%]">Item Number (SKU) <span class="req-star" aria-hidden="true"></span></th>
                         <th class="py-2 px-3 w-[45%]">Description</th>
-                        <th class="py-2 px-3 w-[15%] text-right">Qty</th>
+                        <th class="py-2 px-3 w-[15%] text-right">Qty <span class="req-star" aria-hidden="true"></span></th>
                         <th class="py-2 px-3 w-[0]"></th>
                       </tr>
                     </thead>
@@ -332,6 +388,7 @@
                         <tr class="border-b border-slate-100">
                           <td class="py-2 px-3 align-top">
                             <input
+                              id={"sku_"+i}
                               list="skuOptions"
                               class="w-full rounded-md border border-slate-300 px-2 py-1 shadow-sm
                                      focus:border-emerald-500 focus:ring-emerald-500"
@@ -352,6 +409,7 @@
                           </td>
                           <td class="py-2 px-3 align-top text-right">
                             <input
+                              id={"qty_"+i}
                               type="number" min="1" step="1" inputmode="numeric"
                               class="w-24 rounded-md border border-slate-300 px-2 py-1 text-right shadow-sm
                                      focus:border-emerald-500 focus:ring-emerald-500"
@@ -405,7 +463,7 @@
                 <input id="agree" name="agree" type="checkbox" required
                        class="h-4 w-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500"/>
                 <label for="agree" class="text-slate-700">
-                  I agree to Maramed’s Terms of Sale.
+                  <span class="req-star" aria-hidden="true"></span> I agree to Maramed’s Terms of Sale.
                 </label>
               </div>
 
@@ -431,4 +489,24 @@
 
 <style>
   .min-w-0 { min-width: 0; }
+
+  /* Red asterisk after required labels */
+  .req-star::after {
+    content: " *";
+    color: #dc2626; /* red-600 */
+    font-weight: 600;
+  }
+
+  /* So the alert isn't hidden under any sticky header */
+  #formAlert { scroll-margin-top: 80px; }
+
+
+  :global(:where(input, select, textarea)[data-invalid="true"]) {
+    border-color: #dc2626 !important;
+    box-shadow: 0 0 0 1px #dc2626;
+  }
+  :global(label[data-invalid-label="true"]) {
+    color: #dc2626 !important;
+  }
+  
 </style>

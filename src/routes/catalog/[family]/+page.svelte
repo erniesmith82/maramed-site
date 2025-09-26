@@ -77,11 +77,8 @@
   /* ================= Dynamic Sizes Table ================= */
   const COLUMN_LABELS = {
     itemNumber: "Item Number",
-    sku: "SKU",
     size: "Size",
     side: "Side",
-
-    // measurement fields
     bicepCircumference: "Bicep Circum.",
     forearmCircumference: "Forearm Circum.",
     wristCircumference: "Wrist Circum.",
@@ -94,22 +91,18 @@
     mpDiameter: "M-P Diameter*",
     fingerExtension: "Finger Extension",
     circumference: "Circumference",
-
-    // split + generic dims
     insideLength: "Inside Length",
     outsideLength: "Outside Length",
     length: "Length",
     width: "Width",
     height: "Height",
     insideDiameter: "Inside Diameter",
-
-    // descriptions
     Description: "Description",
     description: "Description"
   };
 
   const COLUMN_ORDER = [
-    "itemNumber","sku","size","side",
+    "itemNumber","size","side",
     "circumference",
     "medialLength","lateralLength","anteriorLength","posteriorLength",
     "bicepCircumference","wristCircumference","forearmCircumference",
