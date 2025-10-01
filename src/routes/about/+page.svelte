@@ -1,9 +1,9 @@
 <script>
-  // animations (same pattern used elsewhere)
+
   import { fade, fly, scale } from "svelte/transition";
   import { onMount } from "svelte";
 
-  // small helper data you already had
+ 
   const stats = [
     { label: "Founded", value: "1972" },
     { label: "Clinically tested cases", value: "5,000+" },
@@ -14,14 +14,13 @@
   let mounted = false;
   onMount(() => requestAnimationFrame(() => (mounted = true)));
 
-  // reduced-motion + global timing controls
   const isReduced =
     typeof matchMedia !== "undefined" &&
     matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // tune these two for overall speed / spacing
-  const DUR_MULT = 3;   // smaller = faster; try 0.4 for snappier
-  const DELAY_MULT = 0.6; // smaller = tighter staggering
+  
+  const DUR_MULT = 3;  
+  const DELAY_MULT = 0.6; 
 
   const T = (ms) => (isReduced ? 0 : Math.round(ms * DUR_MULT));
   const D = (ms) => (isReduced ? 0 : Math.round(ms * DELAY_MULT));
@@ -56,12 +55,6 @@
 
 <!-- HERO -->
 <section class="relative isolate">
-  <!-- Background image -->
-  <div
-    class="absolute inset-0 -z-10 bg-cover bg-center"
-    aria-hidden="true"
-  ></div>
-
   <!-- Overlay gradient -->
   <div
     class="absolute inset-0 -z-10 bg-gradient-to-b from-emerald-800/90 via-emerald-700/70 to-emerald-600/60 -mt-10"

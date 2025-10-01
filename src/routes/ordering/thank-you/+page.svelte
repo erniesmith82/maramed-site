@@ -32,10 +32,7 @@
 <!-- HERO (same background + gradient treatment) -->
 <section class="relative isolate">
   <div
-    class="absolute inset-0 -z-10 bg-cover bg-center"
-    style="background-image:url('/images/about-bg.jpg')"
-    aria-hidden="true"
-  ></div>
+    class="absolute inset-0 -z-10 bg-cover bg-center"></div>
   <div
     class="absolute inset-0 -z-10 bg-gradient-to-b from-emerald-800/90 via-emerald-700/70 to-emerald-600/60 -mt-10"
     aria-hidden="true"

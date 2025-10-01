@@ -1,37 +1,36 @@
 <script>
-  // Pull featured from the loader
+  
   export let data;
   const featured = data?.featured ?? [];
 
-  // show/hide images when they fail to load
+  // image visibility flags (hide on load error)
   let showBrandLogo = true;
   let showHero = true;
 
-  // normalize relative image paths if needed
+  // image path normalizer
   const imgSrc = (p) => (!p ? "" : (p.startsWith("/") ? p : `/images/${p}`));
 
-  /* ---------- animations ---------- */
+  // animations
   import { fade, fly, scale } from "svelte/transition";
   import { onMount } from "svelte";
 
-  // gate animations to client so 'in:' runs on mount
+  // client-only mount gate (enables `in:` transitions)
   let mounted = false;
   onMount(() => {
     requestAnimationFrame(() => (mounted = true));
   });
 
-  // reduced-motion friendly helpers
+  // motion helpers (respect reduced-motion)
   const isReduced =
     typeof matchMedia !== "undefined" &&
     matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-// put near the top with your other helpers
-const DUR_MULT = 5;   // 1.0 = current speed; >1 slows everything
-const DELAY_MULT = 3; // optional, also slow the staggering
+  // global timing knobs
+  const DUR_MULT = 5;   // increase to slow durations
+  const DELAY_MULT = 3; // increase to slow staggers
 
-const T = (ms) => (isReduced ? 0 : Math.round(ms * DUR_MULT));
-const D = (ms) => (isReduced ? 0 : Math.round(ms * DELAY_MULT));
-
+  const T = (ms) => (isReduced ? 0 : Math.round(ms * DUR_MULT));
+  const D = (ms) => (isReduced ? 0 : Math.round(ms * DELAY_MULT));
 </script>
 
 <svelte:head>
@@ -42,8 +41,8 @@ const D = (ms) => (isReduced ? 0 : Math.round(ms * DELAY_MULT));
   />
 </svelte:head>
 
-<!-- HERO -->
-<section class="relative bg-[url('/maramed_hero_bg.png')] bg-cover bg-top ">
+<!-- hero -->
+<section class="relative bg-[url('/maramed_hero_bg.png')] bg-cover bg-top -mt-10">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
     <div class="grid lg:grid-cols-2 gap-10 items-center">
       {#if mounted}
@@ -85,7 +84,7 @@ const D = (ms) => (isReduced ? 0 : Math.round(ms * DELAY_MULT));
       {/if}
 
       {#if mounted}
-        <!-- split fade (wrapper) and scale (inner) -->
+        <!-- media card -->
         <div class="relative" in:fade={{ duration: T(350), delay: D(120) }}>
           <div
             class="aspect-[16/10] w-full rounded-3xl border border-slate-200 overflow-hidden"
@@ -110,7 +109,7 @@ const D = (ms) => (isReduced ? 0 : Math.round(ms * DELAY_MULT));
   </div>
 </section>
 
-<!-- FEATURED PRODUCTS -->
+<!-- featured products -->
 <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
   <div class="flex items-end justify-between gap-6"
        in:fade={{ duration: T(400), delay: D(40) }}>
@@ -122,7 +121,7 @@ const D = (ms) => (isReduced ? 0 : Math.round(ms * DELAY_MULT));
     {#if featured.length}
       {#each featured as p, i (p.href)}
         {#if mounted}
-          <!-- keep one transition per element: use fly only -->
+          <!-- card -->
           <a
             href={p.href}
             class="group rounded-2xl border border-slate-200 overflow-hidden hover:shadow-md transition will-change-transform"
@@ -161,7 +160,7 @@ const D = (ms) => (isReduced ? 0 : Math.round(ms * DELAY_MULT));
   </div>
 </section>
 
-<!-- VALUE PROPS -->
+<!-- value props -->
 <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
   <div class="rounded-3xl border border-slate-200 p-6 sm:p-10"
        in:fade={{ duration: T(400), delay: D(40) }}>
@@ -173,7 +172,6 @@ const D = (ms) => (isReduced ? 0 : Math.round(ms * DELAY_MULT));
         {t:'Helpful support', d:'Questions on materials or fit-for-purpose? We’re here to help.'}
       ] as card, i}
         {#if mounted}
-          <!-- keep one: fly -->
           <div class="rounded-2xl border border-slate-200 p-5"
                in:fly={{ y: 12, duration: T(380), delay: D(80 + i*90) }}>
             <p class="font-semibold">{card.t}</p>
@@ -185,10 +183,9 @@ const D = (ms) => (isReduced ? 0 : Math.round(ms * DELAY_MULT));
   </div>
 </section>
 
-<!-- CTA -->
+<!-- call to action -->
 <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20">
   {#if mounted}
-    <!-- split fade (wrapper) and scale (inner) -->
     <div in:fade={{ duration: T(420), delay: D(60) }}>
       <div class="rounded-3xl border border-slate-200 p-6 sm:p-10 bg-slate-50"
            in:scale={{ duration: T(420), delay: D(60), start: 0.985 }}>
@@ -211,4 +208,3 @@ const D = (ms) => (isReduced ? 0 : Math.round(ms * DELAY_MULT));
     </div>
   {/if}
 </section>
- 

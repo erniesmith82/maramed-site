@@ -1,3 +1,5 @@
+<!-- catalog page wrapper: full-bleed background image with scrollable content slot -->
+
 <script>
   // no data
 </script>

@@ -1,10 +1,15 @@
 <script>
+  
   import { fade, fly, scale } from "svelte/transition";
   import { onMount } from "svelte";
   import { page } from "$app/stores";
+
+  // state
   let mounted = false;
   onMount(() => requestAnimationFrame(() => (mounted = true)));
   $: ref = $page.url.searchParams.get("ref");
+
+  // motion config
   const isReduced =
     typeof matchMedia !== "undefined" &&
     matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -14,8 +19,9 @@
   const sy = (i) => [10, 8, 12, 9, 11][i % 5];
 </script>
 
+<!-- hero -->
 <section class="relative isolate">
-  <div class="absolute inset-0 -z-10 bg-cover bg-center" style="background-image:url('/images/about-bg.jpg')" aria-hidden="true"></div>
+  <div class="absolute inset-0 -z-10 bg-cover bg-center" aria-hidden="true"></div>
   <div class="absolute inset-0 -z-10 bg-gradient-to-b from-emerald-800/90 via-emerald-700/70 to-emerald-600/60 -mt-10" aria-hidden="true"></div>
 
   <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 pt-16 pb-14 sm:pt-20 sm:pb-20">
@@ -39,6 +45,7 @@
   </div>
 </section>
 
+<!-- body -->
 <section class="relative w-full">
   <div class="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
     {#if mounted}

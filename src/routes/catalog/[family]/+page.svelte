@@ -1,16 +1,16 @@
 <!-- src/routes/catalog/[family]/+page.svelte -->
 <script>
+  
   import { page } from "$app/stores";
   import { goto } from "$app/navigation";
   import catalog from "$lib/data/products.json";
-
-  /* --- animations --- */
   import { fade, fly, scale } from "svelte/transition";
   import { onMount } from "svelte";
 
+  
   export let data;
 
-  /* ----- REACTIVE values from loader ----- */
+  // reactive values
   $: details         = data?.details ?? {};
   $: title           = details.title || "";
   $: description     = details.description || "";
@@ -18,34 +18,26 @@
   $: indications     = details.indications || [];
   $: heroImage       = details.heroImage || "";
   $: sizes           = details.sizes || [];
-  $: sizeGroups      = details.sizeGroups || null; // can include { title, image, rows, notes? }
-
-  // NEW: sections from loader (normalized) + measurement cards (can be empty)
+  $: sizeGroups      = details.sizeGroups || null;
   $: sections        = details.sections || [];
   $: measurementCards = details?.measurementCards || [];
-
-  // 🔁 mpNote: always coerce to an array for consistent rendering
   $: mpNotes = Array.isArray(details?.mpNote)
     ? details.mpNote.filter(Boolean)
     : (details?.mpNote ? [String(details.mpNote)] : []);
-
   $: additionalItems = details.additionalItems || [];
-
-  // Helpers
-  const imgSrc = (p) => (!p ? "" : (p.startsWith("/") ? p : `/images/${p}`));
-  const isObj = (v) => v && typeof v === "object" && !Array.isArray(v);
   $: currentKey = $page.params?.family;
 
-  // Try to find a gallery image if a section didn't provide one explicitly
+  // helpers
+  const imgSrc = (p) => (!p ? "" : (p.startsWith("/") ? p : `/images/${p}`));
+  const isObj = (v) => v && typeof v === "object" && !Array.isArray(v);
+
+  // section image picker
   function sectionImage(sec) {
     if (sec?.image) return sec.image;
     const gallery = Array.isArray(details?.gallery) ? details.gallery : [];
     if (!gallery.length) return "";
-
     const id = (sec?.id || "").toLowerCase();
     const title = (sec?.title || "").toLowerCase();
-
-    // quick keyword map for MI style sections
     const synonyms = [
       { re: /mp|m-?p|metacarpo/i, kw: "mp" },
       { re: /calf/i, kw: "calf" },
@@ -53,35 +45,27 @@
       { re: /wrist/i, kw: "wrist" },
       { re: /bicep/i, kw: "bicep" }
     ];
-
-    // 1) exact id match within path
     let hit = gallery.find((p) => p.toLowerCase().includes(id));
     if (hit) return hit;
-
-    // 2) first word of title
     const first = title.split(/\s+/)[0] || "";
     hit = gallery.find((p) => first && p.toLowerCase().includes(first));
     if (hit) return hit;
-
-    // 3) synonyms
     for (const { re, kw } of synonyms) {
       if (re.test(id) || re.test(title)) {
         hit = gallery.find((p) => p.toLowerCase().includes(kw));
         if (hit) return hit;
       }
     }
-
     return "";
   }
 
-  /* ================= Dynamic Sizes Table ================= */
+  // sizes table config
   const COLUMN_LABELS = {
-    itemNumber: "Item Number",
-    sku: "SKU",
+    sku: "Item Number",
     size: "Size",
     side: "Side",
-
-    // measurement fields
+    calfCircumference: "Calf Circumf.",
+    footLength: "Foot Length",
     bicepCircumference: "Bicep Circum.",
     forearmCircumference: "Forearm Circum.",
     wristCircumference: "Wrist Circum.",
@@ -94,22 +78,21 @@
     mpDiameter: "M-P Diameter*",
     fingerExtension: "Finger Extension",
     circumference: "Circumference",
-
-    // split + generic dims
     insideLength: "Inside Length",
     outsideLength: "Outside Length",
     length: "Length",
     width: "Width",
     height: "Height",
     insideDiameter: "Inside Diameter",
-
-    // descriptions
     Description: "Description",
     description: "Description"
   };
 
   const COLUMN_ORDER = [
-    "itemNumber","sku","size","side",
+    "itemNumber",
+    "sku",
+    "size","side",
+    "calfCircumference","footLength",
     "circumference",
     "medialLength","lateralLength","anteriorLength","posteriorLength",
     "bicepCircumference","wristCircumference","forearmCircumference",
@@ -143,14 +126,14 @@
 
   $: orderedColumns = getOrderedColumns(sizes);
 
-  // 👇 show the mpNote section only if any table shows M-P Diameter and we actually have notes
+  // mp note gate
   $: showMpNote =
     (orderedColumns.includes("mpDiameter") ||
       (Array.isArray(sizeGroups) &&
         sizeGroups.some((g) => getOrderedColumns(g.rows || []).includes("mpDiameter")))) &&
     mpNotes.length > 0;
 
-  /* ================= Additional Items → family links ================= */
+  // additional items → family links
   function itemNum(item) {
     if (typeof item === "string") return item.split(/—|-|:/)[0]?.trim();
     return (
@@ -183,32 +166,32 @@
     return aliased && ALL_FAMILY_KEYS.has(aliased) ? aliased : null;
   }
 
-  const SKU_INDEX = (() => {
+  const ITEM_INDEX = (() => {
     const idx = new Map();
     const fams = catalog.families ?? {};
     for (const [fKey, fVal] of Object.entries(fams)) {
       for (const it of fVal.items ?? []) {
-        const k = (it?.sku ?? it?.itemNumber ?? "").toString().trim();
+        const k = (it?.itemNumber ?? it?.sku ?? "").toString().trim();
         if (k) idx.set(k, fKey);
       }
     }
     return idx;
   })();
 
-  function findFamilyKeyBySku(skuRaw = "") {
-    const sku = (skuRaw || "").trim();
-    if (!sku) return null;
-    return SKU_INDEX.get(sku) ?? null;
+  function findFamilyKeyByItemCode(codeRaw = "") {
+    const code = (codeRaw || "").trim();
+    if (!code) return null;
+    return ITEM_INDEX.get(code) ?? null;
   }
 
   const KEYWORD_FAMILY_MAP = [
     { re: /stockinette-wh/i, key: "STOCKINETTE" },
     { re: /wrist hand thumb extended/i, key: "WHT" },
-    { re: /wrist hand thumb finger/i,   key: "WHT"  },
-    { re: /wrist hand thumb/i,          key: "WHT"  },
-    { re: /wrist hand extended/i,       key: "WH"   },
-    { re: /wrist hand holder/i,         key: "WH"   },
-    { re: /wrist hand/i,                key: "WH"   },
+    { re: /wrist hand thumb finger/i,   key: "WHT" },
+    { re: /wrist hand thumb/i,          key: "WHT" },
+    { re: /wrist hand extended/i,       key: "WH"  },
+    { re: /wrist hand holder/i,         key: "WH"  },
+    { re: /wrist hand/i,                key: "WH"  },
     { re: /sports thumb spica/i,        key: "TS-SPORTS" },
     { re: /thumb guard spica/i,         key: "TGS" },
     { re: /colles/i,                    key: "UFB" },
@@ -219,6 +202,7 @@
     { re: /tibial fracture brace/i,     key: "TFB" },
     { re: /ankle foot|afo/i,            key: "PLS-FF" }
   ];
+
   function findFamilyByKeywords(text = "") {
     if (!text) return null;
     for (const { re, key } of KEYWORD_FAMILY_MAP) if (re.test(text)) return key;
@@ -227,12 +211,12 @@
 
   function linkForAdditional(item) {
     if (item?.href) return item.href;
-    const sku = itemNum(item);
-    const viaSku = findFamilyKeyBySku(sku);
-    let famKey = canonicalFamilyKey(viaSku);
+    const code = itemNum(item);
+    const viaCode = findFamilyKeyByItemCode(code);
+    let famKey = canonicalFamilyKey(viaCode);
     if (!famKey) {
       const desc = itemDesc(item);
-      const viaKw = findFamilyByKeywords(desc) || findFamilyByKeywords(sku);
+      const viaKw = findFamilyByKeywords(desc) || findFamilyByKeywords(code);
       famKey = canonicalFamilyKey(viaKw);
     }
     if (!famKey) return null;
@@ -241,10 +225,10 @@
 
   function nav(href) {
     if (!href) return;
-    goto(href, { invalidateAll: true, noScroll: false });
+    goto(href, { invalidateAll: true, noscroll: false });
   }
 
-  /* ------------ Page-wide animation gate ------------ */
+  // animations: gate + config
   let mounted = false;
   onMount(() => requestAnimationFrame(() => (mounted = true)));
 
@@ -257,8 +241,8 @@
   const T = (ms) => (isReduced ? 0 : Math.round(ms * DUR_MULT));
   const D = (ms) => (isReduced ? 0 : Math.round(ms * DELAY_MULT));
 
-  const sx = (i) => [ -18, 14, -10, 12, -8 ][i % 5];
-  const sy = (i) => [ 12, 8, 14, 10, 11 ][i % 5];
+  const sx = (i) => [-18, 14, -10, 12, -8][i % 5];
+  const sy = (i) => [12, 8, 14, 10, 11][i % 5];
 </script>
 
 <section class="w-full">
@@ -300,7 +284,7 @@
             {/if}
           {/if}
 
-          <!-- Indications + Hero -->
+          <!-- sections + hero -->
           <div class="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
             {#if indications.length}
               <div class="col-span-1 lg:col-span-8" in:fade={{ duration: T(460), delay: D(140) }}>
@@ -337,7 +321,7 @@
           </div>
         </div>
 
-        <!-- ===== Sections (now with images) ===== -->
+        <!-- sections -->
         {#if sections.length}
           <div class="max-w-6xl mx-auto px-4 pb-4">
             <div class="mt-6 rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm"
@@ -346,13 +330,10 @@
                 {#each sections as sec, si}
                   <section id={sec.id} class="scroll-mt-24"
                            in:fly={{ x: sx(si), y: sy(si), duration: T(360), delay: D(140 + si*60) }}>
-
-                    <!-- Title -->
                     {#if sec.title}
                       <h3 class="text-2xl font-bold text-slate-900">{sec.title}</h3>
                     {/if}
 
-                    <!-- Content + Optional Image -->
                     <div class="mt-3 grid grid-cols-1 md:grid-cols-12 gap-5 items-start">
                       {#if sectionImage(sec)}
                         <div class="md:col-span-5 order-first">
@@ -367,34 +348,26 @@
                       {/if}
 
                       <div class={sectionImage(sec) ? "md:col-span-7" : "md:col-span-12"}>
-                        {#if sec.body}
-                          <p class="text-slate-700">{sec.body}</p>
-                        {/if}
+                        {#if sec.body}<p class="text-slate-700">{sec.body}</p>{/if}
 
                         {#if sec.requiredMaterials?.length}
                           <h4 class="mt-4 font-semibold text-slate-900">Required Materials</h4>
                           <ul class="mt-2 list-disc pl-6 space-y-1 text-slate-800">
-                            {#each sec.requiredMaterials as m}
-                              <li>{m}</li>
-                            {/each}
+                            {#each sec.requiredMaterials as m}<li>{m}</li>{/each}
                           </ul>
                         {/if}
 
                         {#if sec.steps?.length}
                           <h4 class="mt-4 font-semibold text-slate-900">Steps</h4>
                           <ol class="mt-2 list-decimal pl-6 space-y-1 text-slate-800">
-                            {#each sec.steps as step}
-                              <li>{step}</li>
-                            {/each}
+                            {#each sec.steps as step}<li>{step}</li>{/each}
                           </ol>
                         {/if}
 
                         {#if sec.procedure?.length}
                           <h4 class="mt-4 font-semibold text-slate-900">Procedure</h4>
                           <ol class="mt-2 list-decimal pl-6 space-y-1 text-slate-800">
-                            {#each sec.procedure as p}
-                              <li>{p}</li>
-                            {/each}
+                            {#each sec.procedure as p}<li>{p}</li>{/each}
                           </ol>
                         {/if}
 
@@ -426,9 +399,7 @@
                           <div class="mt-4 space-y-4">
                             {#each sec.lists as group}
                               <div>
-                                {#if group.title}
-                                  <h4 class="font-semibold text-slate-900">{group.title}</h4>
-                                {/if}
+                                {#if group.title}<h4 class="font-semibold text-slate-900">{group.title}</h4>{/if}
                                 <ul class="mt-2 list-disc pl-6 space-y-1 text-slate-800">
                                   {#each group.items as it}
                                     <li>
@@ -463,7 +434,7 @@
           </div>
         {/if}
 
-        <!-- Sizes + Additional Items (unchanged) -->
+        <!-- sizes + additional items -->
         <div class="max-w-6xl mx-auto px-4 pb-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           {#if (sizeGroups && sizeGroups.length) || sizes.length}
             <aside class="col-span-1 lg:col-span-12 lg:col-start-1 mx-auto w-full"
@@ -597,7 +568,7 @@
                 {/if}
 
                 {#if details.notes && details.notes.length && !measurementCards.length}
-                  <div class="mt-3 space-y-1 text-[13px] text-slate-500">
+                  <div class="mt-3 space-y-1 text-[13px] text-slate-500 text">
                     {#each details.notes as note, ni}
                       <p in:fly={{ x: sx(ni), y: sy(ni), duration: T(300), delay: D(80 + ni*30) }}>{note}</p>
                     {/each}
@@ -607,7 +578,7 @@
             </aside>
           {/if}
 
-          <!-- Additional Items -->
+          <!-- additional items -->
           {#if additionalItems.length}
             <div class="mx-auto w-full col-span-1 lg:col-span-12"
                  in:fly={{ x: -12, y: 10, duration: T(480), delay: D(120) }}>
@@ -666,11 +637,9 @@
     background: rgb(16 185 129 / 0.06);
     scroll-margin-top: 80px;
   }
-  /* highlight a measurement card or section when linked via #anchor */
-  article[id]:target, section[id]:target {
+  section[id]:target {
     outline: 2px solid rgb(16 185 129 / 0.6);
     outline-offset: 2px;
     background: rgb(16 185 129 / 0.06);
   }
-  .no-hyphens { hyphens: none; }
 </style>

@@ -1,40 +1,33 @@
 <script>
-  // animations consistent with the rest of the site
+  
   import { fade, fly, scale } from "svelte/transition";
   import { onMount } from "svelte";
-  import { enhance, applyAction } from "$app/forms"; // ← add applyAction
+  import { enhance, applyAction } from "$app/forms";
 
-  export let data;
-
-  // gate animations to the client so "in:" runs on mount
+  // mount gate
   let mounted = false;
   onMount(() => requestAnimationFrame(() => (mounted = true)));
 
-  // reduced motion helpers
+  // motion config
   const isReduced =
     typeof matchMedia !== "undefined" &&
     matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  // global timing (quick/snappy)
-  const DUR_MULT = 1;
-  const DELAY_MULT = 0.5;
+  const DUR_MULT = 3;
+  const DELAY_MULT = 3;
   const T = (ms) => (isReduced ? 0 : Math.round(ms * DUR_MULT));
   const D = (ms) => (isReduced ? 0 : Math.round(ms * DELAY_MULT));
-
-  // light scatter
   const sx = (i) => [-12, 10, -8, 8, -6][i % 5];
   const sy = (i) => [10, 8, 12, 9, 11][i % 5];
 
-  // form state (client success & error via enhance)
+  // form state
   let sent = false;
   let sending = false;
   let errorMsg = "";
 </script>
 
-<!-- Background: subtle grid + brand shapes -->
+<!-- background -->
 <div
-  class="fixed inset-0 -z-10 bg-slate-50
-         bg-[url('/images/bg-medspark.png')] bg-no-repeat bg-cover"
+  class="fixed inset-0 -z-10 bg-slate-50 bg-[url('/images/bg-medspark.png')] bg-no-repeat bg-cover"
   aria-hidden="true"
 ></div>
 <div
@@ -43,15 +36,12 @@
 ></div>
 
 <section class="relative w-full">
-  <!-- Force a wide, centered container on desktop -->
   <div class="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-    <!-- Header band -->
+    <!-- header -->
     {#if mounted}
       <div in:fade={{ duration: T(320) }}>
         <div
-          class="rounded-3xl border border-emerald-800/30
-                 bg-gradient-to-b from-emerald-700/95 to-emerald-600/90
-                 text-white p-6 sm:p-10 shadow-sm"
+          class="rounded-3xl border border-emerald-800/30 bg-gradient-to-b from-emerald-700/95 to-emerald-600/90 text-white p-6 sm:p-10 shadow-sm"
           in:scale={{ duration: T(380), start: 0.985 }}
         >
           <h1
@@ -70,12 +60,9 @@
       </div>
     {/if}
 
-    <!-- Content -->
-    <div
-      class="mt-8 grid gap-8 min-w-0
-             lg:[grid-template-columns:minmax(0,7fr)_minmax(0,5fr)]"
-    >
-      <!-- Form -->
+    <!-- content -->
+    <div class="mt-8 grid gap-8 min-w-0 lg:[grid-template-columns:minmax(0,7fr)_minmax(0,5fr)]">
+      <!-- form -->
       {#if mounted}
         <div class="min-w-0" in:fade={{ duration: T(360), delay: D(60) }}>
           <div
@@ -114,10 +101,9 @@
                 return async ({ result }) => {
                   sending = false;
 
-                  // 👉 Follow server redirect (to /contact/thank-you?ref=…)
+                  // follow server redirect (if any)
                   await applyAction(result);
 
-                  // Fallback UI (if no redirect happened)
                   if (result?.type === "success" && result?.data?.ok) {
                     errorMsg = "";
                     sent = true;
@@ -132,13 +118,10 @@
                     errorMsg = result?.error?.message || "Something went wrong submitting the form.";
                     return;
                   }
-                  // generic fallback
-                  // (shouldn't hit if server returns a known result shape)
                   errorMsg = "Something went wrong submitting the form.";
                 };
               }}
             >
-              <!-- Honeypot (bots) -->
               <input type="text" name="fax" class="hidden" tabindex="-1" autocomplete="off" />
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -152,8 +135,7 @@
                     <label for={field.name} class="block text-sm font-medium text-slate-700">{field.label}</label>
                     <input
                       id={field.name} name={field.name} type={field.type}
-                      class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm
-                             focus:border-emerald-500 focus:ring-emerald-500"
+                      class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm focus:border-emerald-500 focus:ring-emerald-500"
                       required={field.name === 'name' || field.name === 'email'}
                     />
                   </div>
@@ -165,8 +147,7 @@
                   <label for="subject" class="block text-sm font-medium text-slate-700">Subject</label>
                   <input
                     id="subject" name="subject" type="text"
-                    class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm
-                           focus:border-emerald-500 focus:ring-emerald-500"
+                    class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm focus:border-emerald-500 focus:ring-emerald-500"
                     placeholder="Order, sizing help, product question…"
                   />
                 </div>
@@ -175,8 +156,7 @@
                   <label for="interest" class="block text-sm font-medium text-slate-700">Product interest (optional)</label>
                   <select
                     id="interest" name="interest"
-                    class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm
-                           focus:border-emerald-500 focus:ring-emerald-500"
+                    class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm focus:border-emerald-500 focus:ring-emerald-500"
                   >
                     <option value="">—</option>
                     <option>Wrist Hand / Thumb</option>
@@ -193,8 +173,7 @@
                 <label for="message" class="block text-sm font-medium text-slate-700">Message</label>
                 <textarea
                   id="message" name="message" rows="6"
-                  class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm
-                         focus:border-emerald-500 focus:ring-emerald-500"
+                  class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm focus:border-emerald-500 focus:ring-emerald-500"
                   placeholder="How can we help?"
                   required
                 ></textarea>
@@ -204,8 +183,7 @@
                 <p class="text-xs text-slate-500">We’ll never share your information.</p>
                 <button
                   type="submit"
-                  class="inline-flex items-center rounded-xl bg-slate-900 px-5 py-3 font-semibold text-white
-                         hover:bg-black disabled:opacity-60"
+                  class="inline-flex items-center rounded-xl bg-slate-900 px-5 py-3 font-semibold text-white hover:bg-black disabled:opacity-60"
                   disabled={sending}
                   aria-busy={sending}
                 >
@@ -217,13 +195,11 @@
         </div>
       {/if}
 
-      <!-- Contact info / card -->
+      <!-- contact card -->
       {#if mounted}
         <div class="min-w-0" in:fade={{ duration: T(360), delay: D(100) }}>
           <div
-            class="rounded-2xl border border-emerald-800/30
-                   bg-gradient-to-b from-emerald-700/95 to-emerald-600/90
-                   text-white p-6 sm:p-8 shadow-sm h-full w-full min-w-0"
+            class="rounded-2xl border border-emerald-800/30 bg-gradient-to-b from-emerald-700/95 to-emerald-600/90 text-white p-6 sm:p-8 shadow-sm h-full w-full min-w-0"
             in:scale={{ duration: T(380), delay: D(100), start: 0.985 }}
           >
             <h2 class="text-xl font-semibold" in:fly={{ y: 10, duration: T(320), delay: D(140) }}>Contact details</h2>
@@ -253,6 +229,5 @@
 </section>
 
 <style>
-  /* Safety net if a parent layout sets min-content columns */
   .min-w-0 { min-width: 0; }
 </style>

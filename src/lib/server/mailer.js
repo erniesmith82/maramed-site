@@ -1,59 +1,75 @@
-import nodemailerOrig from 'nodemailer';
+// src/lib/server/mailer.js
+import nodemailer from "nodemailer";
 
-const MAIL_DEBUG = process.env.MAIL_DEBUG === '1' || process.env.SMTP_LOG === '1';
-const FORCE_TEST = process.env.MAIL_TEST === '1';
-
-function hasRealSMTP() {
-  return Boolean(process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS);
+function bool(v, def = false) {
+  if (v === undefined || v === null || v === "") return def;
+  return String(v).toLowerCase() === "true" || String(v) === "1";
 }
 
-export async function getTransport(nodemailer = nodemailerOrig) {
-  if (hasRealSMTP() && !FORCE_TEST) {
-    const isSecure =
-      String(process.env.SMTP_SECURE ?? 'false') === 'true' ||
-      Number(process.env.SMTP_PORT) === 465;
+const {
+  MAIL_TEST,
+  SMTP_HOST = "smtp.office365.com",
+  SMTP_PORT = "587",
+  SMTP_USER,
+  SMTP_PASS,
+  SMTP_FROM,
+  SMTP_LOG,
+} = process.env;
 
-    const requireTls = String(process.env.SMTP_REQUIRE_TLS ?? 'true') === 'true';
-    const rejectUnauthorized = String(process.env.SMTP_TLS_REJECT_UNAUTHORIZED ?? 'true') === 'true';
+// Real Office 365 transporter (STARTTLS on 587)
+const realTransporter = nodemailer.createTransport({
+  host: SMTP_HOST,
+  port: Number(SMTP_PORT),
+  secure: false,            // 587 uses STARTTLS upgrade (not SMTPS)
+  requireTLS: true,         // ensure STARTTLS before AUTH
+  auth: { user: SMTP_USER, pass: SMTP_PASS },
+  authMethod: "LOGIN",      // prefer LOGIN to avoid AUTH PLAIN pre-TLS
+  tls: {
+    minVersion: "TLSv1.2",
+    servername: SMTP_HOST,  // SNI
+    rejectUnauthorized: bool(process.env.SMTP_TLS_REJECT_UNAUTHORIZED, true),
+  },
+  logger: bool(SMTP_LOG, false),
+  debug:  bool(SMTP_LOG, false),
+});
 
-    const transport = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT ?? (isSecure ? 465 : 587)),
-      secure: isSecure,
-      requireTLS: !isSecure && requireTls,
-      auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
-      tls: { minVersion: 'TLSv1.2', rejectUnauthorized },
-      logger: MAIL_DEBUG,
-      debug: MAIL_DEBUG
+export async function getTransport() {
+  if (bool(MAIL_TEST, false)) {
+    const test = await nodemailer.createTestAccount();
+    const t = nodemailer.createTransport({
+      host: test.smtp.host,
+      port: test.smtp.port,
+      secure: test.smtp.secure,
+      auth: { user: test.user, pass: test.pass },
     });
-
-    await transport.verify();
-    return { transport, mode: 'smtp' };
+    return { transporter: t, isTest: true, testAccount: test };
   }
-
-  const test = await nodemailer.createTestAccount();
-  const transport = nodemailer.createTransport({
-    host: test.smtp.host,
-    port: test.smtp.port,
-    secure: test.smtp.secure,
-    auth: { user: test.user, pass: test.pass },
-    logger: MAIL_DEBUG,
-    debug: MAIL_DEBUG
-  });
-  return { transport, mode: 'ethereal' };
+  return { transporter: realTransporter, isTest: false };
 }
 
-export async function sendMail({ to, cc, bcc, subject, html, text, replyTo, headers, fromName = 'Website' }) {
-  const nm = nodemailerOrig;
-  const { transport, mode } = await getTransport(nm);
+export function fromHeader(kind = "orders") {
+  if (kind === "noreply" && process.env.NOREPLY_FROM) return process.env.NOREPLY_FROM;
+  return process.env.ORDERS_FROM || SMTP_FROM || SMTP_USER || "orders@example.com";
+}
 
-  const fromAddr = process.env.SMTP_FROM || process.env.SMTP_USER || 'no-reply@example.com';
-  const info = await transport.sendMail({
-    from: `"${fromName}" <${fromAddr}>`,
-    to, ...(cc ? { cc } : {}), ...(bcc ? { bcc } : {}),
-    subject, html, text, replyTo, headers
+export async function sendMail(opts) {
+  const { transporter, isTest } = await getTransport();
+
+  const info = await transporter.sendMail({
+    from: fromHeader("orders"),
+    to: opts.to,
+    subject: opts.subject,
+    text: opts.text,
+    html: opts.html,
+    replyTo: opts.replyTo,
   });
 
-  const previewUrl = mode === 'ethereal' ? nm.getTestMessageUrl(info) : undefined;
-  return { mode, info, previewUrl };
+  if (isTest) {
+    const url = nodemailer.getTestMessageUrl(info);
+    console.log("[SMTP][ETHEREAL] Preview:", url);
+  } else if (bool(SMTP_LOG, false)) {
+    console.log("[SMTP] Message ID:", info.messageId);
+    if (info.response) console.log("[SMTP] Response:", info.response);
+  }
+  return info;
 }

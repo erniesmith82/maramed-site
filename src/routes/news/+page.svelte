@@ -35,7 +35,7 @@
 
 <!-- HERO -->
 <section class="relative isolate">
-  <div class="absolute inset-0 -z-10 bg-cover bg-center" style="background-image:url('/images/about-bg.jpg')" aria-hidden="true"></div>
+  <div class="absolute inset-0 -z-10 bg-cover bg-center"></div>
   <div class="absolute inset-0 -z-10 bg-gradient-to-b from-emerald-800/90 via-emerald-700/70 to-emerald-600/60 -mt-10" aria-hidden="true"></div>
 
   <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 pt-16 pb-14 sm:pt-20 sm:pb-20">
@@ -93,6 +93,3 @@
   </div>
 </section>
 
-<style>
-  .min-w-0 { min-width: 0; }
-</style>

@@ -23,8 +23,8 @@
         ],
         "mpNote": "M-P Diameter is width of hand",
         "additionalItems": [
-          { "itemNumber": "STRAP-STS/M", "description": "Elastic Strap" },
-          { "itemNumber": "STOCKINETT-TGS2", "description": "Stockinette-one size" }
+          { "sku": "STRAP-STS/M", "description": "Elastic Strap" },
+          { "sku": "STOCKINETT-TGS2", "description": "Stockinette-one size" }
         ]
       },
       "items": [
@@ -51,8 +51,8 @@
         ],
         "mpNote": "M-P Diameter is width of hand",
         "additionalItems": [
-          { "itemNumber": "STRAP-STS/M", "description": "Elastic Strap" },
-          { "itemNumber": "STOCKINETT-TGS2", "description": "Stockinette-one size" }
+          { "sku": "STRAP-STS/M", "description": "Elastic Strap" },
+          { "sku": "STOCKINETT-TGS2", "description": "Stockinette-one size" }
         ]
       },
       "items": [
@@ -84,8 +84,8 @@
         "latexFree": true,
         "mpNote": "M-P Diameter is width of hand",
         "additionalItems": [
-          { "itemNumber": "STRAP-10", "description": "Hook and Loop Strap" },
-          { "itemNumber": "STOCKINETT-WH", "description": "Stockinette-one size" }
+          { "sku": "STRAP-10", "description": "Hook and Loop Strap" },
+          { "sku": "STOCKINETT-WH", "description": "Stockinette-one size" }
         ]
       },
       "items": [
@@ -113,8 +113,8 @@
         ],
         "mpNote": "M-P Diameter is width of hand",
         "additionalItems": [
-          { "itemNumber": "STRAP-10", "description": "Hook and Loop Strap" },
-          { "itemNumber": "STOCKINETT-WHT", "description": "Stockinette-one size" }
+          { "sku": "STRAP-10", "description": "Hook and Loop Strap" },
+          { "sku": "STOCKINETT-WHT", "description": "Stockinette-one size" }
         ]
       },
       "items": [
@@ -143,8 +143,8 @@
         "features": ["S-Series slotted shell for lower profile"],
         "mpNote": "M-P Diameter is width of hand",
         "additionalItems": [
-          { "itemNumber": "STRAP-10", "description": "Hook and Loop Strap" },
-          { "itemNumber": "STOCKINETT-WHT", "description": "Stockinette-one size" }
+          { "sku": "STRAP-10", "description": "Hook and Loop Strap" },
+          { "sku": "STOCKINETT-WHT", "description": "Stockinette-one size" }
         ]
       },
       "items": [
@@ -178,8 +178,8 @@
           "* A 4′ proximal extended orthosis (WHE) is available for added protection"
         ],
         "additionalItems": [
-          { "itemNumber": "STRAP-10", "description": "Hook & Loop strap" },
-          { "itemNumber": "STOCKINETT-WH", "description": "Stockinette-one size" }
+          { "sku": "STRAP-10", "description": "Hook & Loop strap" },
+          { "sku": "STOCKINETT-WH", "description": "Stockinette-one size" }
         ]
       },
       "items": [
@@ -216,8 +216,8 @@
         "features": ["S-Series slotted shell for lower profile"],
         "mpNote": "M-P Diameter is width of hand",
         "additionalItems": [
-          { "itemNumber": "STRAP-10", "description": "Hook & Loop strap" },
-          { "itemNumber": "STOCKINETT-WH", "description": "Stockinette-one size" }
+          { "sku": "STRAP-10", "description": "Hook & Loop strap" },
+          { "sku": "STOCKINETT-WH", "description": "Stockinette-one size" }
         ]
       },
       "items": [
@@ -252,8 +252,8 @@
           "*A 4′ proximal extended orthosis WHTE is available for added protection"
         ],
         "additionalItems": [
-          { "itemNumber": "STRAP-10", "description": "Hook & Loop strap" },
-          { "itemNumber": "STOCKINETT-WHT", "description": "Stockinette-one size" }
+          { "sku": "STRAP-10", "description": "Hook & Loop strap" },
+          { "sku": "STOCKINETT-WHT", "description": "Stockinette-one size" }
         ]
       },
       "items": [
@@ -291,8 +291,8 @@
         ],
         "mpNote": "M-P Diameter is width of hand",
         "additionalItems": [
-          { "itemNumber": "STRAP-10", "description": "Hook & Loop strap" },
-          { "itemNumber": "STOCKINETT-WHT", "description": "Stockinette-one size" }
+          { "sku": "STRAP-10", "description": "Hook & Loop strap" },
+          { "sku": "STOCKINETT-WHT", "description": "Stockinette-one size" }
         ]
       },
       "items": [
@@ -322,11 +322,11 @@
           "Adjunct to internal fixation such as unreamed intermedulary nails"
         ],
         "additionalItems": [
-          { "itemNumber": "STRAP-17/S", "description": "Magic Tape™ strap-Sm" },
-          { "itemNumber": "STRAP-19/S", "description": "Magic Tape™ strap-Md/Lg/XLg" },
-          { "itemNumber": "STRAP-OS-1/M", "description": "Over the shoulder strap" },
-          { "itemNumber": "STOCKINETT-H3", "description": "Stockinette-Sm" },
-          { "itemNumber": "STOCKINETT-H4", "description": "Stockinette-Md/Lg/XLg" }
+          { "sku": "STRAP-17/S", "description": "Magic Tape™ strap-Sm" },
+          { "sku": "STRAP-19/S", "description": "Magic Tape™ strap-Md/Lg/XLg" },
+          { "sku": "STRAP-OS-1/M", "description": "Over the shoulder strap" },
+          { "sku": "STOCKINETT-H3", "description": "Stockinette-Sm" },
+          { "sku": "STOCKINETT-H4", "description": "Stockinette-Md/Lg/XLg" }
         ]
       },
       "items": [
@@ -358,10 +358,10 @@
           "Adjunct to internal fixation such as unreamed intermedulary nails"
         ],
         "additionalItems": [
-          { "itemNumber": "STRAP-17/S", "description": "Magic Tape™ strap-Sm" },
-          { "itemNumber": "STRAP-19/S", "description": "Magic Tape™ strap-Md/Lg/XLg" },
-          { "itemNumber": "STOCKINETT-H3", "description": "Stockinette-Sm" },
-          { "itemNumber": "STOCKINETT-H4", "description": "Stockinette-Md/Lg/XLg" }
+          { "sku": "STRAP-17/S", "description": "Magic Tape™ strap-Sm" },
+          { "sku": "STRAP-19/S", "description": "Magic Tape™ strap-Md/Lg/XLg" },
+          { "sku": "STOCKINETT-H3", "description": "Stockinette-Sm" },
+          { "sku": "STOCKINETT-H4", "description": "Stockinette-Md/Lg/XLg" }
         ]
       },
       "items": [
@@ -397,9 +397,9 @@
           "Includes fitting & hygiene instructions"
         ],
         "additionalItems": [
-          { "itemNumber": "Strap-10/S & STRAP-17/S", "description": "Magic Tape™ straps—Md" },
-          { "itemNumber": "Strap-14/S & STRAP-17/S", "description": "Magic Tape™ straps—Lg" },
-          { "itemNumber": "STOCKINETT-U3", "description": "Stockinette-one size" }
+          { "sku": "Strap-10/S & STRAP-17/S", "description": "Magic Tape™ straps—Md" },
+          { "sku": "Strap-14/S & STRAP-17/S", "description": "Magic Tape™ straps—Lg" },
+          { "sku": "STOCKINETT-U3", "description": "Stockinette-one size" }
         ]
       },
       "items": [
@@ -434,11 +434,11 @@
           "Includes fitting and hygiene instructions"
         ],
         "additionalItems": [
-          { "itemNumber": "TFB-HEEL/SA", "description": "Heel Cup—one size" },
-          { "itemNumber": "STRAP-17/S", "description": "Magic Tape™ strap—Sm" },
-          { "itemNumber": "STRAP-17/S & STRAP-19/S", "description": "Magic Tape™ straps—Md/Lg" },
-          { "itemNumber": "STOCKINETT-T3", "description": "Stockinette—Sm" },
-          { "itemNumber": "STOCKINETT-T4", "description": "Stockinette—Md/Lg" }
+          { "sku": "TFB-HEEL/SA", "description": "Heel Cup—one size" },
+          { "sku": "STRAP-17/S", "description": "Magic Tape™ strap—Sm" },
+          { "sku": "STRAP-17/S & STRAP-19/S", "description": "Magic Tape™ straps—Md/Lg" },
+          { "sku": "STOCKINETT-T3", "description": "Stockinette—Sm" },
+          { "sku": "STOCKINETT-T4", "description": "Stockinette—Md/Lg" }
         ]
       },
       "items": [
@@ -500,10 +500,10 @@
           "Includes fitting & hygiene instructions"
         ],
         "additionalItems": [
-          { "itemNumber": "STRAP-10 & STRAP-14", "description": "Hook & Loop straps — Small" },
-          { "itemNumber": "STRAP-10 & STRAP-17", "description": "Hook & Loop straps — Medium" },
-          { "itemNumber": "STRAP-14 & STRAP-17", "description": "Hook & Loop straps — Large" },
-          { "itemNumber": "STOCKINETT-U3", "description": "Stockinette — one size" }
+          { "sku": "STRAP-10 & STRAP-14", "description": "Hook & Loop straps — Small" },
+          { "sku": "STRAP-10 & STRAP-17", "description": "Hook & Loop straps — Medium" },
+          { "sku": "STRAP-14 & STRAP-17", "description": "Hook & Loop straps — Large" },
+          { "sku": "STOCKINETT-U3", "description": "Stockinette — one size" }
         ]
       },
       "items": [
@@ -563,11 +563,11 @@
           "Includes fitting & hygiene instructions"
         ],
         "additionalItems": [
-          { "itemNumber": "STRAP-17", "description": "Hook & Loop strap — Small" },
-          { "itemNumber": "STRAP-19", "description": "Hook & Loop strap — Medium/Large/X-Large" },
-          { "itemNumber": "STRAP-OS-1/M", "description": "Over-the-shoulder strap — one size" },
-          { "itemNumber": "STOCKINETT-H3", "description": "Stockinette — Small" },
-          { "itemNumber": "STOCKINETT-H4", "description": "Stockinette — Medium/Large/X-Large" }
+          { "sku": "STRAP-17", "description": "Hook & Loop strap — Small" },
+          { "sku": "STRAP-19", "description": "Hook & Loop strap — Medium/Large/X-Large" },
+          { "sku": "STRAP-OS-1/M", "description": "Over-the-shoulder strap — one size" },
+          { "sku": "STOCKINETT-H3", "description": "Stockinette — Small" },
+          { "sku": "STOCKINETT-H4", "description": "Stockinette — Medium/Large/X-Large" }
         ]
       },
       "items": [
@@ -609,15 +609,15 @@
           "STRAP-MG-63-1 requires VEL-WRAP-6."
         ],
         "additionalItems": [
-          { "itemNumber": "STRAP-MG-63-1", "description": "Shoulder strap — one size (requires VEL-WRAP-6)" },
-          { "itemNumber": "STRAP-MG-30", "description": "Biceps & distal strap — one size" },
-          { "itemNumber": "VEL-WRAP-6", "description": "Double-sided loop wrap" },
-          { "itemNumber": "VEL-WRAP-3", "description": "Double-sided loop wrap" },
-          { "itemNumber": "STOCKINETT-SG3", "description": "Stockinette — Small" },
-          { "itemNumber": "STOCKINETT-SG4", "description": "Stockinette — Medium/Large/X-Large" },
-          { "itemNumber": "STRAP-OS-1/M", "description": "Shoulder strap 63″" },
-          { "itemNumber": "STRAP-OS-2/M", "description": "Double-sided loop strap" },
-          { "itemNumber": "STRAP-OS-3/M", "description": "Double-sided hook strap" }
+          { "sku": "STRAP-MG-63-1", "description": "Shoulder strap — one size (requires VEL-WRAP-6)" },
+          { "sku": "STRAP-MG-30", "description": "Biceps & distal strap — one size" },
+          { "sku": "VEL-WRAP-6", "description": "Double-sided loop wrap" },
+          { "sku": "VEL-WRAP-3", "description": "Double-sided loop wrap" },
+          { "sku": "STOCKINETT-SG3", "description": "Stockinette — Small" },
+          { "sku": "STOCKINETT-SG4", "description": "Stockinette — Medium/Large/X-Large" },
+          { "sku": "STRAP-OS-1/M", "description": "Shoulder strap 63″" },
+          { "sku": "STRAP-OS-2/M", "description": "Double-sided loop strap" },
+          { "sku": "STRAP-OS-3/M", "description": "Double-sided hook strap" }
         ]
       },
       "items": [
@@ -689,14 +689,14 @@
           "Postoperative cast"
         ],
         "additionalItems": [
-          { "itemNumber": "STRAP-10", "description": "Forearm–Wrist–Hand Hook & Loop strap" },
-          { "itemNumber": "STOCKINETT-WH", "description": "Forearm–Wrist–Hand Stockinette—one size" },
-          { "itemNumber": "8010", "description": "Elbow Joint—11′" },
-          { "itemNumber": "Round-Pad-¼", "description": "Foam Elbow Pad—¼′" },
-          { "itemNumber": "STRAP-17", "description": "Humerus Hook & Loop strap—Sm" },
-          { "itemNumber": "STOCKINETT-H3", "description": "Humerus Stockinette—Sm" },
-          { "itemNumber": "STRAP-19", "description": "Humerus Hook & Loop strap—Md/Lg/XLg" },
-          { "itemNumber": "STOCKINETT-H4", "description": "Humerus Stockinette—Md/Lg/XLg" }
+          { "sku": "STRAP-10", "description": "Forearm–Wrist–Hand Hook & Loop strap" },
+          { "sku": "STOCKINETT-WH", "description": "Forearm–Wrist–Hand Stockinette—one size" },
+          { "sku": "8010", "description": "Elbow Joint—11′" },
+          { "sku": "Round-Pad-¼", "description": "Foam Elbow Pad—¼′" },
+          { "sku": "STRAP-17", "description": "Humerus Hook & Loop strap—Sm" },
+          { "sku": "STOCKINETT-H3", "description": "Humerus Stockinette—Sm" },
+          { "sku": "STRAP-19", "description": "Humerus Hook & Loop strap—Md/Lg/XLg" },
+          { "sku": "STOCKINETT-H4", "description": "Humerus Stockinette—Md/Lg/XLg" }
         ]
       },
       "items": [
@@ -731,15 +731,15 @@
           "Postoperative cast"
         ],
         "additionalItems": [
-          { "itemNumber": "STRAP-10", "description": "Forearm–Wrist–Hand Hook & Loop strap" },
-          { "itemNumber": "STOCKINETT-WH", "description": "Forearm–Wrist–Hand Stockinette—one size" },
-          { "itemNumber": "8010", "description": "Elbow Joint—11″" },
-          { "itemNumber": "Round-Pad-¼", "description": "Foam Elbow Pad—¼″" },
-          { "itemNumber": "STRAP-17", "description": "Shoulder Guard Hook & Loop strap—Sm" },
-          { "itemNumber": "STOCKINETT-SG3", "description": "Shoulder Guard Stockinette—Sm" },
-          { "itemNumber": "STRAP-19", "description": "Shoulder Guard Hook & Loop strap—Md/Lg/XLg" },
-          { "itemNumber": "STOCKINETT-SG4", "description": "Shoulder Guard Stockinette—Md/Lg/XLg" },
-          { "itemNumber": "STRAP-OS-1/M", "description": "Shoulder strap—one size" }
+          { "sku": "STRAP-10", "description": "Forearm–Wrist–Hand Hook & Loop strap" },
+          { "sku": "STOCKINETT-WH", "description": "Forearm–Wrist–Hand Stockinette—one size" },
+          { "sku": "8010", "description": "Elbow Joint—11″" },
+          { "sku": "Round-Pad-¼", "description": "Foam Elbow Pad—¼″" },
+          { "sku": "STRAP-17", "description": "Shoulder Guard Hook & Loop strap—Sm" },
+          { "sku": "STOCKINETT-SG3", "description": "Shoulder Guard Stockinette—Sm" },
+          { "sku": "STRAP-19", "description": "Shoulder Guard Hook & Loop strap—Md/Lg/XLg" },
+          { "sku": "STOCKINETT-SG4", "description": "Shoulder Guard Stockinette—Md/Lg/XLg" },
+          { "sku": "STRAP-OS-1/M", "description": "Shoulder strap—one size" }
         ]
       },
       "items": [
@@ -776,12 +776,12 @@
           "For aluminum insert add -A (e.g., WHCS-C-100-A)"
         ],
         "additionalItems": [
-          { "itemNumber": "COV-WHCS-1", "description": "Fluffi-Cover™ — Small (complete with 3 straps: one 1½″ & two 2″)" },
-          { "itemNumber": "COV-WHCS-2", "description": "Fluffi-Cover™ — Medium (complete with 3 straps: one 1½″ & two 2″)" },
-          { "itemNumber": "COV-WHCS-3", "description": "Fluffi-Cover™ — Large (complete with 3 straps: one 1½″ & two 2″)" },
-          { "itemNumber": "COV-WHCS-4", "description": "Fluffi-Cover™ — X-Large (complete with 3 straps: one 1½″ & two 2″)" },
-          { "itemNumber": "STRAP-C-1.5", "description": "Fluffi-Strap™ — replacement strap, 1½″ width" },
-          { "itemNumber": "STRAP-C-2", "description": "Fluffi-Strap™ — replacement strap, 2″ width" }
+          { "sku": "COV-WHCS-1", "description": "Fluffi-Cover™ — Small (complete with 3 straps: one 1½″ & two 2″)" },
+          { "sku": "COV-WHCS-2", "description": "Fluffi-Cover™ — Medium (complete with 3 straps: one 1½″ & two 2″)" },
+          { "sku": "COV-WHCS-3", "description": "Fluffi-Cover™ — Large (complete with 3 straps: one 1½″ & two 2″)" },
+          { "sku": "COV-WHCS-4", "description": "Fluffi-Cover™ — X-Large (complete with 3 straps: one 1½″ & two 2″)" },
+          { "sku": "STRAP-C-1.5", "description": "Fluffi-Strap™ — replacement strap, 1½″ width" },
+          { "sku": "STRAP-C-2", "description": "Fluffi-Strap™ — replacement strap, 2″ width" }
         ]
       },
       "items": [
@@ -847,11 +847,11 @@
           "For aluminum insert add -A (e.g., WHFS-C-100-A)"
         ],
         "additionalItems": [
-          { "itemNumber": "COV-WHFS-1", "description": "Fluffi-Cover™ — Small (complete with 3 straps: one 1½″ & two 2″)" },
-          { "itemNumber": "COV-WHFS-2", "description": "Fluffi-Cover™ — Medium (complete with 3 straps: one 1½″ & two 2″)" },
-          { "itemNumber": "COV-WHFS-3", "description": "Fluffi-Cover™ — Large (complete with 3 straps: one 1½″ & two 2″)" },
-          { "itemNumber": "STRAP-C-1.5", "description": "Fluffi-Strap™ — replacement strap, 1½″ width" },
-          { "itemNumber": "STRAP-C-2", "description": "Fluffi-Strap™ — replacement strap, 2″ width" }
+          { "sku": "COV-WHFS-1", "description": "Fluffi-Cover™ — Small (complete with 3 straps: one 1½″ & two 2″)" },
+          { "sku": "COV-WHFS-2", "description": "Fluffi-Cover™ — Medium (complete with 3 straps: one 1½″ & two 2″)" },
+          { "sku": "COV-WHFS-3", "description": "Fluffi-Cover™ — Large (complete with 3 straps: one 1½″ & two 2″)" },
+          { "sku": "STRAP-C-1.5", "description": "Fluffi-Strap™ — replacement strap, 1½″ width" },
+          { "sku": "STRAP-C-2", "description": "Fluffi-Strap™ — replacement strap, 2″ width" }
         ]
       },
       "items": [
@@ -921,14 +921,14 @@
     "features": ["Foot section ends at the head of the metatarsals"]
   },
   "items": [
-    { "itemNumber": "PLSB-100L", "size": "Small",  "side": "Left",  "height": "15", "insideLength": "7",     "outsideLength": "7 1/4",  "width": "3",     "mensShoeSize": "3 – 6"  },
-    { "itemNumber": "PLSB-100R", "size": "Small",  "side": "Right", "height": "15", "insideLength": "7",     "outsideLength": "7 1/4",  "width": "3",     "mensShoeSize": "3 – 6"  },
-    { "itemNumber": "PLSB-200L", "size": "Medium", "side": "Left",  "height": "15", "insideLength": "7 3/4", "outsideLength": "7 3/4",  "width": "3 1/2", "mensShoeSize": "6 – 9"  },
-    { "itemNumber": "PLSB-200R", "size": "Medium", "side": "Right", "height": "15", "insideLength": "7 3/4", "outsideLength": "7 3/4",  "width": "3 1/2", "mensShoeSize": "6 – 9"  },
-    { "itemNumber": "PLSB-300L", "size": "Large",  "side": "Left",  "height": "15", "insideLength": "7 5/8", "outsideLength": "7 3/4",  "width": "3 5/8", "mensShoeSize": "9 – 11" },
-    { "itemNumber": "PLSB-300R", "size": "Large",  "side": "Right", "height": "15", "insideLength": "7 5/8", "outsideLength": "7 3/4",  "width": "3 5/8", "mensShoeSize": "9 – 11" },
-    { "itemNumber": "PLSB-400L", "size": "X-Large","side": "Left",  "height": "16", "insideLength": "10 1/8","outsideLength": "10 1/8", "width": "4",     "mensShoeSize": "11 – 13" },
-    { "itemNumber": "PLSB-400R", "size": "X-Large","side": "Right", "height": "16", "insideLength": "10 1/8","outsideLength": "10 1/8", "width": "4",     "mensShoeSize": "11 – 13" }
+    { "sku": "PLSB-100L", "size": "Small",  "side": "Left",  "height": "15", "insideLength": "7",     "outsideLength": "7 1/4",  "width": "3",     "mensShoeSize": "3 – 6"  },
+    { "sku": "PLSB-100R", "size": "Small",  "side": "Right", "height": "15", "insideLength": "7",     "outsideLength": "7 1/4",  "width": "3",     "mensShoeSize": "3 – 6"  },
+    { "sku": "PLSB-200L", "size": "Medium", "side": "Left",  "height": "15", "insideLength": "7 3/4", "outsideLength": "7 3/4",  "width": "3 1/2", "mensShoeSize": "6 – 9"  },
+    { "sku": "PLSB-200R", "size": "Medium", "side": "Right", "height": "15", "insideLength": "7 3/4", "outsideLength": "7 3/4",  "width": "3 1/2", "mensShoeSize": "6 – 9"  },
+    { "sku": "PLSB-300L", "size": "Large",  "side": "Left",  "height": "15", "insideLength": "7 5/8", "outsideLength": "7 3/4",  "width": "3 5/8", "mensShoeSize": "9 – 11" },
+    { "sku": "PLSB-300R", "size": "Large",  "side": "Right", "height": "15", "insideLength": "7 5/8", "outsideLength": "7 3/4",  "width": "3 5/8", "mensShoeSize": "9 – 11" },
+    { "sku": "PLSB-400L", "size": "X-Large","side": "Left",  "height": "16", "insideLength": "10 1/8","outsideLength": "10 1/8", "width": "4",     "mensShoeSize": "11 – 13" },
+    { "sku": "PLSB-400R", "size": "X-Large","side": "Right", "height": "16", "insideLength": "10 1/8","outsideLength": "10 1/8", "width": "4",     "mensShoeSize": "11 – 13" }
   ]
 },
 
@@ -945,15 +945,15 @@
     ]
   },
   "items": [
-    { "itemNumber": "UCB-100", "size": "1", "side": "Left or Right", "length": "4" },
-    { "itemNumber": "UCB-200", "size": "2", "side": "Left or Right", "length": "4 1/4" },
-    { "itemNumber": "UCB-300", "size": "3", "side": "Left or Right", "length": "4 1/2" },
-    { "itemNumber": "UCB-400", "size": "4", "side": "Left or Right", "length": "4 3/4" },
-    { "itemNumber": "UCB-500", "size": "5", "side": "Left or Right", "length": "5" },
-    { "itemNumber": "UCB-600", "size": "6", "side": "Left or Right", "length": "5 1/4" },
-    { "itemNumber": "UCB-700", "size": "7", "side": "Left or Right", "length": "5 7/8" },
-    { "itemNumber": "UCB-800", "size": "8", "side": "Left or Right", "length": "6 5/8" },
-    { "itemNumber": "UCB-900", "size": "9", "side": "Left or Right", "length": "7" }
+    { "sku": "UCB-100", "size": "1", "side": "Left or Right", "length": "4" },
+    { "sku": "UCB-200", "size": "2", "side": "Left or Right", "length": "4 1/4" },
+    { "sku": "UCB-300", "size": "3", "side": "Left or Right", "length": "4 1/2" },
+    { "sku": "UCB-400", "size": "4", "side": "Left or Right", "length": "4 3/4" },
+    { "sku": "UCB-500", "size": "5", "side": "Left or Right", "length": "5" },
+    { "sku": "UCB-600", "size": "6", "side": "Left or Right", "length": "5 1/4" },
+    { "sku": "UCB-700", "size": "7", "side": "Left or Right", "length": "5 7/8" },
+    { "sku": "UCB-800", "size": "8", "side": "Left or Right", "length": "6 5/8" },
+    { "sku": "UCB-900", "size": "9", "side": "Left or Right", "length": "7" }
   ]
 },
     "PLSC": {
@@ -967,14 +967,14 @@
         "features": ["Foot section ends at the head of the metatarsals"]
       },
       "items": [
-        { "itemNumber": "PLSC-100L", "size": "Small", "side": "Left", "height": "13", "insideLength": "5 3/4", "outsideLength": "6", "width": "2 1/2", "mensShoeSize": "3 – 6" },
-        { "itemNumber": "PLSC-100R", "size": "Small", "side": "Right", "height": "13", "insideLength": "5 3/4", "outsideLength": "6", "width": "2 1/2", "mensShoeSize": "3 – 6" },
-        { "itemNumber": "PLSC-200L", "size": "Medium", "side": "Left", "height": "14", "insideLength": "6 1/4", "outsideLength": "6 1/2", "width": "2 3/4", "mensShoeSize": "6 – 9" },
-        { "itemNumber": "PLSC-200R", "size": "Medium", "side": "Right", "height": "14", "insideLength": "6 1/4", "outsideLength": "6 1/2", "width": "2 3/4", "mensShoeSize": "6 – 9" },
-        { "itemNumber": "PLSC-300L", "size": "Large", "side": "Left", "height": "14", "insideLength": "7 1/4", "outsideLength": "7 3/8", "width": "3 1/4", "mensShoeSize": "9 – 11" },
-        { "itemNumber": "PLSC-300R", "size": "Large", "side": "Right", "height": "14", "insideLength": "7 1/4", "outsideLength": "7 3/8", "width": "3 1/4", "mensShoeSize": "9 – 11" },
-        { "itemNumber": "PLSC-400L", "size": "X-Large", "side": "Left", "height": "15", "insideLength": "7 3/4", "outsideLength": "7 7/8", "width": "3 1/2", "mensShoeSize": "11 – 13" },
-        { "itemNumber": "PLSC-400R", "size": "X-Large", "side": "Right", "height": "15", "insideLength": "7 3/4", "outsideLength": "7 7/8", "width": "3 1/2", "mensShoeSize": "11 – 13" }
+        { "sku": "PLSC-100L", "size": "Small", "side": "Left", "height": "13", "insideLength": "5 3/4", "outsideLength": "6", "width": "2 1/2", "mensShoeSize": "3 – 6" },
+        { "sku": "PLSC-100R", "size": "Small", "side": "Right", "height": "13", "insideLength": "5 3/4", "outsideLength": "6", "width": "2 1/2", "mensShoeSize": "3 – 6" },
+        { "sku": "PLSC-200L", "size": "Medium", "side": "Left", "height": "14", "insideLength": "6 1/4", "outsideLength": "6 1/2", "width": "2 3/4", "mensShoeSize": "6 – 9" },
+        { "sku": "PLSC-200R", "size": "Medium", "side": "Right", "height": "14", "insideLength": "6 1/4", "outsideLength": "6 1/2", "width": "2 3/4", "mensShoeSize": "6 – 9" },
+        { "sku": "PLSC-300L", "size": "Large", "side": "Left", "height": "14", "insideLength": "7 1/4", "outsideLength": "7 3/8", "width": "3 1/4", "mensShoeSize": "9 – 11" },
+        { "sku": "PLSC-300R", "size": "Large", "side": "Right", "height": "14", "insideLength": "7 1/4", "outsideLength": "7 3/8", "width": "3 1/4", "mensShoeSize": "9 – 11" },
+        { "sku": "PLSC-400L", "size": "X-Large", "side": "Left", "height": "15", "insideLength": "7 3/4", "outsideLength": "7 7/8", "width": "3 1/2", "mensShoeSize": "11 – 13" },
+        { "sku": "PLSC-400R", "size": "X-Large", "side": "Right", "height": "15", "insideLength": "7 3/4", "outsideLength": "7 7/8", "width": "3 1/2", "mensShoeSize": "11 – 13" }
       ]
     },
     "PLS-S": {
@@ -988,14 +988,14 @@
         "features": ["Sliding calf section reduces chafing", "Full-foot support"]
       },
       "items": [
-        { "itemNumber": "PLS-S-100L", "size": "Small", "side": "Left", "height": "13 1/4", "insideLength": "8 1/2", "outsideLength": "9 3/8", "width": "3 1/4", "mensShoeSize": "3 – 6" },
-        { "itemNumber": "PLS-S-100R", "size": "Small", "side": "Right", "height": "13 1/4", "insideLength": "8 1/2", "outsideLength": "9 3/8", "width": "3 1/4", "mensShoeSize": "3 – 6" },
-        { "itemNumber": "PLS-S-200L", "size": "Medium", "side": "Left", "height": "13 3/4", "insideLength": "9 3/4", "outsideLength": "10 1/8", "width": "3 1/2", "mensShoeSize": "6 – 9" },
-        { "itemNumber": "PLS-S-200R", "size": "Medium", "side": "Right", "height": "13 3/4", "insideLength": "9 3/4", "outsideLength": "10 1/8", "width": "3 1/2", "mensShoeSize": "6 – 9" },
-        { "itemNumber": "PLS-S-300L", "size": "Large", "side": "Left", "height": "14", "insideLength": "11", "outsideLength": "11", "width": "3 3/4", "mensShoeSize": "9 – 11" },
-        { "itemNumber": "PLS-S-300R", "size": "Large", "side": "Right", "height": "14", "insideLength": "11", "outsideLength": "11", "width": "3 3/4", "mensShoeSize": "9 – 11" },
-        { "itemNumber": "PLS-S-400L", "size": "X-Large", "side": "Left", "height": "15 3/4", "insideLength": "11 1/2", "outsideLength": "12", "width": "4", "mensShoeSize": "11 – 13" },
-        { "itemNumber": "PLS-S-400R", "size": "X-Large", "side": "Right", "height": "15 3/4", "insideLength": "11 1/2", "outsideLength": "12", "width": "4", "mensShoeSize": "11 – 13" }
+        { "sku": "PLS-S-100L", "size": "Small", "side": "Left", "height": "13 1/4", "insideLength": "8 1/2", "outsideLength": "9 3/8", "width": "3 1/4", "mensShoeSize": "3 – 6" },
+        { "sku": "PLS-S-100R", "size": "Small", "side": "Right", "height": "13 1/4", "insideLength": "8 1/2", "outsideLength": "9 3/8", "width": "3 1/4", "mensShoeSize": "3 – 6" },
+        { "sku": "PLS-S-200L", "size": "Medium", "side": "Left", "height": "13 3/4", "insideLength": "9 3/4", "outsideLength": "10 1/8", "width": "3 1/2", "mensShoeSize": "6 – 9" },
+        { "sku": "PLS-S-200R", "size": "Medium", "side": "Right", "height": "13 3/4", "insideLength": "9 3/4", "outsideLength": "10 1/8", "width": "3 1/2", "mensShoeSize": "6 – 9" },
+        { "sku": "PLS-S-300L", "size": "Large", "side": "Left", "height": "14", "insideLength": "11", "outsideLength": "11", "width": "3 3/4", "mensShoeSize": "9 – 11" },
+        { "sku": "PLS-S-300R", "size": "Large", "side": "Right", "height": "14", "insideLength": "11", "outsideLength": "11", "width": "3 3/4", "mensShoeSize": "9 – 11" },
+        { "sku": "PLS-S-400L", "size": "X-Large", "side": "Left", "height": "15 3/4", "insideLength": "11 1/2", "outsideLength": "12", "width": "4", "mensShoeSize": "11 – 13" },
+        { "sku": "PLS-S-400R", "size": "X-Large", "side": "Right", "height": "15 3/4", "insideLength": "11 1/2", "outsideLength": "12", "width": "4", "mensShoeSize": "11 – 13" }
       ]
     },
    
@@ -1057,11 +1057,12 @@
         ]
       },
       "items": [
-        { "itemNumber": "PED-C-100", "size": "Small", "side": "Left/Right", "calf": "8 1/2 – 9 1/2", "height": "8 3/4", "foot": "6 5/8", "thickness": "1/8 – 5/32" },
-        { "itemNumber": "PED-C-200", "size": "Medium", "side": "Left/Right", "calf": "9 1/2 – 10 1/2", "height": "9 1/2", "foot": "7", "thickness": "1/8 – 5/32" },
-        { "itemNumber": "PED-C-300", "size": "Large", "side": "Left/Right", "calf": "10 1/2 – 11 1/2", "height": "10 1/2", "foot": "7 1/2", "thickness": "1/8, 5/32, 3/16" }
+        { "sku": "PED-C-100", "size": "Small", "side": "Left/Right", "calf": "8 1/2 – 9 1/2", "height": "8 3/4", "foot": "6 5/8", "thickness": "1/8 – 5/32" },
+        { "sku": "PED-C-200", "size": "Medium", "side": "Left/Right", "calf": "9 1/2 – 10 1/2", "height": "9 1/2", "foot": "7", "thickness": "1/8 – 5/32" },
+        { "sku": "PED-C-300", "size": "Large", "side": "Left/Right", "calf": "10 1/2 – 11 1/2", "height": "10 1/2", "foot": "7 1/2", "thickness": "1/8, 5/32, 3/16" }
       ]
     },
+    
     "MI": {
       "key": "MI",
       "title": "Measurement Instructions",
@@ -1101,23 +1102,140 @@
           { "id": "trim-line-steps", "title": "Trim Line Modification Steps", "body": "Follow these steps to safely establish final trim lines.", "steps": ["Fit the patient with the orthosis.", "Mark the desired trim line.", "Remove the orthosis then cut along the line drawn.", "Smooth the edge to eliminate any sharp protrusions. Edges can be smoothed by carefully sanding with sandpaper or briefly passing over an open flame (e.g., lighter). Normally there is no need to smooth where foam is adhered."] },
           { "id": "heating-relieving", "title": "Heating & Relieving", "body": "For bony prominences, swelling, or open sores that need pressure relief, heat and reshape the brace. Never heat the device while it is on the patient. Maramed plastics are high-temperature materials and typically require 250°–375° F before modification." },
           { "id": "required-materials", "title": "Required Materials", "body": "Gather these materials before beginning heat modification.", "steps": ["Heat source (Leister gun, heat gun or equivalent)", "Water"] },
-          { "id": "suggested-tools", "title": "Suggested Tools", "body": "Recommended specialty tools for precise reshaping.", "steps": ["Maramed Epoxy Adjustment Mandrels (set)"], "lists": { "Suggested tools": [{ "itemNumber": "EAMS-SET", "description": "Epoxy Adjustment Mandrels — complete 12-tool set" }] } },
+          { "id": "suggested-tools", "title": "Suggested Tools", "body": "Recommended specialty tools for precise reshaping.", "steps": ["Maramed Epoxy Adjustment Mandrels (set)"], "lists": { "Suggested tools": [{ "sku": "EAMS-SET", "description": "Epoxy Adjustment Mandrels — complete 12-tool set" }] } },
           { "id": "procedure", "title": "Heat-Relief Procedure", "body": "Standard procedure for creating a local relief using heat and pressure.", "steps": ["Mark the area requiring modification.", "Apply heat to the marked region. If the device is foam-lined, heat from the plastic side only—never directly on the foam.", "Watch for changes in the plastic: it becomes shiny, clear, and flexible. At this point it is at forming temperature. (Note: styrene will not become clear due to pigment; it will appear shinier and feel rubbery.)", "Remove the heat source.", "Alter the shape as needed. Use Epoxy Adjustment Mandrels to apply pressure and form the relief.", "Cool the area under water to “freeze” the plastic.", "Once cooled, verify fit on the patient.", "Repeat as needed. Avoid overheating or overstretching to prevent material thinning or degradation."] }
         ]
       },
       "items": []
     },
     "TS": {
-      "key": "TS",
-      "title": "Tibia Splint",
-      "image": "/images/ts-hero.jpg",
-      "details": { "heroImage": "/images/ts-hero.jpg" },
-      "items": [
-        { "sku": "TS-100", "size": "Small" },
-        { "sku": "TS-200", "size": "Medium" },
-        { "sku": "TS-300", "size": "Large" },
-        { "sku": "TS-400", "size": "X-Large" }
-      ]
+  "key": "TS",
+  "title": "Tibia Splint",
+  "image": "/images/products/tibia-splint.jpg",
+  "details": {
+    "lcode": "",
+    "heroImage": "/images/products/tibia-splint.jpg",
+    "description": "Provides effective temporary positioning and immobilization of the calf and ankle. Foot is held in a slightly plantar-flexed position. Rigid polystyrene construction permits unobstructed radiographs and allows the splint to be gas autoclaved.",
+    "indications": [
+      "Temporary positioning and/or immobilization of calf and ankle fractures or ligament injuries.",
+      "Post-cast immobilization."
+    ],
+    "features": []
+  },
+  "items": [
+    { "sku": "TS-100", "size": "Small",   "universal": true, "height": "8½",  "calfCircumference": "11½", "footLength": "5½" },
+    { "sku": "TS-200", "size": "Medium",  "universal": true, "height": "11½", "calfCircumference": "11¾", "footLength": "6¾" },
+    { "sku": "TS-300", "size": "Large",   "universal": true, "height": "13½", "calfCircumference": "15",  "footLength": "8½" },
+    { "sku": "TS-400", "size": "X-Large", "universal": true, "height": "15",  "calfCircumference": "16½", "footLength": "10¾" }
+  ]
+},
+
+    "AFC": {
+  "key": "AFC",
+  "title": "Ankle Foot Calf Orthosis",
+  "image": "/images/products/ankle-foot-calf-orthosis.jpg",
+  "details": {
+    "lcode": "L1930, L4396",
+    "heroImage": "/images/products/ankle-foot-calf-orthosis.jpg",
+    "description": "Immobilizes the ankle joint while providing rigid cast-like protection. Allows unobstructed radiographs.",
+    "indications": [
+      "Immobilization of the distal tibia and associated ankle injuries",
+      "Temporary splint post arthroplasty",
+      "Lateral malleoli fractures",
+      "Post cast immobilization"
+    ],
+    "features": []
+  },
+  "items": [
+    { "sku": "AFC-100L", "size": "Small",  "side": "Left",  "height": "13", "calfCircumference": "12 – 14", "mensShoeSize": "3 – 6" },
+    { "sku": "AFC-100R", "size": "Small",  "side": "Right", "height": "13", "calfCircumference": "12 – 14", "mensShoeSize": "3 – 6" },
+    { "sku": "AFC-200L", "size": "Medium", "side": "Left",  "height": "14", "calfCircumference": "14 – 16", "mensShoeSize": "6 – 9" },
+    { "sku": "AFC-200R", "size": "Medium", "side": "Right", "height": "14", "calfCircumference": "14 – 16", "mensShoeSize": "6 – 9" },
+    { "sku": "AFC-300L", "size": "Large",  "side": "Left",  "height": "16", "calfCircumference": "14 – 16", "mensShoeSize": "9 – 11" },
+    { "sku": "AFC-300R", "size": "Large",  "side": "Right", "height": "16", "calfCircumference": "14 – 16", "mensShoeSize": "9 – 11" },
+    { "sku": "AFC-400L", "size": "X-Large","side": "Left",  "height": "18", "calfCircumference": "15 – 17", "mensShoeSize": "11 – 13" },
+    { "sku": "AFC-400R", "size": "X-Large","side": "Right", "height": "18", "calfCircumference": "15 – 17", "mensShoeSize": "11 – 13" }
+  ]
+},
+
+    "ARB": {
+  "key": "ARB",
+  "title": "Anti-Rotation Boot",
+  "image": "/images/products/anti-rotation-boot.jpg",
+  "details": {
+    "lcode": "L1930",
+    "heroImage": "/images/products/anti-rotation-boot.jpg",
+    "description": "Designed to position the foot in correct anatomical alignment. Helps to correct both external and internal rotation as well as preventing hip and leg rotation. Flexion is preset at 10° to provide continuous and effective stretching of the plantar fascia and achilles tendon. A toe guard is provided to protect foot from contact with bed linens. An optional toe wedge for increased stretch and an optional scaphoid pad for arch support are available.",
+    "indications": [
+      "Plantar fasciitis",
+      "Achilles tendinitis",
+      "Plantar flexion contractures",
+      "Heel spurs",
+      "Equinovarus",
+      "Pronation syndromes",
+      "Muscle tightening",
+      "Runners cramp",
+      "Neurological deficits resulting in drop foot"
+    ],
+    "features": [
+      "Corrects internal and external rotation; prevents hip and leg rotation",
+      "Preset 10° flexion for continuous stretch of plantar fascia and Achilles tendon",
+      "Toe guard protects from bed linens",
+      "Optional toe wedge for increased stretch (see additional items)",
+      "Optional scaphoid pad for arch support (see additional items)"
+    ],
+    "additionalItems": [
+      { "sku": "SCL-ARB-1", "description": "Fluffi-Liner™ — Small/Medium — additional fluff" },
+      { "sku": "SCL-ARB-2", "description": "Fluffi-Liner™ — Large/X-Large — additional fluff" },
+      { "sku": "TOE-PAD-1/M", "description": "Toe pad" },
+      { "sku": "SCAPHOID-PAD/M", "description": "Scaphoid pad" },
+      { "sku": "TOE-G-1/M", "description": "Toe Guard" }
+    ]
+  },
+  "items": [
+    { "sku": "ARB-150", "size": "Small/Medium", "side": "Universal", "womensShoeSize": "4 – 8", "mensShoeSize": "6 – 7" },
+    { "sku": "ARB-250", "size": "Large/X-Large", "side": "Universal", "womensShoeSize": "8+", "mensShoeSize": "8 – 12" }
+  ]
+},
+
+    "": {
+      "key": "",
+      "title": "",
+      "image": "/images/products/",
+      "details": {
+        "lcode": "",
+        "heroImage": "/images/products",
+        "description": "",
+        "indications": [],
+        "features": []
+      },
+      "items": []
+    },
+    "": {
+      "key": "",
+      "title": "",
+      "image": "/images/products/",
+      "details": {
+        "lcode": "",
+        "heroImage": "/images/products",
+        "description": "",
+        "indications": [],
+        "features": []
+      },
+      "items": []
+    },
+    "": {
+      "key": "",
+      "title": "",
+      "image": "/images/products/",
+      "details": {
+        "lcode": "",
+        "heroImage": "/images/products",
+        "description": "",
+        "indications": [],
+        "features": []
+      },
+      "items": []
     },
     "STOCKINETTE": {
       "key": "STOCKINETTE",
@@ -1238,10 +1356,10 @@
               "Neutral design fits left or right."
             ],
             "rows": [
-              { "itemNumber": "SM-HFO-DE-S", "size": "Small", "bicepCircumference": "8 – 11", "length": "Medial 5¼ / Lateral 10" },
-              { "itemNumber": "SM-HFO-DE-M", "size": "Medium", "bicepCircumference": "11 – 14", "length": "Medial 5¾ / Lateral 10¾" },
-              { "itemNumber": "SM-HFO-DE-L", "size": "Large", "bicepCircumference": "12 – 15", "length": "Medial 6½ / Lateral 12" },
-              { "itemNumber": "SM-HFO-DE-XL", "size": "X-Large", "bicepCircumference": "14 – 17", "length": "Medial 6¾ / Lateral 13" }
+              { "sku": "SM-HFO-DE-S", "size": "Small", "bicepCircumference": "8 – 11", "length": "Medial 5¼ / Lateral 10" },
+              { "sku": "SM-HFO-DE-M", "size": "Medium", "bicepCircumference": "11 – 14", "length": "Medial 5¾ / Lateral 10¾" },
+              { "sku": "SM-HFO-DE-L", "size": "Large", "bicepCircumference": "12 – 15", "length": "Medial 6½ / Lateral 12" },
+              { "sku": "SM-HFO-DE-XL", "size": "X-Large", "bicepCircumference": "14 – 17", "length": "Medial 6¾ / Lateral 13" }
             ]
           },
           {
@@ -1253,10 +1371,10 @@
               "Neutral design fits left or right."
             ],
             "rows": [
-              { "itemNumber": "SM-HFO-S", "size": "Small", "bicepCircumference": "8 – 11", "length": "Anterior 4¾ / Posterior 6" },
-              { "itemNumber": "SM-HFO-M", "size": "Medium", "bicepCircumference": "11 – 14", "length": "Anterior 5¼ / Posterior 6¾" },
-              { "itemNumber": "SM-HFO-L", "size": "Large", "bicepCircumference": "12 – 15", "length": "Anterior 5¾ / Posterior 7½" },
-              { "itemNumber": "SM-HFO-XL", "size": "X-Large", "bicepCircumference": "14 – 17", "length": "Anterior 6¼ / Posterior 8" }
+              { "sku": "SM-HFO-S", "size": "Small", "bicepCircumference": "8 – 11", "length": "Anterior 4¾ / Posterior 6" },
+              { "sku": "SM-HFO-M", "size": "Medium", "bicepCircumference": "11 – 14", "length": "Anterior 5¼ / Posterior 6¾" },
+              { "sku": "SM-HFO-L", "size": "Large", "bicepCircumference": "12 – 15", "length": "Anterior 5¾ / Posterior 7½" },
+              { "sku": "SM-HFO-XL", "size": "X-Large", "bicepCircumference": "14 – 17", "length": "Anterior 6¼ / Posterior 8" }
             ]
           },
           {
@@ -1268,9 +1386,9 @@
               "Neutral design fits left or right."
             ],
             "rows": [
-              { "itemNumber": "SM-UFO-S", "size": "Small", "forearmCircumference": "8 – 11", "length": "7" },
-              { "itemNumber": "SM-UFO-M", "size": "Medium", "forearmCircumference": "9½ – 12½", "length": "7½" },
-              { "itemNumber": "SM-UFO-L", "size": "Large", "forearmCircumference": "11 – 14", "length": "8" }
+              { "sku": "SM-UFO-S", "size": "Small", "forearmCircumference": "8 – 11", "length": "7" },
+              { "sku": "SM-UFO-M", "size": "Medium", "forearmCircumference": "9½ – 12½", "length": "7½" },
+              { "sku": "SM-UFO-L", "size": "Large", "forearmCircumference": "11 – 14", "length": "8" }
             ]
           },
           {
@@ -1282,10 +1400,10 @@
               "Neutral; fits left or right."
             ],
             "rows": [
-              { "itemNumber": "SM-AFO-S", "size": "Small", "side": "Left or Right", "Description": "Men 5–6 / Women 6.5–7.5" },
-              { "itemNumber": "SM-AFO-M", "size": "Medium", "side": "Left or Right", "Description": "Men 6.5–10 / Women 8–11.5" },
-              { "itemNumber": "SM-AFO-L", "size": "Large", "side": "Left or Right", "Description": "Men 10.5–13 / Women 12–14.5" },
-              { "itemNumber": "SM-AFO-XL", "size": "X-Large", "side": "Left or Right", "Description": "Men 13+ / Women 14.5+" }
+              { "sku": "SM-AFO-S", "size": "Small", "side": "Left or Right", "Description": "Men 5–6 / Women 6.5–7.5" },
+              { "sku": "SM-AFO-M", "size": "Medium", "side": "Left or Right", "Description": "Men 6.5–10 / Women 8–11.5" },
+              { "sku": "SM-AFO-L", "size": "Large", "side": "Left or Right", "Description": "Men 10.5–13 / Women 12–14.5" },
+              { "sku": "SM-AFO-XL", "size": "X-Large", "side": "Left or Right", "Description": "Men 13+ / Women 14.5+" }
             ]
           },
           {
@@ -1297,9 +1415,9 @@
               "Neutral; fits left or right."
             ],
             "rows": [
-              { "itemNumber": "SM-SAFO-S", "size": "Small", "side": "Left or Right", "Description": "Men 5–6 / Women 6.5–7.5" },
-              { "itemNumber": "SM-SAFO-M", "size": "Medium", "side": "Left or Right", "Description": "Men 6.5–10 / Women 8–11.5" },
-              { "itemNumber": "SM-SAFO-L", "size": "Large", "side": "Left or Right", "Description": "Men 10.5–13 / Women 12–14.5" }
+              { "sku": "SM-SAFO-S", "size": "Small", "side": "Left or Right", "Description": "Men 5–6 / Women 6.5–7.5" },
+              { "sku": "SM-SAFO-M", "size": "Medium", "side": "Left or Right", "Description": "Men 6.5–10 / Women 8–11.5" },
+              { "sku": "SM-SAFO-L", "size": "Large", "side": "Left or Right", "Description": "Men 10.5–13 / Women 12–14.5" }
             ]
           }
         ]
@@ -1356,21 +1474,35 @@
       "familyKeys": ["PLS-FF", "PLS-S","PLSC", "PLSC-OH", "PLSB", "PED-C", "UCB"]
     },
     {
-      "slug": "lower-extremity-splints",
-      "label": "Lower Extremity Splints",
-      "description": "Lower limb splints for acute stabilization and conservative treatment.",
-      "familyKeys": ["TS"]
-    },
-    {
       "slug": "ue-splints",
       "label": "Upper Extremity Splints",
       "description": "All styles of the upper extremity orthoses are available in a variety of configurations, depending upon the patient’s needs and the practitioner’s preferences. They provide effective immobilization and are completely radiolucent, allowing unobstructed radiographs. The Fluffi-Splints™ are available with either plastic or aluminum inserts. They are easily customized, as shown in the modification procedures.",
       "familyKeys": ["WHCS-C", "WHCS", "WHFS-C", "WHFS"]
     },
     {
+      "slug": "lower-extremity-splints",
+      "label": "Lower Extremity Splints",
+      "description": "All styles of the lower extremity splints are available in a variety of configurations, depending upon the patient’s needs and the practioner’s preferences. They provide effective temporary immobilization and are completely radiolucent, allowing unobstructed radiographs. They are easily customized utilizing a heat gun and scissors, as shown in the modification procedures.",
+      "familyKeys": ["AFC", "ARB", "FS-C", "FS", "TS-C", "TS"]
+    },
+    {
+      "slug": "tibia-fracture-brace",
+      "label": "Tibia Fracture Braces",
+      "description": [
+        "The fracture braces in the Tibia Fracture Brace series have been developed and tested in over 5,000 clinical cases in conjunction with the University of Miami, Department of Orthopedics and Rehabilitation*. The information gained from these studies is a key resource in the design of Maramed’s fracture brace line. The design is comprised of overlapping anterior and posterior shells that allow for ease of adjustment and accommodate for volumetric changes of soft tissue associated with fracture healing. Anatomical and biomedical considerations insure soft tissue compression is maintained as volumetric adjustments are compensated for while maintaining proper suspension of the brace over the fracture area. The design promotes early return to function. A Sarmiento Style Condylar extension is combined with the anatomical design of our standard TFB-PS to produce a superior product in both soft tissue compression and patella control.",
+        "The carefully sculpted foot component insures patient comfort while providing ample medial lateral support. Maximum patient comfort is provided through the use of specially formulated low density polyethylene plastic with 1/8″ foam lining that pads the anterior shell. Excellent off-the-shelf fit has been achieved through many years of clinical development. However, in such cases where customization is indicated, the TFB can be quickly and easily modified utilizing a heat gun and scissors, as shown in the modification procedures. Each is provided with one presewn double layer cotton stockinette. Additional stockinette and straps are available separately"] ,
+       "familyKeys": ["FC", "TFB", "TFB-S", "TFB-PS"]
+    },
+    {
       "slug": "hkafo-kafo-femoral",
       "label": "HKAFO & KAFO Femoral Fracture Orthosis",
       "description": "Hip–knee–ankle–foot and knee–ankle–foot orthoses for femoral fracture management.",
+      "familyKeys": []
+    },
+    {
+      "slug": "heel-pain",
+      "label": "Heel Pain Solution",
+      "description": "",
       "familyKeys": []
     },
     {

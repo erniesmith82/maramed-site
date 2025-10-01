@@ -5,6 +5,7 @@
   const links = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
+    { href: "/clinical", label: "Clinical Studies" },
     { href: "/news", label: "News" },
     { href: "/catalog", label: "Catalog" },
     { href: "/ordering", label: "Ordering and Reimpursement" },

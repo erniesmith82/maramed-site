@@ -1,7 +1,9 @@
 // src/routes/ordering/+page.server.js
 import { fail, redirect } from "@sveltejs/kit";
 import nodemailer from "nodemailer";
+import { Resend } from "resend";
 import {
+  // SMTP & shared
   MAIL_TEST,
   SMTP_HOST,
   SMTP_PORT,
@@ -10,59 +12,81 @@ import {
   SMTP_USER,
   SMTP_PASS,
   SMTP_FROM,
+  SMTP_LOG,
+  SMTP_TLS_REJECT_UNAUTHORIZED,
+
+  // API mode
+  USE_EMAIL_API,
+  RESEND_API_KEY,
+
+  // Legacy single sender (back-compat)
+  FROM_EMAIL,
+
+  // Routing + branded Froms
+  ORDERS_TO,
   CONTACT_TO,
   CONTACT_CC,
   CONTACT_BCC,
-  SMTP_LOG,
-  SMTP_TLS_REJECT_UNAUTHORIZED
+  ORDERS_FROM,   // e.g., "Maramed Orders <orders@maramed.com>"
+  NOREPLY_FROM,  // e.g., "Maramed Do Not Reply <no-reply@maramed.com>"
+  CONTACT_FROM,  // not used here (ordering page)
+
+  // Local-only logging mode (optional)
+  MAIL_LOCAL_JSON
 } from "$env/static/private";
 
-/** Build a human-readable order email from the form fields */
-function buildOrderEmailText(fd, orderRef) {
-  const pick = (k) => (fd.get(k) || "").toString();
+/* -------- env helpers -------- */
+const StaticEnv = {
+  MAIL_TEST, SMTP_HOST, SMTP_PORT, SMTP_SECURE, SMTP_REQUIRE_TLS, SMTP_USER, SMTP_PASS, SMTP_FROM,
+  SMTP_LOG, SMTP_TLS_REJECT_UNAUTHORIZED, USE_EMAIL_API, RESEND_API_KEY, FROM_EMAIL,
+  ORDERS_TO, CONTACT_TO, CONTACT_CC, CONTACT_BCC, ORDERS_FROM, NOREPLY_FROM, CONTACT_FROM,
+  MAIL_LOCAL_JSON
+};
+const ENV  = (k, d) => (process?.env?.[k] ?? StaticEnv?.[k] ?? d);
+const bool = (v, d=false) => typeof v === "string" ? ["1","true","yes","on"].includes(v.toLowerCase()) : (v ?? d);
+const num  = (v, d) => (Number.isFinite(Number(v)) ? Number(v) : d);
+const pickStr = (fd, k, f="") => ((fd.get(k) ?? f) + "");
 
-  const lines = [
+/* -------- email bodies -------- */
+function buildOrderEmailText(fd, orderRef) {
+  return [
     "New website order request",
     "================================",
     "",
     "Customer",
     "--------------------------------",
-    `Company:       ${pick("company")}`,
-    `Contact:       ${pick("contactName")}`,
-    `Email:         ${pick("email")}`,
-    `Phone:         ${pick("phone")}`,
+    `Company:       ${pickStr(fd, "company")}`,
+    `Contact:       ${pickStr(fd, "contactName")}`,
+    `Email:         ${pickStr(fd, "email")}`,
+    `Phone:         ${pickStr(fd, "phone")}`,
     "",
     "Shipping",
     "--------------------------------",
-    `Address 1:     ${pick("shipAddress1")}`,
-    `Address 2:     ${pick("shipAddress2")}`,
-    `City/State:    ${pick("shipCity")}, ${pick("shipState")} ${pick("shipZip")}`,
-    `Country:       ${pick("shipCountry") || "USA"}`,
+    `Address 1:     ${pickStr(fd, "shipAddress1")}`,
+    `Address 2:     ${pickStr(fd, "shipAddress2")}`,
+    `City/State:    ${pickStr(fd, "shipCity")}, ${pickStr(fd, "shipState")} ${pickStr(fd, "shipZip")}`,
+    `Country:       ${pickStr(fd, "shipCountry", "USA")}`,
     "",
     "Order Details",
     "--------------------------------",
-    `PO Number:     ${pick("poNumber")}`,
-    `Ship Method:   ${pick("shipMethod") || "UPS Ground (default)"}`,
+    `PO Number:     ${pickStr(fd, "poNumber")}`,
+    `Ship Method:   ${pickStr(fd, "shipMethod", "UPS Ground (default)")}`,
     "",
     "Items (CSV):",
-    pick("orderItems"),
+    pickStr(fd, "orderItems"),
     "",
     "Notes",
     "--------------------------------",
-    pick("notes") || "(none)",
+    pickStr(fd, "notes") || "(none)",
     "",
     `Reference:     ${orderRef}`,
     "",
     "— Sent from maramed.com ordering form —"
-  ];
-
-  return lines.join("\n");
+  ].join("\n");
 }
 
-/** Build a short confirmation email for the customer */
 function buildCustomerConfirmationText(fd, orderRef) {
-  const contact = (fd.get("contactName") || "there").toString();
-
+  const contact = pickStr(fd, "contactName", "there");
   return [
     `Hi ${contact},`,
     "",
@@ -80,145 +104,251 @@ function buildCustomerConfirmationText(fd, orderRef) {
   ].join("\n");
 }
 
-/** Create a nodemailer transport based on env (Ethereal test vs Office 365) */
-async function makeTransport() {
-  const mailTest = String(MAIL_TEST || "0") === "1";
+/* -------- Resend (API mode) -------- */
+async function sendWithResend({ from, to, cc, bcc, replyTo, subject, text }) {
+  const key = ENV("RESEND_API_KEY");
+  if (!key) throw new Error("RESEND_API_KEY missing");
+  const resend = new Resend(key);
 
-  if (mailTest) {
-    const test = await nodemailer.createTestAccount();
-    const transporter = nodemailer.createTransport({
-      host: test.smtp.host,
-      port: test.smtp.port,
-      secure: test.smtp.secure,
-      auth: { user: test.user, pass: test.pass }
-    });
+  const payload = {
+    from,
+    to: Array.isArray(to) ? to : [to].filter(Boolean),
+    subject,
+    text
+  };
+  if (cc)  payload.cc  = Array.isArray(cc)  ? cc  : [cc];
+  if (bcc) payload.bcc = Array.isArray(bcc) ? bcc : [bcc];
+  if (replyTo) payload.reply_to = replyTo;
+
+  const result = await resend.emails.send(payload);
+  if (result?.error) {
+    throw new Error(`Resend error: ${result.error.message || JSON.stringify(result.error)}`);
+  }
+  return result;
+}
+
+/* -------- SMTP transport (STRICT + JSON local mode) -------- */
+async function makeTransport() {
+  // 0) Local JSON mode — no network; logs messages as JSON
+  const localJson = ["1","true","yes","on"].includes(String(ENV("MAIL_LOCAL_JSON")).toLowerCase());
+  if (localJson) {
+    const transporter = nodemailer.createTransport({ jsonTransport: true });
+    console.log("[smtp][local] JSON transport active — emails will be logged only.");
     return { transporter, isTest: true };
   }
 
-  // Microsoft 365 (STARTTLS on 587)
-  const transporter = nodemailer.createTransport(
-    {
-      host: SMTP_HOST || "smtp.office365.com",
-      port: Number(SMTP_PORT ?? 587),
-      secure: String(SMTP_SECURE) === "true", // MUST be false for 587
-      requireTLS: String(SMTP_REQUIRE_TLS ?? "true") === "true",
-      auth: { user: SMTP_USER, pass: SMTP_PASS },
-      tls: {
-        rejectUnauthorized: String(SMTP_TLS_REJECT_UNAUTHORIZED ?? "true") === "true"
-      }
-    },
-    {
-      from: SMTP_FROM || SMTP_USER // default header From
-    }
-  );
+  // 1) Ethereal test mode
+  const mailTest = ["1","true","yes","on"].includes(String(ENV("MAIL_TEST")).toLowerCase());
+  if (mailTest) {
+    try {
+      const test = await nodemailer.createTestAccount();
 
-  if (String(SMTP_LOG || "0") === "1") {
-    transporter.on("log", console.log);
+      // Prefer SMTPS 465 to avoid STARTTLS stripping
+      try {
+        const t465 = nodemailer.createTransport({
+          host: test.smtp.host,
+          port: 465,
+          secure: true,
+          auth: { user: test.user, pass: test.pass },
+          logger: true,
+          debug: true
+        });
+        await t465.verify();
+        console.log("[smtp][test] Ethereal SMTPS (465) as", test.user);
+        return { transporter: t465, isTest: true };
+      } catch (e465) {
+        console.warn("[smtp][test] 465 failed, trying 587 STARTTLS:", e465?.message);
+      }
+
+      // Fallback: 587 STARTTLS
+      try {
+        const t587 = nodemailer.createTransport({
+          host: test.smtp.host,
+          port: test.smtp.port,   // usually 587
+          secure: false,
+          requireTLS: true,       // do not AUTH before TLS
+          auth: { user: test.user, pass: test.pass },
+          tls: { minVersion: "TLSv1.2", servername: test.smtp.host, rejectUnauthorized: true },
+          logger: true,
+          debug: true
+        });
+        await t587.verify();
+        console.log("[smtp][test] Ethereal STARTTLS (587) as", test.user);
+        return { transporter: t587, isTest: true };
+      } catch (e587) {
+        console.warn("[smtp][test] 587 failed, using JSON:", e587?.message);
+      }
+    } catch (eAcc) {
+      console.warn("[smtp][test] createTestAccount failed, using JSON:", eAcc?.message);
+    }
+
+    // Final fallback: JSON (no network)
+    const transporter = nodemailer.createTransport({ jsonTransport: true });
+    console.log("[smtp][test] JSON transport active — emails will be logged only.");
+    return { transporter, isTest: true };
   }
 
+  // 2) Production O365 (587 STARTTLS, AUTH LOGIN after TLS)
+  const host = "smtp.office365.com";
+  const port = 587;
+  const user = String(ENV("SMTP_USER") || "");
+  const pass = String(ENV("SMTP_PASS") || "");
+  if (!user || !pass) throw new Error("SMTP_USER / SMTP_PASS missing");
+
+  const transporter = nodemailer.createTransport(
+    {
+      host, port,
+      secure: false,          // STARTTLS
+      requireTLS: true,       // do not AUTH before TLS
+      auth: { user, pass },
+      authMethod: "LOGIN",    // avoid AUTH PLAIN pre-TLS
+      tls: { minVersion: "TLSv1.2", servername: host, rejectUnauthorized: true },
+      logger: true,
+      debug: true
+    },
+    { from: ENV("SMTP_FROM") || user }
+  );
+
+  console.log("[smtp] options", {
+    host, port,
+    secure: transporter.options.secure,
+    requireTLS: transporter.options.requireTLS,
+    authMethod: transporter.options.authMethod
+  });
+
+  try {
+    await transporter.verify();
+    console.log("[smtp] verify ok (STARTTLS negotiated before AUTH)");
+  } catch (e) {
+    console.error("[smtp] verify failed:", e?.message);
+  }
   return { transporter, isTest: false };
 }
 
+/* -------- action -------- */
 export const actions = {
-  /** POST /ordering?/send */
   send: async ({ request }) => {
     const form = await request.formData();
+    if (form.get("fax")) return fail(400, { ok: false, error: "Bad request" });
 
-    // Honeypot: if 'fax' is filled, bail quietly (likely a bot)
-    if (form.get("fax")) {
-      return fail(400, { ok: false, error: "Bad request" });
+    // Required fields (mirror client)
+    const contactName = pickStr(form, "contactName").trim();
+    const email       = pickStr(form, "email").trim();
+    const shipAddress1= pickStr(form, "shipAddress1").trim();
+    const shipCity    = pickStr(form, "shipCity").trim();
+    const shipState   = pickStr(form, "shipState").trim();
+    const shipZip     = pickStr(form, "shipZip").trim();
+    const orderItems  = pickStr(form, "orderItems").trim();
+    const agree       = form.get("agree"); // ensure terms accepted
+
+    if (!contactName || !email || !shipAddress1 || !shipCity || !shipState || !shipZip || !orderItems || !agree) {
+      return fail(400, { ok: false, error: "Please check the required fields and try again." });
     }
 
-    // Basic validation for required fields
-    const contactName = (form.get("contactName") || "").toString().trim();
-    const email = (form.get("email") || "").toString().trim();
-    const shipAddress1 = (form.get("shipAddress1") || "").toString().trim();
-    const shipCity = (form.get("shipCity") || "").toString().trim();
-    const shipState = (form.get("shipState") || "").toString().trim();
-    const shipZip = (form.get("shipZip") || "").toString().trim();
-    const orderItems = (form.get("orderItems") || "").toString().trim();
+    // IDs & addressing
+    const orderRef     = `ORD-${Date.now().toString(36).toUpperCase()}`;
+    const envelopeFrom = ENV("SMTP_FROM") || ENV("SMTP_USER") || ENV("FROM_EMAIL");
+    const ordersTo     = ENV("ORDERS_TO") || ENV("CONTACT_TO") || envelopeFrom; // distro ok
+    const ordersFrom   = ENV("ORDERS_FROM") || envelopeFrom;                    // pretty From for support
+    const noReplyFrom  = ENV("NOREPLY_FROM") || envelopeFrom;                   // pretty From for confirmation
 
-    if (!contactName || !email || !shipAddress1 || !shipCity || !shipState || !shipZip || !orderItems) {
-      return fail(400, { ok: false, error: "Please fill all required fields." });
-    }
-
-    // Generate a short reference to correlate logs/emails/UI
-    const orderRef = `ORD-${Date.now().toString(36).toUpperCase()}`;
+    const subject = `Website order ${orderRef}: ${pickStr(form, "company", contactName)}`;
+    const text    = buildOrderEmailText(form, orderRef);
 
     try {
-      const { transporter, isTest } = await makeTransport();
-
       console.log("[order] created", { orderRef, contactName, email });
 
-      // Office 365 safety: envelope MAIL FROM should match authenticated user
-      const envelopeFrom = SMTP_FROM || SMTP_USER;
-      const supportTo = CONTACT_TO || envelopeFrom;
+      if (bool(ENV("USE_EMAIL_API"), false)) {
+        // --- Resend path (API mode) ---
+        await sendWithResend({
+          from: ordersFrom,
+          to: ordersTo,
+          cc: ENV("CONTACT_CC") || undefined,
+          bcc: ENV("CONTACT_BCC") || undefined,
+          replyTo: email,
+          subject,
+          text
+        });
 
-      const subject = `Website order ${orderRef}: ${(form.get("company") || contactName).toString()}`;
-      const text = buildOrderEmailText(form, orderRef);
+        try {
+          await sendWithResend({
+            from: noReplyFrom,
+            to: email,
+            subject: "We received your order request",
+            text: buildCustomerConfirmationText(form, orderRef)
+          });
+        } catch (e) {
+          console.warn("[order] API confirmation failed:", e?.message);
+        }
 
-      // 1) Send to Customer Support
+        throw redirect(303, `/ordering/thank-you?ref=${encodeURIComponent(orderRef)}`);
+      }
+
+      // --- SMTP/JSON path ---
+      const { transporter, isTest } = await makeTransport();
+      const usesJson = !!transporter?.options?.jsonTransport;
+
+      // 1) Team notification
       const info = await transporter.sendMail({
-        envelope: { from: envelopeFrom, to: supportTo },  // SMTP envelope
-        from: envelopeFrom,                                // header From
-        to: supportTo,
-        cc: CONTACT_CC || undefined,
-        bcc: CONTACT_BCC || undefined,
-        replyTo: email,                                    // replies go to customer
+        envelope: usesJson ? undefined : { from: envelopeFrom, to: ordersTo }, // envelope only when real SMTP
+        from: ordersFrom,
+        to: ordersTo,
+        cc: ENV("CONTACT_CC") || undefined,
+        bcc: ENV("CONTACT_BCC") || undefined,
+        replyTo: email,
         subject,
         text,
-        dsn: {
-          id: orderRef,
-          return: "headers",
-          notify: ["failure", "delay"],
-          recipient: supportTo
+        dsn: usesJson ? undefined : { id: orderRef, return: "headers", notify: ["failure","delay"], recipient: ordersTo }
+      });
+
+      if (usesJson) {
+        const snippet = typeof info?.message === "string"
+          ? info.message
+          : info?.message?.toString?.() ?? "";
+        console.log("[order] Support mail (JSON):", snippet.slice(0, 2000));
+      } else {
+        const accepted = Array.isArray(info.accepted) ? info.accepted : [];
+        const rejected = Array.isArray(info.rejected) ? info.rejected : [];
+        console.log("[order] support mail", { orderRef, messageId: info.messageId, accepted, rejected, response: info.response });
+        if (!accepted.length || rejected.length) {
+          return fail(502, { ok: false, error: "Mail server did not accept the message." });
         }
-      });
-
-      const accepted = Array.isArray(info.accepted) ? info.accepted : [];
-      const rejected = Array.isArray(info.rejected) ? info.rejected : [];
-      console.log("[order] support mail", {
-        orderRef,
-        messageId: info.messageId,
-        accepted,
-        rejected,
-        response: info.response
-      });
-
-      if (!accepted.length || rejected.length) {
-        return fail(502, { ok: false, error: "Mail server did not accept the message." });
+        if (isTest) {
+          const previewUrl = nodemailer.getTestMessageUrl(info) || "";
+          if (previewUrl) console.log("[order] Support preview:", previewUrl);
+        }
       }
 
-      if (isTest) {
-        const previewUrl = nodemailer.getTestMessageUrl(info) || "";
-        console.log("[order] Support email preview:", previewUrl);
-      }
-
-      // 2) Send confirmation to the customer (best-effort)
+      // 2) Customer confirmation (best-effort)
       try {
         const confirmInfo = await transporter.sendMail({
-          envelope: { from: envelopeFrom, to: email },
-          from: envelopeFrom,
+          envelope: usesJson ? undefined : { from: envelopeFrom, to: email },
+          from: noReplyFrom,
           to: email,
           subject: "We received your order request",
           text: buildCustomerConfirmationText(form, orderRef)
         });
-        if (isTest) {
-          const confirmationPreview = nodemailer.getTestMessageUrl(confirmInfo) || "";
-          console.log("[order] Customer confirmation preview:", confirmationPreview);
+
+        if (usesJson) {
+          const snippet = typeof confirmInfo?.message === "string"
+            ? confirmInfo.message
+            : confirmInfo?.message?.toString?.() ?? "";
+          console.log("[order] Customer confirmation (JSON):", snippet.slice(0, 2000));
+        } else if (isTest) {
+          const previewUrl = nodemailer.getTestMessageUrl(confirmInfo) || "";
+          if (previewUrl) console.log("[order] Customer confirmation preview:", previewUrl);
         }
       } catch (e) {
-        console.warn("[order] Could not send customer confirmation:", e?.message);
+        console.warn("[order] confirmation failed:", e?.message);
       }
-    } catch (err) {
-      console.error("[order] send error:", err);
-      return fail(500, {
-        ok: false,
-        error: "Email failed to send. Please try again or call Customer Service."
-      });
-    }
 
-    // ✅ Success: redirect OUTSIDE the try/catch so it doesn't get swallowed
-    throw redirect(303, `/ordering/thank-you?ref=${encodeURIComponent(orderRef)}`);
+      // Success → redirect
+      throw redirect(303, `/ordering/thank-you?ref=${encodeURIComponent(orderRef)}`);
+    } catch (err) {
+      // Allow SvelteKit redirects through
+      if (err?.status && err?.location) throw err;
+      console.error("[order] send error:", err);
+      return fail(500, { ok: false, error: "Email failed to send. Please try again or call Customer Service." });
+    }
   }
 };

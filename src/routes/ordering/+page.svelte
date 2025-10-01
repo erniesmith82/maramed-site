@@ -1,12 +1,15 @@
+<!-- src/routes/order/+page.svelte -->
 <script>
-  import { enhance, applyAction } from "$app/forms";   // applyAction auto-follows redirects
+  import { enhance, applyAction } from "$app/forms";
   import { fade, fly, scale } from "svelte/transition";
-  import { onMount } from "svelte";
-  import catalog from "$lib/data/products.json"; // pulls SKUs for the datalist
+  import { onMount, tick } from "svelte";
+  import catalog from "$lib/data/products.json";
 
+  // props
   export let data;
   const featured = data?.featured ?? [];
 
+  // assets
   const imgSrc = (p) => {
     if (!p) return "";
     if (/^(https?:)?\/\//.test(p)) return p;
@@ -15,22 +18,20 @@
     return `/images/${p}`;
   };
 
+  // mount + motion
   let mounted = false;
   onMount(() => requestAnimationFrame(() => (mounted = true)));
-
   const isReduced =
     typeof matchMedia !== "undefined" &&
     matchMedia("(prefers-reduced-motion: reduce)").matches;
-
   const DUR_MULT = 3;
   const DELAY_MULT = 1;
   const T = (ms) => (isReduced ? 0 : Math.round(ms * DUR_MULT));
   const D = (ms) => (isReduced ? 0 : Math.round(ms * DELAY_MULT));
-
   const sx = (i) => [-12, 10, -8, 8, -6][i % 5];
   const sy = (i) => [10, 8, 12, 9, 11][i % 5];
 
-  /* ===== SKU index from catalog ===== */
+  // SKU index
   function buildSkuIndex() {
     const idx = new Map();
     const add = (sku, entry) => {
@@ -39,7 +40,6 @@
       if (!idx.has(key)) idx.set(key, { sku: key, ...entry });
     };
 
-    // top-level dictionary (preferred)
     const dict = catalog?.families;
     if (dict && !Array.isArray(dict)) {
       for (const [famKey, famVal] of Object.entries(dict)) {
@@ -49,13 +49,11 @@
             familyKey: famVal?.key || famKey,
             familyTitle,
             size: it?.size || "",
-            side: it?.side || "",
+            side: it?.side || ""
           });
         }
       }
     }
-
-    // legacy series fallback
     for (const s of catalog?.series ?? []) {
       for (const fam of s?.families ?? []) {
         const familyTitle = fam?.title || fam?.key || fam?.slug || "";
@@ -64,12 +62,11 @@
             familyKey: fam?.key || fam?.slug || familyTitle,
             familyTitle,
             size: it?.size || "",
-            side: it?.side || "",
+            side: it?.side || ""
           });
         }
       }
     }
-
     return idx;
   }
 
@@ -79,28 +76,18 @@
     label:
       `${v.sku} — ${v.familyTitle}` +
       (v.size ? ` · ${v.size}` : "") +
-      (v.side ? ` · ${v.side}` : ""),
+      (v.side ? ` · ${v.side}` : "")
   }));
-
   function describeSku(sku) {
     const hit = SKU_INDEX.get(String(sku || "").trim());
     if (!hit) return "";
     return `${hit.familyTitle}${hit.size ? " · " + hit.size : ""}${hit.side ? " · " + hit.side : ""}`;
   }
 
-  /* ===== Order rows state ===== */
+  // order rows
   let orderRows = [{ sku: "", description: "", qty: 1 }];
-
-  function addRow() {
-    orderRows = [...orderRows, { sku: "", description: "", qty: 1 }];
-  }
-  function removeRow(i) {
-    if (orderRows.length === 1) {
-      orderRows = [{ sku: "", description: "", qty: 1 }];
-    } else {
-      orderRows = orderRows.filter((_, idx) => idx !== i);
-    }
-  }
+  function addRow() { orderRows = [...orderRows, { sku: "", description: "", qty: 1 }]; }
+  function removeRow(i) { orderRows = orderRows.length === 1 ? [{ sku: "", description: "", qty: 1 }] : orderRows.filter((_, idx) => idx !== i); }
   function onSkuInput(i, val) {
     const v = String(val || "").trim();
     orderRows[i].sku = v;
@@ -116,18 +103,56 @@
       .map((r) => `${r.sku} | ${r.description || ""} | ${r.qty || 1}`)
       .join("\n");
   }
+  $: orderItemsSerialized = serializeOrderRows(orderRows);
 
   // form state
   let sending = false;
-  let sent = false;       // kept for completeness (not used after redirect)
   let errorMsg = "";
 
-  $: orderItemsSerialized = serializeOrderRows(orderRows);
+  // terms
+  let agree = false;
+
+  // error banner helper
+  async function showTopError(msg) {
+    errorMsg = msg;
+    await tick();
+    const el = document.getElementById("formErrorTop");
+    if (el) {
+      try { el.scrollIntoView({ behavior: "smooth", block: "start" }); }
+      catch { window.scrollTo(0, 0); }
+      setTimeout(() => el.focus({ preventScroll: true }), 150);
+      history.replaceState(null, "", "#formErrorTop");
+    } else {
+      try { window.scrollTo({ top: 0, behavior: "smooth" }); }
+      catch { window.scrollTo(0, 0); }
+    }
+  }
+
+  // native validation gate
+  async function handleSubmit(e) {
+    const form = e.currentTarget;
+    const valid = form.checkValidity();
+    const termsOk = !!form.querySelector("#agree")?.checked;
+
+    if (!valid || !termsOk) {
+      e.preventDefault();
+
+      await showTopError(
+        !termsOk
+          ? "Please agree to Maramed’s Terms of Sale before submitting."
+          : "Please check the required fields and try again."
+      );
+
+      form.reportValidity?.();
+      const target = !termsOk ? form.querySelector("#agree") : form.querySelector(":invalid");
+      setTimeout(() => target?.focus({ preventScroll: true }), 200);
+    }
+  }
 </script>
 
-<!-- HERO -->
+<!-- hero -->
 <section class="relative isolate">
-  <div class="absolute inset-0 -z-10 bg-cover bg-center" style="background-image:url('/images/about-bg.jpg')" aria-hidden="true"></div>
+  <div class="absolute inset-0 -z-10 bg-cover bg-center" aria-hidden="true"></div>
   <div class="absolute inset-0 -z-10 bg-gradient-to-b from-emerald-800/90 via-emerald-700/70 to-emerald-600/60 -mt-10" aria-hidden="true"></div>
 
   <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 pt-16 pb-14 sm:pt-20 sm:pb-20">
@@ -149,7 +174,7 @@
     {/if}
   </div>
 
-  <!-- TERMS / HOURS / SHIPPING -->
+  <!-- terms / hours / shipping -->
   <section class="relative w-full">
     <div class="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 pb-14 sm:pb-20">
       {#if mounted}
@@ -180,7 +205,12 @@
                 <h3 class="text-xl font-semibold text-slate-900" in:fly={{ y: 10, duration: T(320), delay: D(180) }}>Shipping</h3>
                 <p class="mt-2 text-slate-700" in:fade={{ duration: T(280), delay: D(210) }}>
                   *Maramed offers same-day shipment on most orders at no additional charge.
-                  Standard method is UPS Ground unless otherwise specified.
+                  Standard method is UPS Ground unless otherwise specified. FedEx services available on request.
+                </p>
+              </div>
+              <div class="mt-6">
+                 <p class="mt-2 text-slate-700 font-semibold" in:fade={{ duration: T(280), delay: D(210) }}>
+                  **Maramed sells to licensed professionals and distributors only.
                 </p>
               </div>
             </div>
@@ -191,7 +221,7 @@
   </section>
 </section>
 
-<!-- ORDER FORM -->
+<!-- order form -->
 <section class="relative w-full">
   <div class="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
     {#if mounted}
@@ -200,7 +230,14 @@
           <div class="p-6 sm:p-8">
 
             {#if errorMsg}
-              <div class="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-red-800" in:fade={{ duration: T(200) }} aria-live="polite">
+              <div
+                id="formErrorTop"
+                tabindex="-1"
+                role="alert"
+                aria-live="assertive"
+                class="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-red-800"
+                in:fade={{ duration: T(200) }}
+              >
                 {errorMsg}
               </div>
             {/if}
@@ -212,39 +249,31 @@
               method="POST"
               action="?/send"
               novalidate
+              on:submit|capture={handleSubmit}
               class="mt-5"
-              use:enhance={(event) => {
-                const { form } = event;
-
-                // UI state
-                sending = true;
-                sent = false;
-                errorMsg = "";
-
-                // serialize dynamic rows into the hidden textarea before submit
+              use:enhance={({ form }) => {
                 const hidden = form?.querySelector('textarea[name="orderItems"]');
                 if (hidden) hidden.value = orderItemsSerialized;
 
-                // Return a handler for the result of the action
+                sending = true;
+                errorMsg = "";
+
                 return async ({ result }) => {
                   sending = false;
-
-                  // SvelteKit applies the action (follows 303 redirects, updates form state)
                   await applyAction(result);
 
-                  // Optional: surface errors if it wasn't a redirect
                   if (result?.type === "failure") {
-                    errorMsg = result?.data?.error || "Please check the required fields and try again.";
+                    await showTopError(result?.data?.error || "Please check the required fields and try again.");
                   } else if (result?.type === "error") {
-                    errorMsg = result?.error?.message || "Something went wrong submitting the form.";
+                    await showTopError(result?.error?.message || "Something went wrong submitting the form.");
                   }
                 };
               }}
             >
-              <!-- Honeypot -->
+              <!-- honeypot -->
               <input type="text" name="fax" class="hidden" tabindex="-1" autocomplete="off" />
 
-              <!-- Customer -->
+              <!-- customer -->
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {#each [
                   { name: 'company',    label: 'Company / Practice', type: 'text',  req: false },
@@ -264,25 +293,44 @@
                 {/each}
               </div>
 
-              <!-- PO + Ship method -->
+              <!-- PO + ship method -->
               <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div in:fly={{ x: sx(4), y: sy(4), duration: T(300), delay: D(180) }}>
                   <label for="poNumber" class="block text-sm font-medium text-slate-700">PO Number (optional)</label>
                   <input id="poNumber" name="poNumber" type="text" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm focus:border-emerald-500 focus:ring-emerald-500"/>
                 </div>
+
                 <div in:fly={{ x: sx(5), y: sy(5), duration: T(300), delay: D(200) }}>
-                  <label for="shipMethod" class="block text-sm font-medium text-slate-700">Requested ship method</label>
-                  <select id="shipMethod" name="shipMethod" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm focus:border-emerald-500 focus:ring-emerald-500">
-                    <option>UPS Ground (default)</option>
-                    <option>UPS 2nd Day Air</option>
-                    <option>UPS Next Day Air</option>
-                    <option>Customer Freight Account (enter in notes)</option>
+                  <label for="shipMethod" class="block text-sm font-medium text-slate-700">
+                    Requested ship method
+                  </label>
+                  <select
+                    id="shipMethod"
+                    name="shipMethod"
+                    class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm
+                           focus:border-emerald-500 focus:ring-emerald-500"
+                  >
+                    <optgroup label="UPS">
+                      <option selected>UPS Ground (default)</option>
+                      <option>UPS 3 Day Select</option>
+                      <option>UPS 2nd Day Air</option>
+                      <option>UPS Next Day Air Saver</option>
+                      <option>UPS Next Day Air</option>
+                    </optgroup>
+                    <optgroup label="FedEx">
+                      <option>FedEx Ground / Home Delivery</option>
+                      <option>FedEx Express Saver (3 Day)</option>
+                      <option>FedEx 2Day</option>
+                      <option>FedEx Standard Overnight</option>
+                      <option>FedEx Priority Overnight</option>
+                    </optgroup>
+                    <option>Customer Freight Account (enter carrier & account in notes)</option>
                     <option>Other (enter in notes)</option>
                   </select>
                 </div>
               </div>
 
-              <!-- Shipping address -->
+              <!-- shipping address -->
               <div class="mt-6" in:fly={{ x: -12, y: 10, duration: T(320), delay: D(220) }}>
                 <h3 class="text-lg font-semibold text-slate-900">Shipping address</h3>
                 <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -313,7 +361,7 @@
                 </div>
               </div>
 
-              <!-- Order list (table) -->
+              <!-- order list -->
               <div class="mt-6 min-w-0" in:fly={{ x: -10, y: 12, duration: T(320), delay: D(260) }}>
                 <label class="block text-sm font-medium text-slate-700">Order list</label>
 
@@ -376,7 +424,7 @@
                   </table>
                 </div>
 
-                <!-- datalist powers the SKU field -->
+                <!-- datalist -->
                 <datalist id="skuOptions">
                   {#each SKU_OPTIONS as opt}
                     <option value={opt.sku}>{opt.label}</option>
@@ -387,11 +435,11 @@
                   Tip: start typing a SKU to see matches.
                 </p>
 
-                <!-- Hidden payload your backend expects -->
+                <!-- hidden payload -->
                 <textarea name="orderItems" class="hidden" readonly bind:value={orderItemsSerialized}></textarea>
               </div>
 
-              <!-- Notes + terms -->
+              <!-- notes + terms -->
               <div class="mt-4 min-w-0" in:fly={{ x: 10, y: 10, duration: T(300), delay: D(280) }}>
                 <label for="notes" class="block text-sm font-medium text-slate-700">Notes for Customer Service (optional)</label>
                 <textarea id="notes" name="notes" rows="4"
@@ -402,19 +450,30 @@
               </div>
 
               <div class="mt-4 flex items-center gap-2 text-sm" in:fade={{ duration: T(260), delay: D(300) }}>
-                <input id="agree" name="agree" type="checkbox" required
-                       class="h-4 w-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500"/>
+                <input
+                  id="agree"
+                  name="agree"
+                  type="checkbox"
+                  bind:checked={agree}
+                  required
+                  aria-required="true"
+                  aria-describedby="agree-help"
+                  class="h-4 w-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500"
+                />
                 <label for="agree" class="text-slate-700">
                   I agree to Maramed’s Terms of Sale.
                 </label>
               </div>
+              <p id="agree-help" class="mt-1 text-xs text-slate-500">
+                Required to submit your order.
+              </p>
 
               <div class="mt-6 flex items-center justify-between" in:fade={{ duration: T(260), delay: D(320) }}>
                 <p class="text-xs text-slate-500">Orders ship from Miami, FL.</p>
                 <button
                   type="submit"
                   class="inline-flex items-center rounded-xl bg-slate-900 px-5 py-3 font-semibold text-white
-                         hover:bg-black disabled:opacity-60"
+                         hover:bg-black disabled:opacity-60 disabled:cursor-not-allowed"
                   disabled={sending}
                   aria-busy={sending}
                 >
