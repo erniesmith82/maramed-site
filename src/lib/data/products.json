@@ -1114,10 +1114,10 @@
       "image": "/images/ts-hero.jpg",
       "details": { "heroImage": "/images/ts-hero.jpg" },
       "items": [
-        { "sku": "TS-100", "size": "Small" },
-        { "sku": "TS-200", "size": "Medium" },
-        { "sku": "TS-300", "size": "Large" },
-        { "sku": "TS-400", "size": "X-Large" }
+        { "itemNumber": "TS-100", "size": "Small" },
+        { "itemNumber": "TS-200", "size": "Medium" },
+        { "itemNumber": "TS-300", "size": "Large" },
+        { "itemNumber": "TS-400", "size": "X-Large" }
       ]
     },
     "STOCKINETTE": {

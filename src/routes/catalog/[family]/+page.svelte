@@ -64,6 +64,8 @@
     sku: "Item Number",
     size: "Size",
     side: "Side",
+
+    // measurement fields
     calfCircumference: "Calf Circumf.",
     footLength: "Foot Length",
     bicepCircumference: "Bicep Circum.",
