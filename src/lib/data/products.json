@@ -28,12 +28,12 @@
         ]
       },
       "items": [
-        { "itemNumber": "STS-100L", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼" },
-        { "itemNumber": "STS-100R", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼" },
-        { "itemNumber": "STS-200L", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾" },
-        { "itemNumber": "STS-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾" },
-        { "itemNumber": "STS-300L", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4" },
-        { "itemNumber": "STS-300R", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4" }
+        { "sku": "STS-100L", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼" },
+        { "sku": "STS-100R", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼" },
+        { "sku": "STS-200L", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾" },
+        { "sku": "STS-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾" },
+        { "sku": "STS-300L", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4" },
+        { "sku": "STS-300R", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4" }
       ]
     },
     "TGS": {
@@ -56,12 +56,12 @@
         ]
       },
       "items": [
-        { "itemNumber": "TGS-100L", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼" },
-        { "itemNumber": "TGS-100R", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼" },
-        { "itemNumber": "TGS-200L", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾" },
-        { "itemNumber": "TGS-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾" },
-        { "itemNumber": "TGS-300L", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4" },
-        { "itemNumber": "TGS-300R", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4" }
+        { "sku": "TGS-100L", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼" },
+        { "sku": "TGS-100R", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼" },
+        { "sku": "TGS-200L", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾" },
+        { "sku": "TGS-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾" },
+        { "sku": "TGS-300L", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4" },
+        { "sku": "TGS-300R", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4" }
       ]
     },
     "ATA": {
@@ -89,12 +89,12 @@
         ]
       },
       "items": [
-        { "itemNumber": "WHH-100L", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "fingerExtension": "5" },
-        { "itemNumber": "WHH-100R", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "fingerExtension": "5" },
-        { "itemNumber": "WHH-200L", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "fingerExtension": "5½" },
-        { "itemNumber": "WHH-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "fingerExtension": "5½" },
-        { "itemNumber": "WHH-300L", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "fingerExtension": "6¼" },
-        { "itemNumber": "WHH-300R", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "fingerExtension": "6¼" }
+        { "sku": "WHH-100L", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "fingerExtension": "5" },
+        { "sku": "WHH-100R", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "fingerExtension": "5" },
+        { "sku": "WHH-200L", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "fingerExtension": "5½" },
+        { "sku": "WHH-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "fingerExtension": "5½" },
+        { "sku": "WHH-300L", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "fingerExtension": "6¼" },
+        { "sku": "WHH-300R", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "fingerExtension": "6¼" }
       ]
     },
     "FPO": {
@@ -118,12 +118,12 @@
         ]
       },
       "items": [
-        { "itemNumber": "WHTF-100L", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "fingerExtension": "5" },
-        { "itemNumber": "WHTF-100R", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "fingerExtension": "5" },
-        { "itemNumber": "WHTF-200L", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "fingerExtension": "5½" },
-        { "itemNumber": "WHTF-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "fingerExtension": "5½" },
-        { "itemNumber": "WHTF-300L", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "fingerExtension": "6¼" },
-        { "itemNumber": "WHTF-300R", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "fingerExtension": "6¼" }
+        { "sku": "WHTF-100L", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "fingerExtension": "5" },
+        { "sku": "WHTF-100R", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "fingerExtension": "5" },
+        { "sku": "WHTF-200L", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "fingerExtension": "5½" },
+        { "sku": "WHTF-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "fingerExtension": "5½" },
+        { "sku": "WHTF-300L", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "fingerExtension": "6¼" },
+        { "sku": "WHTF-300R", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "fingerExtension": "6¼" }
       ]
     },
     "FPO-S": {
@@ -148,12 +148,12 @@
         ]
       },
       "items": [
-        { "itemNumber": "WHTF-100L-S", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "fingerExtension": "5" },
-        { "itemNumber": "WHTF-100R-S", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "fingerExtension": "5" },
-        { "itemNumber": "WHTF-200L-S", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "fingerExtension": "5½" },
-        { "itemNumber": "WHTF-200R-S", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "fingerExtension": "5½" },
-        { "itemNumber": "WHTF-300L-S", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "fingerExtension": "6¼" },
-        { "itemNumber": "WHTF-300R-S", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "fingerExtension": "6¼" }
+        { "sku": "WHTF-100L-S", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "fingerExtension": "5" },
+        { "sku": "WHTF-100R-S", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "fingerExtension": "5" },
+        { "sku": "WHTF-200L-S", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "fingerExtension": "5½" },
+        { "sku": "WHTF-200R-S", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "fingerExtension": "5½" },
+        { "sku": "WHTF-300L-S", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "fingerExtension": "6¼" },
+        { "sku": "WHTF-300R-S", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "fingerExtension": "6¼" }
       ]
     },
     "WH": {
@@ -183,18 +183,18 @@
         ]
       },
       "items": [
-        { "itemNumber": "WH-100L", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "length": "7½" },
-        { "itemNumber": "WH-100R", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "length": "7½" },
-        { "itemNumber": "WH-200L", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "length": "7½" },
-        { "itemNumber": "WH-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "length": "7½" },
-        { "itemNumber": "WH-300L", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "length": "8" },
-        { "itemNumber": "WH-300R", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "length": "8" },
-        { "itemNumber": "WHE-100L", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "length": "11" },
-        { "itemNumber": "WHE-100R", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "length": "11" },
-        { "itemNumber": "WHE-200L", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "length": "11" },
-        { "itemNumber": "WHE-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "length": "11" },
-        { "itemNumber": "WHE-300L", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "length": "13" },
-        { "itemNumber": "WHE-300R", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "length": "13" }
+        { "sku": "WH-100L", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "length": "7½" },
+        { "sku": "WH-100R", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "length": "7½" },
+        { "sku": "WH-200L", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "length": "7½" },
+        { "sku": "WH-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "length": "7½" },
+        { "sku": "WH-300L", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "length": "8" },
+        { "sku": "WH-300R", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "length": "8" },
+        { "sku": "WHE-100L", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "length": "11" },
+        { "sku": "WHE-100R", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "length": "11" },
+        { "sku": "WHE-200L", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "length": "11" },
+        { "sku": "WHE-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "length": "11" },
+        { "sku": "WHE-300L", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "length": "13" },
+        { "sku": "WHE-300R", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "length": "13" }
       ]
     },
     "WH-S": {
@@ -221,12 +221,12 @@
         ]
       },
       "items": [
-        { "itemNumber": "WH-100L-S", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "length": "7½" },
-        { "itemNumber": "WH-100R-S", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "length": "7½" },
-        { "itemNumber": "WH-200L-S", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "length": "7½" },
-        { "itemNumber": "WH-200R-S", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "length": "7½" },
-        { "itemNumber": "WH-300L-S", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "length": "8" },
-        { "itemNumber": "WH-300R-S", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "length": "8" }
+        { "sku": "WH-100L-S", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "length": "7½" },
+        { "sku": "WH-100R-S", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "length": "7½" },
+        { "sku": "WH-200L-S", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "length": "7½" },
+        { "sku": "WH-200R-S", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "length": "7½" },
+        { "sku": "WH-300L-S", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "length": "8" },
+        { "sku": "WH-300R-S", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "length": "8" }
       ]
     },
     "WHT": {
@@ -257,18 +257,18 @@
         ]
       },
       "items": [
-        { "itemNumber": "WHT-100L", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "length": "7½" },
-        { "itemNumber": "WHT-100R", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "length": "7½" },
-        { "itemNumber": "WHT-200L", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "length": "7½" },
-        { "itemNumber": "WHT-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "length": "7½" },
-        { "itemNumber": "WHT-300L", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "length": "8" },
-        { "itemNumber": "WHT-300R", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "length": "8" },
-        { "itemNumber": "WHTE-100L", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "length": "11" },
-        { "itemNumber": "WHTE-100R", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "length": "11" },
-        { "itemNumber": "WHTE-200L", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "length": "11" },
-        { "itemNumber": "WHTE-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "length": "11" },
-        { "itemNumber": "WHTE-300L", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "length": "13" },
-        { "itemNumber": "WHTE-300R", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "length": "13" }
+        { "sku": "WHT-100L", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "length": "7½" },
+        { "sku": "WHT-100R", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "length": "7½" },
+        { "sku": "WHT-200L", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "length": "7½" },
+        { "sku": "WHT-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "length": "7½" },
+        { "sku": "WHT-300L", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "length": "8" },
+        { "sku": "WHT-300R", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "length": "8" },
+        { "sku": "WHTE-100L", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "length": "11" },
+        { "sku": "WHTE-100R", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "length": "11" },
+        { "sku": "WHTE-200L", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "length": "11" },
+        { "sku": "WHTE-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "length": "11" },
+        { "sku": "WHTE-300L", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "length": "13" },
+        { "sku": "WHTE-300R", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "length": "13" }
       ]
     },
     "WHT-S": {
@@ -296,12 +296,12 @@
         ]
       },
       "items": [
-        { "itemNumber": "WHT-100L-S", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "length": "7½" },
-        { "itemNumber": "WHT-100R-S", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "length": "7½" },
-        { "itemNumber": "WHT-200L-S", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "length": "7½" },
-        { "itemNumber": "WHT-200R-S", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "length": "7½" },
-        { "itemNumber": "WHT-300L-S", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "length": "8" },
-        { "itemNumber": "WHT-300R-S", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "length": "8" }
+        { "sku": "WHT-100L-S", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "length": "7½" },
+        { "sku": "WHT-100R-S", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "length": "7½" },
+        { "sku": "WHT-200L-S", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "length": "7½" },
+        { "sku": "WHT-200R-S", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "length": "7½" },
+        { "sku": "WHT-300L-S", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "length": "8" },
+        { "sku": "WHT-300R-S", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "length": "8" }
       ]
     },
     "HFB-SG-S": {
@@ -330,14 +330,14 @@
         ]
       },
       "items": [
-        { "itemNumber": "HFB-SG-100L-S", "size": "Small", "side": "Left", "circumference": "8 – 12¼", "medialLength": "6¼", "lateralLength": "10¼" },
-        { "itemNumber": "HFB-SG-100R-S", "size": "Small", "side": "Right", "circumference": "8 – 12¼", "medialLength": "6¼", "lateralLength": "10¼" },
-        { "itemNumber": "HFB-SG-200L-S", "size": "Medium", "side": "Left", "circumference": "11 – 14½", "medialLength": "7", "lateralLength": "12" },
-        { "itemNumber": "HFB-SG-200R-S", "size": "Medium", "side": "Right", "circumference": "11 – 14½", "medialLength": "7", "lateralLength": "12" },
-        { "itemNumber": "HFB-SG-300L-S", "size": "Large", "side": "Left", "circumference": "12 – 16½", "medialLength": "7¼", "lateralLength": "12½" },
-        { "itemNumber": "HFB-SG-300R-S", "size": "Large", "side": "Right", "circumference": "12 – 16½", "medialLength": "7¼", "lateralLength": "12½" },
-        { "itemNumber": "HFB-SG-400L-S", "size": "X-Large", "side": "Left", "circumference": "12 – 17½", "medialLength": "8", "lateralLength": "13½" },
-        { "itemNumber": "HFB-SG-400R-S", "size": "X-Large", "side": "Right", "circumference": "12 – 17½", "medialLength": "8", "lateralLength": "13½" }
+        { "sku": "HFB-SG-100L-S", "size": "Small", "side": "Left", "circumference": "8 – 12¼", "medialLength": "6¼", "lateralLength": "10¼" },
+        { "sku": "HFB-SG-100R-S", "size": "Small", "side": "Right", "circumference": "8 – 12¼", "medialLength": "6¼", "lateralLength": "10¼" },
+        { "sku": "HFB-SG-200L-S", "size": "Medium", "side": "Left", "circumference": "11 – 14½", "medialLength": "7", "lateralLength": "12" },
+        { "sku": "HFB-SG-200R-S", "size": "Medium", "side": "Right", "circumference": "11 – 14½", "medialLength": "7", "lateralLength": "12" },
+        { "sku": "HFB-SG-300L-S", "size": "Large", "side": "Left", "circumference": "12 – 16½", "medialLength": "7¼", "lateralLength": "12½" },
+        { "sku": "HFB-SG-300R-S", "size": "Large", "side": "Right", "circumference": "12 – 16½", "medialLength": "7¼", "lateralLength": "12½" },
+        { "sku": "HFB-SG-400L-S", "size": "X-Large", "side": "Left", "circumference": "12 – 17½", "medialLength": "8", "lateralLength": "13½" },
+        { "sku": "HFB-SG-400R-S", "size": "X-Large", "side": "Right", "circumference": "12 – 17½", "medialLength": "8", "lateralLength": "13½" }
       ]
     },
     "HFB-S": {
@@ -365,14 +365,14 @@
         ]
       },
       "items": [
-        { "itemNumber": "HFB-100L-S", "size": "Small", "side": "Left", "circumference": "8 – 11", "medialLength": "5¼", "lateralLength": "6¼" },
-        { "itemNumber": "HFB-100R-S", "size": "Small", "side": "Right", "circumference": "8 – 11", "medialLength": "5¼", "lateralLength": "6¼" },
-        { "itemNumber": "HFB-200L-S", "size": "Medium", "side": "Left", "circumference": "10 – 13", "medialLength": "5½", "lateralLength": "6¾" },
-        { "itemNumber": "HFB-200R-S", "size": "Medium", "side": "Right", "circumference": "10 – 13", "medialLength": "5½", "lateralLength": "6¾" },
-        { "itemNumber": "HFB-300L-S", "size": "Large", "side": "Left", "circumference": "12 – 15", "medialLength": "6", "lateralLength": "7¼" },
-        { "itemNumber": "HFB-300R-S", "size": "Large", "side": "Right", "circumference": "12 – 15", "medialLength": "6", "lateralLength": "7¼" },
-        { "itemNumber": "HFB-400L-S", "size": "X-Large", "side": "Left", "circumference": "14 – 17", "medialLength": "6¼", "lateralLength": "7¾" },
-        { "itemNumber": "HFB-400R-S", "size": "X-Large", "side": "Right", "circumference": "14 – 17", "medialLength": "6¼", "lateralLength": "7¾" }
+        { "sku": "HFB-100L-S", "size": "Small", "side": "Left", "circumference": "8 – 11", "medialLength": "5¼", "lateralLength": "6¼" },
+        { "sku": "HFB-100R-S", "size": "Small", "side": "Right", "circumference": "8 – 11", "medialLength": "5¼", "lateralLength": "6¼" },
+        { "sku": "HFB-200L-S", "size": "Medium", "side": "Left", "circumference": "10 – 13", "medialLength": "5½", "lateralLength": "6¾" },
+        { "sku": "HFB-200R-S", "size": "Medium", "side": "Right", "circumference": "10 – 13", "medialLength": "5½", "lateralLength": "6¾" },
+        { "sku": "HFB-300L-S", "size": "Large", "side": "Left", "circumference": "12 – 15", "medialLength": "6", "lateralLength": "7¼" },
+        { "sku": "HFB-300R-S", "size": "Large", "side": "Right", "circumference": "12 – 15", "medialLength": "6", "lateralLength": "7¼" },
+        { "sku": "HFB-400L-S", "size": "X-Large", "side": "Left", "circumference": "14 – 17", "medialLength": "6¼", "lateralLength": "7¾" },
+        { "sku": "HFB-400R-S", "size": "X-Large", "side": "Right", "circumference": "14 – 17", "medialLength": "6¼", "lateralLength": "7¾" }
       ]
     },
     "UFB-S": {
@@ -403,12 +403,12 @@
         ]
       },
       "items": [
-        { "itemNumber": "UFB-100L-S", "size": "Small", "side": "Left", "circumference": "8 – 10", "length": "7" },
-        { "itemNumber": "UFB-100R-S", "size": "Small", "side": "Right", "circumference": "8 – 10", "length": "7" },
-        { "itemNumber": "UFB-200L-S", "size": "Medium", "side": "Left", "circumference": "10 – 12", "length": "8" },
-        { "itemNumber": "UFB-200R-S", "size": "Medium", "side": "Right", "circumference": "10 – 12", "length": "8" },
-        { "itemNumber": "UFB-300L-S", "size": "Large", "side": "Left", "circumference": "12 – 14", "length": "9" },
-        { "itemNumber": "UFB-300R-S", "size": "Large", "side": "Right", "circumference": "12 – 14", "length": "9" }
+        { "sku": "UFB-100L-S", "size": "Small", "side": "Left", "circumference": "8 – 10", "length": "7" },
+        { "sku": "UFB-100R-S", "size": "Small", "side": "Right", "circumference": "8 – 10", "length": "7" },
+        { "sku": "UFB-200L-S", "size": "Medium", "side": "Left", "circumference": "10 – 12", "length": "8" },
+        { "sku": "UFB-200R-S", "size": "Medium", "side": "Right", "circumference": "10 – 12", "length": "8" },
+        { "sku": "UFB-300L-S", "size": "Large", "side": "Left", "circumference": "12 – 14", "length": "9" },
+        { "sku": "UFB-300R-S", "size": "Large", "side": "Right", "circumference": "12 – 14", "length": "9" }
       ]
     },
     "TFB-S": {
@@ -442,12 +442,12 @@
         ]
       },
       "items": [
-        { "itemNumber": "TFB-100L-S", "size": "Small", "side": "Left", "circumference": "11½ – 14", "height": "11" },
-        { "itemNumber": "TFB-100R-S", "size": "Small", "side": "Right", "circumference": "11½ – 14", "height": "11" },
-        { "itemNumber": "TFB-200L-S", "size": "Medium", "side": "Left", "circumference": "12½ – 15½", "height": "12½" },
-        { "itemNumber": "TFB-200R-S", "size": "Medium", "side": "Right", "circumference": "12½ – 15½", "height": "12½" },
-        { "itemNumber": "TFB-300L-S", "size": "Large", "side": "Left", "circumference": "13 – 16½", "height": "13" },
-        { "itemNumber": "TFB-300R-S", "size": "Large", "side": "Right", "circumference": "13 – 16½", "height": "13" }
+        { "sku": "TFB-100L-S", "size": "Small", "side": "Left", "circumference": "11½ – 14", "height": "11" },
+        { "sku": "TFB-100R-S", "size": "Small", "side": "Right", "circumference": "11½ – 14", "height": "11" },
+        { "sku": "TFB-200L-S", "size": "Medium", "side": "Left", "circumference": "12½ – 15½", "height": "12½" },
+        { "sku": "TFB-200R-S", "size": "Medium", "side": "Right", "circumference": "12½ – 15½", "height": "12½" },
+        { "sku": "TFB-300L-S", "size": "Large", "side": "Left", "circumference": "13 – 16½", "height": "13" },
+        { "sku": "TFB-300R-S", "size": "Large", "side": "Right", "circumference": "13 – 16½", "height": "13" }
       ]
     },
     "HFB-N": {
@@ -473,10 +473,10 @@
         ]
       },
       "items": [
-        { "itemNumber": "HFB-N-100", "size": "Small", "side": "Left or Right", "distalCircumference": "7 – 9", "proximalCircumference": "9 – 11", "length": "7½" },
-        { "itemNumber": "HFB-N-200", "size": "Medium", "side": "Left or Right", "distalCircumference": "9 – 11", "proximalCircumference": "11 – 13", "length": "8" },
-        { "itemNumber": "HFB-N-300", "size": "Large", "side": "Left or Right", "distalCircumference": "11 – 13", "proximalCircumference": "13 – 15", "length": "8" },
-        { "itemNumber": "HFB-N-400", "size": "X-Large", "side": "Left or Right", "distalCircumference": "13 – 15", "proximalCircumference": "15 – 17", "length": "11" }
+        { "sku": "HFB-N-100", "size": "Small", "side": "Left or Right", "distalCircumference": "7 – 9", "proximalCircumference": "9 – 11", "length": "7½" },
+        { "sku": "HFB-N-200", "size": "Medium", "side": "Left or Right", "distalCircumference": "9 – 11", "proximalCircumference": "11 – 13", "length": "8" },
+        { "sku": "HFB-N-300", "size": "Large", "side": "Left or Right", "distalCircumference": "11 – 13", "proximalCircumference": "13 – 15", "length": "8" },
+        { "sku": "HFB-N-400", "size": "X-Large", "side": "Left or Right", "distalCircumference": "13 – 15", "proximalCircumference": "15 – 17", "length": "11" }
       ]
     },
     "UFB": {
@@ -507,12 +507,12 @@
         ]
       },
       "items": [
-        { "itemNumber": "UFB-100L", "size": "Small", "side": "Left", "circumference": "8 – 10", "length": "7" },
-        { "itemNumber": "UFB-100R", "size": "Small", "side": "Right", "circumference": "8 – 10", "length": "7" },
-        { "itemNumber": "UFB-200L", "size": "Medium", "side": "Left", "circumference": "10 – 12", "length": "8" },
-        { "itemNumber": "UFB-200R", "size": "Medium", "side": "Right", "circumference": "10 – 12", "length": "8" },
-        { "itemNumber": "UFB-300L", "size": "Large", "side": "Left", "circumference": "12 – 14", "length": "9" },
-        { "itemNumber": "UFB-300R", "size": "Large", "side": "Right", "circumference": "12 – 14", "length": "9" }
+        { "sku": "UFB-100L", "size": "Small", "side": "Left", "circumference": "8 – 10", "length": "7" },
+        { "sku": "UFB-100R", "size": "Small", "side": "Right", "circumference": "8 – 10", "length": "7" },
+        { "sku": "UFB-200L", "size": "Medium", "side": "Left", "circumference": "10 – 12", "length": "8" },
+        { "sku": "UFB-200R", "size": "Medium", "side": "Right", "circumference": "10 – 12", "length": "8" },
+        { "sku": "UFB-300L", "size": "Large", "side": "Left", "circumference": "12 – 14", "length": "9" },
+        { "sku": "UFB-300R", "size": "Large", "side": "Right", "circumference": "12 – 14", "length": "9" }
       ]
     },
     "UFB-N": {
@@ -535,9 +535,9 @@
         ]
       },
       "items": [
-        { "itemNumber": "UFB-N-100", "size": "Small", "side": "Left or Right", "distalCircumference": "6½ – 7½", "proximalCircumference": "7½ – 9", "length": "6½" },
-        { "itemNumber": "UFB-N-200", "size": "Medium", "side": "Left or Right", "distalCircumference": "7½ – 8½", "proximalCircumference": "9 – 11", "length": "7" },
-        { "itemNumber": "UFB-N-300", "size": "Large", "side": "Left or Right", "distalCircumference": "8½ – 9½", "proximalCircumference": "11 – 13", "length": "8" }
+        { "sku": "UFB-N-100", "size": "Small", "side": "Left or Right", "distalCircumference": "6½ – 7½", "proximalCircumference": "7½ – 9", "length": "6½" },
+        { "sku": "UFB-N-200", "size": "Medium", "side": "Left or Right", "distalCircumference": "7½ – 8½", "proximalCircumference": "9 – 11", "length": "7" },
+        { "sku": "UFB-N-300", "size": "Large", "side": "Left or Right", "distalCircumference": "8½ – 9½", "proximalCircumference": "11 – 13", "length": "8" }
       ]
     },
     "HFB-SG": {
@@ -571,14 +571,14 @@
         ]
       },
       "items": [
-        { "itemNumber": "HFB-SG-100L", "size": "Small", "side": "Left", "circumference": "8 – 12¼", "medialLength": "6¼", "lateralLength": "10¼" },
-        { "itemNumber": "HFB-SG-100R", "size": "Small", "side": "Right", "circumference": "8 – 12¼", "medialLength": "6¼", "lateralLength": "10¼" },
-        { "itemNumber": "HFB-SG-200L", "size": "Medium", "side": "Left", "circumference": "11 – 14½", "medialLength": "7", "lateralLength": "12" },
-        { "itemNumber": "HFB-SG-200R", "size": "Medium", "side": "Right", "circumference": "11 – 14½", "medialLength": "7", "lateralLength": "12" },
-        { "itemNumber": "HFB-SG-300L", "size": "Large", "side": "Left", "circumference": "12 – 16½", "medialLength": "7¼", "lateralLength": "12½" },
-        { "itemNumber": "HFB-SG-300R", "size": "Large", "side": "Right", "circumference": "12 – 16½", "medialLength": "7¼", "lateralLength": "12½" },
-        { "itemNumber": "HFB-SG-400L", "size": "X-Large", "side": "Left", "circumference": "12 – 17½", "medialLength": "8", "lateralLength": "13½" },
-        { "itemNumber": "HFB-SG-400R", "size": "X-Large", "side": "Right", "circumference": "12 – 17½", "medialLength": "8", "lateralLength": "13½" }
+        { "sku": "HFB-SG-100L", "size": "Small", "side": "Left", "circumference": "8 – 12¼", "medialLength": "6¼", "lateralLength": "10¼" },
+        { "sku": "HFB-SG-100R", "size": "Small", "side": "Right", "circumference": "8 – 12¼", "medialLength": "6¼", "lateralLength": "10¼" },
+        { "sku": "HFB-SG-200L", "size": "Medium", "side": "Left", "circumference": "11 – 14½", "medialLength": "7", "lateralLength": "12" },
+        { "sku": "HFB-SG-200R", "size": "Medium", "side": "Right", "circumference": "11 – 14½", "medialLength": "7", "lateralLength": "12" },
+        { "sku": "HFB-SG-300L", "size": "Large", "side": "Left", "circumference": "12 – 16½", "medialLength": "7¼", "lateralLength": "12½" },
+        { "sku": "HFB-SG-300R", "size": "Large", "side": "Right", "circumference": "12 – 16½", "medialLength": "7¼", "lateralLength": "12½" },
+        { "sku": "HFB-SG-400L", "size": "X-Large", "side": "Left", "circumference": "12 – 17½", "medialLength": "8", "lateralLength": "13½" },
+        { "sku": "HFB-SG-400R", "size": "X-Large", "side": "Right", "circumference": "12 – 17½", "medialLength": "8", "lateralLength": "13½" }
       ]
     },
     "HFB-OS": {
@@ -621,15 +621,15 @@
         ]
       },
       "items": [
-        { "itemNumber": "HFB-OS-100", "size": "Small", "side": "Left or Right", "circumference": "8 – 12½", "medialLength": "6", "lateralLength": "10½", "group": "Standard Neutral sizes" },
-        { "itemNumber": "HFB-OS-200", "size": "Medium", "side": "Left or Right", "circumference": "10 – 13¼", "medialLength": "6½", "lateralLength": "11½", "group": "Standard Neutral sizes" },
-        { "itemNumber": "HFB-OS-300", "size": "Large", "side": "Left or Right", "circumference": "12 – 15", "medialLength": "7", "lateralLength": "13½", "group": "Standard Neutral sizes" },
-        { "itemNumber": "HFB-OS-400", "size": "X-Large", "side": "Left or Right", "circumference": "14 – 16", "medialLength": "7¼", "lateralLength": "14", "group": "Standard Neutral sizes" },
-        { "itemNumber": "HFB-OS-000X", "size": "X-Small", "side": "Left or Right", "circumference": "7 – 9", "medialLength": "4½", "lateralLength": "10½", "group": "Extended Version (Neutral)" },
-        { "itemNumber": "HFB-OS-100X", "size": "Small", "side": "Left or Right", "circumference": "11 – 14", "medialLength": "5¾", "lateralLength": "13½", "group": "Extended Version (Neutral)" },
-        { "itemNumber": "HFB-OS-200X", "size": "Medium", "side": "Left or Right", "circumference": "13 – 16", "medialLength": "6¼", "lateralLength": "14", "group": "Extended Version (Neutral)" },
-        { "itemNumber": "HFB-OS-300X", "size": "Large", "side": "Left or Right", "circumference": "15½ – 17½", "medialLength": "7", "lateralLength": "16½", "group": "Extended Version (Neutral)" },
-        { "itemNumber": "HFB-OS-400X", "size": "X-Large", "side": "Left or Right", "circumference": "17 – 20", "medialLength": "8", "lateralLength": "17½", "group": "Extended Version (Neutral)" }
+        { "sku": "HFB-OS-100", "size": "Small", "side": "Left or Right", "circumference": "8 – 12½", "medialLength": "6", "lateralLength": "10½", "group": "Standard Neutral sizes" },
+        { "sku": "HFB-OS-200", "size": "Medium", "side": "Left or Right", "circumference": "10 – 13¼", "medialLength": "6½", "lateralLength": "11½", "group": "Standard Neutral sizes" },
+        { "sku": "HFB-OS-300", "size": "Large", "side": "Left or Right", "circumference": "12 – 15", "medialLength": "7", "lateralLength": "13½", "group": "Standard Neutral sizes" },
+        { "sku": "HFB-OS-400", "size": "X-Large", "side": "Left or Right", "circumference": "14 – 16", "medialLength": "7¼", "lateralLength": "14", "group": "Standard Neutral sizes" },
+        { "sku": "HFB-OS-000X", "size": "X-Small", "side": "Left or Right", "circumference": "7 – 9", "medialLength": "4½", "lateralLength": "10½", "group": "Extended Version (Neutral)" },
+        { "sku": "HFB-OS-100X", "size": "Small", "side": "Left or Right", "circumference": "11 – 14", "medialLength": "5¾", "lateralLength": "13½", "group": "Extended Version (Neutral)" },
+        { "sku": "HFB-OS-200X", "size": "Medium", "side": "Left or Right", "circumference": "13 – 16", "medialLength": "6¼", "lateralLength": "14", "group": "Extended Version (Neutral)" },
+        { "sku": "HFB-OS-300X", "size": "Large", "side": "Left or Right", "circumference": "15½ – 17½", "medialLength": "7", "lateralLength": "16½", "group": "Extended Version (Neutral)" },
+        { "sku": "HFB-OS-400X", "size": "X-Large", "side": "Left or Right", "circumference": "17 – 20", "medialLength": "8", "lateralLength": "17½", "group": "Extended Version (Neutral)" }
       ]
     },
     "HFB": {
@@ -656,16 +656,16 @@
         ]
       },
       "items": [
-        { "itemNumber": "HFB-100L", "size": "Small", "side": "Left", "circumference": "8 – 11", "medialLength": "5¼", "lateralLength": "6¼" },
-        { "itemNumber": "HFB-100R", "size": "Small", "side": "Right", "circumference": "8 – 11", "medialLength": "5¼", "lateralLength": "6¼" },
-        { "itemNumber": "HFB-200L", "size": "Medium", "side": "Left", "circumference": "10 – 13", "medialLength": "5½", "lateralLength": "6¾" },
-        { "itemNumber": "HFB-200R", "size": "Medium", "side": "Right", "circumference": "10 – 13", "medialLength": "5½", "lateralLength": "6¾" },
-        { "itemNumber": "HFB-300L", "size": "Large", "side": "Left", "circumference": "12 – 15", "medialLength": "6", "lateralLength": "7¼" },
-        { "itemNumber": "HFB-300R", "size": "Large", "side": "Right", "circumference": "12 – 15", "medialLength": "6", "lateralLength": "7¼" },
-        { "itemNumber": "HFB-400L", "size": "X-Large", "side": "Left", "circumference": "14 – 17", "medialLength": "6¼", "lateralLength": "7¾" },
-        { "itemNumber": "HFB-400R", "size": "X-Large", "side": "Right", "circumference": "14 – 17", "medialLength": "6¼", "lateralLength": "7¾" },
-        { "itemNumber": "HFB-500L", "size": "XX-Large", "side": "Left", "circumference": "18 – 23", "medialLength": "7¼", "lateralLength": "8¾" },
-        { "itemNumber": "HFB-500R", "size": "XX-Large", "side": "Right", "circumference": "18 – 23", "medialLength": "7¼", "lateralLength": "8¾" }
+        { "sku": "HFB-100L", "size": "Small", "side": "Left", "circumference": "8 – 11", "medialLength": "5¼", "lateralLength": "6¼" },
+        { "sku": "HFB-100R", "size": "Small", "side": "Right", "circumference": "8 – 11", "medialLength": "5¼", "lateralLength": "6¼" },
+        { "sku": "HFB-200L", "size": "Medium", "side": "Left", "circumference": "10 – 13", "medialLength": "5½", "lateralLength": "6¾" },
+        { "sku": "HFB-200R", "size": "Medium", "side": "Right", "circumference": "10 – 13", "medialLength": "5½", "lateralLength": "6¾" },
+        { "sku": "HFB-300L", "size": "Large", "side": "Left", "circumference": "12 – 15", "medialLength": "6", "lateralLength": "7¼" },
+        { "sku": "HFB-300R", "size": "Large", "side": "Right", "circumference": "12 – 15", "medialLength": "6", "lateralLength": "7¼" },
+        { "sku": "HFB-400L", "size": "X-Large", "side": "Left", "circumference": "14 – 17", "medialLength": "6¼", "lateralLength": "7¾" },
+        { "sku": "HFB-400R", "size": "X-Large", "side": "Right", "circumference": "14 – 17", "medialLength": "6¼", "lateralLength": "7¾" },
+        { "sku": "HFB-500L", "size": "XX-Large", "side": "Left", "circumference": "18 – 23", "medialLength": "7¼", "lateralLength": "8¾" },
+        { "sku": "HFB-500R", "size": "XX-Large", "side": "Right", "circumference": "18 – 23", "medialLength": "7¼", "lateralLength": "8¾" }
       ]
     },
     "EO": {
@@ -700,14 +700,14 @@
         ]
       },
       "items": [
-        { "itemNumber": "EO-100L", "size": "Small", "side": "Left", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "bicepCircumference": "8 – 11" },
-        { "itemNumber": "EO-100R", "size": "Small", "side": "Right", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "bicepCircumference": "8 – 11" },
-        { "itemNumber": "EO-200L", "size": "Medium", "side": "Left", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "bicepCircumference": "10 – 13" },
-        { "itemNumber": "EO-200R", "size": "Medium", "side": "Right", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "bicepCircumference": "10 – 13" },
-        { "itemNumber": "EO-300L", "size": "Large", "side": "Left", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "bicepCircumference": "12 – 15" },
-        { "itemNumber": "EO-300R", "size": "Large", "side": "Right", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "bicepCircumference": "12 – 15" },
-        { "itemNumber": "EO-400L", "size": "X-Large", "side": "Left", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "bicepCircumference": "14 – 17" },
-        { "itemNumber": "EO-400R", "size": "X-Large", "side": "Right", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "bicepCircumference": "14 – 17" }
+        { "sku": "EO-100L", "size": "Small", "side": "Left", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "bicepCircumference": "8 – 11" },
+        { "sku": "EO-100R", "size": "Small", "side": "Right", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "bicepCircumference": "8 – 11" },
+        { "sku": "EO-200L", "size": "Medium", "side": "Left", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "bicepCircumference": "10 – 13" },
+        { "sku": "EO-200R", "size": "Medium", "side": "Right", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "bicepCircumference": "10 – 13" },
+        { "sku": "EO-300L", "size": "Large", "side": "Left", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "bicepCircumference": "12 – 15" },
+        { "sku": "EO-300R", "size": "Large", "side": "Right", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "bicepCircumference": "12 – 15" },
+        { "sku": "EO-400L", "size": "X-Large", "side": "Left", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "bicepCircumference": "14 – 17" },
+        { "sku": "EO-400R", "size": "X-Large", "side": "Right", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "bicepCircumference": "14 – 17" }
       ]
     },
     "EO-SG": {
@@ -743,14 +743,14 @@
         ]
       },
       "items": [
-        { "itemNumber": "EO-SG-100L", "size": "Small", "side": "Left", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "bicepCircumference": "8 – 12¼" },
-        { "itemNumber": "EO-SG-100R", "size": "Small", "side": "Right", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "bicepCircumference": "8 – 12¼" },
-        { "itemNumber": "EO-SG-200L", "size": "Medium", "side": "Left", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "bicepCircumference": "11 – 14½" },
-        { "itemNumber": "EO-SG-200R", "size": "Medium", "side": "Right", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "bicepCircumference": "11 – 14½" },
-        { "itemNumber": "EO-SG-300L", "size": "Large", "side": "Left", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "bicepCircumference": "12 – 16½" },
-        { "itemNumber": "EO-SG-300R", "size": "Large", "side": "Right", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "bicepCircumference": "12 – 16½" },
-        { "itemNumber": "EO-SG-400L", "size": "X-Large", "side": "Left", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "bicepCircumference": "14 – 17½" },
-        { "itemNumber": "EO-SG-400R", "size": "X-Large", "side": "Right", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "bicepCircumference": "14 – 17½" }
+        { "sku": "EO-SG-100L", "size": "Small", "side": "Left", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "bicepCircumference": "8 – 12¼" },
+        { "sku": "EO-SG-100R", "size": "Small", "side": "Right", "wristCircumference": "6 – 7", "forearmCircumference": "8 – 10", "bicepCircumference": "8 – 12¼" },
+        { "sku": "EO-SG-200L", "size": "Medium", "side": "Left", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "bicepCircumference": "11 – 14½" },
+        { "sku": "EO-SG-200R", "size": "Medium", "side": "Right", "wristCircumference": "7 – 8", "forearmCircumference": "10 – 12", "bicepCircumference": "11 – 14½" },
+        { "sku": "EO-SG-300L", "size": "Large", "side": "Left", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "bicepCircumference": "12 – 16½" },
+        { "sku": "EO-SG-300R", "size": "Large", "side": "Right", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "bicepCircumference": "12 – 16½" },
+        { "sku": "EO-SG-400L", "size": "X-Large", "side": "Left", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "bicepCircumference": "14 – 17½" },
+        { "sku": "EO-SG-400R", "size": "X-Large", "side": "Right", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "bicepCircumference": "14 – 17½" }
       ]
     },
     "WHCS-C": {
@@ -785,14 +785,14 @@
         ]
       },
       "items": [
-        { "itemNumber": "WHCS-C-100L", "size": "Small", "side": "Left", "mpDiameter": "2 – 2½", "length": "5¼" },
-        { "itemNumber": "WHCS-C-100R", "size": "Small", "side": "Right", "mpDiameter": "2 – 2½", "length": "5¼" },
-        { "itemNumber": "WHCS-C-200L", "size": "Medium", "side": "Left", "mpDiameter": "2¾ – 3¼", "length": "7½" },
-        { "itemNumber": "WHCS-C-200R", "size": "Medium", "side": "Right", "mpDiameter": "2¾ – 3¼", "length": "7½" },
-        { "itemNumber": "WHCS-C-300L", "size": "Large", "side": "Left", "mpDiameter": "3¼ – 3¾", "length": "9" },
-        { "itemNumber": "WHCS-C-300R", "size": "Large", "side": "Right", "mpDiameter": "3¼ – 3¾", "length": "9" },
-        { "itemNumber": "WHCS-C-400L", "size": "X-Large", "side": "Left", "mpDiameter": "3¾ – 4", "length": "10" },
-        { "itemNumber": "WHCS-C-400R", "size": "X-Large", "side": "Right", "mpDiameter": "3¾ – 4", "length": "10" }
+        { "sku": "WHCS-C-100L", "size": "Small", "side": "Left", "mpDiameter": "2 – 2½", "length": "5¼" },
+        { "sku": "WHCS-C-100R", "size": "Small", "side": "Right", "mpDiameter": "2 – 2½", "length": "5¼" },
+        { "sku": "WHCS-C-200L", "size": "Medium", "side": "Left", "mpDiameter": "2¾ – 3¼", "length": "7½" },
+        { "sku": "WHCS-C-200R", "size": "Medium", "side": "Right", "mpDiameter": "2¾ – 3¼", "length": "7½" },
+        { "sku": "WHCS-C-300L", "size": "Large", "side": "Left", "mpDiameter": "3¼ – 3¾", "length": "9" },
+        { "sku": "WHCS-C-300R", "size": "Large", "side": "Right", "mpDiameter": "3¼ – 3¾", "length": "9" },
+        { "sku": "WHCS-C-400L", "size": "X-Large", "side": "Left", "mpDiameter": "3¾ – 4", "length": "10" },
+        { "sku": "WHCS-C-400R", "size": "X-Large", "side": "Right", "mpDiameter": "3¾ – 4", "length": "10" }
       ]
     },
     "WHCS": {
@@ -814,14 +814,14 @@
         "mpNote": "M-P Diameter is width of hand"
       },
       "items": [
-        { "itemNumber": "WHCS-100L", "size": "Small", "side": "Left", "mpDiameter": "2 – 2½", "length": "5¼" },
-        { "itemNumber": "WHCS-100R", "size": "Small", "side": "Right", "mpDiameter": "2 – 2½", "length": "5¼" },
-        { "itemNumber": "WHCS-200L", "size": "Medium", "side": "Left", "mpDiameter": "2¾ – 3¼", "length": "7½" },
-        { "itemNumber": "WHCS-200R", "size": "Medium", "side": "Right", "mpDiameter": "2¾ – 3¼", "length": "7½" },
-        { "itemNumber": "WHCS-300L", "size": "Large", "side": "Left", "mpDiameter": "3¼ – 3¾", "length": "9" },
-        { "itemNumber": "WHCS-300R", "size": "Large", "side": "Right", "mpDiameter": "3¼ – 3¾", "length": "9" },
-        { "itemNumber": "WHCS-400L", "size": "X-Large", "side": "Left", "mpDiameter": "3¾ – 4", "length": "10" },
-        { "itemNumber": "WHCS-400R", "size": "X-Large", "side": "Right", "mpDiameter": "3¾ – 4", "length": "10" }
+        { "sku": "WHCS-100L", "size": "Small", "side": "Left", "mpDiameter": "2 – 2½", "length": "5¼" },
+        { "sku": "WHCS-100R", "size": "Small", "side": "Right", "mpDiameter": "2 – 2½", "length": "5¼" },
+        { "sku": "WHCS-200L", "size": "Medium", "side": "Left", "mpDiameter": "2¾ – 3¼", "length": "7½" },
+        { "sku": "WHCS-200R", "size": "Medium", "side": "Right", "mpDiameter": "2¾ – 3¼", "length": "7½" },
+        { "sku": "WHCS-300L", "size": "Large", "side": "Left", "mpDiameter": "3¼ – 3¾", "length": "9" },
+        { "sku": "WHCS-300R", "size": "Large", "side": "Right", "mpDiameter": "3¼ – 3¾", "length": "9" },
+        { "sku": "WHCS-400L", "size": "X-Large", "side": "Left", "mpDiameter": "3¾ – 4", "length": "10" },
+        { "sku": "WHCS-400R", "size": "X-Large", "side": "Right", "mpDiameter": "3¾ – 4", "length": "10" }
       ]
     },
     "WHFS-C": {
@@ -855,12 +855,12 @@
         ]
       },
       "items": [
-        { "itemNumber": "WHFS-C-100L", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼", "length": "7½" },
-        { "itemNumber": "WHFS-C-100R", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼", "length": "7½" },
-        { "itemNumber": "WHFS-C-200L", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾", "length": "10" },
-        { "itemNumber": "WHFS-C-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "length": "10" },
-        { "itemNumber": "WHFS-C-300L", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4", "length": "10½" },
-        { "itemNumber": "WHFS-C-300R", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4", "length": "10½" }
+        { "sku": "WHFS-C-100L", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼", "length": "7½" },
+        { "sku": "WHFS-C-100R", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼", "length": "7½" },
+        { "sku": "WHFS-C-200L", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾", "length": "10" },
+        { "sku": "WHFS-C-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "length": "10" },
+        { "sku": "WHFS-C-300L", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4", "length": "10½" },
+        { "sku": "WHFS-C-300R", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4", "length": "10½" }
       ]
     },
     "WHFS": {
@@ -882,12 +882,12 @@
         "mpNote": "M-P Diameter is width of hand"
       },
       "items": [
-        { "itemNumber": "WHFS-100L", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼", "length": "7½" },
-        { "itemNumber": "WHFS-100R", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼", "length": "7½" },
-        { "itemNumber": "WHFS-200L", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾", "length": "10" },
-        { "itemNumber": "WHFS-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "length": "10" },
-        { "itemNumber": "WHFS-300L", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4", "length": "10½" },
-        { "itemNumber": "WHFS-300R", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4", "length": "10½" }
+        { "sku": "WHFS-100L", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼", "length": "7½" },
+        { "sku": "WHFS-100R", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼", "length": "7½" },
+        { "sku": "WHFS-200L", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾", "length": "10" },
+        { "sku": "WHFS-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "length": "10" },
+        { "sku": "WHFS-300L", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4", "length": "10½" },
+        { "sku": "WHFS-300R", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4", "length": "10½" }
       ]
     },
     "PLS-FF": {
@@ -900,14 +900,14 @@
         "description": "Full-foot posterior leaf-spring AFO designed to assist dorsiflexion and support gait. Rigid footplate with comfortable proximal cuff; can be trimmed and heat-modified for fit."
       },
       "items": [
-        { "itemNumber": "PLS-FF-100L", "size": "Small", "side": "Left", "height": "13", "insideLength": "8½", "outsideLength": "9 3/8", "width": "3¼", "mensShoeSize": "3 – 6" },
-        { "itemNumber": "PLS-FF-100R", "size": "Small", "side": "Right", "height": "13", "insideLength": "8½", "outsideLength": "9 3/8", "width": "3¼", "mensShoeSize": "3 – 6" },
-        { "itemNumber": "PLS-FF-200L", "size": "Medium", "side": "Left", "height": "13½", "insideLength": "9¾", "outsideLength": "10 1/8", "width": "3½", "mensShoeSize": "6 – 9" },
-        { "itemNumber": "PLS-FF-200R", "size": "Medium", "side": "Right", "height": "13½", "insideLength": "9¾", "outsideLength": "10 1/8", "width": "3½", "mensShoeSize": "6 – 9" },
-        { "itemNumber": "PLS-FF-300L", "size": "Large", "side": "Left", "height": "14½", "insideLength": "11", "outsideLength": "11", "width": "3¾", "mensShoeSize": "9 – 11" },
-        { "itemNumber": "PLS-FF-300R", "size": "Large", "side": "Right", "height": "14½", "insideLength": "11", "outsideLength": "11", "width": "3¾", "mensShoeSize": "9 – 11" },
-        { "itemNumber": "PLS-FF-400L", "size": "X-Large", "side": "Left", "height": "14½", "insideLength": "11½", "outsideLength": "12", "width": "4", "mensShoeSize": "11 – 13" },
-        { "itemNumber": "PLS-FF-400R", "size": "X-Large", "side": "Right", "height": "14½", "insideLength": "11½", "outsideLength": "12", "width": "4", "mensShoeSize": "11 – 13" }
+        { "sku": "PLS-FF-100L", "size": "Small", "side": "Left", "height": "13", "insideLength": "8½", "outsideLength": "9 3/8", "width": "3¼", "mensShoeSize": "3 – 6" },
+        { "sku": "PLS-FF-100R", "size": "Small", "side": "Right", "height": "13", "insideLength": "8½", "outsideLength": "9 3/8", "width": "3¼", "mensShoeSize": "3 – 6" },
+        { "sku": "PLS-FF-200L", "size": "Medium", "side": "Left", "height": "13½", "insideLength": "9¾", "outsideLength": "10 1/8", "width": "3½", "mensShoeSize": "6 – 9" },
+        { "sku": "PLS-FF-200R", "size": "Medium", "side": "Right", "height": "13½", "insideLength": "9¾", "outsideLength": "10 1/8", "width": "3½", "mensShoeSize": "6 – 9" },
+        { "sku": "PLS-FF-300L", "size": "Large", "side": "Left", "height": "14½", "insideLength": "11", "outsideLength": "11", "width": "3¾", "mensShoeSize": "9 – 11" },
+        { "sku": "PLS-FF-300R", "size": "Large", "side": "Right", "height": "14½", "insideLength": "11", "outsideLength": "11", "width": "3¾", "mensShoeSize": "9 – 11" },
+        { "sku": "PLS-FF-400L", "size": "X-Large", "side": "Left", "height": "14½", "insideLength": "11½", "outsideLength": "12", "width": "4", "mensShoeSize": "11 – 13" },
+        { "sku": "PLS-FF-400R", "size": "X-Large", "side": "Right", "height": "14½", "insideLength": "11½", "outsideLength": "12", "width": "4", "mensShoeSize": "11 – 13" }
       ]
     },
     "PLSB": {
@@ -1016,30 +1016,30 @@
         ]
       },
       "items": [
-        { "itemNumber": "PLS-FFOH-100L", "size": "Small", "side": "Left", "mensShoeSize": "3 – 6", "group": "Full-Foot Plate (PLS-FFOH)" },
-        { "itemNumber": "PLS-FFOH-100R", "size": "Small", "side": "Right", "mensShoeSize": "3 – 6", "group": "Full-Foot Plate (PLS-FFOH)" },
-        { "itemNumber": "PLS-FFOH-200L", "size": "Medium", "side": "Left", "mensShoeSize": "6 – 9", "group": "Full-Foot Plate (PLS-FFOH)" },
-        { "itemNumber": "PLS-FFOH-200R", "size": "Medium", "side": "Right", "mensShoeSize": "6 – 9", "group": "Full-Foot Plate (PLS-FFOH)" },
-        { "itemNumber": "PLS-FFOH-300L", "size": "Large", "side": "Left", "mensShoeSize": "9 – 11", "group": "Full-Foot Plate (PLS-FFOH)" },
-        { "itemNumber": "PLS-FFOH-300R", "size": "Large", "side": "Right", "mensShoeSize": "9 – 11", "group": "Full-Foot Plate (PLS-FFOH)" },
-        { "itemNumber": "PLS-FFOH-400L", "size": "X-Large", "side": "Left", "mensShoeSize": "11 – 13", "group": "Full-Foot Plate (PLS-FFOH)" },
-        { "itemNumber": "PLS-FFOH-400R", "size": "X-Large", "side": "Right", "mensShoeSize": "11 – 13", "group": "Full-Foot Plate (PLS-FFOH)" },
-        { "itemNumber": "PLS-SOH-100L", "size": "Small", "side": "Left", "mensShoeSize": "3 – 6", "group": "Sliding Calf Section (PLS-SOH)" },
-        { "itemNumber": "PLS-SOH-100R", "size": "Small", "side": "Right", "mensShoeSize": "3 – 6", "group": "Sliding Calf Section (PLS-SOH)" },
-        { "itemNumber": "PLS-SOH-200L", "size": "Medium", "side": "Left", "mensShoeSize": "6 – 9", "group": "Sliding Calf Section (PLS-SOH)" },
-        { "itemNumber": "PLS-SOH-200R", "size": "Medium", "side": "Right", "mensShoeSize": "6 – 9", "group": "Sliding Calf Section (PLS-SOH)" },
-        { "itemNumber": "PLS-SOH-300L", "size": "Large", "side": "Left", "mensShoeSize": "9 – 11", "group": "Sliding Calf Section (PLS-SOH)" },
-        { "itemNumber": "PLS-SOH-300R", "size": "Large", "side": "Right", "mensShoeSize": "9 – 11", "group": "Sliding Calf Section (PLS-SOH)" },
-        { "itemNumber": "PLS-SOH-400L", "size": "X-Large", "side": "Left", "mensShoeSize": "11 – 13", "group": "Sliding Calf Section (PLS-SOH)" },
-        { "itemNumber": "PLS-SOH-400R", "size": "X-Large", "side": "Right", "mensShoeSize": "11 – 13", "group": "Sliding Calf Section (PLS-SOH)" },
-        { "itemNumber": "PLSC-OH-100L", "size": "Small", "side": "Left", "mensShoeSize": "3 – 6", "group": "Three-Quarter Foot Plate (PLSC-OH)" },
-        { "itemNumber": "PLSC-OH-100R", "size": "Small", "side": "Right", "mensShoeSize": "3 – 6", "group": "Three-Quarter Foot Plate (PLSC-OH)" },
-        { "itemNumber": "PLSC-OH-200L", "size": "Medium", "side": "Left", "mensShoeSize": "6 – 9", "group": "Three-Quarter Foot Plate (PLSC-OH)" },
-        { "itemNumber": "PLSC-OH-200R", "size": "Medium", "side": "Right", "mensShoeSize": "6 – 9", "group": "Three-Quarter Foot Plate (PLSC-OH)" },
-        { "itemNumber": "PLSC-OH-300L", "size": "Large", "side": "Left", "mensShoeSize": "9 – 11", "group": "Three-Quarter Foot Plate (PLSC-OH)" },
-        { "itemNumber": "PLSC-OH-300R", "size": "Large", "side": "Right", "mensShoeSize": "9 – 11", "group": "Three-Quarter Foot Plate (PLSC-OH)" },
-        { "itemNumber": "PLSC-OH-400L", "size": "X-Large", "side": "Left", "mensShoeSize": "11 – 13", "group": "Three-Quarter Foot Plate (PLSC-OH)" },
-        { "itemNumber": "PLSC-OH-400R", "size": "X-Large", "side": "Right", "mensShoeSize": "11 – 13", "group": "Three-Quarter Foot Plate (PLSC-OH)" }
+        { "sku": "PLS-FFOH-100L", "size": "Small", "side": "Left", "mensShoeSize": "3 – 6", "group": "Full-Foot Plate (PLS-FFOH)" },
+        { "sku": "PLS-FFOH-100R", "size": "Small", "side": "Right", "mensShoeSize": "3 – 6", "group": "Full-Foot Plate (PLS-FFOH)" },
+        { "sku": "PLS-FFOH-200L", "size": "Medium", "side": "Left", "mensShoeSize": "6 – 9", "group": "Full-Foot Plate (PLS-FFOH)" },
+        { "sku": "PLS-FFOH-200R", "size": "Medium", "side": "Right", "mensShoeSize": "6 – 9", "group": "Full-Foot Plate (PLS-FFOH)" },
+        { "sku": "PLS-FFOH-300L", "size": "Large", "side": "Left", "mensShoeSize": "9 – 11", "group": "Full-Foot Plate (PLS-FFOH)" },
+        { "sku": "PLS-FFOH-300R", "size": "Large", "side": "Right", "mensShoeSize": "9 – 11", "group": "Full-Foot Plate (PLS-FFOH)" },
+        { "sku": "PLS-FFOH-400L", "size": "X-Large", "side": "Left", "mensShoeSize": "11 – 13", "group": "Full-Foot Plate (PLS-FFOH)" },
+        { "sku": "PLS-FFOH-400R", "size": "X-Large", "side": "Right", "mensShoeSize": "11 – 13", "group": "Full-Foot Plate (PLS-FFOH)" },
+        { "sku": "PLS-SOH-100L", "size": "Small", "side": "Left", "mensShoeSize": "3 – 6", "group": "Sliding Calf Section (PLS-SOH)" },
+        { "sku": "PLS-SOH-100R", "size": "Small", "side": "Right", "mensShoeSize": "3 – 6", "group": "Sliding Calf Section (PLS-SOH)" },
+        { "sku": "PLS-SOH-200L", "size": "Medium", "side": "Left", "mensShoeSize": "6 – 9", "group": "Sliding Calf Section (PLS-SOH)" },
+        { "sku": "PLS-SOH-200R", "size": "Medium", "side": "Right", "mensShoeSize": "6 – 9", "group": "Sliding Calf Section (PLS-SOH)" },
+        { "sku": "PLS-SOH-300L", "size": "Large", "side": "Left", "mensShoeSize": "9 – 11", "group": "Sliding Calf Section (PLS-SOH)" },
+        { "sku": "PLS-SOH-300R", "size": "Large", "side": "Right", "mensShoeSize": "9 – 11", "group": "Sliding Calf Section (PLS-SOH)" },
+        { "sku": "PLS-SOH-400L", "size": "X-Large", "side": "Left", "mensShoeSize": "11 – 13", "group": "Sliding Calf Section (PLS-SOH)" },
+        { "sku": "PLS-SOH-400R", "size": "X-Large", "side": "Right", "mensShoeSize": "11 – 13", "group": "Sliding Calf Section (PLS-SOH)" },
+        { "sku": "PLSC-OH-100L", "size": "Small", "side": "Left", "mensShoeSize": "3 – 6", "group": "Three-Quarter Foot Plate (PLSC-OH)" },
+        { "sku": "PLSC-OH-100R", "size": "Small", "side": "Right", "mensShoeSize": "3 – 6", "group": "Three-Quarter Foot Plate (PLSC-OH)" },
+        { "sku": "PLSC-OH-200L", "size": "Medium", "side": "Left", "mensShoeSize": "6 – 9", "group": "Three-Quarter Foot Plate (PLSC-OH)" },
+        { "sku": "PLSC-OH-200R", "size": "Medium", "side": "Right", "mensShoeSize": "6 – 9", "group": "Three-Quarter Foot Plate (PLSC-OH)" },
+        { "sku": "PLSC-OH-300L", "size": "Large", "side": "Left", "mensShoeSize": "9 – 11", "group": "Three-Quarter Foot Plate (PLSC-OH)" },
+        { "sku": "PLSC-OH-300R", "size": "Large", "side": "Right", "mensShoeSize": "9 – 11", "group": "Three-Quarter Foot Plate (PLSC-OH)" },
+        { "sku": "PLSC-OH-400L", "size": "X-Large", "side": "Left", "mensShoeSize": "11 – 13", "group": "Three-Quarter Foot Plate (PLSC-OH)" },
+        { "sku": "PLSC-OH-400R", "size": "X-Large", "side": "Right", "mensShoeSize": "11 – 13", "group": "Three-Quarter Foot Plate (PLSC-OH)" }
       ]
     },
     "PED-C": {
@@ -1114,10 +1114,10 @@
       "image": "/images/ts-hero.jpg",
       "details": { "heroImage": "/images/ts-hero.jpg" },
       "items": [
-        { "itemNumber": "TS-100", "size": "Small" },
-        { "itemNumber": "TS-200", "size": "Medium" },
-        { "itemNumber": "TS-300", "size": "Large" },
-        { "itemNumber": "TS-400", "size": "X-Large" }
+        { "sku": "TS-100", "size": "Small" },
+        { "sku": "TS-200", "size": "Medium" },
+        { "sku": "TS-300", "size": "Large" },
+        { "sku": "TS-400", "size": "X-Large" }
       ]
     },
     "STOCKINETTE": {
@@ -1134,27 +1134,27 @@
         "latexFree": true
       },
       "items": [
-        { "itemNumber": "STOCKINETT-TGS2", "Description": "2″ Thumb Gard Spika", "Size": "all", "group": "Stockinette" },
-        { "itemNumber": "STOCKINETT-TGS2", "Description": "2″ Sport Thumb Spika", "Size": "all", "group": "Stockinette" },
-        { "itemNumber": "STOCKINETT-WH", "Description": "2″ Wrist Hand", "Size": "all", "group": "Stockinette" },
-        { "itemNumber": "STOCKINETT-WH", "Description": "2″ Wrist Hand Extended", "Size": "all", "group": "Stockinette" },
-        { "itemNumber": "STOCKINETT-WH", "Description": "2″ Wrist Hand Holder", "Size": "all", "group": "Stockinette" },
-        { "itemNumber": "STOCKINETT-WHT", "Description": "2″ Wrist Hand Thumb", "Size": "all", "group": "Stockinette" },
-        { "itemNumber": "STOCKINETT-WHT", "Description": "2″ Wrist Hand Thumb Extended", "Size": "all", "group": "Stockinette" },
-        { "itemNumber": "STOCKINETT-WHT", "Description": "2″ Wrist Hand Thumb Finger", "Size": "all", "group": "Stockinette" },
-        { "itemNumber": "STOCKINETT-C3", "Description": "3″ Colles’ Fracture Brace", "Size": "all", "group": "Fracture Braces" },
-        { "itemNumber": "STOCKINETT-F6", "Description": "6″ Femoral Fracture Brace", "Size": "Md/Lg", "group": "Fracture Braces" },
-        { "itemNumber": "STOCKINETT-H3", "Description": "3″ Humerus Fracture Brace", "Size": "Sm", "group": "Fracture Braces" },
-        { "itemNumber": "STOCKINETT-H4", "Description": "4″ Humerus Fracture Brace", "Size": "Md/Lg/XLg", "group": "Fracture Braces" },
-        { "itemNumber": "STOCKINETT-PTB3", "Description": "3″ Tibial FB Proximal Support", "Size": "Sm", "group": "Fracture Braces" },
-        { "itemNumber": "STOCKINETT-PTB4", "Description": "4″ Tibial FB Proximal Support", "Size": "Md/Lg", "group": "Fracture Braces" },
-        { "itemNumber": "STOCKINETT-SG3", "Description": "3″ Humeral FB-OS or SG", "Size": "Sm", "group": "Fracture Braces" },
-        { "itemNumber": "STOCKINETT-SG4", "Description": "4″ Humeral FB-OS or SG", "Size": "Md/Lg/XLg", "group": "Fracture Braces" },
-        { "itemNumber": "STOCKINETT-T3", "Description": "3″ Tibial Fracture Brace", "Size": "Sm", "group": "Fracture Braces" },
-        { "itemNumber": "STOCKINETT-T4", "Description": "4″ Tibial Fracture Brace", "Size": "Md/Lg", "group": "Fracture Braces" },
-        { "itemNumber": "STOCKINETT-U3", "Description": "3″ Ulna Fracture Brace", "Size": "all", "group": "Fracture Braces" },
-        { "itemNumber": "STOCKINETT-3-26", "Description": "3″ Ankle Foot Calf", "Size": "Sm/Md", "group": "Lower Extremity" },
-        { "itemNumber": "STOCKINETT-4-26", "Description": "4″ Ankle Foot Calf", "Size": "Lg/XLg", "group": "Lower Extremity" }
+        { "sku": "STOCKINETT-TGS2", "Description": "2″ Thumb Gard Spika", "Size": "all", "group": "Stockinette" },
+        { "sku": "STOCKINETT-TGS2", "Description": "2″ Sport Thumb Spika", "Size": "all", "group": "Stockinette" },
+        { "sku": "STOCKINETT-WH", "Description": "2″ Wrist Hand", "Size": "all", "group": "Stockinette" },
+        { "sku": "STOCKINETT-WH", "Description": "2″ Wrist Hand Extended", "Size": "all", "group": "Stockinette" },
+        { "sku": "STOCKINETT-WH", "Description": "2″ Wrist Hand Holder", "Size": "all", "group": "Stockinette" },
+        { "sku": "STOCKINETT-WHT", "Description": "2″ Wrist Hand Thumb", "Size": "all", "group": "Stockinette" },
+        { "sku": "STOCKINETT-WHT", "Description": "2″ Wrist Hand Thumb Extended", "Size": "all", "group": "Stockinette" },
+        { "sku": "STOCKINETT-WHT", "Description": "2″ Wrist Hand Thumb Finger", "Size": "all", "group": "Stockinette" },
+        { "sku": "STOCKINETT-C3", "Description": "3″ Colles’ Fracture Brace", "Size": "all", "group": "Fracture Braces" },
+        { "sku": "STOCKINETT-F6", "Description": "6″ Femoral Fracture Brace", "Size": "Md/Lg", "group": "Fracture Braces" },
+        { "sku": "STOCKINETT-H3", "Description": "3″ Humerus Fracture Brace", "Size": "Sm", "group": "Fracture Braces" },
+        { "sku": "STOCKINETT-H4", "Description": "4″ Humerus Fracture Brace", "Size": "Md/Lg/XLg", "group": "Fracture Braces" },
+        { "sku": "STOCKINETT-PTB3", "Description": "3″ Tibial FB Proximal Support", "Size": "Sm", "group": "Fracture Braces" },
+        { "sku": "STOCKINETT-PTB4", "Description": "4″ Tibial FB Proximal Support", "Size": "Md/Lg", "group": "Fracture Braces" },
+        { "sku": "STOCKINETT-SG3", "Description": "3″ Humeral FB-OS or SG", "Size": "Sm", "group": "Fracture Braces" },
+        { "sku": "STOCKINETT-SG4", "Description": "4″ Humeral FB-OS or SG", "Size": "Md/Lg/XLg", "group": "Fracture Braces" },
+        { "sku": "STOCKINETT-T3", "Description": "3″ Tibial Fracture Brace", "Size": "Sm", "group": "Fracture Braces" },
+        { "sku": "STOCKINETT-T4", "Description": "4″ Tibial Fracture Brace", "Size": "Md/Lg", "group": "Fracture Braces" },
+        { "sku": "STOCKINETT-U3", "Description": "3″ Ulna Fracture Brace", "Size": "all", "group": "Fracture Braces" },
+        { "sku": "STOCKINETT-3-26", "Description": "3″ Ankle Foot Calf", "Size": "Sm/Md", "group": "Lower Extremity" },
+        { "sku": "STOCKINETT-4-26", "Description": "4″ Ankle Foot Calf", "Size": "Lg/XLg", "group": "Lower Extremity" }
       ]
     },
     "AFO-S": {
@@ -1171,13 +1171,13 @@
         ]
       },
       "items": [
-        { "itemNumber": "AFO-S-1", "Description": "Anti-shock Shoe Insert", "mensShoeSize": "3 – 6", "group": "AFO Shoe Inserts" },
-        { "itemNumber": "AFO-S-2", "Description": "Anti-shock Shoe Insert", "mensShoeSize": "6 – 9", "group": "AFO Shoe Inserts" },
-        { "itemNumber": "AFO-S-3", "Description": "Anti-shock Shoe Insert", "mensShoeSize": "9 – 11", "group": "AFO Shoe Inserts" },
-        { "itemNumber": "AFO-S-4", "Description": "Anti-shock Shoe Insert", "mensShoeSize": "11 – 13", "group": "AFO Shoe Inserts" },
-        { "itemNumber": "AFO-L-1", "Description": "AFO Sock (seamless)", "size": "Pediatric — one size", "group": "AFO Socks" },
-        { "itemNumber": "AFO-L-2", "Description": "AFO Sock (seamless)", "size": "Adult — one size", "group": "AFO Socks" },
-        { "itemNumber": "STRAP-PLSC/M", "Description": "Adhesive-back strap — fits PLSC & PLS-FF", "group": "Drop Foot Splint Straps" }
+        { "sku": "AFO-S-1", "Description": "Anti-shock Shoe Insert", "mensShoeSize": "3 – 6", "group": "AFO Shoe Inserts" },
+        { "sku": "AFO-S-2", "Description": "Anti-shock Shoe Insert", "mensShoeSize": "6 – 9", "group": "AFO Shoe Inserts" },
+        { "sku": "AFO-S-3", "Description": "Anti-shock Shoe Insert", "mensShoeSize": "9 – 11", "group": "AFO Shoe Inserts" },
+        { "sku": "AFO-S-4", "Description": "Anti-shock Shoe Insert", "mensShoeSize": "11 – 13", "group": "AFO Shoe Inserts" },
+        { "sku": "AFO-L-1", "Description": "AFO Sock (seamless)", "size": "Pediatric — one size", "group": "AFO Socks" },
+        { "sku": "AFO-L-2", "Description": "AFO Sock (seamless)", "size": "Adult — one size", "group": "AFO Socks" },
+        { "sku": "STRAP-PLSC/M", "Description": "Adhesive-back strap — fits PLSC & PLS-FF", "group": "Drop Foot Splint Straps" }
       ]
     },
     "EAM": {
@@ -1193,28 +1193,28 @@
         ]
       },
       "items": [
-        { "itemNumber": "EAM20", "Description": "Shape a", "size": "Large", "group": "Shape a" },
-        { "itemNumber": "EAM21", "Description": "Shape a", "size": "Small", "group": "Shape a" },
-        { "itemNumber": "EAM10", "Description": "Shape b", "size": "X-Large", "group": "Shape b" },
-        { "itemNumber": "EAM11", "Description": "Shape b", "size": "Large", "group": "Shape b" },
-        { "itemNumber": "EAM12", "Description": "Shape b", "size": "Medium", "group": "Shape b" },
-        { "itemNumber": "EAM13", "Description": "Shape b", "size": "Small", "group": "Shape b" },
-        { "itemNumber": "EAM22", "Description": "Shape c", "size": "Large", "group": "Shape c" },
-        { "itemNumber": "EAM23", "Description": "Shape c", "size": "Small", "group": "Shape c" },
-        { "itemNumber": "EAM32", "Description": "Shape d", "size": "Large", "group": "Shape d" },
-        { "itemNumber": "EAM33", "Description": "Shape d", "size": "Small", "group": "Shape d" },
-        { "itemNumber": "EAM30", "Description": "Shape e", "size": "Large", "group": "Shape e" },
-        { "itemNumber": "EAM31", "Description": "Shape e", "size": "Small", "group": "Shape e" },
-        { "itemNumber": "EAMS-SET", "Description": "Complete set of 12 tools", "group": "Sets" }
+        { "sku": "EAM20", "Description": "Shape a", "size": "Large", "group": "Shape a" },
+        { "sku": "EAM21", "Description": "Shape a", "size": "Small", "group": "Shape a" },
+        { "sku": "EAM10", "Description": "Shape b", "size": "X-Large", "group": "Shape b" },
+        { "sku": "EAM11", "Description": "Shape b", "size": "Large", "group": "Shape b" },
+        { "sku": "EAM12", "Description": "Shape b", "size": "Medium", "group": "Shape b" },
+        { "sku": "EAM13", "Description": "Shape b", "size": "Small", "group": "Shape b" },
+        { "sku": "EAM22", "Description": "Shape c", "size": "Large", "group": "Shape c" },
+        { "sku": "EAM23", "Description": "Shape c", "size": "Small", "group": "Shape c" },
+        { "sku": "EAM32", "Description": "Shape d", "size": "Large", "group": "Shape d" },
+        { "sku": "EAM33", "Description": "Shape d", "size": "Small", "group": "Shape d" },
+        { "sku": "EAM30", "Description": "Shape e", "size": "Large", "group": "Shape e" },
+        { "sku": "EAM31", "Description": "Shape e", "size": "Small", "group": "Shape e" },
+        { "sku": "EAMS-SET", "Description": "Complete set of 12 tools", "group": "Sets" }
       ]
     },
     "VEH": {
       "key": "VEH",
       "items": [
-        { "itemNumber": "EO-100", "size": "Small" },
-        { "itemNumber": "EO-200", "size": "Medium" },
-        { "itemNumber": "EO-300", "size": "Large" },
-        { "itemNumber": "EO-400", "size": "X-Large" }
+        { "sku": "EO-100", "size": "Small" },
+        { "sku": "EO-200", "size": "Medium" },
+        { "sku": "EO-300", "size": "Large" },
+        { "sku": "EO-400", "size": "X-Large" }
       ]
     },
     "SM-GROUPED": {
@@ -1403,7 +1403,7 @@
     {
       "slug": "sky-medical",
       "label": "Sky Medical",
-      "description": "Maramed Orthopedic Systems now supplies Sky Medical fracture orthoses and AFOs. You'll receive the exact designs and outcomes you rely on, backed by Maramed's responsive service: quick answers from knowledgeable staff, streamlined ordering with itemNumber continuity, and reliable turnaround. From first fit to follow-up, our team is here to help with sizing, product selection, and post-purchase support.",
+      "description": "Maramed Orthopedic Systems now supplies Sky Medical fracture orthoses and AFOs. You'll receive the exact designs and outcomes you rely on, backed by Maramed's responsive service: quick answers from knowledgeable staff, streamlined ordering with sku continuity, and reliable turnaround. From first fit to follow-up, our team is here to help with sizing, product selection, and post-purchase support.",
       "familyKeys": ["SM-GROUPED"]
     },
       {

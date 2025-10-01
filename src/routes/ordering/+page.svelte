@@ -1,4 +1,3 @@
-<!-- src/routes/order/+page.svelte -->
 <script>
   import { enhance, applyAction } from "$app/forms";
   import { fade, fly, scale } from "svelte/transition";
@@ -50,7 +49,6 @@
             familyTitle,
             size: it?.size || "",
             side: it?.side || ""
-            side: it?.side || ""
           });
         }
       }
@@ -63,7 +61,6 @@
             familyKey: fam?.key || fam?.slug || familyTitle,
             familyTitle,
             size: it?.size || "",
-            side: it?.side || ""
             side: it?.side || ""
           });
         }
@@ -79,8 +76,8 @@
       `${v.sku} — ${v.familyTitle}` +
       (v.size ? ` · ${v.size}` : "") +
       (v.side ? ` · ${v.side}` : "")
-      (v.side ? ` · ${v.side}` : "")
   }));
+
   function describeSku(sku) {
     const hit = SKU_INDEX.get(String(sku || "").trim());
     if (!hit) return "";
@@ -152,6 +149,7 @@
     }
   }
 </script>
+
 
 <!-- hero -->
 <section class="relative isolate">
