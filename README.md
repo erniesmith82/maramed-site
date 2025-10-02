@@ -1,38 +1,46 @@
-# sv
+# Maramed — Orthopedic Systems (SvelteKit)
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Modern, mobile-first catalog and ordering site for Maramed Orthopedic Systems.  
+Built with **SvelteKit**, **Tailwind CSS**, and light **Svelte transitions** for a clean, fast UX.
 
-## Creating a project
+---
 
-If you're seeing this, you've probably already done this step. Congrats!
+## ✨ Features
 
-```sh
-# create a new project in the current directory
-npx sv create
+- **Catalog browser** with product families, sizes, and rich details
+- **Fast search / clear item tables** with auto-ordered measurement columns
+- **Ordering workflow** with dynamic SKU rows and form validation
+- **Contact form** using SvelteKit form actions (`enhance` + `applyAction`)
+- **Clinical Studies** section with inline citation rendering (`[[1,3–5]]` → superscripts)
+- **Printable catalog** view at `/catalog/print` (print to PDF or paper)
+- **Reduced-motion friendly** animations that respect `prefers-reduced-motion`
+- **Weekly rotating featured items** (stable by ISO week, ET)
 
-# create a new project in my-app
-npx sv create my-app
-```
+---
 
-## Developing
+## 🧱 Tech Stack
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+- **Framework:** SvelteKit (Vite)
+- **UI / Styles:** Tailwind CSS
+- **Transitions:** `fade`, `fly`, `scale` (Svelte)
+- **Data:** `src/lib/data/products.json`
+- **Forms:** `$app/forms` (`enhance`, `applyAction`)
+- **Node:** ≥ 18.x recommended
 
-```sh
-npm run dev
+---
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## 📦 Getting Started
 
-## Building
+```bash
+# install deps
+npm install
 
-To create a production version of your app:
+# dev server
+npm run dev   # defaults to http://localhost:5173
 
-```sh
+# production build
 npm run build
-```
 
-You can preview the production build with `npm run preview`.
+# preview build
+npm run preview
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
