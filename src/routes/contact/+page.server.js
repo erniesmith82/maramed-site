@@ -2,37 +2,28 @@
 import { fail, redirect } from '@sveltejs/kit';
 import nodemailer from 'nodemailer';
 import { Resend } from 'resend';
-import {
-  MAIL_LOCAL_JSON, MAIL_LOCAL_FILE, MAIL_LOCAL_DIR,
-  MAIL_TEST, USE_EMAIL_API,
-  SMTP_HOST, SMTP_PORT, SMTP_SECURE, SMTP_REQUIRE_TLS, SMTP_TLS_REJECT_UNAUTHORIZED, SMTP_LOG,
-  SMTP_USER, SMTP_PASS, SMTP_FROM,
-  CONTACT_TO, CONTACT_CC, CONTACT_BCC, CONTACT_FROM,
-  RESEND_API_KEY
-} from '$env/static/private';
+import { env } from '$env/dynamic/private';
 
-/* ---------- helpers ---------- */
-const StaticEnv = {
-  MAIL_LOCAL_JSON, MAIL_LOCAL_FILE, MAIL_LOCAL_DIR,
-  MAIL_TEST, USE_EMAIL_API,
-  SMTP_HOST, SMTP_PORT, SMTP_SECURE, SMTP_REQUIRE_TLS, SMTP_TLS_REJECT_UNAUTHORIZED, SMTP_LOG,
-  SMTP_USER, SMTP_PASS, SMTP_FROM,
-  CONTACT_TO, CONTACT_CC, CONTACT_BCC, CONTACT_FROM,
-  RESEND_API_KEY
-};
-const ENV  = (k, d) => (process?.env?.[k] ?? StaticEnv?.[k] ?? d);
-const bool = (v, d=false) => typeof v === 'string' ? ['1','true','yes','on'].includes(v.toLowerCase()) : (v ?? d);
-const num  = (v, d) => (Number.isFinite(Number(v)) ? Number(v) : d);
+/* ---------- env helpers ---------- */
+const ENV = (k, d) => (env?.[k] ?? process?.env?.[k] ?? d);
+const bool = (v, d = false) =>
+  typeof v === 'string' ? ['1', 'true', 'yes', 'on'].includes(v.toLowerCase()) : (v ?? d);
+const num = (v, d) => (Number.isFinite(Number(v)) ? Number(v) : d);
 
+/* ---------- validators / utils ---------- */
 const looksLikeEmail = (v = '') => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-const escapeHtml = (s = '') => s
-  .replaceAll('&', '&amp;')
-  .replaceAll('<', '&lt;')
-  .replaceAll('>', '&gt;')
-  .replaceAll('"', '&quot;')
-  .replaceAll("'", '&#39;');
+const escapeHtml = (s = '') =>
+  String(s)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
 const splitAddresses = (s = '') =>
-  String(s).split(/[,;]+/).map((x) => x.trim()).filter(Boolean);
+  String(s)
+    .split(/[,;]+/)
+    .map((x) => x.trim())
+    .filter(Boolean);
 const isRedirect = (e) => e && typeof e === 'object' && 'status' in e && 'location' in e;
 
 /* ---------- transports ---------- */
@@ -48,12 +39,15 @@ async function makeTransport() {
   if (bool(ENV('MAIL_TEST'), false)) {
     try {
       const test = await nodemailer.createTestAccount();
-      // 465 SMTPS (avoids STARTTLS stripping)
+      // 465 SMTPS (avoids AUTH before TLS)
       try {
         const t465 = nodemailer.createTransport({
-          host: test.smtp.host, port: 465, secure: true,
+          host: test.smtp.host,
+          port: 465,
+          secure: true,
           auth: { user: test.user, pass: test.pass },
-          logger: true, debug: true
+          logger: true,
+          debug: true
         });
         await t465.verify();
         console.log('[contact][test] Ethereal SMTPS (465) as', test.user);
@@ -64,10 +58,14 @@ async function makeTransport() {
       // 587 STARTTLS
       try {
         const t587 = nodemailer.createTransport({
-          host: test.smtp.host, port: test.smtp.port, secure: false, requireTLS: true,
+          host: test.smtp.host,
+          port: test.smtp.port,
+          secure: false,
+          requireTLS: true,
           auth: { user: test.user, pass: test.pass },
           tls: { minVersion: 'TLSv1.2', servername: test.smtp.host, rejectUnauthorized: true },
-          logger: true, debug: true
+          logger: true,
+          debug: true
         });
         await t587.verify();
         console.log('[contact][test] Ethereal STARTTLS (587) as', test.user);
@@ -83,16 +81,17 @@ async function makeTransport() {
     return { transporter: tJson, usesJson: true, isTest: true };
   }
 
-  // 2) Production O365 (587 STARTTLS; LOGIN after TLS)
+  // 2) Production SMTP (default O365 over STARTTLS 587; LOGIN after TLS)
   const host = ENV('SMTP_HOST', 'smtp.office365.com');
   const port = num(ENV('SMTP_PORT'), 587);
   const transporter = nodemailer.createTransport(
     {
-      host, port,
-      secure: false,                // STARTTLS
-      requireTLS: true,             // do not AUTH before TLS
+      host,
+      port,
+      secure: false, // STARTTLS
+      requireTLS: true, // do not AUTH before TLS
       auth: { user: ENV('SMTP_USER'), pass: ENV('SMTP_PASS') },
-      authMethod: 'LOGIN',          // avoid AUTH PLAIN pre-TLS
+      authMethod: 'LOGIN', // avoid AUTH PLAIN pre-TLS
       tls: {
         minVersion: 'TLSv1.2',
         servername: host,
@@ -103,7 +102,9 @@ async function makeTransport() {
     },
     { from: ENV('SMTP_FROM') || ENV('SMTP_USER') }
   );
-  try { await transporter.verify(); } catch (e) {
+  try {
+    await transporter.verify();
+  } catch (e) {
     console.error('[contact][smtp] verify failed:', e?.message);
   }
   return { transporter, usesJson: false, isTest: false };
@@ -111,7 +112,7 @@ async function makeTransport() {
 
 /* ---------- API sender (Resend) ---------- */
 async function sendWithResend({ from, to, cc, bcc, replyTo, subject, text, html }) {
-  const key = ENV('RESEND_API_KEY');
+  const key = ENV('RESEND_API_KEY', '');
   if (!key) throw new Error('RESEND_API_KEY missing');
   const resend = new Resend(key);
 
@@ -122,7 +123,7 @@ async function sendWithResend({ from, to, cc, bcc, replyTo, subject, text, html 
   };
   if (text) payload.text = text;
   if (html) payload.html = html;
-  if (cc)  payload.cc  = Array.isArray(cc)  ? cc  : [cc];
+  if (cc) payload.cc = Array.isArray(cc) ? cc : [cc];
   if (bcc) payload.bcc = Array.isArray(bcc) ? bcc : [bcc];
   if (replyTo) payload.reply_to = replyTo;
 
@@ -138,13 +139,13 @@ async function handleSubmit({ request }) {
   // Honeypot
   if (data.get('fax')) return { ok: true };
 
-  const name     = (data.get('name')     ?? '').toString().trim();
-  const email    = (data.get('email')    ?? '').toString().trim();
-  const company  = (data.get('company')  ?? '').toString().trim();
-  const phone    = (data.get('phone')    ?? '').toString().trim();
-  const subjectI = (data.get('subject')  ?? '').toString().trim();
+  const name = (data.get('name') ?? '').toString().trim();
+  const email = (data.get('email') ?? '').toString().trim();
+  const company = (data.get('company') ?? '').toString().trim();
+  const phone = (data.get('phone') ?? '').toString().trim();
+  const subjectI = (data.get('subject') ?? '').toString().trim();
   const interest = (data.get('interest') ?? '').toString().trim();
-  const message  = (data.get('message')  ?? '').toString().trim();
+  const message = (data.get('message') ?? '').toString().trim();
 
   if (!name || !email || !message) {
     return fail(400, { ok: false, error: 'Please check the required fields and try again.' });
@@ -153,17 +154,14 @@ async function handleSubmit({ request }) {
     return fail(400, { ok: false, error: 'Please enter a valid email address.' });
   }
 
-  const subject = subjectI
-    ? `Website contact — ${subjectI}`
-    : 'Website contact';
-
+  const subject = subjectI ? `Website contact — ${subjectI}` : 'Website contact';
   const msgRef = `MSG-${Date.now().toString(36).toUpperCase()}`;
 
   const plain = [
     `From: ${name} <${email}>`,
     company ? `Company: ${company}` : `Company: —`,
-    phone   ? `Phone: ${phone}`     : `Phone: —`,
-    interest? `Interest: ${interest}`: `Interest: —`,
+    phone ? `Phone: ${phone}` : `Phone: —`,
+    interest ? `Interest: ${interest}` : `Interest: —`,
     `Subject: ${subject}`,
     '',
     message,
@@ -186,8 +184,8 @@ async function handleSubmit({ request }) {
     </p>
   `;
 
-  const toList  = splitAddresses(ENV('CONTACT_TO', 'custsupport@maramed.com'));
-  const ccList  = splitAddresses(ENV('CONTACT_CC', ''));
+  const toList = splitAddresses(ENV('CONTACT_TO', 'custsupport@maramed.com'));
+  const ccList = splitAddresses(ENV('CONTACT_CC', ''));
   const bccList = splitAddresses(ENV('CONTACT_BCC', ''));
   const fromHdr = ENV('CONTACT_FROM', ENV('SMTP_FROM', 'Maramed Website <no-reply@localhost>'));
   const envFrom = ENV('SMTP_FROM', ENV('SMTP_USER', 'no-reply@localhost'));
@@ -214,7 +212,7 @@ async function handleSubmit({ request }) {
       envelope: usesJson ? undefined : { from: envFrom, to: [...toList, ...ccList, ...bccList] },
       from: fromHdr,
       to: toList,
-      ...(ccList.length  ? { cc:  ccList }  : {}),
+      ...(ccList.length ? { cc: ccList } : {}),
       ...(bccList.length ? { bcc: bccList } : {}),
       subject: `${subject} (${msgRef})`,
       text: plain,
@@ -228,9 +226,8 @@ async function handleSubmit({ request }) {
     });
 
     if (usesJson) {
-      const snippet = typeof info?.message === 'string'
-        ? info.message
-        : info?.message?.toString?.() ?? '';
+      const snippet =
+        typeof info?.message === 'string' ? info.message : info?.message?.toString?.() ?? '';
       console.log('[contact] JSON:', snippet.slice(0, 2000));
     } else {
       const accepted = Array.isArray(info.accepted) ? info.accepted : [];
@@ -244,9 +241,7 @@ async function handleSubmit({ request }) {
       }
     }
 
-    // success
     throw redirect(303, `/contact/thank-you?ref=${encodeURIComponent(msgRef)}`);
-
   } catch (err) {
     if (isRedirect(err)) throw err;
 

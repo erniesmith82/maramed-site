@@ -1,8 +1,7 @@
 <script>
-  
   import { fade, fly, scale } from "svelte/transition";
   import { onMount } from "svelte";
-  import studiesData from "$lib/data/studies.json";
+  import studiesData from "$lib/data/studies.json" with { type: "json" };
 
   // mount gate
   let mounted = false;
@@ -32,15 +31,6 @@
     date: s.published || s.year || ""
   }));
 </script>
-
-<svelte:head>
-  <title>Clinical Studies — Maramed</title>
-  <meta name="description" content="Key literature supporting functional fracture bracing approaches." />
-  <link rel="canonical" href={canonical} />
-  <meta property="og:title" content="Clinical Studies — Maramed" />
-  <meta property="og:description" content="Key literature supporting functional fracture bracing approaches." />
-  <meta property="og:type" content="website" />
-</svelte:head>
 
 <section class="relative isolate">
   <div class="absolute inset-0 -z-10 bg-cover bg-center" aria-hidden="true"></div>

@@ -2,47 +2,10 @@
 import { fail, redirect } from "@sveltejs/kit";
 import nodemailer from "nodemailer";
 import { Resend } from "resend";
-import {
-  // SMTP & shared
-  MAIL_TEST,
-  SMTP_HOST,
-  SMTP_PORT,
-  SMTP_SECURE,
-  SMTP_REQUIRE_TLS,
-  SMTP_USER,
-  SMTP_PASS,
-  SMTP_FROM,
-  SMTP_LOG,
-  SMTP_TLS_REJECT_UNAUTHORIZED,
-
-  // API mode
-  USE_EMAIL_API,
-  RESEND_API_KEY,
-
-  // Legacy single sender (back-compat)
-  FROM_EMAIL,
-
-  // Routing + branded Froms
-  ORDERS_TO,
-  CONTACT_TO,
-  CONTACT_CC,
-  CONTACT_BCC,
-  ORDERS_FROM,   // e.g., "Maramed Orders <orders@maramed.com>"
-  NOREPLY_FROM,  // e.g., "Maramed Do Not Reply <no-reply@maramed.com>"
-  CONTACT_FROM,  // not used here (ordering page)
-
-  // Local-only logging mode (optional)
-  MAIL_LOCAL_JSON
-} from "$env/static/private";
+import { env } from "$env/dynamic/private";
 
 /* -------- env helpers -------- */
-const StaticEnv = {
-  MAIL_TEST, SMTP_HOST, SMTP_PORT, SMTP_SECURE, SMTP_REQUIRE_TLS, SMTP_USER, SMTP_PASS, SMTP_FROM,
-  SMTP_LOG, SMTP_TLS_REJECT_UNAUTHORIZED, USE_EMAIL_API, RESEND_API_KEY, FROM_EMAIL,
-  ORDERS_TO, CONTACT_TO, CONTACT_CC, CONTACT_BCC, ORDERS_FROM, NOREPLY_FROM, CONTACT_FROM,
-  MAIL_LOCAL_JSON
-};
-const ENV  = (k, d) => (process?.env?.[k] ?? StaticEnv?.[k] ?? d);
+const ENV  = (k, d) => (env?.[k] ?? process?.env?.[k] ?? d);
 const bool = (v, d=false) => typeof v === "string" ? ["1","true","yes","on"].includes(v.toLowerCase()) : (v ?? d);
 const num  = (v, d) => (Number.isFinite(Number(v)) ? Number(v) : d);
 const pickStr = (fd, k, f="") => ((fd.get(k) ?? f) + "");
@@ -106,7 +69,7 @@ function buildCustomerConfirmationText(fd, orderRef) {
 
 /* -------- Resend (API mode) -------- */
 async function sendWithResend({ from, to, cc, bcc, replyTo, subject, text }) {
-  const key = ENV("RESEND_API_KEY");
+  const key = ENV("RESEND_API_KEY", "");
   if (!key) throw new Error("RESEND_API_KEY missing");
   const resend = new Resend(key);
 
@@ -130,16 +93,14 @@ async function sendWithResend({ from, to, cc, bcc, replyTo, subject, text }) {
 /* -------- SMTP transport (STRICT + JSON local mode) -------- */
 async function makeTransport() {
   // 0) Local JSON mode — no network; logs messages as JSON
-  const localJson = ["1","true","yes","on"].includes(String(ENV("MAIL_LOCAL_JSON")).toLowerCase());
-  if (localJson) {
+  if (bool(ENV("MAIL_LOCAL_JSON"), false)) {
     const transporter = nodemailer.createTransport({ jsonTransport: true });
     console.log("[smtp][local] JSON transport active — emails will be logged only.");
     return { transporter, isTest: true };
   }
 
   // 1) Ethereal test mode
-  const mailTest = ["1","true","yes","on"].includes(String(ENV("MAIL_TEST")).toLowerCase());
-  if (mailTest) {
+  if (bool(ENV("MAIL_TEST"), false)) {
     try {
       const test = await nodemailer.createTestAccount();
 
@@ -189,10 +150,10 @@ async function makeTransport() {
   }
 
   // 2) Production O365 (587 STARTTLS, AUTH LOGIN after TLS)
-  const host = "smtp.office365.com";
-  const port = 587;
-  const user = String(ENV("SMTP_USER") || "");
-  const pass = String(ENV("SMTP_PASS") || "");
+  const host = ENV("SMTP_HOST", "smtp.office365.com");
+  const port = num(ENV("SMTP_PORT"), 587);
+  const user = String(ENV("SMTP_USER", ""));
+  const pass = String(ENV("SMTP_PASS", ""));
   if (!user || !pass) throw new Error("SMTP_USER / SMTP_PASS missing");
 
   const transporter = nodemailer.createTransport(
@@ -202,19 +163,16 @@ async function makeTransport() {
       requireTLS: true,       // do not AUTH before TLS
       auth: { user, pass },
       authMethod: "LOGIN",    // avoid AUTH PLAIN pre-TLS
-      tls: { minVersion: "TLSv1.2", servername: host, rejectUnauthorized: true },
-      logger: true,
-      debug: true
+      tls: {
+        minVersion: "TLSv1.2",
+        servername: host,
+        rejectUnauthorized: bool(ENV("SMTP_TLS_REJECT_UNAUTHORIZED"), true)
+      },
+      logger: bool(ENV("SMTP_LOG"), false),
+      debug: bool(ENV("SMTP_LOG"), false)
     },
-    { from: ENV("SMTP_FROM") || user }
+    { from: ENV("SMTP_FROM", "") || user }
   );
-
-  console.log("[smtp] options", {
-    host, port,
-    secure: transporter.options.secure,
-    requireTLS: transporter.options.requireTLS,
-    authMethod: transporter.options.authMethod
-  });
 
   try {
     await transporter.verify();
