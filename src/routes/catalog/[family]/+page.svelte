@@ -450,65 +450,82 @@
                 {#if sizeGroups && sizeGroups.length}
                   {#each sizeGroups as group, gi}
                     {#if group.rows && group.rows.length}
-                      <div class={gi > 0 ? "mt-10" : ""} in:fly={{ x: sx(gi), y: sy(gi), duration: T(420), delay: D(120 + gi*140) }}>
+                      <div id={group.key} class={gi > 0 ? "mt-10" : ""} in:fly={{ x: sx(gi), y: sy(gi), duration: T(420), delay: D(120 + gi*140) }}>
                         <div class="mb-3 flex items-center justify-between gap-3">
                           <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 text-left">
                             {group.title}
                           </h3>
                         </div>
 
-                        {#key group.title}
-                          {#await Promise.resolve(getOrderedColumns(group.rows)) then cols}
-                            {#if cols.length}
-                              <div class="-mx-4 sm:mx-0">
-                                <div class="overflow-x-auto">
-                                  <div class="min-w-[680px] sm:min-w-0 overflow-hidden rounded-xl border border-slate-200">
-                                    <table class="w-full text-xs sm:text-sm table-fixed sm:table-auto border-collapse">
-                                      <thead class="bg-slate-50">
-                                        <tr class="text-left text-slate-600 border-b border-slate-200">
-                                          {#each cols as col, ci}
-                                            <th
-                                              class="py-2 px-3 pr-4 last:pr-3 font-semibold leading-snug whitespace-nowrap sm:whitespace-normal break-words align-top border-r border-slate-200 last:border-r-0"
-                                              in:fade={{ duration: T(280), delay: D(60 + ci*20) }}
-                                            >
-                                              {COLUMN_LABELS[col]}
-                                            </th>
-                                          {/each}
-                                        </tr>
-                                      </thead>
-                                      <tbody class="align-top">
-                                        {#each group.rows as row, ri}
-                                          <tr id={(row.itemNumber || row.sku) ? String(row.itemNumber || row.sku) : undefined}
-                                              class="border-b border-slate-200 hover:bg-slate-50 transition">
-                                            {#each cols as col}
-                                              <td class="py-2 px-3 pr-4 last:pr-3 align-top whitespace-nowrap sm:whitespace-normal break-words border-r border-slate-200 last:border-r-0">
-                                                {#if row[col] != null && String(row[col]).trim() !== ""}
-                                                  {row[col]}
-                                                {:else}
-                                                  <span class="text-slate-400">—</span>
-                                                {/if}
-                                              </td>
-                                            {/each}
-                                          </tr>
-                                        {/each}
-                                      </tbody>
-                                    </table>
-                                  </div>
-                                </div>
-                              </div>
-                            {:else}
-                              <p class="text-sm text-slate-600 text-center">No size attributes for this group.</p>
-                            {/if}
-                          {/await}
-                        {/key}
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-5 items-start">
+                          {#if group.image}
+                            <div class="md:col-span-4"
+                                 in:fade={{ duration: T(320), delay: D(120) }}>
+                              <img
+                                src={imgSrc(group.image)}
+                                alt={(group.title ? `${group.title} illustration` : "Size group illustration")}
+                                class="w-full h-48 md:h-64 object-contain rounded-lg bg-slate-50 ring-1 ring-slate-200 shadow-sm"
+                                loading="lazy"
+                                decoding="async"
+                              />
+                            </div>
+                          {/if}
 
-                        {#if group.notes && group.notes.length}
-                          <ul class="mt-3 text-[13px] text-slate-600 space-y-1">
-                            {#each group.notes as note, ni}
-                              <li in:fade={{ duration: T(240), delay: D(60 + ni*40) }}>• {note}</li>
-                            {/each}
-                          </ul>
-                        {/if}
+                          <div class={group.image ? "md:col-span-8" : "md:col-span-12"}>
+                            {#key group.key || group.title}
+                              {#await Promise.resolve(getOrderedColumns(group.rows)) then cols}
+                                {#if cols.length}
+                                  <div class="-mx-4 sm:mx-0">
+                                    <div class="overflow-x-auto">
+                                      <div class="min-w-[680px] sm:min-w-0 overflow-hidden rounded-xl border border-slate-200">
+                                        <table class="w-full text-xs sm:text-sm table-fixed sm:table-auto border-collapse">
+                                          <thead class="bg-slate-50">
+                                            <tr class="text-left text-slate-600 border-b border-slate-200">
+                                              {#each cols as col, ci}
+                                                <th
+                                                  class="py-2 px-3 pr-4 last:pr-3 font-semibold leading-snug whitespace-nowrap sm:whitespace-normal break-words align-top border-r border-slate-200 last:border-r-0"
+                                                  in:fade={{ duration: T(280), delay: D(60 + ci*20) }}
+                                                >
+                                                  {COLUMN_LABELS[col]}
+                                                </th>
+                                              {/each}
+                                            </tr>
+                                          </thead>
+                                          <tbody class="align-top">
+                                            {#each group.rows as row, ri}
+                                              <tr id={(row.itemNumber || row.sku) ? String(row.itemNumber || row.sku) : undefined}
+                                                  class="border-b border-slate-200 hover:bg-slate-50 transition">
+                                                {#each cols as col}
+                                                  <td class="py-2 px-3 pr-4 last:pr-3 align-top whitespace-nowrap sm:whitespace-normal break-words border-r border-slate-200 last:border-r-0">
+                                                    {#if row[col] != null && String(row[col]).trim() !== ""}
+                                                      {row[col]}
+                                                    {:else}
+                                                      <span class="text-slate-400">—</span>
+                                                    {/if}
+                                                  </td>
+                                                {/each}
+                                              </tr>
+                                            {/each}
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                  </div>
+                                {:else}
+                                  <p class="text-sm text-slate-600 text-center">No size attributes for this group.</p>
+                                {/if}
+                              {/await}
+                            {/key}
+
+                            {#if group.notes && group.notes.length}
+                              <ul class="mt-3 text-[13px] text-slate-600 space-y-1">
+                                {#each group.notes as note, ni}
+                                  <li in:fade={{ duration: T(240), delay: D(60 + ni*40) }}>• {note}</li>
+                                {/each}
+                              </ul>
+                            {/if}
+                          </div>
+                        </div>
                       </div>
                     {/if}
                   {/each}

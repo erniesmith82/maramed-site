@@ -1217,98 +1217,110 @@
         { "sku": "EO-400", "size": "X-Large" }
       ]
     },
-    "SM-GROUPED": {
-      "key": "SM-GROUPED",
-      "title": "Sky Medical",
-      "image": "/sky-medical-thumbnail.png",
-      "details": {
-        "heroImage": "/images/products/AFO-Posterior-Leaf-Spring.png",
-        "description": "Upper-extremity functional fracture orthoses and PLS AFOs designed for adjustable compression and left/right-neutral fit where noted.",
-        "features": [
-          "Adjustable fit for volumetric changes",
-          "Compression straps for consistent soft-tissue support",
-          "Neutral designs fit left or right (where noted)"
-        ],
-        "sizeGroups": [
-          {
-            "title": "Humerus Fracture Orthosis — Over the Shoulder (Neutral)",
-            "image": "/images/products/Humerus-Fracture-Orthosis-Over-the-Shoulder.png",
-            "notes": [
-              "Measure bicep circumference at the widest point.",
-              "Length values denote shell lengths (medial / lateral).",
-              "Neutral design fits left or right."
-            ],
-            "rows": [
-              { "sku": "SM-HFO-DE-S", "size": "Small", "bicepCircumference": "8 – 11", "length": "Medial 5¼ / Lateral 10" },
-              { "sku": "SM-HFO-DE-M", "size": "Medium", "bicepCircumference": "11 – 14", "length": "Medial 5¾ / Lateral 10¾" },
-              { "sku": "SM-HFO-DE-L", "size": "Large", "bicepCircumference": "12 – 15", "length": "Medial 6½ / Lateral 12" },
-              { "sku": "SM-HFO-DE-XL", "size": "X-Large", "bicepCircumference": "14 – 17", "length": "Medial 6¾ / Lateral 13" }
-            ]
-          },
-          {
-            "title": "Humerus Fracture Orthosis (Neutral)",
-            "image": "/images/products/Humerus-Fracture-Orthosis-Neutral.png",
-            "notes": [
-              "Measure bicep circumference at the widest point.",
-              "Length values denote shell lengths (anterior / posterior).",
-              "Neutral design fits left or right."
-            ],
-            "rows": [
-              { "sku": "SM-HFO-S", "size": "Small", "bicepCircumference": "8 – 11", "length": "Anterior 4¾ / Posterior 6" },
-              { "sku": "SM-HFO-M", "size": "Medium", "bicepCircumference": "11 – 14", "length": "Anterior 5¼ / Posterior 6¾" },
-              { "sku": "SM-HFO-L", "size": "Large", "bicepCircumference": "12 – 15", "length": "Anterior 5¾ / Posterior 7½" },
-              { "sku": "SM-HFO-XL", "size": "X-Large", "bicepCircumference": "14 – 17", "length": "Anterior 6¼ / Posterior 8" }
-            ]
-          },
-          {
-            "title": "Ulna Fracture Orthosis (Neutral)",
-            "image": "/images/products/Ulna-Fracture-Orthosis-Neutral.png",
-            "notes": [
-              "Measure forearm circumference at the widest point.",
-              "Overall length shown in inches.",
-              "Neutral design fits left or right."
-            ],
-            "rows": [
-              { "sku": "SM-UFO-S", "size": "Small", "forearmCircumference": "8 – 11", "length": "7" },
-              { "sku": "SM-UFO-M", "size": "Medium", "forearmCircumference": "9½ – 12½", "length": "7½" },
-              { "sku": "SM-UFO-L", "size": "Large", "forearmCircumference": "11 – 14", "length": "8" }
-            ]
-          },
-          {
-            "title": "AFO — Posterior Leaf Spring",
-            "image": "/images/products/AFO-Posterior-Leaf-Spring.png",
-            "notes": [
-              "Select size by shoe size; use men’s / women’s ranges as a guide.",
-              "Pre-dorsiflexed, low-profile design for comfort.",
-              "Neutral; fits left or right."
-            ],
-            "rows": [
-              { "sku": "SM-AFO-S", "size": "Small", "side": "Left or Right", "Description": "Men 5–6 / Women 6.5–7.5" },
-              { "sku": "SM-AFO-M", "size": "Medium", "side": "Left or Right", "Description": "Men 6.5–10 / Women 8–11.5" },
-              { "sku": "SM-AFO-L", "size": "Large", "side": "Left or Right", "Description": "Men 10.5–13 / Women 12–14.5" },
-              { "sku": "SM-AFO-XL", "size": "X-Large", "side": "Left or Right", "Description": "Men 13+ / Women 14.5+" }
-            ]
-          },
-          {
-            "title": "AFO — Semi-Solid Posterior Leaf Spring",
-            "image": "/images/products/Semi-Solid-AFO-Posterior-Leaf-Spring.png",
-            "notes": [
-              "Semi-solid PLS increases dorsiflexion assist.",
-              "Select size by shoe size; use men’s / women’s ranges as a guide.",
-              "Neutral; fits left or right."
-            ],
-            "rows": [
-              { "sku": "SM-SAFO-S", "size": "Small", "side": "Left or Right", "Description": "Men 5–6 / Women 6.5–7.5" },
-              { "sku": "SM-SAFO-M", "size": "Medium", "side": "Left or Right", "Description": "Men 6.5–10 / Women 8–11.5" },
-              { "sku": "SM-SAFO-L", "size": "Large", "side": "Left or Right", "Description": "Men 10.5–13 / Women 12–14.5" }
-            ]
-          }
-        ]
-      },
-      "items": []
-    }
+"SM-HFO-DE": {
+  "key": "SM-HFO-DE",
+  "title": "Humerus Fracture Orthosis — Over the Shoulder (Neutral)",
+  "image": "/images/products/Humerus-Fracture-Orthosis-Over-the-Shoulder.png",
+  "details": {
+    "heroImage": "/images/products/Humerus-Fracture-Orthosis-Over-the-Shoulder.png",
+    "description": "Over-the-shoulder neutral humerus fracture orthosis.",
+    "notes": [
+      "Measure bicep circumference at the widest point.",
+      "Length values denote shell lengths (medial / lateral).",
+      "Neutral design fits left or right."
+    ]
   },
+  "items": [
+    { "sku": "SM-HFO-DE-S",  "size": "Small",  "bicepCircumference": "8 – 11",  "length": "Medial 5¼ / Lateral 10" },
+    { "sku": "SM-HFO-DE-M",  "size": "Medium", "bicepCircumference": "11 – 14", "length": "Medial 5¾ / Lateral 10¾" },
+    { "sku": "SM-HFO-DE-L",  "size": "Large",  "bicepCircumference": "12 – 15", "length": "Medial 6½ / Lateral 12" },
+    { "sku": "SM-HFO-DE-XL", "size": "X-Large","bicepCircumference": "14 – 17","length": "Medial 6¾ / Lateral 13" }
+  ]
+},
 
+"SM-HFO": {
+  "key": "SM-HFO",
+  "title": "Humerus Fracture Orthosis (Neutral)",
+  "image": "/images/products/Humerus-Fracture-Orthosis-Neutral.png",
+  "details": {
+    "heroImage": "/images/products/Humerus-Fracture-Orthosis-Neutral.png",
+    "description": "Neutral humerus fracture orthosis.",
+    "notes": [
+      "Measure bicep circumference at the widest point.",
+      "Length values denote shell lengths (anterior / posterior).",
+      "Neutral design fits left or right."
+    ]
+  },
+  "items": [
+    { "sku": "SM-HFO-S",  "size": "Small",  "bicepCircumference": "8 – 11",  "length": "Anterior 4¾ / Posterior 6" },
+    { "sku": "SM-HFO-M",  "size": "Medium", "bicepCircumference": "11 – 14", "length": "Anterior 5¼ / Posterior 6¾" },
+    { "sku": "SM-HFO-L",  "size": "Large",  "bicepCircumference": "12 – 15", "length": "Anterior 5¾ / Posterior 7½" },
+    { "sku": "SM-HFO-XL", "size": "X-Large","bicepCircumference": "14 – 17","length": "Anterior 6¼ / Posterior 8" }
+  ]
+},
+
+"SM-UFO": {
+  "key": "SM-UFO",
+  "title": "Ulna Fracture Orthosis (Neutral)",
+  "image": "/images/products/Ulna-Fracture-Orthosis-Neutral.png",
+  "details": {
+    "heroImage": "/images/products/Ulna-Fracture-Orthosis-Neutral.png",
+    "description": "Neutral ulna fracture orthosis.",
+    "notes": [
+      "Measure forearm circumference at the widest point.",
+      "Overall length shown in inches.",
+      "Neutral design fits left or right."
+    ]
+  },
+  "items": [
+    { "sku": "SM-UFO-S", "size": "Small",  "forearmCircumference": "8 – 11",    "length": "7" },
+    { "sku": "SM-UFO-M", "size": "Medium", "forearmCircumference": "9½ – 12½", "length": "7½" },
+    { "sku": "SM-UFO-L", "size": "Large",  "forearmCircumference": "11 – 14",  "length": "8" }
+  ]
+},
+
+"SM-AFO-PLS": {
+  "key": "SM-AFO-PLS",
+  "title": "AFO — Posterior Leaf Spring",
+  "image": "/images/products/AFO-Posterior-Leaf-Spring.png",
+  "details": {
+    "heroImage": "/images/products/AFO-Posterior-Leaf-Spring.png",
+    "description": "Pre-dorsiflexed, low-profile PLS AFO.",
+    "notes": [
+      "Select size by shoe size; use men’s / women’s ranges as a guide.",
+      "Pre-dorsiflexed, low-profile design for comfort.",
+      "Neutral; fits left or right."
+    ]
+  },
+  "items": [
+    { "sku": "SM-AFO-S",  "size": "Small",  "side": "Left or Right", "Description": "Men 5–6 / Women 6.5–7.5" },
+    { "sku": "SM-AFO-M",  "size": "Medium", "side": "Left or Right", "Description": "Men 6.5–10 / Women 8–11.5" },
+    { "sku": "SM-AFO-L",  "size": "Large",  "side": "Left or Right", "Description": "Men 10.5–13 / Women 12–14.5" },
+    { "sku": "SM-AFO-XL", "size": "X-Large","side": "Left or Right", "Description": "Men 13+ / Women 14.5+" }
+  ]
+},
+
+"SM-SAFO": {
+  "key": "SM-SAFO",
+  "title": "AFO — Semi-Solid Posterior Leaf Spring",
+  "image": "/images/products/Semi-Solid-AFO-Posterior-Leaf-Spring.png",
+  "details": {
+    "heroImage": "/images/products/Semi-Solid-AFO-Posterior-Leaf-Spring.png",
+    "description": "Semi-solid PLS AFO for increased dorsiflexion assist.",
+    "notes": [
+      "Semi-solid PLS increases dorsiflexion assist.",
+      "Select size by shoe size; use men’s / women’s ranges as a guide.",
+      "Neutral; fits left or right."
+    ]
+  },
+  "items": [
+    { "sku": "SM-SAFO-S", "size": "Small",  "side": "Left or Right", "Description": "Men 5–6 / Women 6.5–7.5" },
+    { "sku": "SM-SAFO-M", "size": "Medium", "side": "Left or Right", "Description": "Men 6.5–10 / Women 8–11.5" },
+    { "sku": "SM-SAFO-L", "size": "Large",  "side": "Left or Right", "Description": "Men 10.5–13 / Women 12–14.5" }
+  ]
+}
+  },
+  
   "series": [
     {
       "slug": "thumb-spica",
@@ -1348,13 +1360,13 @@
       "slug": "ue-fracture-braces",
       "label": "Upper Extremity Fracture Braces",
       "description": "All Maramed fracture braces have been developed and tested in over 5,000 clinical cases in conjunction with the University of Miami, Department of Orthopedics and Rehabilitation*. The information gained from these studies was a key resource in the design of Maramed’s fracture brace line. The design is comprised of overlapping anterior and posterior shells that allow for ease of adjustment, accommodate for volumetric changes of soft tissue associated with fracture healing and eliminate the need for serial casting. Anatomical and biomedical considerations insure that soft tissue compression is maintained as volumetric adjustments are compensated for while maintaining proper suspension of the brace over the fracture area. Flared edges are incorporated in the anterior and posterior shells providing superior patient comfort throughout full range of motion. Maximum patient comfort is also provided through the use of a specially formulated low density polyethylene plastic with 1/8″ foam lining that pads the anterior shell. Excellent off-the-shelf fit has been achieved through many years of clinical development. However, in such cases where customization is indicated, braces can be quickly and easily modified utilizing a heat gun and scissors, as shown in the modification procedures. Each is provided with one presewn double layer cotton stockinette. Additional stockinette and straps are available separately.",
-      "familyKeys": ["HFB-S", "HFB-N", "UFB", "UFB-S", "UFB-N", "HFB-SG", "HFB-SG-S", "HFB-OS", "HFB"]
+      "familyKeys": ["HFB-S", "HFB-N", "UFB", "UFB-S", "UFB-N", "HFB-SG", "HFB-SG-S", "HFB-OS", "HFB", "SM-UFO", "SM-HFO", "SM-HFO-DE"]
     },
     {
       "slug": "afo-drop-foot",
       "label": "Ankle Foot Orthoses / Drop Foot Splints",
       "description": "The ankle foot orthoses/drop foot splints provide a full foot section for additional support and comfort when indicated and are fabricated in a predorsiflexed position to provide superior dorsiflexion assist. The amount of dorsiflexion assist is proportional to shoe size. The anatomical design compensates for atrophy and avoids calcaneus irritation. The splints are made of a specially formulated polypropylene plastic insuring effective product longevity and are guaranteed for life. They are easily customized, utilizing a heat gun and scissors, as shown in the modification procedures. Additional stockinette and straps are available separately.",
-      "familyKeys": ["PLS-FF", "PLS-S","PLSC", "PLSC-OH", "PLSB", "PED-C", "UCB"]
+      "familyKeys": ["PLS-FF", "PLS-S","PLSC", "PLSC-OH", "PLSB", "PED-C", "UCB", "SM-SAFO", "SM-AFO-PLS"]
     },
     {
       "slug": "ue-splints",
@@ -1404,7 +1416,7 @@
       "slug": "sky-medical",
       "label": "Sky Medical",
       "description": "Maramed Orthopedic Systems now supplies Sky Medical fracture orthoses and AFOs. You'll receive the exact designs and outcomes you rely on, backed by Maramed's responsive service: quick answers from knowledgeable staff, streamlined ordering with sku continuity, and reliable turnaround. From first fit to follow-up, our team is here to help with sizing, product selection, and post-purchase support.",
-      "familyKeys": ["SM-GROUPED"]
+      "familyKeys": ["SM-SAFO", "SM-AFO-PLS", "SM-UFO", "SM-HFO", "SM-HFO-DE"]
     },
       {
       

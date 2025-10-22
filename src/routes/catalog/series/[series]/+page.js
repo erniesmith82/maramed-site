@@ -1,22 +1,18 @@
 // src/routes/catalog/[series]/+page.js
-
 import catalog from '$lib/data/products.json';
 import { error } from '@sveltejs/kit';
 
-// helpers
 const toCard = (f = {}) => ({
   family: f.key ?? '',
   title: f.title ?? f.key ?? '',
   image: f.image ?? ''
 });
 
-// load
 export function load({ params }) {
   const slug = decodeURIComponent(params.series);
   const series = (catalog.series ?? []).find((s) => s.slug === slug);
   if (!series) throw error(404, `Series not found: "${slug}"`);
 
-  // data: family dictionary
   let dict = catalog.families ?? null;
   if (!dict) {
     dict = {};
@@ -27,17 +23,68 @@ export function load({ params }) {
     }
   }
 
-  // data: resolve by keys
+  // Index sizeGroups by key → { familyKey, groupKey, title, image }
+  const groupIndex = {};
+  for (const [famKey, famVal] of Object.entries(dict)) {
+    const groups = famVal?.details?.sizeGroups ?? [];
+    for (const g of groups) {
+      const gkey = g?.key;
+      if (!gkey) continue;
+      groupIndex[gkey] = {
+        familyKey: famKey,
+        groupKey: gkey,
+        title: g.title || famVal.title || famKey,
+        image: g.image || famVal.image || ''
+      };
+    }
+  }
+
+  const resolveKey = (kRaw = '') => {
+    const k = String(kRaw || '').trim();
+    if (!k) return null;
+
+    // Case 1: anchored family "FAM#group"
+    if (k.includes('#')) {
+      const [famKey, anchor] = k.split('#');
+      const fam = dict[famKey];
+      if (!fam) return null;
+      const gInfo = (fam?.details?.sizeGroups ?? []).find((g) => g.key === anchor);
+      const title = gInfo?.title || fam.title || famKey;
+      const image = gInfo?.image || fam.image || '';
+      return { family: `${famKey}#${anchor}`, title, image };
+    }
+
+    // Case 2: exact family key
+    if (dict[k]) {
+      const fam = dict[k];
+      return { family: fam.key, title: fam.title || fam.key, image: fam.image || '' };
+    }
+
+    // Case 3: group key (redirect to its family with anchor)
+    if (groupIndex[k]) {
+      const { familyKey, groupKey, title, image } = groupIndex[k];
+      return { family: `${familyKey}#${groupKey}`, title, image };
+    }
+
+    return null;
+  };
+
+  const toCardResolved = (keyOrFam) => {
+    if (!keyOrFam) return null;
+    const res = resolveKey(keyOrFam);
+    if (res) return { family: res.family, title: res.title, image: res.image };
+    // Fallback: unknown key still produces a card (so you can see it)
+    return toCard({ key: keyOrFam });
+  };
+
   const byKeys = (keys = []) =>
     keys
-      .map((k) => (dict[k] ? toCard(dict[k]) : toCard({ key: k })))
-      .filter((c) => c.family);
+      .map((k) => toCardResolved(k))
+      .filter((c) => c && c.family);
 
-  // result containers
   let families = [];
   let familyGroups = null;
 
-  // resolve groups / lists
   if (Array.isArray(series.familyGroups) && series.familyGroups.length) {
     familyGroups = series.familyGroups.map((g) => ({
       title: g?.title || '',
@@ -45,7 +92,6 @@ export function load({ params }) {
       families: byKeys(g?.familyKeys || [])
     }));
 
-    // flatten (dedupe)
     const seen = new Set();
     const flat = [];
     for (const grp of familyGroups) {
@@ -65,12 +111,11 @@ export function load({ params }) {
     families = [];
   }
 
-  // return
   return {
     seriesLabel: series.label ?? slug,
     seriesDescription: series.description ?? '',
     features: series.features ?? [],
-    families,     // flat list
-    familyGroups  // optional grouped data
+    families,
+    familyGroups
   };
 }

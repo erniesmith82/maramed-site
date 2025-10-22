@@ -1,26 +1,23 @@
 <script>
+  import { page } from "$app/stores";
+  import { fade, fly, scale } from "svelte/transition";
+  import { onMount } from "svelte";
 
   export let data;
 
   // reactive destructure
-  $: ({
-    seriesLabel,
-    seriesDescription = "",
-    families = [],
-    features = []
-  } = data ?? {});
+  $: ({ seriesLabel, seriesDescription = "", families = [], features = [] } = data ?? {});
+
+  // current series slug (to suppress badge on Sky Medical page)
+  $: seriesSlug = $page.params?.series || "";
+  $: isSkyMedicalSeries = decodeURIComponent(seriesSlug) === "sky-medical";
 
   const imgSrc = (p) => (!p ? "" : (p.startsWith("/") ? p : `/images/${p}`));
 
   // animations
-  import { fade, fly, scale } from "svelte/transition";
-  import { onMount } from "svelte";
-
-  // mount gate
   let mounted = false;
   onMount(() => requestAnimationFrame(() => (mounted = true)));
 
-  // motion config
   const isReduced =
     typeof matchMedia !== "undefined" &&
     matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -30,12 +27,12 @@
   const T = (ms) => (isReduced ? 0 : Math.round(ms * DUR_MULT));
   const D = (ms) => (isReduced ? 0 : Math.round(ms * DELAY_MULT));
 
-  // motion offsets
   const sx = (i) => ((i % 3) - 1) * 6;
   const sy = (i) => (i % 2 ? 12 : 8);
 
-  // layout: single card center
   $: isSingle = Array.isArray(families) && families.length === 1;
+
+  const isSky = (famKey = "") => (famKey || "").toUpperCase().startsWith("SM-");
 </script>
 
 <section class="w-full mx-auto">
@@ -104,13 +101,12 @@
             {#each families as fam, i (fam.family)}
               <a
                 href={`/catalog/${encodeURIComponent(fam.family)}`}
-                class={`group relative flex flex-col h-full rounded-xl border border-transparent
-                        bg-white dark:bg-white
-                        p-5 text-emerald-800 dark:text-emerald-800
-                        shadow-sm transition will-change-transform
-                        hover:shadow-xl hover:-translate-y-0.5
-                        focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 text-center
-                        overflow-hidden ${isSingle ? "w-full max-w-md" : ""}`}
+                class={`group relative flex flex-col h-full rounded-xl border
+                        ${isSky(fam.family) && !isSkyMedicalSeries ? "border-emerald-200 bg-emerald-50/70" : "border-transparent bg-white"}
+                        dark:bg-white p-5 text-emerald-800 shadow-sm transition
+                        hover:shadow-xl hover:-translate-y-0.5 focus:outline-none
+                        focus-visible:ring-2 focus-visible:ring-emerald-400 text-center overflow-hidden
+                        ${isSingle ? "w-full max-w-md" : ""}`}
                 aria-label={`View ${fam.title}`}
                 in:fly={{ x: sx(i), y: sy(i), duration: T(380), delay: D(80 + i * 70) }}
               >
@@ -129,6 +125,17 @@
                   {fam.title}
                 </h2>
 
+                <!-- Sky Medical badge everywhere except on the Sky Medical series page -->
+                {#if isSky(fam.family) && !isSkyMedicalSeries}
+                  <span
+                    class="pointer-events-none absolute top-2 right-2 text-[10px] sm:text-xs
+                           font-semibold tracking-wide uppercase bg-emerald-600 text-white
+                           px-2 py-1 rounded-full shadow"
+                  >
+                    Sky Medical
+                  </span>
+                {/if}
+
                 <div class="mt-auto"></div>
 
                 <span
@@ -141,9 +148,7 @@
           </div>
         {/if}
       {:else}
-        <div
-          class="rounded-lg border border-slate-200 bg-white p-6 text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300"
-        >
+        <div class="rounded-lg border border-slate-200 bg-white p-6 text-slate-600">
           No families found in <span class="font-semibold">{seriesLabel}</span>.
         </div>
       {/if}
