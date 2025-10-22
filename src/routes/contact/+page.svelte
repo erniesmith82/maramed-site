@@ -25,6 +25,41 @@
   let errorMsg = "";
 </script>
 
+<svelte:head>
+  <!-- Primary SEO -->
+  <title>Contact Maramed | Orthotic Fabrication & Central Fabrication Services in Miami</title>
+  <meta
+    name="description"
+    content="Get in touch with Maramed’s orthotic fabrication team in Miami, Florida. Contact us for custom central fabrication, CAD/CAM milling, and orthotic component orders."
+  />
+  <meta
+    name="keywords"
+    content="Maramed contact, orthotic fabrication Miami, central fabrication, CADCAM, orthotic services, Miami orthotics, BioSculptor"
+  />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="Contact Maramed | Orthotic Fabrication & Central Fabrication Services in Miami" />
+  <meta
+    property="og:description"
+    content="Reach out to Maramed for orthotic fabrication, CAD/CAM solutions, and central fabrication services. Located in Miami, Florida."
+  />
+  <meta property="og:image" content="/images/contact-hero.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.maramed.com/contact" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact Maramed | Orthotic Fabrication & Central Fabrication Services in Miami" />
+  <meta
+    name="twitter:description"
+    content="Get in touch with Maramed’s team for CAD/CAM milling and orthotic fabrication services in Miami, FL."
+  />
+  <meta name="twitter:image" content="/images/contact-hero.jpg" />
+
+  <!-- Canonical / Favicon -->
+  <link rel="canonical" href="https://www.maramed.com/contact" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+</svelte:head>
 <!-- background -->
 <div
   class="fixed inset-0 -z-10 bg-slate-50 bg-[url('/images/bg-medspark.png')] bg-no-repeat bg-cover"

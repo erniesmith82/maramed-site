@@ -34,11 +34,39 @@
 </script>
 
 <svelte:head>
-  <title>Maramed — Orthopedic Systems</title>
+  <!-- Primary Meta -->
+  <title>Maramed | Orthotic Fabrication & CAD/CAM Experts in Miami</title>
   <meta
     name="description"
-    content="Modern orthopedic & prosthetic components and supplies. Explore the Maramed catalog."
+    content="Maramed provides high-quality orthotic fabrication, CAD/CAM milling, and vacuum forming services in Miami, Florida. Explore our full catalog of orthotic systems and materials."
   />
+  <meta
+    name="keywords"
+    content="orthotics, central fabrication, CADCAM, vacuum forming, Miami, Maramed, orthotic fabrication, BioSculptor"
+  />
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Maramed | Orthotic Fabrication & CAD/CAM Experts in Miami" />
+  <meta
+    property="og:description"
+    content="Explore Maramed’s full line of orthotic fabrication and CAD/CAM milling services, including precision vacuum forming and advanced orthopedic systems."
+  />
+  <meta property="og:image" content="/images/hero-maramed.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.maramed.com" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Maramed | Orthotic Fabrication & CAD/CAM Experts in Miami" />
+  <meta
+    name="twitter:description"
+    content="High-quality orthotic fabrication and CAD/CAM services in Miami, Florida. Explore Maramed’s orthotic systems and materials."
+  />
+  <meta name="twitter:image" content="/images/hero-maramed.jpg" />
+
+  <!-- Favicon / Identity -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="canonical" href="https://www.maramed.com" />
 </svelte:head>
 
 <!-- hero -->
