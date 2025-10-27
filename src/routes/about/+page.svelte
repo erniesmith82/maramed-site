@@ -122,7 +122,7 @@
         <p in:fly={{ x: sx(3), y: sy(3), duration: T(360), delay: D(280) }}>
           In <strong>2014</strong>, Maramed Orthopedic Systems merged with
           <a href="https://www.biosculptor.com" target="_blank" rel="noopener">BioSculptor Corporation</a>,
-          a leader in digital technology for orthopedic, podiatric, and P&amp;O practices. Together, we
+          a leader in digital technology for orthopedic, podiatric, orthotic and prosthetic practices. Together, we
           continue to push the boundaries of patient care through advanced design, manufacturing, and
           clinical innovation.
         </p>

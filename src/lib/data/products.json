@@ -668,6 +668,130 @@
         { "sku": "HFB-500R", "size": "XX-Large", "side": "Right", "circumference": "18 – 23", "medialLength": "7¼", "lateralLength": "8¾" }
       ]
     },
+
+    "FC": { 
+  "key": "FC", 
+  "title": "Foot Component", 
+  "image": "/images/products/foot-component.jpg", 
+  "details": {
+    "heroImage": "/images/products/foot-component.jpg", 
+    "description": "",
+    "indications": [
+      "Easy assembly",
+      "Better integration with the Tibia Fracture Brace Proximal Support orthosis",
+      "Better anatomical alignment",
+      "Greater adjustability",
+      "Foot Component sold separately",
+      "Suggested L-Code: L1930"
+    ]
+  },
+  "items": [
+    { "itemNumber": "FC-100L", "size": "Small", "side": "Left", "mensShoeSize": "3–6" },
+    { "itemNumber": "FC-100R", "size": "Small", "side": "Right", "mensShoeSize": "3–6" },
+    { "itemNumber": "FC-200L", "size": "Medium", "side": "Left", "mensShoeSize": "6–9" },
+    { "itemNumber": "FC-200R", "size": "Medium", "side": "Right", "mensShoeSize": "6–9" },
+    { "itemNumber": "FC-300L", "size": "Large", "side": "Left", "mensShoeSize": "9–11" },
+    { "itemNumber": "FC-300R", "size": "Large", "side": "Right", "mensShoeSize": "9–11" }
+  ]
+},
+"TFB": {
+  "key": "TFB",
+  "title": "Tibia Fracture Brace",
+  "image": "/images/products/tibia-fracture-braces.jpg",
+  "details": {
+    "lcode": "L2114",
+    "heroImage": "/images/products/tibia-fracture-braces.jpg",
+    "description": "Clinically designed for treating tibial shaft fractures. Each Tibia Fracture Brace (TFB) includes detailed fitting and hygiene instructions to help ensure patient compliance. Heel Cup is provided with each TFB, and optional foot components are available.",
+    "indications": [
+      "Nonoperative treatment of closed tibial shaft fractures",
+      "Postoperative treatment of open tibial shaft fractures",
+      "Protection of tibial defects",
+      "After removal of internal or external fixation",
+      "Post biopsy",
+      "Defects resulting from tumor growth",
+      "Adjunct to internal fixation such as unreamed intermedullary nails"
+    ],
+    "features": [
+      "Includes fitting and hygiene instructions for patient compliance",
+      "Heel Cup included with each TFB",
+      "Optional Foot Components available for better anatomical alignment",
+      "Anatomically designed for proper tibial stabilization"
+    ],
+    "mpNote": [
+      "Ensure correct sizing based on mid-calf circumference and height.",
+      "Foot Component (FC) sold separately for full integration."
+    ],
+    "additionalItems": [
+      { "sku": "TFB-HEEL/SA", "description": "Heel Cup — one size" },
+      { "sku": "STRAP-17", "description": "Hook & Loop strap — Small" },
+      { "sku": "STRAP-17 & STRAP-19", "description": "Hook & Loop straps — Medium/Large" },
+      { "sku": "STOCKINETT-T3", "description": "Stockinette — Small" },
+      { "sku": "STOCKINETT-T4", "description": "Stockinette — Medium/Large" }
+    ]
+  },
+  "items": [
+    { "sku": "TFB-100L", "size": "Small", "side": "Left", "midCalfCircumference": "11½ – 14", "height": "11" },
+    { "sku": "TFB-100R", "size": "Small", "side": "Right", "midCalfCircumference": "11½ – 14", "height": "11" },
+    { "sku": "TFB-200L", "size": "Medium", "side": "Left", "midCalfCircumference": "12½ – 15½", "height": "12½" },
+    { "sku": "TFB-200R", "size": "Medium", "side": "Right", "midCalfCircumference": "12½ – 15½", "height": "12½" },
+    { "sku": "TFB-300L", "size": "Large", "side": "Left", "midCalfCircumference": "13 – 16½", "height": "13" },
+    { "sku": "TFB-300R", "size": "Large", "side": "Right", "midCalfCircumference": "13 – 16½", "height": "13" },
+    { "sku": "TFB-400L", "size": "X-Large", "side": "Left", "midCalfCircumference": "17 – 23½", "height": "15⅝" },
+    { "sku": "TFB-400R", "size": "X-Large", "side": "Right", "midCalfCircumference": "17 – 23½", "height": "15⅝" }
+  ]
+},
+
+"TFB-PS": {
+  "key": "TFB-PS",
+  "title": "Tibia Fracture Brace — Proximal Support",
+  "image": "/images/products/tibia-fracture-brace-proximal-support.jpg",
+  "details": {
+    "lcode": "L2114",
+    "heroImage": "/images/products/tibia-fracture-brace-proximal-support.jpg",
+    "description": "Clinically designed for treating tibial shaft fractures, the TFB-PS includes detailed fitting and hygiene instructions with each brace to help ensure patient compliance. Foot component is sold separately.",
+    "indications": [
+      "Nonoperative treatment of closed tibial shaft fractures",
+      "Postoperative treatment of open tibial shaft fractures",
+      "Protection of tibial defects",
+      "After removal of internal or external fixation",
+      "Post biopsy",
+      "Defects resulting from tumor growth",
+      "Adjunct to internal fixation such as unreamed intermedullary nails"
+    ],
+    "features": [
+      "Proximal support design for enhanced tibial stabilization",
+      "Includes fitting & hygiene instructions to promote compliance",
+      "Compatible with optional Foot Component for improved alignment",
+      "Adjustable design accommodates soft-tissue changes"
+    ],
+    "mpNote": [
+      "Foot Component (FC) sold separately."
+    ],
+    "additionalItems": [
+      { "sku": "STRAP-22", "description": "Hook & Loop strap — all sizes" },
+      { "sku": "STRAP-TFBE", "description": "Double-sided loop" },
+      { "sku": "STOCKINETT-PTB3", "description": "Stockinette — Small" },
+      { "sku": "STOCKINETT-PTB4", "description": "Stockinette — Medium/Large" }
+    ]
+  },
+  "items": [
+    { "sku": "TFB-PS-100L", "size": "Small", "side": "Left",  "midCalfCircumference": "11 – 13", "height": "15" },
+    { "sku": "TFB-PS-100R", "size": "Small", "side": "Right", "midCalfCircumference": "11 – 13", "height": "15" },
+
+    { "sku": "TFB-PS-200L", "size": "Medium", "side": "Left",  "midCalfCircumference": "14 – 16", "height": "16 – 17" },
+    { "sku": "TFB-PS-200R", "size": "Medium", "side": "Right", "midCalfCircumference": "14 – 16", "height": "16 – 17" },
+
+    { "sku": "TFB-PS-200L-E", "size": "Medium Extended", "side": "Left Extended",  "midCalfCircumference": "14 – 16", "height": "18 – 19" },
+    { "sku": "TFB-PS-200R-E", "size": "Medium Extended", "side": "Right Extended", "midCalfCircumference": "14 – 16", "height": "18 – 19" },
+
+    { "sku": "TFB-PS-300L", "size": "Large", "side": "Left",  "midCalfCircumference": "16 – 18", "height": "17 – 18" },
+    { "sku": "TFB-PS-300R", "size": "Large", "side": "Right", "midCalfCircumference": "16 – 18", "height": "17 – 18" },
+
+    { "sku": "TFB-PS-300L-E", "size": "Large Extended", "side": "Left Extended",  "midCalfCircumference": "16 – 18", "height": "19 – 21" },
+    { "sku": "TFB-PS-300R-E", "size": "Large Extended", "side": "Right Extended", "midCalfCircumference": "16 – 18", "height": "19 – 21" }
+  ]
+},
+
     "EO": {
       "key": "EO",
       "title": "Elbow Orthosis",
@@ -753,143 +877,7 @@
         { "sku": "EO-SG-400R", "size": "X-Large", "side": "Right", "wristCircumference": "8 – 9", "forearmCircumference": "12 – 14", "bicepCircumference": "14 – 17½" }
       ]
     },
-    "WHCS-C": {
-      "key": "WHCS-C",
-      "title": "Wrist Hand Colles Fluffi-Splint™",
-      "image": "/images/products/wrist-hand-colles-fluffi-splint.jpg",
-      "details": {
-        "lcode": "L3914",
-        "heroImage": "/images/products/wrist-hand-colles-fluffi-splint.jpg",
-        "description": "Provides effective temporary positioning and immobilization of the wrist in an ulnar-deviated position with the added comfort and safety of a soft cover and straps. The cover and straps wick moisture and are washable to promote hygiene. Excellent for rehabilitation and long-term care. Rigid polystyrene construction permits unobstructed radiographs and allows gas autoclave. Available with an aluminum insert, which can be hand-modified without heat.",
-        "indications": [
-          "Temporary positioning and/or immobilization of wrist and hand fractures or ligament injuries",
-          "Post cast immobilization"
-        ],
-        "features": [
-          "Soft Fluffi™ cover and straps wick moisture; washable",
-          "Rigid polystyrene shell allows unobstructed radiographs",
-          "Shell can be gas-autoclaved",
-          "Optional aluminum insert; hand-modifiable without heat"
-        ],
-        "mpNote": [
-          "M-P Diameter is width of hand",
-          "For aluminum insert add -A (e.g., WHCS-C-100-A)"
-        ],
-        "additionalItems": [
-          { "sku": "COV-WHCS-1", "description": "Fluffi-Cover™ — Small (complete with 3 straps: one 1½″ & two 2″)" },
-          { "sku": "COV-WHCS-2", "description": "Fluffi-Cover™ — Medium (complete with 3 straps: one 1½″ & two 2″)" },
-          { "sku": "COV-WHCS-3", "description": "Fluffi-Cover™ — Large (complete with 3 straps: one 1½″ & two 2″)" },
-          { "sku": "COV-WHCS-4", "description": "Fluffi-Cover™ — X-Large (complete with 3 straps: one 1½″ & two 2″)" },
-          { "sku": "STRAP-C-1.5", "description": "Fluffi-Strap™ — replacement strap, 1½″ width" },
-          { "sku": "STRAP-C-2", "description": "Fluffi-Strap™ — replacement strap, 2″ width" }
-        ]
-      },
-      "items": [
-        { "sku": "WHCS-C-100L", "size": "Small", "side": "Left", "mpDiameter": "2 – 2½", "length": "5¼" },
-        { "sku": "WHCS-C-100R", "size": "Small", "side": "Right", "mpDiameter": "2 – 2½", "length": "5¼" },
-        { "sku": "WHCS-C-200L", "size": "Medium", "side": "Left", "mpDiameter": "2¾ – 3¼", "length": "7½" },
-        { "sku": "WHCS-C-200R", "size": "Medium", "side": "Right", "mpDiameter": "2¾ – 3¼", "length": "7½" },
-        { "sku": "WHCS-C-300L", "size": "Large", "side": "Left", "mpDiameter": "3¼ – 3¾", "length": "9" },
-        { "sku": "WHCS-C-300R", "size": "Large", "side": "Right", "mpDiameter": "3¼ – 3¾", "length": "9" },
-        { "sku": "WHCS-C-400L", "size": "X-Large", "side": "Left", "mpDiameter": "3¾ – 4", "length": "10" },
-        { "sku": "WHCS-C-400R", "size": "X-Large", "side": "Right", "mpDiameter": "3¾ – 4", "length": "10" }
-      ]
-    },
-    "WHCS": {
-      "key": "WHCS",
-      "title": "Wrist Hand Colles Splint",
-      "image": "/images/products/wrist-hand-colles-splint.jpg",
-      "details": {
-        "lcode": "L3914",
-        "heroImage": "/images/products/wrist-hand-colles-splint.jpg",
-        "description": "Provides effective temporary positioning and immobilization of the wrist in an ulnar-deviated position. Rigid polystyrene construction permits unobstructed radiographs and allows the splint to be gas autoclaved.",
-        "indications": [
-          "Temporary positioning and/or immobilization of wrist and hand fractures or ligament injuries",
-          "Post cast immobilization"
-        ],
-        "features": [
-          "Rigid polystyrene shell allows unobstructed radiographs",
-          "Shell can be gas-autoclaved"
-        ],
-        "mpNote": "M-P Diameter is width of hand"
-      },
-      "items": [
-        { "sku": "WHCS-100L", "size": "Small", "side": "Left", "mpDiameter": "2 – 2½", "length": "5¼" },
-        { "sku": "WHCS-100R", "size": "Small", "side": "Right", "mpDiameter": "2 – 2½", "length": "5¼" },
-        { "sku": "WHCS-200L", "size": "Medium", "side": "Left", "mpDiameter": "2¾ – 3¼", "length": "7½" },
-        { "sku": "WHCS-200R", "size": "Medium", "side": "Right", "mpDiameter": "2¾ – 3¼", "length": "7½" },
-        { "sku": "WHCS-300L", "size": "Large", "side": "Left", "mpDiameter": "3¼ – 3¾", "length": "9" },
-        { "sku": "WHCS-300R", "size": "Large", "side": "Right", "mpDiameter": "3¼ – 3¾", "length": "9" },
-        { "sku": "WHCS-400L", "size": "X-Large", "side": "Left", "mpDiameter": "3¾ – 4", "length": "10" },
-        { "sku": "WHCS-400R", "size": "X-Large", "side": "Right", "mpDiameter": "3¾ – 4", "length": "10" }
-      ]
-    },
-    "WHFS-C": {
-      "key": "WHFS-C",
-      "title": "Wrist Hand Forearm Fluffi-Splint™",
-      "image": "/images/products/wrist-hand-forearm-fluffi-splint.jpg",
-      "details": {
-        "lcode": "L3914",
-        "heroImage": "/images/products/wrist-hand-forearm-fluffi-splint.jpg",
-        "description": "Provides effective temporary positioning and immobilization of the wrist in a neutral position with the added comfort and safety of a soft cover and straps. The cover and straps wick away moisture and are washable to promote proper hygiene. Excellent for rehabilitation and long-term care. Rigid polystyrene construction permits unobstructed radiographs and allows the splint to be gas autoclaved. Available with an aluminum insert, which can be modified by hand without heat.",
-        "indications": [
-          "Temporary positioning and/or immobilization of wrist and hand fractures or ligament injuries",
-          "Post cast immobilization"
-        ],
-        "features": [
-          "Soft Fluffi™ cover and straps wick moisture; washable",
-          "Rigid polystyrene shell allows unobstructed radiographs",
-          "Shell can be gas-autoclaved",
-          "Optional aluminum insert; hand-modifiable without heat"
-        ],
-        "mpNote": [
-          "M-P Diameter is width of hand",
-          "For aluminum insert add -A (e.g., WHFS-C-100-A)"
-        ],
-        "additionalItems": [
-          { "sku": "COV-WHFS-1", "description": "Fluffi-Cover™ — Small (complete with 3 straps: one 1½″ & two 2″)" },
-          { "sku": "COV-WHFS-2", "description": "Fluffi-Cover™ — Medium (complete with 3 straps: one 1½″ & two 2″)" },
-          { "sku": "COV-WHFS-3", "description": "Fluffi-Cover™ — Large (complete with 3 straps: one 1½″ & two 2″)" },
-          { "sku": "STRAP-C-1.5", "description": "Fluffi-Strap™ — replacement strap, 1½″ width" },
-          { "sku": "STRAP-C-2", "description": "Fluffi-Strap™ — replacement strap, 2″ width" }
-        ]
-      },
-      "items": [
-        { "sku": "WHFS-C-100L", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼", "length": "7½" },
-        { "sku": "WHFS-C-100R", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼", "length": "7½" },
-        { "sku": "WHFS-C-200L", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾", "length": "10" },
-        { "sku": "WHFS-C-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "length": "10" },
-        { "sku": "WHFS-C-300L", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4", "length": "10½" },
-        { "sku": "WHFS-C-300R", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4", "length": "10½" }
-      ]
-    },
-    "WHFS": {
-      "key": "WHFS",
-      "title": "Wrist Hand Forearm Splint",
-      "image": "/images/products/wrist-hand-forearm-splint.jpg",
-      "details": {
-        "lcode": "L3914",
-        "heroImage": "/images/products/wrist-hand-forearm-splint.jpg",
-        "description": "Provides effective temporary positioning and immobilization of the wrist in the neutral position. Rigid polystyrene construction permits unobstructed radiographs and allows the splint to be gas autoclaved.",
-        "indications": [
-          "Temporary positioning and/or immobilization of wrist and hand fractures or ligament injuries",
-          "Post cast immobilization"
-        ],
-        "features": [
-          "Rigid polystyrene shell allows unobstructed radiographs",
-          "Shell can be gas-autoclaved"
-        ],
-        "mpNote": "M-P Diameter is width of hand"
-      },
-      "items": [
-        { "sku": "WHFS-100L", "size": "Small", "side": "Left", "mpDiameter": "2¾ – 3¼", "length": "7½" },
-        { "sku": "WHFS-100R", "size": "Small", "side": "Right", "mpDiameter": "2¾ – 3¼", "length": "7½" },
-        { "sku": "WHFS-200L", "size": "Medium", "side": "Left", "mpDiameter": "3¼ – 3¾", "length": "10" },
-        { "sku": "WHFS-200R", "size": "Medium", "side": "Right", "mpDiameter": "3¼ – 3¾", "length": "10" },
-        { "sku": "WHFS-300L", "size": "Large", "side": "Left", "mpDiameter": "3¾ – 4", "length": "10½" },
-        { "sku": "WHFS-300R", "size": "Large", "side": "Right", "mpDiameter": "3¾ – 4", "length": "10½" }
-      ]
-    },
+    
     "PLS-FF": {
       "key": "PLS-FF",
       "title": "Drop Foot Splint — Full Foot",
@@ -1334,22 +1322,7 @@
       "description": "All orthoses in the Wrist Hand series are comprised of a foam lined hypoallergenic linear polyethylene plastic with a padded dorsal tongue that enables them to provide both rigid cast-like protection and maximum comfort to the patient. They provide a significant advantage over casting, as they are highly adjustable, allowing them to properly compensate for edema. The brace composition is completely radiolucent. In addition to the traditional style, which incorporates hook and loop straps with the quick lock fastener system, all of the Wrist Hand orthoses, except for the Arthroscopic Traction Assist, are available in the streamlined, slotted S-Series™ version. They are easily customized utilizing a heat gun and scissors, as shown in the modification procedures. Each is provided with one presewn double-layer cotton stockinette. Additional stockinette and straps are available separately.",
       "familyKeys": ["ATA", "FPO", "FPO-S", "WH", "WH-S", "WHT", "WHT-S"]
     },
-    {
-      "slug": "s-series",
-      "label": "The S-Series™",
-      "description": "In response to the needs and preferences of today’s healthcare professional, Maramed is proud to introduce the S-Series™ line of prefabricated orthoses. It consists of the same superior materials and anatomical designs as our original style and includes several distinct new features.",
-      "features": [
-        "Longer straps with end stops insure proper brace alignment while donning and doffing",
-        "All straps are made of Magic Tape™, a revolutionary strapping material that consists of self-engaging hook and loop",
-        "Straps are easily replaced without any tools",
-        "Removable straps promote proper hygiene",
-        "Same clinically tested anatomical shapes",
-        "More patient compliant",
-        "Lower profile – no external parts to catch on clothes",
-        "By replacing the loop, chafe and rivet with a simple static slot, slippage and rotation of the anterior/posterior components are minimized"
-      ],
-      "familyKeys": ["WH-S", "WHT-S", "HFB-S", "HFB-SG-S", "FPO-S", "UFB-S", "TFB-S"]
-    },
+   
     {
       "slug": "elbow",
       "label": "Elbow Series",
@@ -1367,18 +1340,6 @@
       "label": "Ankle Foot Orthoses / Drop Foot Splints",
       "description": "The ankle foot orthoses/drop foot splints provide a full foot section for additional support and comfort when indicated and are fabricated in a predorsiflexed position to provide superior dorsiflexion assist. The amount of dorsiflexion assist is proportional to shoe size. The anatomical design compensates for atrophy and avoids calcaneus irritation. The splints are made of a specially formulated polypropylene plastic insuring effective product longevity and are guaranteed for life. They are easily customized, utilizing a heat gun and scissors, as shown in the modification procedures. Additional stockinette and straps are available separately.",
       "familyKeys": ["PLS-FF", "PLS-S","PLSC", "PLSC-OH", "PLSB", "PED-C", "UCB", "SM-SAFO", "SM-AFO-PLS"]
-    },
-    {
-      "slug": "ue-splints",
-      "label": "Upper Extremity Splints",
-      "description": "All styles of the upper extremity orthoses are available in a variety of configurations, depending upon the patient’s needs and the practitioner’s preferences. They provide effective immobilization and are completely radiolucent, allowing unobstructed radiographs. The Fluffi-Splints™ are available with either plastic or aluminum inserts. They are easily customized, as shown in the modification procedures.",
-      "familyKeys": ["WHCS-C", "WHCS", "WHFS-C", "WHFS"]
-    },
-    {
-      "slug": "lower-extremity-splints",
-      "label": "Lower Extremity Splints",
-      "description": "All styles of the lower extremity splints are available in a variety of configurations, depending upon the patient’s needs and the practioner’s preferences. They provide effective temporary immobilization and are completely radiolucent, allowing unobstructed radiographs. They are easily customized utilizing a heat gun and scissors, as shown in the modification procedures.",
-      "familyKeys": ["AFC", "ARB", "FS-C", "FS", "TS-C", "TS"]
     },
     {
       "slug": "tibia-fracture-brace",
