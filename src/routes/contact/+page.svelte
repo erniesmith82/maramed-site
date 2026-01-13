@@ -1,5 +1,4 @@
 <script>
-  
   import { fade, fly, scale } from "svelte/transition";
   import { onMount } from "svelte";
   import { enhance, applyAction } from "$app/forms";
@@ -60,14 +59,21 @@
   <link rel="canonical" href="https://www.maramed.com/contact" />
   <link rel="icon" type="image/png" href="/favicon.png" />
 </svelte:head>
+
 <!-- background -->
 <div
-  class="fixed inset-0 -z-10 bg-slate-50 bg-[url('/images/bg-medspark.png')] bg-no-repeat bg-cover"
+  class="fixed inset-0 -z-10 bg-slate-50"
+  aria-hidden="true"
+></div>
+
+<!-- NO GRADIENT: replace radial-gradient overlay with a subtle flat tint + ring -->
+<div
+  class="pointer-events-none fixed inset-0 -z-10 bg-emerald-50/40"
   aria-hidden="true"
 ></div>
 <div
-  class="pointer-events-none fixed inset-0 -z-10
-         bg-[radial-gradient(80rem_80rem_at_80%_-10%,theme(colors.emerald.100/.30),transparent_50%),radial-gradient(70rem_70rem_at_-10%_10%,theme(colors.emerald.200/.20),transparent_55%)]"
+  class="pointer-events-none fixed inset-0 -z-10 ring-1 ring-inset ring-black/5"
+  aria-hidden="true"
 ></div>
 
 <section class="relative w-full">
@@ -76,17 +82,20 @@
     {#if mounted}
       <div in:fade={{ duration: T(320) }}>
         <div
-          class="rounded-3xl border border-emerald-800/30 bg-gradient-to-b from-emerald-700/95 to-emerald-600/90 text-white p-6 sm:p-10 shadow-sm"
+          class="rounded-3xl border border-emerald-800/30 bg-emerald-800/85 text-white p-6 sm:p-10 shadow-sm"
           in:scale={{ duration: T(380), start: 0.985 }}
         >
+          <!-- subtle depth, still not a gradient -->
+          <div class="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/10" aria-hidden="true"></div>
+
           <h1
-            class="text-4xl sm:text-5xl font-extrabold tracking-tight text-center"
+            class="relative text-4xl sm:text-5xl font-extrabold tracking-tight text-center"
             in:fly={{ y: 12, duration: T(420), delay: D(40) }}
           >
             Get in touch
           </h1>
           <p
-            class="mt-3 max-w-2xl mx-auto text-emerald-50/90 text-center"
+            class="relative mt-3 max-w-2xl mx-auto text-emerald-50/90 text-center"
             in:fade={{ duration: T(360), delay: D(120) }}
           >
             Send your part list, ask about specs, or request sizing help. We’ll respond quickly.
@@ -234,11 +243,14 @@
       {#if mounted}
         <div class="min-w-0" in:fade={{ duration: T(360), delay: D(100) }}>
           <div
-            class="rounded-2xl border border-emerald-800/30 bg-gradient-to-b from-emerald-700/95 to-emerald-600/90 text-white p-6 sm:p-8 shadow-sm h-full w-full min-w-0"
+            class="relative rounded-2xl border border-emerald-800/30 bg-emerald-800/85 text-white p-6 sm:p-8 shadow-sm h-full w-full min-w-0"
             in:scale={{ duration: T(380), delay: D(100), start: 0.985 }}
           >
-            <h2 class="text-xl font-semibold" in:fly={{ y: 10, duration: T(320), delay: D(140) }}>Contact details</h2>
-            <ul class="mt-3 space-y-2 text-emerald-50/90">
+            <!-- subtle depth, still not a gradient -->
+            <div class="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10" aria-hidden="true"></div>
+
+            <h2 class="relative text-xl font-semibold" in:fly={{ y: 10, duration: T(320), delay: D(140) }}>Contact details</h2>
+            <ul class="relative mt-3 space-y-2 text-emerald-50/90">
               <li in:fly={{ x: 10, y: 8, duration: T(300), delay: D(170) }}>
                 <span class="font-semibold">Email:</span>
                 <a class="underline" href="mailto:custsupport@maramed.com">custsupport@maramed.com</a>
@@ -251,7 +263,7 @@
               </li>
             </ul>
 
-            <div class="mt-6 rounded-xl bg-white/10 p-4" in:fade={{ duration: T(280), delay: D(240) }}>
+            <div class="relative mt-6 rounded-xl bg-white/10 p-4" in:fade={{ duration: T(280), delay: D(240) }}>
               <p class="text-sm text-emerald-50/90">
                 Prefer email? Include SKUs, sizes, and quantities—we’ll quote and confirm availability.
               </p>

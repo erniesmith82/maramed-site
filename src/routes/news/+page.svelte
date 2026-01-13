@@ -36,31 +36,63 @@
 <!-- HERO -->
 <section class="relative isolate">
   <div class="absolute inset-0 -z-10 bg-cover bg-center"></div>
-  <div class="absolute inset-0 -z-10 bg-gradient-to-b from-emerald-800/90 via-emerald-700/70 to-emerald-600/60 -mt-10" aria-hidden="true"></div>
+
+  <!-- Overlay (NO GRADIENT): flat emerald -->
+  <div
+    class="absolute inset-0 -z-10 bg-emerald-800/85 -mt-10"
+    aria-hidden="true"
+  ></div>
+
+  <!-- optional subtle depth -->
+  <div
+    class="absolute inset-0 -z-10 ring-1 ring-inset ring-black/10 -mt-10"
+    aria-hidden="true"
+  ></div>
 
   <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 pt-16 pb-14 sm:pt-20 sm:pb-20">
     {#if mounted}
       <div in:fade={{ duration: T(320) }}>
-        <div class="mx-auto max-w-3xl text-center text-white" in:scale={{ duration: T(360), start: 0.985 }}>
-          <p class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[10px] sm:text-xs font-medium ring-1 ring-white/20 backdrop-blur" in:fly={{ y: 10, duration: T(340), delay: D(40) }}>
+        <div
+          class="mx-auto max-w-3xl text-center text-white"
+          in:scale={{ duration: T(360), start: 0.985 }}
+        >
+          <p
+            class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[10px] sm:text-xs font-medium ring-1 ring-white/20 backdrop-blur"
+            in:fly={{ y: 10, duration: T(340), delay: D(40) }}
+          >
             <span class="h-1.5 w-1.5 rounded-full bg-emerald-300"></span>
             News &amp; Updates
           </p>
 
-          <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight" in:fly={{ y: 12, duration: T(400), delay: D(110) }}>
+          <h1
+            class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight"
+            in:fly={{ y: 12, duration: T(400), delay: D(110) }}
+          >
             Sky Medical Products — Now Available from Maramed
           </h1>
 
-          <p class="mt-4 text-sm sm:text-base lg:text-lg text-white/90" in:fly={{ y: 10, duration: T(360), delay: D(200) }}>
+          <p
+            class="mt-4 text-sm sm:text-base lg:text-lg text-white/90"
+            in:fly={{ y: 10, duration: T(360), delay: D(200) }}
+          >
             We’re excited to announce that Maramed is now an authorized source for Sky Medical products.
             Ordering is simple, fulfillment is fast, and support comes straight from our team.
           </p>
 
-          <div class="mt-6 flex items-center justify-center gap-3" in:fade={{ duration: T(260), delay: D(260) }}>
-            <a href="/ordering" class="inline-flex items-center rounded-xl bg-white/95 text-slate-900 px-5 py-3 font-semibold hover:bg-white">
+          <div
+            class="mt-6 flex items-center justify-center gap-3"
+            in:fade={{ duration: T(260), delay: D(260) }}
+          >
+            <a
+              href="/ordering"
+              class="inline-flex items-center rounded-xl bg-white/95 text-slate-900 px-5 py-3 font-semibold hover:bg-white"
+            >
               Order Now
             </a>
-            <a href="/catalog/SM-GROUPED" class="inline-flex items-center rounded-xl border border-white/70 text-white px-5 py-3 font-semibold hover:bg-white/10">
+            <a
+              href="/catalog/SM-GROUPED"
+              class="inline-flex items-center rounded-xl border border-white/70 text-white px-5 py-3 font-semibold hover:bg-white/10"
+            >
               Sky Medical Products
             </a>
           </div>
@@ -74,14 +106,18 @@
   </div>
 </section>
 
-<!-- WHAT'S CHANGING ONLY -->
+<!-- WHAT'S CHANGING -->
 <section class="relative w-full">
   <div class="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
     {#if mounted}
-      <div class="rounded-2xl border border-slate-200 bg-white shadow-sm p-6 sm:p-8"
-           in:scale={{ duration: T(360), delay: D(60), start: 0.99 }}>
-        <h2 class="text-2xl font-bold text-slate-900"
-            in:fly={{ x: sx(0), y: sy(0), duration: T(300), delay: D(80) }}>
+      <div
+        class="rounded-2xl border border-slate-200 bg-white shadow-sm p-6 sm:p-8"
+        in:scale={{ duration: T(360), delay: D(60), start: 0.99 }}
+      >
+        <h2
+          class="text-2xl font-bold text-slate-900"
+          in:fly={{ x: sx(0), y: sy(0), duration: T(300), delay: D(80) }}
+        >
           What’s changing
         </h2>
         <p class="mt-2 text-slate-700" in:fade={{ duration: T(260), delay: D(110) }}>
@@ -92,4 +128,3 @@
     {/if}
   </div>
 </section>
-

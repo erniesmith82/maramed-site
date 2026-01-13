@@ -150,11 +150,21 @@
   }
 </script>
 
-
 <!-- hero -->
 <section class="relative isolate">
   <div class="absolute inset-0 -z-10 bg-cover bg-center" aria-hidden="true"></div>
-  <div class="absolute inset-0 -z-10 bg-gradient-to-b from-emerald-800/90 via-emerald-700/70 to-emerald-600/60 -mt-10" aria-hidden="true"></div>
+
+  <!-- Overlay (NO GRADIENT): flat emerald -->
+  <div
+    class="absolute inset-0 -z-10 bg-emerald-800/85 -mt-10"
+    aria-hidden="true"
+  ></div>
+
+  <!-- optional subtle depth, still not a gradient -->
+  <div
+    class="absolute inset-0 -z-10 ring-1 ring-inset ring-black/10 -mt-10"
+    aria-hidden="true"
+  ></div>
 
   <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 pt-16 pb-14 sm:pt-20 sm:pb-20">
     {#if mounted}
@@ -210,7 +220,7 @@
                 </p>
               </div>
               <div class="mt-6">
-                 <p class="mt-2 text-slate-700 font-semibold" in:fade={{ duration: T(280), delay: D(210) }}>
+                <p class="mt-2 text-slate-700 font-semibold" in:fade={{ duration: T(280), delay: D(210) }}>
                   **Maramed sells to licensed professionals and distributors only.
                 </p>
               </div>
@@ -517,7 +527,6 @@
   /* So the alert isn't hidden under any sticky header */
   #formAlert { scroll-margin-top: 80px; }
 
-
   :global(:where(input, select, textarea)[data-invalid="true"]) {
     border-color: #dc2626 !important;
     box-shadow: 0 0 0 1px #dc2626;
@@ -525,5 +534,4 @@
   :global(label[data-invalid-label="true"]) {
     color: #dc2626 !important;
   }
-  
 </style>

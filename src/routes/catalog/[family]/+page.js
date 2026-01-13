@@ -158,15 +158,6 @@ function slugify(s = "") {
   return s.toString().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 }
 
-function findImageByKeyword(gallery = [], keywords = []) {
-  const lower = gallery.map((p) => ({ p, k: (p || "").toLowerCase() }));
-  for (const kw of keywords) {
-    const hit = lower.find(({ k }) => k.includes(kw));
-    if (hit) return hit.p;
-  }
-  return "";
-}
-
 // Hardened version to avoid `.test` errors on malformed notes
 function coerceMeasurementCards(d = {}) {
   const rawNotes = d?.notes;
@@ -280,8 +271,33 @@ function normalizeSections(sections = []) {
   });
 }
 
-export function load({ params }) {
-  // IMPORTANT: strip any encoded or literal fragment that accidentally ended up in the path
+// ✅ NEW: allow "components" to behave like grouped "sizes"
+function componentsToSizeGroups(components = [], items = []) {
+  if (!Array.isArray(components) || !components.length) return null;
+
+  const groups = components
+    .map((c, i) => {
+      const title = c?.group || c?.title || `Group ${i + 1}`;
+      const key = c?.key || slugify(title) || `group-${i + 1}`;
+      const image = c?.image || c?.img || c?.photo || c?.thumbnail || "";
+
+      // items can be array of objects OR array of sku strings
+      const rows = normalizeRows(Array.isArray(c?.items) ? c.items : [], items);
+
+      return {
+        key,
+        title,
+        image,
+        notes: normalizeNotes(c?.notes),
+        rows
+      };
+    })
+    .filter((g) => g.rows.length > 0);
+
+  return groups.length ? groups : null;
+}
+
+export function load({ params, url }) {
   const raw = params.family || "";
   const keyRaw = raw.split("%23")[0].split("#")[0];
 
@@ -294,7 +310,9 @@ export function load({ params }) {
 
   const sizes = normalizeRows(items, items);
 
+  // default grouped sizes (from d.sizeGroups OR item.group)
   let sizeGroups = null;
+
   if (Array.isArray(d.sizeGroups) && d.sizeGroups.length) {
     sizeGroups = d.sizeGroups
       .map((g, i) => ({
@@ -325,18 +343,28 @@ export function load({ params }) {
     }
   }
 
+  // ✅ if the product uses d.components groups, convert them into sizeGroups
+  // so it renders in the SAME grouped table UI as PLSC-OH
+  const compGroups = componentsToSizeGroups(d.components, items);
+  if (compGroups?.length) sizeGroups = compGroups;
+
   const mpNotes = normalizeMpNoteArray(d.mpNote);
   const sections = normalizeSections(d.sections);
   const measurementCards = coerceMeasurementCards({ ...d, sections });
 
+  // optional highlighting of sku via query param (you already link ?sku= in additionalItems)
+  const focusSku = (url?.searchParams?.get("sku") || "").trim();
+
   return {
     family: f.key,
+    focusSku,
     details: {
       title: f.title ?? f.key,
       heroImage: d.heroImage || f.image || "",
       gallery: d.gallery ?? [],
       description: d.description ?? "",
       indications: d.indications ?? [],
+      features: d.features ?? [],              
       lcode: d.lcode ?? "",
       notes: normalizeNotes(d.notes),
       mpNote: mpNotes,

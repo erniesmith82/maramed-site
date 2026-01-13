@@ -1,9 +1,7 @@
 <script>
-
   import { fade, fly, scale } from "svelte/transition";
   import { onMount } from "svelte";
 
- 
   const stats = [
     { label: "Founded", value: "1972" },
     { label: "Clinically tested cases", value: "5,000+" },
@@ -18,16 +16,15 @@
     typeof matchMedia !== "undefined" &&
     matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  
-  const DUR_MULT = 3;  
-  const DELAY_MULT = 0.6; 
+  const DUR_MULT = 3;
+  const DELAY_MULT = 0.6;
 
   const T = (ms) => (isReduced ? 0 : Math.round(ms * DUR_MULT));
   const D = (ms) => (isReduced ? 0 : Math.round(ms * DELAY_MULT));
 
   // light “scatter” offsets
   const sx = (i) => [-12, 10, -8, 9, -6][i % 5];
-  const sy = (i) => [ 10,  8, 12, 9, 11][i % 5];
+  const sy = (i) => [10, 8, 12, 9, 11][i % 5];
 </script>
 
 <svelte:head>
@@ -55,11 +52,13 @@
 
 <!-- HERO -->
 <section class="relative isolate">
-  <!-- Overlay gradient -->
+  <!-- Overlay -->
   <div
-    class="absolute inset-0 -z-10 bg-gradient-to-b from-emerald-800/90 via-emerald-700/70 to-emerald-600/60 -mt-10"
+    class="absolute inset-0 -z-10 bg-emerald-800/85 -mt-10"
     aria-hidden="true"
   ></div>
+  
+  <div class="absolute inset-0 -z-10 ring-1 ring-inset ring-black/10 -mt-10" aria-hidden="true"></div>
 
   <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 pt-16 pb-14 sm:pt-20 sm:pb-20">
     {#if mounted}
@@ -231,11 +230,11 @@
 
 <!-- CTA -->
 <section class="px-4 sm:px-6 lg:px-8 pb-20">
-  <div class="mx-auto max-w-screen-lg" >
+  <div class="mx-auto max-w-screen-lg">
     {#if mounted}
       <div in:fade={{ duration: T(320) }}>
         <div
-          class="rounded-3xl bg-gradient-to-r from-emerald-600 to-sky-600 px-5 sm:px-8 py-8 sm:py-10 text-center text-white shadow-lg"
+          class="rounded-3xl bg-emerald-700 px-5 sm:px-8 py-8 sm:py-10 text-center text-white shadow-lg"
           in:scale={{ duration: T(360), start: 0.985 }}
         >
           <h2 class="text-lg sm:text-xl font-bold" in:fly={{ y: 10, duration: T(320), delay: D(40) }}>

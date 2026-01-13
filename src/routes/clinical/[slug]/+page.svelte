@@ -1,5 +1,4 @@
 <script>
-  
   import { fade, fly, scale } from "svelte/transition";
   import { onMount } from "svelte";
 
@@ -88,18 +87,35 @@
   <!-- hero -->
   <section class="relative isolate">
     <div class="absolute inset-0 -z-10 bg-cover bg-center" aria-hidden="true"></div>
-    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-emerald-800/90 via-emerald-700/70 to-emerald-600/60 -mt-10" aria-hidden="true"></div>
+
+    <!-- Overlay (NO GRADIENT): flat emerald -->
+    <div
+      class="absolute inset-0 -z-10 bg-emerald-800/85 -mt-10"
+      aria-hidden="true"
+    ></div>
+
+    <!-- optional subtle depth, still not a gradient -->
+    <div
+      class="absolute inset-0 -z-10 ring-1 ring-inset ring-black/10 -mt-10"
+      aria-hidden="true"
+    ></div>
 
     <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 pt-16 pb-14 sm:pt-20 sm:pb-20">
       {#if mounted}
         <div in:fade={{ duration: T(320) }}>
           <div class="mx-auto max-w-3xl text-center text-white" in:scale={{ duration: T(360), start: 0.985 }}>
-            <p class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[10px] sm:text-xs font-medium ring-1 ring-white/20 backdrop-blur" in:fly={{ y: 10, duration: T(340), delay: D(40) }}>
+            <p
+              class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[10px] sm:text-xs font-medium ring-1 ring-white/20 backdrop-blur"
+              in:fly={{ y: 10, duration: T(340), delay: D(40) }}
+            >
               <span class="h-1.5 w-1.5 rounded-full bg-emerald-300"></span>
               Clinical Study
             </p>
 
-            <h1 class="mt-5 text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight" in:fly={{ y: 12, duration: T(400), delay: D(110) }}>
+            <h1
+              class="mt-5 text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight"
+              in:fly={{ y: 12, duration: T(400), delay: D(110) }}
+            >
               {study.title}
             </h1>
 
@@ -124,7 +140,10 @@
   <section class="relative w-full">
     <div class="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
       {#if mounted}
-        <article class="rounded-2xl border border-slate-200 bg-white shadow-sm p-6 sm:p-8" in:scale={{ duration: T(360), delay: D(60), start: 0.99 }}>
+        <article
+          class="rounded-2xl border border-slate-200 bg-white shadow-sm p-6 sm:p-8"
+          in:scale={{ duration: T(360), delay: D(60), start: 0.99 }}
+        >
           {#if study.description}
             <p class="text-slate-700">{study.description}</p>
             <hr class="my-6 border-slate-200" />
@@ -163,7 +182,9 @@
           {#if study.tags?.length}
             <div class="mt-8 flex flex-wrap gap-2">
               {#each study.tags as tag}
-                <span class="inline-flex items-center rounded-full bg-slate-100 text-slate-700 text-xs px-2.5 py-1 border border-slate-200">
+                <span
+                  class="inline-flex items-center rounded-full bg-slate-100 text-slate-700 text-xs px-2.5 py-1 border border-slate-200"
+                >
                   {tag}
                 </span>
               {/each}
@@ -171,13 +192,19 @@
           {/if}
 
           <div class="mt-10 flex items-center justify-between border-t border-slate-200 pt-6">
-            <a href="/clinical" class="text-sm font-medium text-emerald-700 hover:underline">← Back to Clinical Studies</a>
+            <a href="/clinical" class="text-sm font-medium text-emerald-700 hover:underline">
+              ← Back to Clinical Studies
+            </a>
             <div class="flex gap-3">
               {#if prev}
-                <a href={`/clinical/${prev.slug}`} class="text-sm text-slate-600 hover:underline" title={prev.title}>Previous</a>
+                <a href={`/clinical/${prev.slug}`} class="text-sm text-slate-600 hover:underline" title={prev.title}>
+                  Previous
+                </a>
               {/if}
               {#if next}
-                <a href={`/clinical/${next.slug}`} class="text-sm text-slate-600 hover:underline" title={next.title}>Next</a>
+                <a href={`/clinical/${next.slug}`} class="text-sm text-slate-600 hover:underline" title={next.title}>
+                  Next
+                </a>
               {/if}
             </div>
           </div>
