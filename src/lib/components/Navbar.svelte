@@ -24,7 +24,7 @@
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-22 flex items-center justify-between">
     <a href={brand.href} class="flex items-center gap-2">
       {#if brand.logo}
-        <img src={brand.logo} alt={brand.name} class="h-18 w-45 rounded-lg" />
+        <img src={brand.logo} alt={brand.name} class="h-30 w-45 rounded-lg" />
       {/if}
     </a>
 

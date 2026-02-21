@@ -10,18 +10,25 @@ function nowInET() {
       month: "2-digit",
       day: "2-digit"
     });
-    const parts = Object.fromEntries(fmt.formatToParts(new Date()).map(p => [p.type, p.value]));
+    const parts = Object.fromEntries(
+      fmt.formatToParts(new Date()).map((p) => [p.type, p.value])
+    );
     return new Date(`${parts.year}-${parts.month}-${parts.day}T00:00:00-05:00`);
   } catch {
     // absolute fallback (no TZ support)
     const d = new Date();
-    return new Date(`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}T00:00:00-05:00`);
+    return new Date(
+      `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(
+        d.getDate()
+      ).padStart(2, "0")}T00:00:00-05:00`
+    );
   }
 }
+
 function weekKeyET() {
   const d = nowInET();
-  const day = (d.getDay() + 6) % 7;      // Mon=0 … Sun=6
-  d.setDate(d.getDate() - day + 3);      // ISO week Thursday
+  const day = (d.getDay() + 6) % 7; // Mon=0 … Sun=6
+  d.setDate(d.getDate() - day + 3); // ISO week Thursday
   const firstThu = new Date(d.getFullYear(), 0, 4);
   const adj = (firstThu.getDay() + 6) % 7;
   const week = 1 + Math.round(((d - firstThu) / 86400000 - 3 + adj) / 7);
@@ -42,6 +49,7 @@ function xmur3(str) {
     return h >>> 0;
   };
 }
+
 function mulberry32(a) {
   return function () {
     let t = (a += 0x6d2b79f5);
@@ -50,6 +58,7 @@ function mulberry32(a) {
     return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
   };
 }
+
 function shuffleDeterministic(arr, rnd) {
   const a = arr.slice();
   for (let i = a.length - 1; i > 0; i--) {
@@ -60,7 +69,8 @@ function shuffleDeterministic(arr, rnd) {
 }
 
 /* ---------- Catalog helpers ---------- */
-const pick = (...vals) => vals.find(v => typeof v === "string" && v.trim().length) || null;
+const pick = (...vals) =>
+  vals.find((v) => typeof v === "string" && v.trim().length) || null;
 
 function normalizePublicPath(p) {
   if (!p || typeof p !== "string") return null;
@@ -73,32 +83,39 @@ function normalizePublicPath(p) {
   }
   return out;
 }
+
 function imageForFamily(fam) {
-  return normalizePublicPath(pick(fam?.image, fam?.details?.heroImage, fam?.details?.gallery?.[0]));
+  return normalizePublicPath(
+    pick(fam?.image, fam?.details?.heroImage, fam?.details?.gallery?.[0])
+  );
 }
-function buildPool(cat) {
+
+// Build cards for a SINGLE series entry (slug)
+function buildPoolForSeries(cat, seriesEntry) {
   const famMap = cat?.families || {};
   const out = [];
-  for (const series of (cat?.series || [])) {
-    const keys = series?.familyKeys || [];
-    for (const key of keys) {
-      const fam = famMap[key];
-      if (!fam) continue;
-      const img = imageForFamily(fam);
-      if (!img) continue;
-      out.push({
-        name: fam.title || fam.key || "Untitled",
-        desc: pick(fam.details?.description, series.description) || "",
-        sku: "",
-        img,
-        href: `/catalog/${encodeURIComponent(fam.key)}`,
-        tag: series.label || ""
-      });
-    }
+  const keys = seriesEntry?.familyKeys || [];
+
+  for (const key of keys) {
+    const fam = famMap[key];
+    if (!fam) continue;
+
+    const img = imageForFamily(fam);
+    if (!img) continue;
+
+    out.push({
+      name: fam.title || fam.key || "Untitled",
+      desc: pick(fam.details?.description, seriesEntry.description) || "",
+      sku: fam.key || "",
+      img,
+      href: `/catalog/${encodeURIComponent(fam.key)}`,
+      tag: seriesEntry.label || ""
+    });
   }
+
   // de-dupe by href
   const seen = new Set();
-  return out.filter(card => {
+  return out.filter((card) => {
     if (!card.href) return false;
     if (seen.has(card.href)) return false;
     seen.add(card.href);
@@ -107,23 +124,67 @@ function buildPool(cat) {
 }
 
 export function load() {
+  // ------------------------------------------------------------
+  // FEATURED SOURCE (CHANGE MONTHLY HERE)
+  // ------------------------------------------------------------
+  const FEATURED_SOURCE_SLUG = "sky-medical";
+  // ------------------------------------------------------------
+
   try {
-    const pool = buildPool(catalog);
-    const seed = xmur3(weekKeyET())();
+    // Keep naming consistent with your UI: data.brands
+    const brands = catalog?.series ?? [];
+
+    // Pick requested slug, else default to first
+    const requested = brands.find((b) => b.slug === FEATURED_SOURCE_SLUG);
+    let chosen = requested ?? brands[0];
+
+    // Build pool from chosen
+    let pool = chosen ? buildPoolForSeries(catalog, chosen) : [];
+
+    // ✅ If chosen slug exists but has NO matching families, fall back to first series that does
+    if (!pool.length) {
+      const firstWithItems = brands.find(
+        (b) => buildPoolForSeries(catalog, b).length > 0
+      );
+      if (firstWithItems) {
+        chosen = firstWithItems;
+        pool = buildPoolForSeries(catalog, chosen);
+      }
+    }
+
+    // deterministic random per-week (and per-slug)
+    const seed = xmur3(`${weekKeyET()}::${chosen?.slug ?? "none"}`)();
     const rnd = mulberry32(seed);
+
     const featured = shuffleDeterministic(pool, rnd).slice(0, 3);
+
+    // Helpful debug: show which keys are missing from catalog.families (if any)
+    const famMap = catalog?.families || {};
+    const missingKeysSample =
+      chosen?.familyKeys
+        ?.filter((k) => !famMap[k])
+        ?.slice(0, 12) ?? [];
 
     const debugInfo = {
       week: weekKeyET(),
+      requestedSlug: FEATURED_SOURCE_SLUG,
+      chosenSlug: chosen?.slug,
+      label: chosen?.label,
       poolCount: pool.length,
       featuredCount: featured.length,
-      first: featured[0]?.name
+      first: featured[0]?.name,
+      missingKeysSample
     };
+
     console.log("[landing] featured debug:", debugInfo);
 
-    return { featured, debugInfo };
+    return { featured, brands, debugInfo };
   } catch (err) {
     console.error("[landing] load failed:", err);
-    return { featured: [], debugInfo: { error: true, message: String(err) } };
+    return {
+      featured: [],
+      brands: [],
+      debugInfo: { error: true, message: String(err) }
+    };
   }
 }

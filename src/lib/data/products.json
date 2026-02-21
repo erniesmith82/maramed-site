@@ -1445,6 +1445,38 @@
         { "sku": "EAMS-SET", "Description": "Complete set of 12 tools", "group": "Sets" }
       ]
     },
+
+    "QLF": {
+  "key": "QLF",
+  "title": "Quick Lock Fasteners",
+  "image": "/images/products/quick-lock-fasteners.png",
+  "details": {
+    "heroImage": "/images/products/quick-lock-fasteners.png",
+    "description": "Developed by Maramed to provide practitioners with an easy, reliable, radiolucent fastening system. Quick Lock Fasteners deliver a minimum of 80% more shear strength and 60% more tensile strength than traditional speedy rivets.",
+    "features": [
+      "Can be applied while the patient is wearing the device",
+      "Does not obstruct radiographs (radiolucent)",
+      "Non-corrosive construction",
+      "Strong and tough design",
+      "Low profile with no sharp edges",
+      "Brace appears more modern and professional",
+      "Available in Black and White",
+      "Washer option available for additional strength",
+      "Custom installation tool required (QLF-IT-1)",
+      "Custom colors available with bulk orders (call for volume pricing)",
+      "Packaged in bags of 100 (includes stem and cap unless otherwise noted)"
+    ]
+  },
+  "items": [
+    { "sku": "QLF-WA", "Description": "Washers – pkg of 50 (for QLF-4, QLF-6, QLF-8)", "group": "Accessories" },
+    { "sku": "QLF-2", "Description": "Small Stem & Rivet – pkg of 100", "group": "Fasteners" },
+    { "sku": "QLF-4", "Description": "Standard Stem & Rivet – pkg of 100", "group": "Fasteners" },
+    { "sku": "QLF-6", "Description": "Long Stem & Rivet – pkg of 100", "group": "Fasteners" },
+    { "sku": "QLF-8", "Description": "Large Stem & Rivet – pkg of 100", "group": "Fasteners" },
+    { "sku": "QLF-IT-1", "Description": "QLF Installation Tool", "group": "Tools" },
+    { "sku": "BUCKLE-1PK", "Description": "1\" Loop & Chafe – pkg of 100", "group": "Accessories" }
+  ]
+},
     "VEH": {
       "key": "VEH",
       "items": [
@@ -1615,7 +1647,7 @@
       "slug": "accessories",
       "label": "Accessories",
       "description": "Replacement straps, stockinette and liners, pads and heel cups, hardware, and other add-ons compatible with Maramed products.",
-      "familyKeys": ["AFO-S", "EAM"]
+      "familyKeys": ["AFO-S", "EAM", "QLF"]
     },
     {
       "slug": "stockinette",

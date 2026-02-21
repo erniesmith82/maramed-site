@@ -1,6 +1,47 @@
 <script>
   export let data;
-  const featured = data?.featured ?? [];
+
+  // ------------------------------------------------------------
+  // FEATURED SOURCE (CHANGE MONTHLY HERE)
+  // All 3 featured products will be randomly pulled from THIS slug.
+  // ------------------------------------------------------------
+  const FEATURED_SOURCE_SLUG = "sky-medical";
+  // ------------------------------------------------------------
+
+  // Expect these from your loader:
+  // data.featured = all product families/cards (full catalog list)
+  // data.brands   = [{slug,label,description,familyKeys}, ...]
+  const allFeatured = data?.featured ?? [];
+  const brands = data?.brands ?? [];
+
+  // Find the brand by slug so we can use label + allowed family keys
+  const featuredBrand = brands.find((b) => b.slug === FEATURED_SOURCE_SLUG);
+
+  // Random sample helper (no repeats)
+  const sample = (arr, n) => {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a.slice(0, n);
+  };
+
+  // Build 3 items: only those whose sku/key is in the brand's familyKeys
+  // (supports either p.sku or p.key coming from your loader)
+  const featured =
+    featuredBrand?.familyKeys?.length
+      ? sample(
+          allFeatured.filter((p) =>
+            featuredBrand.familyKeys.includes(p?.sku ?? p?.key)
+          ),
+          3
+        ).map((p) => ({
+          ...p,
+          // force tag to match the brand label (so cards always show Sky Medical)
+          tag: featuredBrand.label
+        }))
+      : allFeatured.slice(0, 3);
 
   // image visibility flags (hide on load error)
   let showBrandLogo = true;
@@ -25,7 +66,7 @@
     matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // global timing knobs
-  const DUR_MULT = 5;   // increase to slow durations
+  const DUR_MULT = 5; // increase to slow durations
   const DELAY_MULT = 3; // increase to slow staggers
 
   const T = (ms) => (isReduced ? 0 : Math.round(ms * DUR_MULT));
@@ -70,10 +111,7 @@
 
 <!-- hero -->
 <section class="relative -mt-10 overflow-hidden bg-[url('/maramed_hero_bg.png')] bg-cover bg-top">
-  
   <div class="absolute inset-0 bg-emerald-950/55"></div>
-
-  <!-- subtle depth ring -->
   <div class="absolute inset-0 ring-1 ring-inset ring-black/10"></div>
 
   <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
@@ -155,54 +193,70 @@
 
 <!-- featured products -->
 <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-  <div class="flex items-end justify-between gap-6"
-       in:fade={{ duration: T(400), delay: D(40) }}>
+  <div class="flex items-end justify-between gap-6" in:fade={{ duration: T(400), delay: D(40) }}>
     <h2 class="text-xl font-semibold text-slate-900">Featured products</h2>
     <a href="/catalog" class="text-sm font-medium text-emerald-700 hover:text-emerald-800">View all →</a>
   </div>
 
-  <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-    {#if featured.length}
-      {#each featured as p, i (p.href)}
-        {#if mounted}
-          <!-- card -->
-          <a
-            href={p.href}
-            class="group rounded-2xl border border-slate-200 overflow-hidden hover:shadow-md transition will-change-transform bg-white
-                   hover:border-emerald-200"
-            in:fly={{ y: 14, duration: T(420), delay: D(80 + i * 70) }}
-          >
-            <div class="aspect-[4/3] bg-slate-100 overflow-hidden">
-              {#if p.img}
-                <img
-                  src={imgSrc(p.img)}
-                  alt={p.name}
-                  class="h-full w-full object-cover group-hover:scale-[1.03] transition"
-                />
-              {:else}
-                <div class="h-full w-full grid place-items-center text-slate-400 text-sm">No image</div>
-              {/if}
+  <!-- HEADER UNDER "FEATURED PRODUCTS" SHOWING THE LABEL FROM THE SLUG -->
+{#if featuredBrand?.label}
+  <h1 class="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight text-emerald-700">
+    {featuredBrand.label}
+  </h1>
+{/if}
+
+<div class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+  {#if featured.length}
+    {#each featured as p, i (p.href)}
+      {#if mounted}
+        <!-- card -->
+        <a
+          href={p.href}
+          class="group rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition bg-white
+                 hover:border-emerald-200"
+          in:fly={{ y: 14, duration: T(420), delay: D(80 + i * 70) }}
+        >
+          <!-- IMAGE CONTAINER -->
+          <div class="h-72 bg-slate-100 overflow-hidden flex items-center justify-center">
+            {#if p.img}
+              <img
+                src={imgSrc(p.img)}
+                alt={p.name}
+                class="max-h-full max-w-full object-contain transition group-hover:scale-105"
+              />
+            {:else}
+              <div class="text-slate-400 text-sm">No image</div>
+            {/if}
+          </div>
+
+          <!-- CONTENT -->
+          <div class="p-5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold uppercase tracking-wide text-emerald-700">
+                {p.tag}
+              </span>
+              <span class="text-xs text-slate-400">
+                {p.sku ? `SKU: ${p.sku}` : ""}
+              </span>
             </div>
-            <div class="p-4">
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-semibold uppercase tracking-wide text-emerald-700">{p.tag}</span>
-                <span class="text-xs text-slate-400">{p.sku ? `SKU: ${p.sku}` : ""}</span>
-              </div>
-              <h3 class="mt-2 font-semibold text-slate-900 group-hover:text-emerald-800">{p.name}</h3>
-              <p class="mt-1 text-sm text-slate-600 overflow-hidden text-ellipsis [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">
-                {p.desc}
-              </p>
-            </div>
-          </a>
-        {/if}
-      {/each}
-    {:else}
-      <div class="rounded-xl border border-slate-200 p-6 text-slate-600 bg-white"
-           in:fade={{ duration: T(350), delay: D(80) }}>
-        Featured items will appear here.
-      </div>
-    {/if}
-  </div>
+
+            <h3 class="mt-3 text-lg font-semibold text-slate-900 group-hover:text-emerald-800">
+              {p.name}
+            </h3>
+
+            <p class="mt-2 text-sm text-slate-600 line-clamp-2">
+              {p.desc}
+            </p>
+          </div>
+        </a>
+      {/if}
+    {/each}
+  {:else}
+    <div class="rounded-xl border border-slate-200 p-6 text-slate-600 bg-white">
+      Featured items will appear here.
+    </div>
+  {/if}
+</div>
 </section>
 
 <!-- value props -->
