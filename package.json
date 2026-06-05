@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "type": "module",
   "engines": {
-    "node": ">=18.17 <23"
+    "node": "22.x"
   },
   "scripts": {
     "dev": "vite dev",
@@ -39,10 +39,9 @@
     "vite": "^7.0.4"
   },
   "dependencies": {
-    "dotenv": "^17.2.2",
+    "dotenv": "^17.3.1",
     "flowbite": "^3.1.2",
     "flowbite-svelte": "^1.12.6",
-    "nodemailer": "^7.0.6",
-    "resend": "^6.1.0"
+    "resend": "^6.12.4"
   }
 }

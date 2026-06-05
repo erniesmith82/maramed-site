@@ -253,7 +253,7 @@
             <ul class="relative mt-3 space-y-2 text-emerald-50/90">
               <li in:fly={{ x: 10, y: 8, duration: T(300), delay: D(170) }}>
                 <span class="font-semibold">Email:</span>
-                <a class="underline" href="mailto:custsupport@maramed.com">custsupport@maramed.com</a>
+                <a class="underline" href="mailto:custsupport@maramed.com">info@maramed.com</a>
               </li>
               <li in:fly={{ x: -10, y: 10, duration: T(300), delay: D(195) }}>
                 <span class="font-semibold">Phone:</span> (305) 823-8304

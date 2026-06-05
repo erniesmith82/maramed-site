@@ -208,10 +208,23 @@
           <div class="rounded-2xl border border-slate-200 bg-white shadow-sm" in:scale={{ duration: T(360), delay: D(80), start: 0.99 }}>
             <div class="p-6 sm:p-8">
               <h3 class="text-xl font-semibold text-slate-900" in:fly={{ y: 10, duration: T(320), delay: D(120) }}>Customer Service Hours</h3>
-              <p class="mt-2 text-slate-700" in:fade={{ duration: T(280), delay: D(150) }}>
-                Monday–Friday, 8 AM – 5 PM (EST). 24-hour fax: (305) 823-8304.
-                Email: <a class="text-emerald-700 underline" href="mailto:custsupport@maramed.com">custsupport@maramed.com</a>
-              </p>
+             <div
+	class="mt-3 space-y-2 text-slate-700"
+	in:fade={{ duration: T(280), delay: D(150) }}
+>
+	<p><strong>Hours:</strong> Monday–Friday, 8 AM – 5 PM (EST)</p>
+	<p><strong>Phone:</strong> (305) 823-8304</p>
+	<p><strong>Fax:</strong> (305) 823-8304</p>
+	<p>
+		<strong>Email:</strong>
+		<a
+			class="text-emerald-700 underline"
+			href="mailto:custsupport@maramed.com"
+		>
+			custsupport@maramed.com
+		</a>
+	</p>
+</div>
               <div class="mt-6">
                 <h3 class="text-xl font-semibold text-slate-900" in:fly={{ y: 10, duration: T(320), delay: D(180) }}>Shipping</h3>
                 <p class="mt-2 text-slate-700" in:fade={{ duration: T(280), delay: D(210) }}>
