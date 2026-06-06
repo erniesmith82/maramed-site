@@ -3,6 +3,9 @@ import { Resend } from "resend";
 import { env } from "$env/dynamic/private";
 
 function getResend() {
+	console.log("RESEND_API_KEY exists?", !!env.RESEND_API_KEY);
+	console.log("RESEND_API_KEY length:", env.RESEND_API_KEY?.length ?? 0);
+
 	if (!env.RESEND_API_KEY) {
 		throw new Error("[mailer] Missing RESEND_API_KEY");
 	}
