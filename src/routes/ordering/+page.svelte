@@ -170,16 +170,11 @@
     {#if mounted}
       <div in:fade={{ duration: T(320) }}>
         <div class="mx-auto max-w-3xl text-center text-white" in:scale={{ duration: T(360), start: 0.985 }}>
-          <p class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[10px] sm:text-xs font-medium ring-1 ring-white/20 backdrop-blur" in:fly={{ y: 10, duration: T(340), delay: D(40) }}>
-            <span class="h-1.5 w-1.5 rounded-full bg-emerald-300"></span>
-            Net 30 · Same-day shipping on most orders
-          </p>
+          
           <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight" in:fly={{ y: 12, duration: T(400), delay: D(110) }}>
             Ordering &amp; Reimbursement
           </h1>
-          <p class="mt-4 text-sm sm:text-base lg:text-lg text-white/90" in:fly={{ y: 10, duration: T(360), delay: D(200) }}>
-            Submit orders below. Terms of sale, customer service hours, and shipping information are included on this page.
-          </p>
+          
         </div>
       </div>
     {/if}
@@ -194,13 +189,15 @@
             <div class="p-6 sm:p-8">
               <h3 class="text-xl font-semibold text-slate-900" in:fly={{ y: 10, duration: T(320), delay: D(100) }}>Terms of Sale</h3>
               <ul class="mt-3 space-y-2 text-slate-700">
-                <li in:fly={{ x: 10, y: 8, duration: T(300), delay: D(130) }}>Accounts past due 30 days after delivery. Delinquent accounts assessed 1.5% per month (18% annual).</li>
                 <li in:fly={{ x: -10, y: 10, duration: T(300), delay: D(150) }}>Shipment: F.O.B. Miami, Florida</li>
                 <li in:fly={{ x: 8, y: 10, duration: T(300), delay: D(170) }}>Prices and Terms of Sale subject to change without notice.</li>
-                <li in:fly={{ x: -8, y: 10, duration: T(300), delay: D(190) }}>Request a <em>Return Authorization Number</em> before all returns and place it on the shipping label. Unauthorized returns will not be accepted.</li>
-                <li in:fly={{ x: 10, y: 8, duration: T(300), delay: D(210) }}>Now accepting American Express, Mastercard, Visa and Discover.</li>
+                <li in:fly={{ x: -8, y: 10, duration: T(300), delay: D(190) }}>
+  Request a <em>Return Authorization Number (RA#)</em> before all returns and place it on the shipping label. Unauthorized returns will not be accepted. A 20% restocking fee applies to all approved returns.</li>
+                <li in:fly={{ x: 10, y: 8, duration: T(300), delay: D(210) }}>
+  All major credit cards are accepted. A 3.5% credit card processing fee applies to all card payments.
+</li>
                 <li in:fly={{ x: -10, y: 8, duration: T(300), delay: D(230) }}>Orders may ship C.O.D. until an account is established. Terms: Net 30 Days.</li>
-                <li in:fly={{ x: 8, y: 8, duration: T(300), delay: D(250) }}>Pay by invoice. Statements are mailed monthly.</li>
+               
               </ul>
             </div>
           </div>
@@ -212,8 +209,8 @@
 	class="mt-3 space-y-2 text-slate-700"
 	in:fade={{ duration: T(280), delay: D(150) }}
 >
-	<p><strong>Hours:</strong> Monday–Friday, 8 AM – 5 PM (EST)</p>
-	<p><strong>Phone:</strong> (305) 823-8304</p>
+	<p><strong>Hours:</strong> Monday–Friday, 8:00 AM – 4:30 PM (EST)</p>
+	<p><strong>Phone:</strong> (305) 823-8300</p>
 	<p><strong>Fax:</strong> (305) 823-8304</p>
 	<p>
 		<strong>Email:</strong>
@@ -228,12 +225,11 @@
               <div class="mt-6">
                 <h3 class="text-xl font-semibold text-slate-900" in:fly={{ y: 10, duration: T(320), delay: D(180) }}>Shipping</h3>
                 <p class="mt-2 text-slate-700" in:fade={{ duration: T(280), delay: D(210) }}>
-                  *Maramed offers same-day shipment on most orders at no additional charge.
-                  Standard method is UPS Ground unless otherwise specified. FedEx services available on request.
-                </p>
+  *Most orders ship the same business day, subject to product availability. Standard shipping methods include UPS Ground and FedEx Ground unless alternate shipping arrangements are requested.
+</p>
               </div>
               <div class="mt-6">
-                <p class="mt-2 text-slate-700 font-semibold" in:fade={{ duration: T(280), delay: D(210) }}>
+                <p class="mt-2 text-red-700 font-bold text-lg" in:fade={{ duration: T(280), delay: D(210) }}>
                   **Maramed sells to licensed professionals and distributors only.
                 </p>
               </div>

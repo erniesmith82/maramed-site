@@ -38,9 +38,8 @@
 <!-- catalog page wrapper: full-bleed background image with scrollable content slot -->
 <section
   class="relative isolate min-h-[100svh] sm:min-h-screen flex
-         bg-no-repeat bg-top sm:bg-center
-         bg-contain lg:bg-cover"
-  style="background-image:url('/Maramed-catalog.jpg'); background-color:white;"
+         bg-no-repeat bg-top bg-contain"
+  style="background-image:url('/Maramed-catalog-front.jpg'); background-color:white;"
 >
   <main
     class="relative z-10 flex-1 px-3 sm:px-6 lg:px-8 py-1 sm:py-3 overflow-y-auto no-scrollbar"

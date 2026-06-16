@@ -169,19 +169,19 @@
         <!-- media card -->
         <div class="relative" in:fade={{ duration: T(350), delay: D(120) }}>
           <div
-            class="aspect-[16/10] w-full rounded-3xl border border-white/15 overflow-hidden bg-white/5 shadow-lg"
-            in:scale={{ duration: T(450), delay: D(120), start: 0.96 }}
-          >
+  class="aspect-[16/10] w-full overflow-hidden"
+  in:scale={{ duration: T(450), delay: D(120), start: 0.96 }}
+>
             {#if showHero}
               <img
-                src="/Maramed-catalog.jpg"
-                alt="Catalog preview"
-                class="h-full w-full object-cover will-change-transform"
-                on:error={() => (showHero = false)}
-              />
+  src="/Maramed-catalog-front.jpg"
+  alt="Catalog preview"
+  class="h-full w-full object-contain will-change-transform"
+  on:error={() => (showHero = false)}
+/>
             {:else}
               <div class="h-full w-full grid place-items-center bg-white/10 text-emerald-50/70">
-                Add a hero image at <code>/static/images/Maramed-catalog.jpg</code>
+                Add a hero image at <code>/static/images/Maramed-catalog-front.jpg</code>
               </div>
             {/if}
           </div>
