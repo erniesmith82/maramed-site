@@ -1,140 +1,6 @@
 {
   "families": {
 
-"HKAFO-KAFO": {
-  "key": "HKAFO-KAFO",
-  "title": "HKAFO & KAFO Components",
-  "image": "/images/products/quad-brim.jpg",
-  "details": {
-    "lcode": "L2128",
-    "heroImage": "/images/products/hkafo-kafo-femoral-fracture-orthosis.jpg",
-    "description": "Component options for building HKAFO/KAFO femoral fracture orthoses (quad brim, tibia sections, foot components, joints, and accessories).",
-    "indications": [
-      "Tibial plateau fractures",
-      "Proximal tibial fractures",
-      "Distal and mid shaft femoral fractures",
-      "Adjunct to limited ORIF of interarticular fractures with proximal tibial fractures",
-      "Adjunct to internal fixation such as unreamed intermedullary nails",
-      "Post healing of soft tissue in external fixation"
-    ],
-    "notes": [
-      "† For foam lining add -FL (ex: QUAD-100-FL).",
-      "Hip joint: indicate left or right; provides 15° abduction.",
-      "Knee joints: indicate unilateral or bilateral where applicable."
-    ],
-
-    "sizeGroups": [
-      {
-        "key": "quad-brim",
-        "title": "Quad Brim",
-        "image": "/images/products/quad-brim.jpg",
-        "rows": ["QUAD-100", "QUAD-200", "QUAD-300"]
-      },
-      {
-        "key": "hip-joint",
-        "title": "Aluminum Polycentric Total Hip Replacement Joint",
-        "image": "/images/products/aluminum-polycentric-total-hip-replacement-joint.jpg",
-        "rows": ["O-HIP-JNT-2"],
-        "notes": ["Indicate left or right; provides 15° abduction."]
-      },
-      {
-        "key": "ptb-style-tibia",
-        "title": "PTB Style Tibia",
-        "image": "/images/products/ptb-style-tibia.jpg",
-        "rows": ["TFB-PS-100", "TFB-PS-200", "TFB-PS-200E", "TFB-PS-300", "TFB-PS-300E"]
-      },
-      {
-        "key": "standard-tibia",
-        "title": "Standard Tibia",
-        "image": "/images/products/standard-tibia.jpg",
-        "rows": ["TFB-100", "TFB-200", "TFB-300"]
-      },
-      {
-        "key": "single-axis-foot",
-        "title": "Single Axis Foot Component",
-        "image": "/images/products/single-axis-foot-component.jpg",
-        "rows": ["FC-100", "FC-200", "FC-300"]
-      },
-      {
-        "key": "heel-cup",
-        "title": "Heel Cup",
-        "image": "/images/products/heel-cup.jpg",
-        "rows": ["TFB-HEEL/SA"]
-      },
-      {
-        "key": "afo",
-        "title": "AFO",
-        "image": "/images/products/afo-pls-foot-component.jpg",
-        "rows": ["PLSFC-100", "PLSFC-200", "PLSFC-300", "PLSFC-400"]
-      },
-      {
-        "key": "nylon-polycentric-knee",
-        "title": "Nylon Polycentric Free Motion Knee Joint",
-        "image": "/images/products/nylon-polycentric-free-motion-knee-joint.jpg",
-        "rows": ["PCN-500"]
-      },
-      {
-        "key": "drop-lock-knee",
-        "title": "Aluminum Laminated Long Leg Drop Lock Knee Joint",
-        "image": "/images/products/aluminum-laminated-long-leg-drop-lock-knee-joint.jpg",
-        "rows": ["O-KNEE-JT-AL-9", "O-KNEE-JT-AL-8", "O-KNEE-JT-AL-7"],
-        "notes": ["Available with ball spring stops. Indicate unilateral or bilateral."]
-      },
-      {
-        "key": "lerman-lock-lem-1",
-        "title": "3/16″ Aluminum Polycentric Fracture Cast Knee Joint — Lerman Lock",
-        "image": "/images/products/aluminum-polycentric-fracture-cast-knee-joint-lerman-lock.jpg",
-        "rows": ["O-KNEE-JT-LEM-1"],
-        "notes": ["Upper & lower components 7″."]
-      },
-      {
-        "key": "lerman-lock-lem-2",
-        "title": "Polycentric Aluminum Long Leg Knee Joint — Lerman Lock",
-        "image": "/images/products/polycentric-aluminum-long-leg-knee-joint-lerman-lock.jpg",
-        "rows": ["O-KNEE-JT-LEM-2"]
-      }
-    ]
-  },
-
-  "items": [
-    { "sku": "QUAD-100", "thighCircumference": "13 – 17", "group": "Quad Brim" },
-    { "sku": "QUAD-200", "thighCircumference": "17 – 22", "group": "Quad Brim" },
-    { "sku": "QUAD-300", "thighCircumference": "22 – 26", "group": "Quad Brim" },
-
-    { "sku": "O-HIP-JNT-2", "description": "Indicate left or right; provides 15° abduction", "group": "Aluminum Polycentric Total Hip Replacement Joint" },
-
-    { "sku": "TFB-PS-100", "calfCircumference": "11 – 13", "group": "PTB Style Tibia" },
-    { "sku": "TFB-PS-200", "calfCircumference": "14 – 16", "group": "PTB Style Tibia" },
-    { "sku": "TFB-PS-200E", "calfCircumference": "14 – 16", "group": "PTB Style Tibia" },
-    { "sku": "TFB-PS-300", "calfCircumference": "16 – 18", "group": "PTB Style Tibia" },
-    { "sku": "TFB-PS-300E", "calfCircumference": "16 – 18", "group": "PTB Style Tibia" },
-
-    { "sku": "TFB-100", "calfCircumference": "11½ – 14", "group": "Standard Tibia" },
-    { "sku": "TFB-200", "calfCircumference": "12½ – 15½", "group": "Standard Tibia" },
-    { "sku": "TFB-300", "calfCircumference": "13 – 16½", "group": "Standard Tibia" },
-
-    { "sku": "FC-100", "mensShoeSize": "3 – 6", "group": "Single Axis Foot Component" },
-    { "sku": "FC-200", "mensShoeSize": "6 – 9", "group": "Single Axis Foot Component" },
-    { "sku": "FC-300", "mensShoeSize": "9 – 11", "group": "Single Axis Foot Component" },
-
-    { "sku": "TFB-HEEL/SA", "size": "One Size", "group": "Heel Cup" },
-
-    { "sku": "PLSFC-100", "mensShoeSize": "3 – 6", "group": "AFO" },
-    { "sku": "PLSFC-200", "mensShoeSize": "6 – 9", "group": "AFO" },
-    { "sku": "PLSFC-300", "mensShoeSize": "9 – 11", "group": "AFO" },
-    { "sku": "PLSFC-400", "mensShoeSize": "11 – 13", "group": "AFO" },
-
-    { "sku": "PCN-500", "group": "Nylon Polycentric Free Motion Knee Joint" },
-
-    { "sku": "O-KNEE-JT-AL-9", "spec": "3/16 × 5/8", "notes": "Available with ball spring stops", "group": "Aluminum Laminated Long Leg Drop Lock Knee Joint" },
-    { "sku": "O-KNEE-JT-AL-8", "spec": "3/16 × 3/4", "notes": "Available with ball spring stops", "group": "Aluminum Laminated Long Leg Drop Lock Knee Joint" },
-    { "sku": "O-KNEE-JT-AL-7", "spec": "1/4 × 3/4", "notes": "Available with ball spring stops", "group": "Aluminum Laminated Long Leg Drop Lock Knee Joint" },
-
-    { "sku": "O-KNEE-JT-LEM-1", "notes": "Upper & lower components 7″", "group": "3/16″ Aluminum Polycentric Fracture Cast Knee Joint — Lerman Lock" },
-    { "sku": "O-KNEE-JT-LEM-2", "group": "Polycentric Aluminum Long Leg Knee Joint — Lerman Lock" }
-  ]
-},
-
 "heel-pain": {
   "key": "heel-pain",
   "title": "Heel Pain Rehab System",
@@ -1394,29 +1260,7 @@
         { "sku": "STOCKINETT-4-26", "Description": "4″ Ankle Foot Calf", "Size": "Lg/XLg", "group": "Lower Extremity" }
       ]
     },
-    "AFO-S": {
-      "key": "AFO-S",
-      "title": "AFO/Drop Foot Splint Accessories",
-      "image": "/images/products/afo-drop-foot-splint-accessories.jpg",
-      "details": {
-        "heroImage": "/images/products/afo-drop-foot-splint-accessories.jpg",
-        "description": "The exact height compatible with any model of PLS.",
-        "features": [
-          "Inserts compatible with all PLS models",
-          "Seamless cotton-blend socks",
-          "Adhesive-back strap fits PLSC & PLS-FF"
-        ]
-      },
-      "items": [
-        { "sku": "AFO-S-1", "Description": "Anti-shock Shoe Insert", "mensShoeSize": "3 – 6", "group": "AFO Shoe Inserts" },
-        { "sku": "AFO-S-2", "Description": "Anti-shock Shoe Insert", "mensShoeSize": "6 – 9", "group": "AFO Shoe Inserts" },
-        { "sku": "AFO-S-3", "Description": "Anti-shock Shoe Insert", "mensShoeSize": "9 – 11", "group": "AFO Shoe Inserts" },
-        { "sku": "AFO-S-4", "Description": "Anti-shock Shoe Insert", "mensShoeSize": "11 – 13", "group": "AFO Shoe Inserts" },
-        { "sku": "AFO-L-1", "Description": "AFO Sock (seamless)", "size": "Pediatric — one size", "group": "AFO Socks" },
-        { "sku": "AFO-L-2", "Description": "AFO Sock (seamless)", "size": "Adult — one size", "group": "AFO Socks" },
-        { "sku": "STRAP-PLSC/M", "Description": "Adhesive-back strap — fits PLSC & PLS-FF", "group": "Drop Foot Splint Straps" }
-      ]
-    },
+  
     "EAM": {
       "key": "EAM",
       "title": "Epoxy Adjustment Mandrels",
@@ -1446,7 +1290,7 @@
       ]
     },
 
-    "QLF": {
+"QLF": {
   "key": "QLF",
   "title": "Quick Lock Fasteners",
   "image": "/images/products/quick-lock-fasteners.png",
@@ -1474,18 +1318,19 @@
     { "sku": "QLF-6", "Description": "Long Stem & Rivet – pkg of 100", "group": "Fasteners" },
     { "sku": "QLF-8", "Description": "Large Stem & Rivet – pkg of 100", "group": "Fasteners" },
     { "sku": "QLF-IT-1", "Description": "QLF Installation Tool", "group": "Tools" },
-    { "sku": "BUCKLE-1PK", "Description": "1\" Loop & Chafe – pkg of 100", "group": "Accessories" }
+    { "sku": "BUCKLE-1PK", "Description": "1\" Loop & Chafe – pkg of 100", "group": "Accessories" },
+    { "sku": "STRAP-PLSC/M", "Description": "Adhesive-back strap — fits PLSC & PLS-FF", "group": "Drop Foot Splint Straps" }
   ]
 },
-    "VEH": {
-      "key": "VEH",
-      "items": [
-        { "sku": "EO-100", "size": "Small" },
-        { "sku": "EO-200", "size": "Medium" },
-        { "sku": "EO-300", "size": "Large" },
-        { "sku": "EO-400", "size": "X-Large" }
-      ]
-    },
+"VEH": {
+  "key": "VEH",
+  "items": [
+    { "sku": "EO-100", "size": "Small" },
+    { "sku": "EO-200", "size": "Medium" },
+    { "sku": "EO-300", "size": "Large" },
+    { "sku": "EO-400", "size": "X-Large" }
+  ]
+},
 "SM-HFO-DE": {
   "key": "SM-HFO-DE",
   "title": "Humerus Fracture Orthosis — Over the Shoulder (Neutral)",
@@ -1628,12 +1473,6 @@
       "description": "The fracture braces in the Tibia Fracture Brace series have been developed and tested in over 5,000 clinical cases.",
       "familyKeys": ["FC", "TFB", "TFB-S", "TFB-PS"]
     },
-    {
-      "slug": "hkafo-kafo-femoral",
-      "label": "HKAFO & KAFO Femoral Fracture Orthosis",
-      "description": "Maramed’s custom fabricated femoral fracture orthoses are available in various configurations to effectively match the indications of your patient. The standard thigh component insures sufficient medial/lateral soft tissue compression while maintaining proper joint alignment as the soft tissue atrophies. The tibia component allows anterior posterior compression. The hip, thigh, hip & knee joint, tibia and heel cup components of the orthosis can be selected from the different styles shown on the following page. An orthometry diagram is included to assist with obtaining the proper measurements for ordering.",
-      "familyKeys": ["HKAFO-KAFO"]
-    },
 
 {
   "slug": "heel-pain",
@@ -1647,7 +1486,7 @@
       "slug": "accessories",
       "label": "Accessories",
       "description": "Replacement straps, stockinette and liners, pads and heel cups, hardware, and other add-ons compatible with Maramed products.",
-      "familyKeys": ["AFO-S", "EAM", "QLF"]
+      "familyKeys": ["EAM", "QLF"]
     },
     {
       "slug": "stockinette",

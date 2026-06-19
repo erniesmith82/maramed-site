@@ -24,11 +24,17 @@
 </script>
 
 <svelte:head>
-  <title>Sky Medical products now available from Maramed — Maramed News</title>
-  <meta name="description" content="Maramed is now an authorized source for Sky Medical products. Learn what's changing." />
+  <title>Maramed Acquires Sky Medical in 2025 — Maramed News</title>
+  <meta
+    name="description"
+    content="Maramed acquired Sky Medical in 2025, expanding its orthopedic product offering and strengthening support for healthcare providers nationwide."
+  />
   <link rel="canonical" href={canonical} />
-  <meta property="og:title" content="Sky Medical products now available from Maramed" />
-  <meta property="og:description" content="Maramed is now an authorized source for Sky Medical products." />
+  <meta property="og:title" content="Maramed Acquires Sky Medical in 2025" />
+  <meta
+    property="og:description"
+    content="Maramed acquired Sky Medical in 2025, expanding its orthopedic product offering and customer support capabilities."
+  />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content="2025-09-20" />
 </svelte:head>
@@ -37,13 +43,11 @@
 <section class="relative isolate">
   <div class="absolute inset-0 -z-10 bg-cover bg-center"></div>
 
-  <!-- Overlay (NO GRADIENT): flat emerald -->
   <div
     class="absolute inset-0 -z-10 bg-emerald-800/85 -mt-10"
     aria-hidden="true"
   ></div>
 
-  <!-- optional subtle depth -->
   <div
     class="absolute inset-0 -z-10 ring-1 ring-inset ring-black/10 -mt-10"
     aria-hidden="true"
@@ -68,15 +72,14 @@
             class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight"
             in:fly={{ y: 12, duration: T(400), delay: D(110) }}
           >
-            Sky Medical Products — Now Available from Maramed
+            Maramed Acquires Sky Medical in 2025
           </h1>
 
           <p
             class="mt-4 text-sm sm:text-base lg:text-lg text-white/90"
             in:fly={{ y: 10, duration: T(360), delay: D(200) }}
           >
-            We’re excited to announce that Maramed is now an authorized source for Sky Medical products.
-            Ordering is simple, fulfillment is fast, and support comes straight from our team.
+            In 2025, Maramed proudly acquired Sky Medical as part of our continued commitment to providing high-quality orthopedic and rehabilitation solutions to practitioners nationwide. This acquisition expands Maramed’s product portfolio by incorporating Sky Medical’s trusted line of fracture orthoses, ankle-foot orthoses, and related orthopedic products. By bringing these product lines under the Maramed umbrella, customers benefit from a streamlined ordering process, enhanced inventory availability, responsive customer support, and the same reliable service that healthcare professionals have come to expect from Maramed. We are excited to continue supporting existing Sky Medical customers while introducing these products to new providers through our growing distribution network.
           </p>
 
           <div
@@ -120,9 +123,9 @@
         >
           What’s changing
         </h2>
+
         <p class="mt-2 text-slate-700" in:fade={{ duration: T(260), delay: D(110) }}>
-          Effective immediately, customers can purchase Sky Medical product families directly through Maramed.
-          Your service, billing, and shipping will be handled by our Customer Service team in Miami, FL.
+          Following the acquisition of Sky Medical in 2025, Maramed has integrated select Sky Medical product families into its catalog and distribution network. Healthcare providers can now purchase these products directly through Maramed, benefiting from consolidated ordering, billing, fulfillment, and customer service. Existing Sky Medical customers will continue to have access to the products they know and trust, while gaining the advantages of Maramed’s expanded inventory, efficient logistics, and dedicated customer support team based in Miami, Florida. This transition reflects Maramed’s ongoing investment in delivering comprehensive orthopedic solutions and strengthening relationships with practitioners throughout the United States and international markets.
         </p>
       </div>
     {/if}
