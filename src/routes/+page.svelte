@@ -174,14 +174,14 @@
 >
             {#if showHero}
               <img
-  src="/Maramed-catalog-front.jpg"
+  src="/Maramed-catalog-front.png"
   alt="Catalog preview"
   class="h-full w-full object-contain will-change-transform"
   on:error={() => (showHero = false)}
 />
             {:else}
               <div class="h-full w-full grid place-items-center bg-white/10 text-emerald-50/70">
-                Add a hero image at <code>/static/images/Maramed-catalog-front.jpg</code>
+                Add a hero image at <code>/static/images/Maramed-catalog-front.png</code>
               </div>
             {/if}
           </div>
