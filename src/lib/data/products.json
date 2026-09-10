@@ -1471,7 +1471,7 @@
       "slug": "tibia-fracture-brace",
       "label": "Tibia Fracture Braces",
       "description": "The fracture braces in the Tibia Fracture Brace series have been developed and tested in over 5,000 clinical cases.",
-      "familyKeys": ["FC", "TFB", "TFB-S", "TFB-PS"]
+      "familyKeys": ["FC", "TFB", "TFB-PS"]
     },
 
 {
