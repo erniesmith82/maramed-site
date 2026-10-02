@@ -256,7 +256,7 @@
                 <a class="underline" href="mailto:custsupport@maramed.com">info@maramed.com</a>
               </li>
               <li in:fly={{ x: -10, y: 10, duration: T(300), delay: D(195) }}>
-                <span class="font-semibold">Phone:</span> (305) 823-8304
+                <span class="font-semibold">Phone:</span> (305) 823-8300
               </li>
               <li in:fly={{ x: 8, y: 10, duration: T(300), delay: D(220) }}>
                 <span class="font-semibold">Hours:</span> Mon–Fri · 8am–5pm (EST)
